@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="robots" content="noindex,nofollow">
+<meta name="robots" content="noindex, nofollow">
 <script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,6 +91,8 @@
   .effects-b { --g1:#8b5cf6; --g2:#39e6d0; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
   .instruments-b { --g1:#3ecf6e; --g2:#ffd84a; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
   .everything-b { --g1:#ff3d5a; --g2:#ffd84a; --glow:#ff3d5a; --shadow:rgba(255,61,90,.28); }
+  .midi-b { --g1:#ff5ca8; --g2:#8b5cf6; --glow:#ff5ca8; --shadow:rgba(255,92,168,.28); }
+  .bundle .dl { display:inline-block; margin-top:14px; padding:12px 22px; border-radius:12px; color:#0a0a0c; font-weight:900; text-decoration:none; align-self:flex-start; }
   footer { border-top:1px solid var(--line); margin-top:56px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
   @media (max-width: 640px) {
@@ -280,7 +282,7 @@
   </div>
 
   <div class="sect-title" id="modes">Mode Packs · The Modal Series</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the other five flavors, and nobody makes chord packs for them. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Ben Bohmer floats in Lydian. Daft Punk grooved in Dorian. Now you.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the other flavors, and nobody makes chord packs for them. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Ben Bohmer floats in Lydian. Daft Punk grooved in Dorian. Now you.</p>
   <div class="modegrid">
     <div class="modecard ionian">
       <h3>IONIAN</h3>
@@ -330,12 +332,6 @@
       <div class="songs">Every mode · every key · one download</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AllModes336-SebastianMacan.zip">Download 336</a>
     </div>
-    <div class="modecard allmodes" style="--g1:#ffd84a;--g2:#ff3d5a;">
-      <h3>MIDI MEGA</h3>
-      <div class="vibe">Every MIDI pack we make. 3 genre chord packs + all 7 mode packs in one zip.</div>
-      <div class="songs">796 progressions · the complete harmonic arsenal</div>
-      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/MIDIMega796-SebastianMacan.zip">Download 796</a>
-    </div>
   </div>
 
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
@@ -357,6 +353,15 @@
         <div class="price"><s>$107</s> $69 <span class="freebie">· free during launch</span></div>
       </div>
     </div>
+    <div class="bundle midi-b">
+      <img src="img/bundles/midi_mega_bundle.png" alt="MIDI Mega Basket: every chord pack and mode pack as wrapped candy in a basket" loading="lazy">
+      <div class="binner">
+        <h3>MIDI MEGA BASKET</h3>
+        <p class="desc">Every MIDI pack we make. 3 genre chord packs + all 7 mode packs. 796 progressions, the complete harmonic arsenal in one basket.</p>
+        <div class="price"><s>$115</s> $49 <span class="freebie">· free during launch</span></div>
+        <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/MIDIMega796-SebastianMacan.zip">Download 796</a>
+      </div>
+    </div>
     <div class="bundle everything-b">
       <img src="img/bundles/everything_bundle.png" alt="Everything Bundle: the whole candy shop in one basket" loading="lazy">
       <div class="binner">
@@ -370,6 +375,7 @@
   <footer>
     <div>© 2026 Aluetion, LLC. All rights reserved. Sebastian Macan is an Aluetion, LLC brand.</div>
     <div><a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="privacy.html">Privacy</a> · <a href="EULA.txt">License</a> · <a href="https://instagram.com/sebastianmacanmusic">Instagram</a></div>
+    <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> · <a href="learn/magician.html">Chord generators</a> · <a href="learn/ghost.html">Audio freeze</a> · <a href="learn/fauna.html">Creature synth</a> · <a href="learn/reels.html">Tape emulation</a> · <a href="learn/bounce.html">Beat repeat</a> · <a href="learn/jelly.html">Wobble FX</a> · <a href="learn/liftoff.html">Phaser flanger</a> · <a href="learn/orbit.html">3D auto-pan</a> · <a href="learn/gloss.html">Easy mixing</a> · <a href="learn/halo.html">One knob mastering</a></div>
   </footer>
 </div>
 <script src="js/email-gate.js" defer></script>
