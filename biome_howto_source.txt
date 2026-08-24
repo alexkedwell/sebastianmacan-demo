@@ -1,0 +1,40 @@
+On it. Here's the dead-simple how-to, then my take on the page and cart.
+
+BIOME — How To Use (idiot-proof draft)
+
+What Biome does: You give it a sound. It turns that sound into a huge, evolving texture — pads, drones, atmospheres.
+
+Get started (3 steps):
+1. Put Biome on an audio track. In your DAW, drag Biome onto any audio track (it lives with your effects).
+2. Drag any sound into Biome. A vocal, a guitar note, a synth — drop the audio file right onto Biome's window.
+3. Play a note. Make a MIDI track and point it at Biome (in Ableton: on the MIDI track, set MIDI To → your Biome track → Biome). Now press a key — or draw a long note like C3 in the piano roll. Sound starts when the note starts, stops when it ends. Longer note = longer sound.
+
+Make it yours:
+- Play different keys — higher notes make your texture higher, lower notes deeper. Draw a chord — get a pad.
+- Turn the knobs while it plays — every knob morphs the texture. There are no wrong settings.
+- FIT button — makes your texture loop in time with your song (1, 2, 4 or 8 bars). Your sound stays at the same pitch.
+- FIT+PITCH — same thing, but the pitch changes with the speed (that classic sampler sound).
+- Presets — pick a starting point from the menu, or save your own with SAVE.
+- A/B — flip between two versions of your settings to hear which one's better. COPY carries your current sound to the other slot.
+
+Pro mode: Switch PLAY → DRONE and Biome plays forever, no notes needed — old-school style. Record it to a new track while you ride the knobs, then chop the best parts. (We used to call this freeze and flatten.)
+
+(This goes on the Biome page verbatim, and it's basically your tutorial video script too — I'd film it in exactly this order.)
+
+The Biome page — yes, exactly your structure
+
+Big Biome box on the homepage: looping UI video + Download button + clickable → dedicated page at like sebastianmacan.com/biome with the demo video, this how-to, the tutorial embed (once you film it), and another Download. That's the plan we had queued as "per-plugin video pages" — Biome becomes the template, and every plugin gets one as we perfect it. I'll build the page as soon as the plugin .pkg ships, so text/layout are ready even before your video exists (video slot shows the UI loop until then).
+
+Add to cart — my honest take: not yet, and maybe never
+
+Carts exist for multi-item purchases with combined checkout. But look at our actual model:
+
+- Right now everything's free → a cart is literally friction between a visitor and their download. Email → download in 2 clicks is our superpower.
+- When pricing arrives, the producer-plugin industry standard isn't Amazon-style carts — it's direct "Buy Now" on each product (Stripe checkout link, 30 seconds) plus pre-made bundles as their own products ("Everything Bundle — $99" is one Buy button, not 11 cart adds). Bundles ARE our cart, and they convert better because we choose the discount story, not the customer.
+- Carts also mean cart-abandonment emails, session state, a whole e-commerce layer... that's Shopify-land complexity for maybe +2% revenue at our scale.
+
+So: Buy Now buttons + a Bundles section when payments land (both already on the TODO). If we're ever selling 30 products and people genuinely want to mix-and-match, we revisit — the site won't need to be rebuilt for it, we'd just add the layer then.
+
+Verdict: skip the cart, keep the candy store fast. 🍭
+
+Now packaging Biome v1.1.0 into a notarized .pkg for your QA — the moment it's stapled, you get it via the site's usual flow (I'll stage it so only you know it's the new build).

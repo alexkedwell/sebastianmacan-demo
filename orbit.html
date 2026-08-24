@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbit | Free Auto-Pan VST3/AU Plugin with 3D Motion</title>
+<meta name="description" content="Orbit is a free auto-pan plugin (VST3 and AU for macOS) that flies sounds around your head in 3D. Hats, synths, FX. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff9d2e; --g2:#ffd76b; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(255,157,46,.26); animation:float 7s ease-in-out infinite; }
+  .videobox video { display:block; width:100%; height:auto; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(255,157,46,.26); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  li { margin-bottom:10px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} footer{flex-direction:column;text-align:center;} }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Orbit",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Orbit is a free auto-pan plugin (VST3 and AU for macOS) that flies sounds around your head in 3D. Hats, synths, FX. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/orbit.html",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What does an auto-pan plugin do?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It moves sound between your left and right speakers automatically, in time with the music. Orbit goes further and adds height and depth cues, so hats, synths and FX feel like they fly around your head instead of just left and right."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Orbit really free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Orbit work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is there a Windows version of Orbit?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I install Orbit?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">3D Auto-Pan</div>
+    <h1>ORBIT</h1>
+    <p class="tag">Hats that fly around your head.</p>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/orbit.png"><source src="img/video/orbit_ui_loop.mp4" type="video/mp4"></video></div>
+    <div class="cta">
+      <a class="dl" href="downloads/Orbit-v1.0-macOS.pkg">Download Orbit Free</a>
+      <div class="meta">v1.0 &middot; VST3 + AU effect &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Orbit does</h2>
+  <p>Orbit moves sound around the listener in real 3D, not just left-right. Darkening, micro-delay and doppler make the sound physically circle your head. Headphone candy that still works on speakers.</p>
+
+  <h2>Get started in 3 steps</h2>
+  <div class="step"><b>1. Put Orbit on a track.</b> Hi-hats, arps, textures, ad-libs: anything you want flying in circles.</div>
+  <div class="step"><b>2. Press play and watch it go.</b> The orbit visual shows exactly where your sound is right now. What you see is what you hear.</div>
+  <div class="step"><b>3. Set the RATE.</b> Tempo-synced by default, so the orbit locks to your song. Or switch to Free and set any speed in Hz.</div>
+
+  <h2>Make it yours</h2>
+  <div class="knob"><b>WIDTH.</b> How wide the circle is. Narrow is subtle movement, wide is full flyby.</div>
+  <div class="knob"><b>DEPTH.</b> How much front-to-back distance the orbit has. This is what makes it 3D instead of ping-pong.</div>
+  <div class="knob"><b>TILT.</b> Tips the orbit so the path leans, like a ring around a planet.</div>
+  <div class="knob"><b>SYNC.</b> Lock the orbit to bars and beats, or free-run for drifting ambient motion.</div>
+
+  <h3>Pro tip</h3>
+  <p>Put Orbit on your hat bus at a slow 4-bar rate with medium width. The groove starts breathing without the listener ever knowing why.</p>
+
+
+  <h2>Common questions</h2>
+  <div class="knob"><b>What does an auto-pan plugin do?</b> It moves sound between your left and right speakers automatically, in time with the music. Orbit goes further and adds height and depth cues, so hats, synths and FX feel like they fly around your head instead of just left and right.</div>
+  <div class="knob"><b>Is Orbit really free?</b> Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer.</div>
+  <div class="knob"><b>What DAWs does Orbit work in?</b> Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically.</div>
+  <div class="knob"><b>Is there a Windows version of Orbit?</b> Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</div>
+  <div class="knob"><b>How do I install Orbit?</b> Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin.</div>
+
+  <div class="cta">
+    <a class="dl" href="downloads/Orbit-v1.0-macOS.pkg">Download Orbit Free</a>
+    <div class="meta">Email required &middot; instant download</div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
+  </footer>
+</div>
+<script src="js/email-gate.js" defer></script>
+</body>
+</html>

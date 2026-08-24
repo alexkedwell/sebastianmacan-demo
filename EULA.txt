@@ -1,5 +1,5 @@
 SEBASTIAN MACAN — END USER LICENSE AGREEMENT ("EULA")
-Chaos v1.0 — Copyright (c) 2026 Sebastian Macan. All rights reserved.
+Applies to all Sebastian Macan products — Copyright (c) 2026 Aluetion, LLC. All rights reserved.
 
 1. LICENSE. You are granted a non-exclusive, non-transferable license to install and use this software for music production. You may not redistribute, resell, decompile, or reverse-engineer the software.
 2. NO WARRANTY. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.

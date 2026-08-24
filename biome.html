@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biome | Free Granular Synthesizer VST3/AU for macOS</title>
+<meta name="description" content="Biome is a free granular synthesizer plugin (VST3 and AU for macOS). Drag in any audio and grow it into huge evolving textures, pads and drones. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#3ecf6e; --g2:#5ad9d0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(62,207,110,.18); animation:float 7s ease-in-out infinite; }
+  .videobox video { display:block; width:100%; height:auto; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(62,207,110,.35); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  li { margin-bottom:10px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} footer{flex-direction:column;text-align:center;} }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Biome",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Biome is a free granular synthesizer plugin (VST3 and AU for macOS). Drag in any audio and grow it into huge evolving textures, pads and drones. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/biome.html",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is a granular synthesizer?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A granular synth chops audio into tiny pieces called grains, then layers and stretches those grains into brand new sounds. Biome uses this to turn any sample, a vocal, a guitar note, a field recording, into evolving pads, drones and atmospheres."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Biome really free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Biome work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is there a Windows version of Biome?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I install Biome?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">Granular Texture Blender</div>
+    <h1>BIOME</h1>
+    <p class="tag">Drop a rainforest on your beat.</p>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/biome.png"><source src="img/video/biome_ui_loop.mp4" type="video/mp4"></video></div>
+    <div class="cta">
+      <a class="dl" href="downloads/Biome-v1.0-macOS.pkg">Download Biome Free</a>
+      <div class="meta">v1.0 &middot; VST3 + AU &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Biome does</h2>
+  <p>You give it a sound. Biome turns that sound into a huge, evolving texture: pads, drones, atmospheres. Any audio works. A vocal, a guitar note, a field recording of birds, a crackly vinyl loop. Biome grows it into an ecosystem.</p>
+
+  <h2>Get started in 3 steps</h2>
+  <div class="step"><b>1. Put Biome on a track.</b> In your DAW, drag Biome onto a track like you would any plugin.</div>
+  <div class="step"><b>2. Drag any sound into Biome.</b> A vocal, a guitar note, a synth. Drop the audio file right onto Biome's window.</div>
+  <div class="step"><b>3. Play a note.</b> Make a MIDI track and point it at Biome (in Ableton: on the MIDI track, set MIDI To, then your Biome track, then Biome). Press a key, or draw a long note like C3 in the piano roll. Sound starts when the note starts and stops when it ends. Longer note, longer sound.</div>
+
+  <h2>Make it yours</h2>
+  <div class="knob"><b>Play different keys.</b> Higher notes make your texture higher, lower notes deeper. Draw a chord and you get a pad.</div>
+  <div class="knob"><b>Turn the knobs while it plays.</b> Every knob morphs the texture. There are no wrong settings.</div>
+  <div class="knob"><b>FIT.</b> Makes your texture loop in time with your song (1, 2, 4 or 8 bars). Your sound stays at the same pitch.</div>
+  <div class="knob"><b>FIT+PITCH.</b> Same thing, but the pitch changes with the speed. That classic sampler sound.</div>
+  <div class="knob"><b>Presets.</b> Pick a starting point from the menu, or save your own with SAVE.</div>
+  <div class="knob"><b>A/B.</b> Flip between two versions of your settings to hear which one is better. COPY carries your current sound over to the other slot.</div>
+
+  <h3>Pro mode</h3>
+  <p>Switch PLAY to DRONE and Biome plays forever, no notes needed. Old-school style. Record it to a new track while you ride the knobs, then chop the best parts.</p>
+
+
+  <h2>Common questions</h2>
+  <div class="knob"><b>What is a granular synthesizer?</b> A granular synth chops audio into tiny pieces called grains, then layers and stretches those grains into brand new sounds. Biome uses this to turn any sample, a vocal, a guitar note, a field recording, into evolving pads, drones and atmospheres.</div>
+  <div class="knob"><b>Is Biome really free?</b> Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer.</div>
+  <div class="knob"><b>What DAWs does Biome work in?</b> Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically.</div>
+  <div class="knob"><b>Is there a Windows version of Biome?</b> Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</div>
+  <div class="knob"><b>How do I install Biome?</b> Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin.</div>
+
+  <div class="cta">
+    <a class="dl" href="downloads/Biome-v1.0-macOS.pkg">Download Biome Free</a>
+    <div class="meta">Email required &middot; instant download</div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
+  </footer>
+</div>
+<script src="js/email-gate.js" defer></script>
+</body>
+</html>
