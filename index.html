@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="robots" content="noindex, nofollow">
-<script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sebastian Macan - Audio Plugins | 11 Plugins + 10 MIDI Packs</title>
@@ -63,6 +61,15 @@
   .hitchords { --g1:#f2f2f4; --g2:#8b5cf6; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
   .clubchords { --g1:#4ad9ff; --g2:#ff4ad9; --glow:#4ad9ff; --shadow:rgba(74,217,255,.26); }
   .soulchords { --g1:#f5a623; --g2:#c084fc; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
+  .featgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; margin-top:16px; }
+  .feat { display:flex; flex-direction:column; border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; text-decoration:none; color:var(--txt); position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .feat:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
+  .feat video { display:block; width:100%; height:auto; background:#0d0d10; }
+  .feat .finner { padding:18px 24px 22px; display:flex; flex-direction:column; }
+  .feat h2 { font-size:clamp(30px,4vw,40px); font-weight:900; letter-spacing:-.03em; line-height:1; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .feat .tag { margin-top:6px; font-size:16px; font-weight:700; }
+  .feat .more { margin-top:10px; }
+  .sect-sub { color:var(--dim); font-size:14px; margin-top:6px; }
   .modegrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin-top:16px; }
   .modecard { border:1px solid var(--line); background:var(--card); border-radius:16px; padding:20px 20px 18px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .modecard:hover { transform:translateY(-5px); border-color:var(--g1); box-shadow:0 14px 44px var(--shadow); }
@@ -118,6 +125,33 @@
     <h1>A whole <em>candy store</em> of sound. Free.</h1>
     <p class="sub">Eleven plugins and 796 MIDI chord progressions for producers who crave something unique. Download everything, drop it in your DAW, create something sweet.</p>
   </section>
+
+  <div class="sect-title" id="sweet">The Sweet Stuff</div>
+  <p class="sect-sub">Sebastian's favorites, front of the counter.</p>
+  <div class="featgrid">
+    <a class="feat biome" href="biome.html">
+      <video autoplay muted loop playsinline preload="metadata" poster="img/video/biome_feature_poster.jpg">
+        <source src="img/video/biome_feature.mp4" type="video/mp4">
+      </video>
+      <div class="finner">
+        <div class="kind">Granular Texture Blender</div>
+        <h2>BIOME</h2>
+        <p class="tag">Drop a rainforest on your beat.</p>
+        <span class="more">See how it works &rarr;</span>
+      </div>
+    </a>
+    <a class="feat wizard" href="magician.html">
+      <video autoplay muted loop playsinline preload="metadata" poster="img/video/magician_feature_poster.jpg">
+        <source src="img/video/magician_feature.mp4" type="video/mp4">
+      </video>
+      <div class="finner">
+        <div class="kind">Chord &amp; Melody Generator</div>
+        <h2>MAGICIAN</h2>
+        <p class="tag">Hit songs on tap. 20 genres.</p>
+        <span class="more">See how it works &rarr;</span>
+      </div>
+    </a>
+  </div>
 
   <div class="sect-title" id="effects">Color &amp; Motion FX</div>
   <div class="grid">
@@ -282,7 +316,7 @@
   </div>
 
   <div class="sect-title" id="modes">Mode Packs · The Modal Series</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the other flavors, and nobody makes chord packs for them. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Ben Bohmer floats in Lydian. Daft Punk grooved in Dorian. Now you.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the rest of the candy case, the secret flavors running through records you already love. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Ben Bohmer floats in Lydian. Daft Punk grooved in Dorian. Now you.</p>
   <div class="modegrid">
     <div class="modecard ionian">
       <h3>IONIAN</h3>
@@ -379,5 +413,18 @@
   </footer>
 </div>
 <script src="js/email-gate.js" defer></script>
+<script>
+// Whole plugin card is clickable -> its "See how it works" page.
+// Real links/buttons inside the card (Download, See how it works) keep working normally.
+document.querySelectorAll('.card').forEach(function(card){
+  var more = card.querySelector('a.more');
+  if(!more) return;
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', function(e){
+    if(e.target.closest('a')) return; // let real links do their thing
+    window.location.href = more.getAttribute('href');
+  });
+});
+</script>
 </body>
 </html>
