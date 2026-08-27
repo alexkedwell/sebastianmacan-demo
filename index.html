@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sebastian Macan - Audio Plugins | 11 Plugins + 10 MIDI Packs</title>
 <meta name="description" content="11 creative audio plugins (VST3/AU, macOS) + 796 MIDI chord progressions incl. the Modal Series: Ghost, Bounce, Liftoff, Orbit, Jelly, Magician, Biome, Fauna, Reels, Gloss, Halo.">
 <style>
@@ -70,6 +70,7 @@
   .feat .finner { padding:18px 24px 22px; display:flex; flex-direction:column; }
   .feat h2 { font-size:clamp(30px,4vw,40px); font-weight:900; letter-spacing:-.03em; line-height:1; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .feat .tag { margin-top:6px; font-size:16px; font-weight:700; }
+  .feat .dl { align-self:flex-start; }
   .feat .more { margin-top:10px; }
   .sect-sub { color:var(--dim); font-size:14px; margin-top:6px; }
   .modegrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin-top:16px; }
@@ -139,6 +140,7 @@
         <div class="kind">Granular Texture Blender</div>
         <h2>BIOME</h2>
         <p class="tag">Drop a rainforest on your beat.</p>
+        <span class="dl" data-dl="downloads/Biome-v1.0-macOS.pkg">Download Biome</span>
         <span class="more">See how it works &rarr;</span>
       </div>
     </a>
@@ -150,6 +152,7 @@
         <div class="kind">Chord &amp; Melody Generator</div>
         <h2>MAGICIAN</h2>
         <p class="tag">Hit songs on tap. 20 genres.</p>
+        <span class="dl" data-dl="downloads/Magician-v1.2-macOS.pkg">Download Magician</span>
         <span class="more">See how it works &rarr;</span>
       </div>
     </a>
@@ -425,6 +428,20 @@ document.querySelectorAll('.card').forEach(function(card){
   card.addEventListener('click', function(e){
     if(e.target.closest('a')) return; // let real links do their thing
     window.location.href = more.getAttribute('href');
+  });
+});
+// Featured-card Download buttons: stop the card link, route through the email gate.
+document.querySelectorAll('.feat .dl[data-dl]').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var tmp = document.createElement('a');
+    tmp.className = 'dl';
+    tmp.href = btn.getAttribute('data-dl');
+    tmp.style.display = 'none';
+    document.body.appendChild(tmp);
+    tmp.click();           // bubbles to the email-gate document listener
+    setTimeout(function(){ tmp.remove(); }, 0);
   });
 });
 </script>
