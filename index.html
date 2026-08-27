@@ -28,8 +28,8 @@
   .card { border:1px solid var(--line); background:var(--card); border-radius:18px; padding:28px 26px 24px; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .card:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
   .shot { margin:16px -6px 2px; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#0d0d10; }
-  .shot img { display:block; width:100%; height:auto; transition:transform .5s ease; }
-  .card:hover .shot img { transform:scale(1.04); }
+  .shot img, .shot video { display:block; width:100%; height:auto; transition:transform .5s ease; }
+  .card:hover .shot img, .card:hover .shot video { transform:scale(1.04); }
   .more { margin-top:10px; font-size:13px; font-weight:700; color:var(--dim); text-decoration:none; }
   .more:hover { color:var(--txt); }
   .card::before { content:""; position:absolute; inset:0; opacity:.12; pointer-events:none;
@@ -167,7 +167,7 @@
       <h2>GHOST</h2>
       <p class="tag">Freeze sound. Then haunt it.</p>
       <p class="desc">Traps the last four seconds when you hit FREEZE, then lets you play inside the frozen audio with an XY pad. Type in seeds, save your favorites. Every haunting is recallable.</p>
-      <div class="shot"><img src="img/ui/ghost.png" alt="Ghost plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/ghost.png"><source src="img/video/ghost_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Ghost-v1.1-macOS.pkg">Download Ghost</a>
       <a class="more" href="ghost.html">See how it works &rarr;</a>
       <div class="meta">v1.1 · VST3 + AU effect</div>
@@ -177,7 +177,7 @@
       <h2>BOUNCE</h2>
       <p class="tag">Stutter like a bouncing ball.</p>
       <p class="desc">Tempo-synced beat repeats that fall in pitch and volume like a dropped ball. Smash the TRIGGER pad or let seeded AUTO mode glitch your groove reproducibly.</p>
-      <div class="shot"><img src="img/ui/bounce.png" alt="Bounce plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/bounce.png"><source src="img/video/bounce_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Bounce-v1.0-macOS.pkg">Download Bounce</a>
       <a class="more" href="bounce.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
@@ -188,7 +188,7 @@
       <h2>LIFTOFF</h2>
       <p class="tag">Rockets. Actual rockets.</p>
       <p class="desc">A space-and-time-warping phaser-flanger. Turn LAUNCH and the whole sound sweeps skyward; hit IGNITE and it auto-ramps into orbit over four seconds. Flume-style warp included.</p>
-      <div class="shot"><img src="img/ui/liftoff.png" alt="Liftoff plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/liftoff.png"><source src="img/video/liftoff_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Liftoff-v1.0-macOS.pkg">Download Liftoff</a>
       <a class="more" href="liftoff.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
@@ -199,7 +199,7 @@
       <h2>ORBIT</h2>
       <p class="tag">Hats that fly around your head.</p>
       <p class="desc">True 3D auto-pan, not just left-right. Darkening, micro-delay and doppler make sounds physically circle the listener. Tempo-synced, with a live orbit visual. Travis-approved space.</p>
-      <div class="shot"><img src="img/ui/orbit.png" alt="Orbit plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/orbit.png"><source src="img/video/orbit_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Orbit-v1.0-macOS.pkg">Download Orbit</a>
       <a class="more" href="orbit.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
@@ -210,7 +210,7 @@
       <h2>JELLY</h2>
       <p class="tag">Make everything jiggle.</p>
       <p class="desc">One huge wobbling jelly-blob knob drives filter, tremolo, pitch jiggle and pan wiggle from a single tempo-synced LFO. Turn BOUNCE up and it wobbles like a dropped ball of slime.</p>
-      <div class="shot"><img src="img/ui/jelly.png" alt="Jelly plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/jelly.png"><source src="img/video/jelly_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Jelly-v1.0-macOS.pkg">Download Jelly</a>
       <a class="more" href="jelly.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
@@ -225,7 +225,7 @@
       <h2>MAGICIAN</h2>
       <p class="tag">Hit songs on tap. 20 genres.</p>
       <p class="desc">Sebastian's chord generator. Pick from 20 genres: Pop, Trap, Jazz, Gospel, Drill, Afrobeats, Future Bass and more. All seven modes from Dorian to Locrian. Smash GENERATE, reroll any chord you dislike, drag the MIDI straight into your DAW.</p>
-      <div class="shot"><img src="img/ui/magician.png" alt="Magician plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/magician.png"><source src="img/video/magician_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Magician-v1.2-macOS.pkg">Download Magician</a>
       <a class="more" href="magician.html">See how it works &rarr;</a>
       <div class="meta">v1.2 · VST3 + AU instrument</div>
@@ -236,7 +236,7 @@
       <h2>FAUNA</h2>
       <p class="tag">Play the ocean. Play the sky.</p>
       <p class="desc">Whale moans, birdsong trills, loon calls, as a genuinely playable synth. Six species, expressive glide and trill, and an OCEAN space that puts it all underwater.</p>
-      <div class="shot"><img src="img/ui/fauna.png" alt="Fauna plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/fauna.png"><source src="img/video/fauna_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Fauna-v1.0-macOS.pkg">Download Fauna</a>
       <a class="more" href="fauna.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU instrument</div>
@@ -247,7 +247,7 @@
       <h2>BIOME</h2>
       <p class="tag">Drop a rainforest on your beat.</p>
       <p class="desc">Drag in ANY audio (rainforest, birds, vinyl, a vocal) and Biome granulates it into an evolving texture that ducks musically under whatever you're playing. Your sound, your ecosystem.</p>
-      <div class="shot"><img src="img/ui/biome.png" alt="Biome plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/biome.png"><source src="img/video/biome_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Biome-v1.0-macOS.pkg">Download Biome</a>
       <a class="more" href="biome.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
@@ -262,7 +262,7 @@
       <h2 style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">REELS</h2>
       <p class="tag">A real tape machine, in the box.</p>
       <p class="desc">Asymmetric tape saturation, head bump, wow &amp; flutter, age and hiss. Three machines from pristine studio 15ips to a 30-year-old cassette. Watch the reels actually spin.</p>
-      <div class="shot"><img src="img/ui/reels.png" alt="Reels plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/reels.png"><source src="img/video/reels_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);box-shadow:0 6px 28px rgba(232,160,92,.26);" href="downloads/Reels-v1.0-macOS.pkg">Download Reels</a>
       <a class="more" href="reels.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
@@ -273,7 +273,7 @@
       <h2>GLOSS</h2>
       <p class="tag">Mixes that sit right. Four knobs.</p>
       <p class="desc">Tell it what the track is (vocal, drums, bass, master) and shape everything with CLEAN, PUNCH, GLOW and WIDTH. Auto-gain keeps louder from fooling you. Zero engineering degree required.</p>
-      <div class="shot"><img src="img/ui/gloss.png" alt="Gloss plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gloss.png"><source src="img/video/gloss_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Gloss-v1.0-macOS.pkg">Download Gloss</a>
       <a class="more" href="gloss.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
@@ -284,7 +284,7 @@
       <h2>HALO</h2>
       <p class="tag">Turn LIFT until the halo closes.</p>
       <p class="desc">Pick a target (Streaming, Club, Podcast) and turn the LIFT knob until the golden halo ring closes around it. Glue, sheen, width and a true-peak limiter land you on a perfect master.</p>
-      <div class="shot"><img src="img/ui/halo.png" alt="Halo plugin interface" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/halo.png"><source src="img/video/halo_ui_loop.mp4" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Halo-v1.0-macOS.pkg">Download Halo</a>
       <a class="more" href="halo.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
@@ -300,6 +300,7 @@
       <p class="tag">The progressions behind the hits.</p>
       <p class="desc">220 chord progressions across 11 genres: Pop, Trap, RnB, EDM, LoFi, Rock, Latin, Cinematic, Country, Gospel/Jazz, K-Pop. Drag-and-drop MIDI with genre-true voicings, 7ths, 9ths and all.</p>
       <a class="dl" href="downloads/HitChords200-SebastianMacan.zip">Download the Pack</a>
+      <a class="more" href="midi-packs.html#hitchords">See what&#39;s inside &rarr;</a>
       <div class="meta">220 .mid files · works in every DAW</div>
     </div>
     <div class="card clubchords">
@@ -309,6 +310,7 @@
       <p class="tag">Chords for the dancefloor.</p>
       <p class="desc">120 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum &amp; Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.</p>
       <a class="dl" href="downloads/ClubChords120-SebastianMacan.zip">Download the Pack</a>
+      <a class="more" href="midi-packs.html#clubchords">See what&#39;s inside &rarr;</a>
       <div class="meta">120 .mid files · works in every DAW</div>
     </div>
     <div class="card soulchords">
@@ -318,6 +320,7 @@
       <p class="tag">The rich stuff. 9ths, 11ths, church.</p>
       <p class="desc">120 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.</p>
       <a class="dl" href="downloads/SoulChords120-SebastianMacan.zip">Download the Pack</a>
+      <a class="more" href="midi-packs.html#soulchords">See what&#39;s inside &rarr;</a>
       <div class="meta">120 .mid files · works in every DAW</div>
     </div>
   </div>
@@ -326,49 +329,49 @@
   <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the rest of the candy case, the secret flavors running through records you already love. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Ben Bohmer floats in Lydian. Daft Punk grooved in Dorian. Now you.</p>
   <div class="modegrid">
     <div class="modecard ionian">
-      <h3>IONIAN</h3>
+      <h3><a href="midi-packs.html#ionian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">IONIAN</a></h3>
       <div class="vibe">Pure major. The sound of every anthem chorus ever written.</div>
       <div class="songs">Hey Jude · Let It Be · most of pop history</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/IonianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard dorian">
-      <h3>DORIAN</h3>
+      <h3><a href="midi-packs.html#dorian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">DORIAN</a></h3>
       <div class="vibe">Minor with hope. Groovy, cool, never fully sad.</div>
       <div class="songs">Get Lucky · Billie Jean · Mad World</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/DorianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard phrygian">
-      <h3>PHRYGIAN</h3>
+      <h3><a href="midi-packs.html#phrygian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">PHRYGIAN</a></h3>
       <div class="vibe">Dark Spanish menace. Techno, trap and trance villain energy.</div>
       <div class="songs">Sicko Mode vibe · flamenco · dark techno</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/PhrygianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard lydian">
-      <h3>LYDIAN</h3>
+      <h3><a href="midi-packs.html#lydian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">LYDIAN</a></h3>
       <div class="vibe">Floating, dreamlike major. The melodic house secret weapon.</div>
       <div class="songs">Ben Bohmer territory · film scores · The Simpsons theme</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/LydianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard mixolydian">
-      <h3>MIXOLYDIAN</h3>
+      <h3><a href="midi-packs.html#mixolydian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">MIXOLYDIAN</a></h3>
       <div class="vibe">Major with a rebel flat seven. Rock, funk and festival gold.</div>
       <div class="songs">Sweet Home Alabama · Clocks · Royals</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/MixolydianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard aeolian">
-      <h3>AEOLIAN</h3>
+      <h3><a href="midi-packs.html#aeolian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">AEOLIAN</a></h3>
       <div class="vibe">Natural minor. The emotional workhorse of modern music.</div>
       <div class="songs">Lose Yourself · Someone Like You · every sad banger</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AeolianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard locrian">
-      <h3>LOCRIAN</h3>
+      <h3><a href="midi-packs.html#locrian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">LOCRIAN</a></h3>
       <div class="vibe">The forbidden mode. So unstable almost nobody writes in it. We did.</div>
       <div class="songs">Army of Me · YYZ · you, next</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/LocrianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard allmodes">
-      <h3>ALL 7 MODES</h3>
+      <h3><a href="midi-packs.html#allmodes" style="color:inherit;text-decoration:none;">ALL 7 MODES</a></h3>
       <div class="vibe">The complete modal toolkit. 336 progressions. Who else even makes this?</div>
       <div class="songs">Every mode · every key · one download</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AllModes336-SebastianMacan.zip">Download 336</a>
