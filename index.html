@@ -103,6 +103,8 @@
   .everything-b { --g1:#ff3d5a; --g2:#ffd84a; --glow:#ff3d5a; --shadow:rgba(255,61,90,.28); }
   .midi-b { --g1:#ff5ca8; --g2:#8b5cf6; --glow:#ff5ca8; --shadow:rgba(255,92,168,.28); }
   .bundle .dl { display:inline-block; margin-top:14px; padding:12px 22px; border-radius:12px; color:#0a0a0c; font-weight:900; text-decoration:none; align-self:flex-start; }
+  a.bundle { text-decoration:none; color:var(--txt); cursor:pointer; }
+  .bopen { color:#fff; }
   footer { border-top:1px solid var(--line); margin-top:56px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
   @media (max-width: 640px) {
@@ -376,39 +378,42 @@
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
   <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Everything is free during launch. When checkout opens, these are the baskets worth grabbing. MIDI has its own ladder: Chord Packs Bundle at $30, Mode Packs Bundle at $39, or the MIDI Mega Bundle with all 796 progressions at $49.</p>
   <div class="bundlegrid">
-    <div class="bundle effects-b">
+    <a class="bundle effects-b" href="basket-effects.html">
       <img src="img/bundles/effects_bundle.png" alt="Effects Bundle: six plugin UIs as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>EFFECTS BASKET</h3>
         <p class="desc">All six paid effects: Ghost, Liftoff, Orbit, Reels, Gloss, Halo. Six flavors of motion, texture and polish in one basket.</p>
         <div class="price"><s>$114</s> $59 <span class="freebie">· free during launch</span></div>
+        <span class="dl bopen" style="background:linear-gradient(135deg,#8b5cf6,#60a5fa);">Open the basket</span>
       </div>
-    </div>
-    <div class="bundle instruments-b">
+    </a>
+    <a class="bundle instruments-b" href="basket-instruments.html">
       <img src="img/bundles/instruments_bundle.png" alt="Instruments Bundle: Biome, Magician and Fauna as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>INSTRUMENTS BASKET</h3>
         <p class="desc">Biome, Magician and Fauna. A texture blender, a hit generator and a creature synth. The three big ones.</p>
         <div class="price"><s>$107</s> $69 <span class="freebie">· free during launch</span></div>
+        <span class="dl bopen" style="background:linear-gradient(135deg,#3ecf6e,#ffd257);">Open the basket</span>
       </div>
-    </div>
-    <div class="bundle midi-b">
+    </a>
+    <a class="bundle midi-b" href="basket-midi.html">
       <img src="img/bundles/midi_mega_bundle.png" alt="MIDI Mega Basket: every chord pack and mode pack as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>MIDI MEGA BASKET</h3>
         <p class="desc">Every MIDI pack we make. 3 genre chord packs + all 7 mode packs. 796 progressions, the complete harmonic arsenal in one basket.</p>
         <div class="price"><s>$115</s> $49 <span class="freebie">· free during launch</span></div>
-        <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/MIDIMega796-SebastianMacan.zip">Download 796</a>
+        <span class="dl bopen" style="background:linear-gradient(135deg,#ff5ca8,#8b5cf6);">Open the basket</span>
       </div>
-    </div>
-    <div class="bundle everything-b">
+    </a>
+    <a class="bundle everything-b" href="basket-candy-shop.html">
       <img src="img/bundles/everything_bundle.png" alt="Everything Bundle: the whole candy shop in one basket" loading="lazy">
       <div class="binner">
         <h3>THE WHOLE CANDY SHOP</h3>
         <p class="desc">Every plugin, every MIDI pack, every mode pack. All of it. One basket to rule the store.</p>
         <div class="price"><s>$300+</s> $99 <span class="freebie">· free during launch</span></div>
+        <span class="dl bopen" style="background:linear-gradient(135deg,#ff3d5a,#ffd257);">Open the basket</span>
       </div>
-    </div>
+    </a>
   </div>
 
   <footer>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midi Mega Basket | Sebastian Macan</title>
+<meta name="description" content="Every MIDI pack we make: all 3 genre chord packs plus all 7 mode packs. Drag and drop into any DAW, works with any synth or piano you already own.">
+<meta name="robots" content="index,follow">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff5ca8; --g2:#8b5cf6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(38px,8vw,72px); font-weight:900; letter-spacing:-.03em; line-height:1.05;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .bimg { display:block; width:min(560px,92%); margin:26px auto 4px; border-radius:20px; animation:float 7s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .pricebar { text-align:center; margin:18px 0 4px; }
+  .pricebar .big { font-size:34px; font-weight:900; }
+  .pricebar s { color:var(--dim); font-weight:700; font-size:20px; margin-right:10px; }
+  .freebie { color:#5ad9d0; font-weight:800; }
+  .meta { color:var(--dim); font-size:13px; margin-top:10px; text-align:center; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:48px 0 6px; }
+  .sub { color:var(--dim); font-size:14.5px; margin-bottom:18px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 22px; margin:12px 0;
+    display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
+  .ikind { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  .iname { font-size:21px; font-weight:900; letter-spacing:-.01em;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .itag { color:#c8c8d0; font-size:14px; }
+  .rowlink { color:var(--dim); font-size:13px; text-decoration:none; }
+  .rowlink:hover { color:var(--txt); }
+  .iact { text-align:right; display:flex; align-items:center; gap:16px; }
+  .iprice { color:var(--dim); font-weight:700; }
+  .iprice s { font-size:15px; }
+  .freetag { color:#5ad9d0; font-size:12px; font-weight:800; letter-spacing:.06em; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:15px; padding:12px 28px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 6px 26px rgba(0,0,0,.4); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .idl { font-size:14px; padding:10px 22px; }
+  .cta { text-align:center; margin:34px 0 8px; }
+  .cta .dl { font-size:17px; padding:16px 44px; }
+  .mathbox { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:30px 0 8px; text-align:center; }
+  .mathbox b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} footer{flex-direction:column;text-align:center;} .iact{width:100%;justify-content:space-between;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/#bundles">&larr; Back to the baskets</a>
+
+  <section class="hero">
+    <div class="kind">Candy Basket</div>
+    <h1>MIDI MEGA BASKET</h1>
+    <p class="tag">796 progressions. The complete harmonic arsenal.</p>
+    <img class="bimg" src="img/bundles/midi_mega_bundle.png" alt="MIDI MEGA BASKET basket art">
+    <div class="pricebar"><span class="big"><s>$115</s> $49</span> <span class="freebie">&middot; free during launch</span></div>
+    <div class="meta">10 packs · 796 MIDI files · any DAW</div>
+  </section>
+
+  <h2>What's in the basket</h2>
+  <p class="sub">Every MIDI pack we make: all 3 genre chord packs plus all 7 mode packs. Drag and drop into any DAW, works with any synth or piano you already own. Every item below is yours &mdash; grab them one by one, all free during launch.</p>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Chord Pack</div>
+        <div class="iname">Hit Chords 200</div>
+        <p class="itag">200 progressions built for hooks.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$15</s></div>
+        <a class="dl idl" href="downloads/HitChords200-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Chord Pack</div>
+        <div class="iname">Club Chords 120</div>
+        <p class="itag">120 progressions for the floor.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$15</s></div>
+        <a class="dl idl" href="downloads/ClubChords120-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Chord Pack</div>
+        <div class="iname">Soul Chords 120</div>
+        <p class="itag">120 progressions with feel.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$15</s></div>
+        <a class="dl idl" href="downloads/SoulChords120-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Mode Pack</div>
+        <div class="iname">Ionian Mode 48</div>
+        <p class="itag">48 progressions. The bright classic.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$10</s></div>
+        <a class="dl idl" href="downloads/IonianMode48-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Mode Pack</div>
+        <div class="iname">Dorian Mode 48</div>
+        <p class="itag">48 progressions. Smooth and soulful.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$10</s></div>
+        <a class="dl idl" href="downloads/DorianMode48-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Mode Pack</div>
+        <div class="iname">Phrygian Mode 48</div>
+        <p class="itag">48 progressions. Dark and exotic.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$10</s></div>
+        <a class="dl idl" href="downloads/PhrygianMode48-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Mode Pack</div>
+        <div class="iname">Lydian Mode 48</div>
+        <p class="itag">48 progressions. Dreamy and floating.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$10</s></div>
+        <a class="dl idl" href="downloads/LydianMode48-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Mode Pack</div>
+        <div class="iname">Mixolydian Mode 48</div>
+        <p class="itag">48 progressions. Groovy and warm.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$10</s></div>
+        <a class="dl idl" href="downloads/MixolydianMode48-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Mode Pack</div>
+        <div class="iname">Aeolian Mode 48</div>
+        <p class="itag">48 progressions. The minor mood.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$10</s></div>
+        <a class="dl idl" href="downloads/AeolianMode48-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">MIDI Mode Pack</div>
+        <div class="iname">Locrian Mode 48</div>
+        <p class="itag">48 progressions. The forbidden one.</p>
+        
+      </div>
+      <div class="iact">
+        <div class="iprice"><s>$10</s></div>
+        <a class="dl idl" href="downloads/LocrianMode48-SebastianMacan.zip">Download</a>
+      </div>
+    </div>
+
+  <div class="cta"><a class="dl" href="downloads/MIDIMega796-SebastianMacan.zip">Download all 796</a><div class="meta">One zip, everything inside, organized by pack.</div></div>
+
+  <div class="mathbox">
+    Bought one by one this basket adds up to <b>$115</b>. As a basket it's <b>$49</b> when checkout opens &mdash; and <b>free right now during launch</b>. 10 items, zero catches.
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Aluetion, LLC &middot; Sebastian Macan</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
+  </footer>
+</div>
+<script src="js/email-gate.js" defer></script>
+</body>
+</html>
