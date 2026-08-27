@@ -74,6 +74,9 @@
   .feat .more { margin-top:10px; }
   .sect-sub { color:var(--dim); font-size:14px; margin-top:6px; }
   .modegrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin-top:16px; }
+  .cardlink { position:absolute; inset:0; z-index:1; }
+  .modecard .dl { position:relative; z-index:2; }
+  .modecard h3, .modecard .vibe, .modecard .songs { position:relative; pointer-events:none; }
   .modecard { border:1px solid var(--line); background:var(--card); border-radius:16px; padding:20px 20px 18px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .modecard:hover { transform:translateY(-5px); border-color:var(--g1); box-shadow:0 14px 44px var(--shadow); }
   .modecard h3 { font-size:24px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
@@ -329,49 +332,57 @@
   <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the rest of the candy case, the secret flavors running through records you already love. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Ben Bohmer floats in Lydian. Daft Punk grooved in Dorian. Now you.</p>
   <div class="modegrid">
     <div class="modecard ionian">
-      <h3><a href="midi-packs.html#ionian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">IONIAN</a></h3>
+      <a class="cardlink" href="midi-packs.html#ionian" aria-label="Ionian pack details"></a>
+      <h3>IONIAN</h3>
       <div class="vibe">Pure major. The sound of every anthem chorus ever written.</div>
       <div class="songs">Hey Jude · Let It Be · most of pop history</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/IonianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard dorian">
-      <h3><a href="midi-packs.html#dorian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">DORIAN</a></h3>
+      <a class="cardlink" href="midi-packs.html#dorian" aria-label="Dorian pack details"></a>
+      <h3>DORIAN</h3>
       <div class="vibe">Minor with hope. Groovy, cool, never fully sad.</div>
       <div class="songs">Get Lucky · Billie Jean · Mad World</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/DorianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard phrygian">
-      <h3><a href="midi-packs.html#phrygian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">PHRYGIAN</a></h3>
+      <a class="cardlink" href="midi-packs.html#phrygian" aria-label="Phrygian pack details"></a>
+      <h3>PHRYGIAN</h3>
       <div class="vibe">Dark Spanish menace. Techno, trap and trance villain energy.</div>
       <div class="songs">Sicko Mode vibe · flamenco · dark techno</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/PhrygianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard lydian">
-      <h3><a href="midi-packs.html#lydian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">LYDIAN</a></h3>
+      <a class="cardlink" href="midi-packs.html#lydian" aria-label="Lydian pack details"></a>
+      <h3>LYDIAN</h3>
       <div class="vibe">Floating, dreamlike major. The melodic house secret weapon.</div>
       <div class="songs">Ben Bohmer territory · film scores · The Simpsons theme</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/LydianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard mixolydian">
-      <h3><a href="midi-packs.html#mixolydian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">MIXOLYDIAN</a></h3>
+      <a class="cardlink" href="midi-packs.html#mixolydian" aria-label="Mixolydian pack details"></a>
+      <h3>MIXOLYDIAN</h3>
       <div class="vibe">Major with a rebel flat seven. Rock, funk and festival gold.</div>
       <div class="songs">Sweet Home Alabama · Clocks · Royals</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/MixolydianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard aeolian">
-      <h3><a href="midi-packs.html#aeolian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">AEOLIAN</a></h3>
+      <a class="cardlink" href="midi-packs.html#aeolian" aria-label="Aeolian pack details"></a>
+      <h3>AEOLIAN</h3>
       <div class="vibe">Natural minor. The emotional workhorse of modern music.</div>
       <div class="songs">Lose Yourself · Someone Like You · every sad banger</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AeolianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard locrian">
-      <h3><a href="midi-packs.html#locrian" style="color:inherit;text-decoration:none;background:inherit;-webkit-background-clip:text;background-clip:text;">LOCRIAN</a></h3>
+      <a class="cardlink" href="midi-packs.html#locrian" aria-label="Locrian pack details"></a>
+      <h3>LOCRIAN</h3>
       <div class="vibe">The forbidden mode. So unstable almost nobody writes in it. We did.</div>
       <div class="songs">Army of Me · YYZ · you, next</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/LocrianMode48-SebastianMacan.zip">Download 48</a>
     </div>
     <div class="modecard allmodes">
-      <h3><a href="midi-packs.html#allmodes" style="color:inherit;text-decoration:none;">ALL 7 MODES</a></h3>
+      <a class="cardlink" href="midi-packs.html#allmodes" aria-label="All modes bundle details"></a>
+      <h3>ALL 7 MODES</h3>
       <div class="vibe">The complete modal toolkit. 336 progressions. Who else even makes this?</div>
       <div class="songs">Every mode · every key · one download</div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AllModes336-SebastianMacan.zip">Download 336</a>
