@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rusty | Free Robot Voice Machine VST3/AU Plugin</title>
+<meta name="description" content="Rusty is a robot voice effect plugin (VST3 and AU for macOS). Five robot modes turn vocals and synths into vocoder chrome, talkbox bots, ring-mod intercoms, toy robots and talking dubstep sub bass. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff8c42; --g2:#5ad1ff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(255,140,66,.26); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:10px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .knob b { color:var(--g1); }
+  .bot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .bot b { color:var(--g2); }
+  footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
+  footer a { color:var(--dim); }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Rusty",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Rusty is a robot voice effect plugin (VST3 and AU for macOS). Five robot modes turn vocals and synths into vocoder chrome, talkbox bots, ring-mod intercoms, toy robots and talking dubstep sub bass. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/rusty.html",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I make my vocals sound like a robot?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Put Rusty on your vocal track, pick a robot, and turn TWIST. Chrome mode is the classic Daft Punk style vocoder, Talkbox is the melodic bot, Dalek is the angry intercom, Toybot is the 80s toy, and Sub Bot turns your voice into talking dubstep bass."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Rusty really free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Enter your email and the download starts right away. Full version, all five robots, no locked knobs, no trial timer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Rusty work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Rusty work on synths and bass, not just vocals?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Chrome vocoder chords on a synth are instant robot funk, and Sub Bot is built for wubs, dubstep and space house: it follows the pitch of whatever you feed it and generates a huge talking sub layer underneath."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I install Rusty?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">The Robot Voice Machine</div>
+    <h1>RUSTY</h1>
+    <p class="tag">Feed it your voice. Pick your robot.</p>
+    <div class="cta">
+      <a class="dl" href="downloads/Rusty-v2.0-macOS.pkg">Download Rusty Free</a>
+      <div class="meta">v2.0 &middot; VST3 + AU effect &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Rusty does</h2>
+  <p>Rusty is five robots living in one box. Drop it on a vocal, a synth, anything with a voice, and it comes out the other side as a machine. The robot on the front panel changes with the mode, glows with the sound, and does exactly what it looks like it does.</p>
+
+  <h2>Meet the robots</h2>
+  <div class="bot"><b>CHROME.</b> The classic. A 16-band vocoder that follows your pitch and shines like a disco android. Vocoder chords on a synth are instant robot funk.</div>
+  <div class="bot"><b>TALKBOX.</b> The melodic one. Hard formants and pitch snapped to the nearest note. The robot that sings hooks.</div>
+  <div class="bot"><b>DALEK.</b> The angry intercom. Ring modulation and grit. Say something normal, hear something menacing.</div>
+  <div class="bot"><b>TOYBOT.</b> The 80s toy. Crushed, narrow and adorable, like a battery-powered friend giving instructions through a tiny speaker.</div>
+  <div class="bot"><b>SUB BOT.</b> The bass monster. Built for wubs, dubstep and space house: it tracks your pitch and generates a huge talking sub layer with a tempo-synced wub filter. Vocals become talking bass lines. Watch his subwoofer belly pulse.</div>
+
+  <h2>Get started in 3 steps</h2>
+  <div class="step"><b>1. Put Rusty on a vocal or synth.</b> Anything with pitch and personality.</div>
+  <div class="step"><b>2. Pick your robot.</b> The character on the panel switches with you.</div>
+  <div class="step"><b>3. Turn TWIST.</b> One big knob morphs how deep into the machine you go.</div>
+
+  <h2>Make it yours</h2>
+  <div class="knob"><b>TWIST.</b> The hero knob. Each robot changes character as you turn it.</div>
+  <div class="knob"><b>VOICE.</b> Dry/wet. Sneak the robot under your real voice or go full machine.</div>
+  <div class="knob"><b>PITCH.</b> Shift the robot up or down by semitones. Deep bots and chipmunk bots welcome.</div>
+  <div class="knob"><b>GROWL.</b> Drive and aggression. Every robot has a temper.</div>
+  <div class="knob"><b>AIR.</b> Adds your natural breath and sibilance back on top so words stay clear.</div>
+  <div class="knob"><b>Presets, A/B and bypass.</b> 14 factory robots to start from, save your own, compare two setups, and a true bypass button.</div>
+
+  <h2>FAQ</h2>
+  <h3>How do I make my vocals sound like a robot?</h3>
+  <p>Put Rusty on your vocal track, pick a robot, turn TWIST. That is the whole tutorial.</p>
+  <h3>Is Rusty really free?</h3>
+  <p>Yes. Full version, all five robots, no locked knobs, no trial timer.</p>
+  <h3>Does it work on synths and bass too?</h3>
+  <p>Absolutely. Chrome on synth chords is instant robot funk, and Sub Bot was built for basses and wubs in the first place.</p>
+  <h3>Is there a Windows version?</h3>
+  <p>Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</p>
+
+  <footer>
+    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@aluetion.com">hello@aluetion.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
