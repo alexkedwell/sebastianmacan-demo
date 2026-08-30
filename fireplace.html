@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fireplace | Cozy Ambience Machine VST3/AU Plugin</title>
+<meta name="description" content="Fireplace is a cozy ambience layer plugin (VST3 and AU for macOS). Four rooms of atmosphere under your music: crackling fireplace, rain on the window, dusty vinyl attic and an old tape room, with music-aware ducking. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff8c42; --g2:#5ad1ff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(255,140,66,.26); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:10px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .knob b { color:var(--g1); }
+  .bot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .bot b { color:var(--g2); }
+  footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
+  footer a { color:var(--dim); }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Fireplace",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Fireplace is a cozy ambience layer plugin (VST3 and AU for macOS). Four synthesized rooms of atmosphere with music-aware ducking, tone and distance controls. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/fireplace.html",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I make my vocals sound like a robot?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Put Fireplace on your vocal track, pick a robot, and turn TWIST. Chrome mode is the classic Daft Punk style vocoder, Talkbox is the melodic bot, Dalek is the angry intercom, Toybot is the 80s toy, and Sub Bot turns your voice into talking dubstep bass."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Fireplace really free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Enter your email and the download starts right away. Full version, all eight robots, no locked knobs, no trial timer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Fireplace work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Fireplace work on synths and bass, not just vocals?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Chrome vocoder chords on a synth are instant robot funk, and Sub Bot is built for wubs, dubstep and space house: it follows the pitch of whatever you feed it and generates a huge talking sub layer underneath."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I install Fireplace?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">The Cozy Ambience Machine</div>
+    <h1>FIREPLACE</h1>
+    <p class="tag">A living room for your lofi beat.</p>
+    <div class="cta">
+      <a class="dl" href="downloads/Fireplace-v1.0-macOS.pkg">Download Fireplace</a>
+      <div class="meta">v1.0 &middot; VST3 + AU effect &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Fireplace does</h2>
+  <p>Fireplace puts a room around your music. Drop it on your master or a bus and it lays living atmosphere UNDER the beat: a crackling fire, rain on a window, a dusty attic record player, an old tape machine room. It is not a noise loop. Everything is generated live, it never repeats, and it listens to your music so it can get out of the way.</p>
+
+  <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/fireplace.png"><source src="img/video/fireplace_ui_loop.mp4" type="video/mp4"></video></div>
+
+  <h2>Pick your room</h2>
+  <div class="bot"><b>FIREPLACE.</b> The classic. Warm low roar, snapping crackle bursts, embers fizzing up the chimney. The fire in the window actually burns, and it burns brighter as you turn it up.</div>
+  <div class="bot"><b>RAIN ON WINDOW.</b> Steady rain bed, droplets pinging the glass, distant rumble. The city outside the window is having a worse night than you.</div>
+  <div class="bot"><b>VINYL ATTIC.</b> A dusty record spinning in the corner: needle hiss, dust ticks, turntable rumble. Instant "found this beat in a crate" energy.</div>
+  <div class="bot"><b>TAPE ROOM.</b> The machine room: tape hiss with a slow wow drift, faint mains hum, blinking meters. For beats that want to sound like they were left running overnight.</div>
+
+  <h2>The knobs</h2>
+  <div class="knob"><b>AMOUNT.</b> How much room you pour under the music. The fire grows with it.</div>
+  <div class="knob"><b>DUCK.</b> The secret weapon. The ambience listens to your music and tucks itself under every hit, then swells back in the gaps. Your beat breathes.</div>
+  <div class="knob"><b>TONE.</b> Dark and woolly to bright and crisp. Same room, different mood.</div>
+  <div class="knob"><b>DISTANCE.</b> Pull the room close or push it to the far wall. Closes the top end and sinks the level like real distance does.</div>
+  <div class="knob"><b>OUT.</b> Output trim, plus a true bypass button.</div>
+
+  <h2>Why it beats a noise sample</h2>
+  <p>A crackle sample loops. You hear the loop, your listeners hear the loop, and it sits ON TOP of your mix fighting the drums. Fireplace never repeats because nothing is recorded, and the DUCK knob keeps the atmosphere underneath the music where it belongs. That is the difference between an ambience layer and a WAV file.</p>
+
+  <h2>Is it really free right now?</h2>
+  <p>Yes. Enter your email and the download starts right away. Full version, all four rooms, no locked knobs, no trial timer.</p>
+
+  <footer>
+    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@aluetion.com">hello@aluetion.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
