@@ -120,7 +120,9 @@
   @media (max-width: 640px) {
     .wrap { padding:0 16px; }
     header { padding:20px 0; flex-direction:column; gap:10px; }
-    nav a { margin:0 10px; }
+    nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;}
+    nav::-webkit-scrollbar{display:none;}
+    nav a { margin:0 10px; display:inline-block; }
     .hero { padding:40px 0 20px; }
     .grid { grid-template-columns:1fr; }
     footer { flex-direction:column; text-align:center; }
