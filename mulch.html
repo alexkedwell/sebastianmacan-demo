@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mulch | Sample Mulcher Granular Instrument VST3/AU Plugin</title>
+<meta name="description" content="Mulch is a granular sample-mulcher instrument (VST3 and AU for macOS). Feed it up to 8 samples and it births one new playable instrument out of the whole pile. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff8c42; --g2:#5ad1ff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(255,140,66,.26); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:10px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .knob b { color:var(--g1); }
+  .bot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .bot b { color:var(--g2); }
+  footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
+  footer a { color:var(--dim); }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Mulch",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Mulch is a granular sample-mulcher instrument (VST3 and AU for macOS). Feed it up to 8 samples and it births one new playable instrument out of the whole pile. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/mulch.html",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I make my vocals sound like a robot?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Put Mulch on your vocal track, pick a robot, and turn TWIST. Chrome mode is the classic Daft Punk style vocoder, Talkbox is the melodic bot, Dalek is the angry intercom, Toybot is the 80s toy, and Sub Bot turns your voice into talking dubstep bass."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Mulch really free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Enter your email and the download starts right away. Full version, all eight robots, no locked knobs, no trial timer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Mulch work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Mulch work on synths and bass, not just vocals?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Chrome vocoder chords on a synth are instant robot funk, and Sub Bot is built for wubs, dubstep and space house: it follows the pitch of whatever you feed it and generates a huge talking sub layer underneath."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I install Mulch?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">The Sample Mulcher</div>
+    <h1>MULCH</h1>
+    <p class="tag">Feed it your samples. Play the monster it becomes.</p>
+    <div class="cta">
+      <a class="dl" href="downloads/Mulch-v1.0-macOS.pkg">Download Mulch</a>
+      <div class="meta">v1.0 &middot; VST3 + AU instrument &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Mulch does</h2>
+  <p>Drag up to 8 samples into the chipper. Any samples. A drum break, a vocal chop, a piano note, a recording of birds outside your window. Mulch chews the whole pile into grains and births ONE new playable instrument out of everything you fed it. Every key you press regrows the sound from random little pieces of your pile, so no two notes are ever exactly the same.</p>
+
+  <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/mulch.png"><source src="img/video/mulch_ui_loop.mp4" type="video/mp4"></video></div>
+
+  <h2>The knobs</h2>
+  <div class="knob"><b>MULCH.</b> The big one. At zero, notes grow from your first sample only. Turn it up and the grains start coming from EVERYTHING in the pile at once. Full mulch = total hybrid.</div>
+  <div class="knob"><b>CHEW.</b> Grain size. Tiny confetti pieces for shimmering clouds, big chunks for recognizable slices of your source.</div>
+  <div class="knob"><b>SPIN.</b> Chaos. Random pitch throws up to a fifth in either direction, plus a chance any grain plays backwards. A little is texture, a lot is a haunted blender.</div>
+  <div class="knob"><b>GLUE.</b> Melts the grains into one voice: a warming lowpass plus a soft squash so the pile stops sounding like pieces and starts sounding like an instrument.</div>
+  <div class="knob"><b>ATTACK / RELEASE.</b> Simple amp envelope. Slow attack = evolving pads, fast = playable keys.</div>
+  <div class="knob"><b>OUT.</b> Output trim.</div>
+
+  <h2>Watch it eat</h2>
+  <p>The chipper on the front panel is not decoration. Your samples sit in the tray as colored chips, and when you play, the gears grind and the chute sprays grain confetti in each chip's color, so you can literally see whose pieces are in the sound right now. Click a chip to take it out of the pile.</p>
+
+  <h2>What to feed it</h2>
+  <p>Melodic stuff at similar pitches mulches into playable hybrids. Drums plus anything = instant texture percussion. One vocal plus one synth is the classic. Field recordings turn everything into a film score. There is no wrong pile.</p>
+
+  <h2>Is it really free right now?</h2>
+  <p>Yes. Enter your email and the download starts right away. Full version, the whole 8-sample pile, no locked knobs, no trial timer.</p>
+
+  <footer>
+    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@aluetion.com">hello@aluetion.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
