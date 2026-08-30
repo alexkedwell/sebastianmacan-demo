@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mulch | Sample Mulcher Granular Instrument VST3/AU Plugin</title>
-<meta name="description" content="Mulch is a granular sample-mulcher instrument (VST3 and AU for macOS). Feed it up to 8 samples and it births one new playable instrument out of the whole pile. By Sebastian Macan.">
+<meta name="description" content="Mulch v2.0 is a granular sample-mulcher instrument (VST3 and AU for macOS). Feed it any sample and get a brand new instrument back: real ADSR sustain, regenerating granulation, and a RANDOMIZE dice with reproducible seeds. By Sebastian Macan.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff8c42; --g2:#5ad1ff; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -39,6 +39,8 @@
   .knob b { color:var(--g1); }
   .bot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
   .bot b { color:var(--g2); }
+  .shot { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line); }
+  .shot video { display:block; width:100%; height:auto; }
   footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
   footer a { color:var(--dim); }
 </style>
@@ -52,8 +54,9 @@
    "operatingSystem": "macOS",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Mulch is a granular sample-mulcher instrument (VST3 and AU for macOS). Feed it up to 8 samples and it births one new playable instrument out of the whole pile. By Sebastian Macan.",
+   "description": "Mulch v2.0 is a granular sample-mulcher instrument (VST3 and AU for macOS). Feed it any sample and get a brand new instrument back: real ADSR sustain, regenerating granulation, and a RANDOMIZE dice with reproducible seeds. By Sebastian Macan.",
    "url": "https://sebastianmacan.com/mulch.html",
+   "softwareVersion": "2.0",
    "offers": {
     "@type": "Offer",
     "price": "0",
@@ -74,10 +77,10 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "How do I make my vocals sound like a robot?",
+     "name": "What is new in Mulch v2.0?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Put Mulch on your vocal track, pick a robot, and turn TWIST. Chrome mode is the classic Daft Punk style vocoder, Talkbox is the melodic bot, Dalek is the angry intercom, Toybot is the 80s toy, and Sub Bot turns your voice into talking dubstep bass."
+      "text": "Held notes now sustain forever thanks to a real ADSR envelope and regenerating granulation, plus a RANDOMIZE dice with a reproducible SEED, six new randomization params (pitch scatter, grain size jitter, reverse probability, filter drift, pan scatter, start-position chaos), texture smear and freeze, and a chaos macro."
      }
     },
     {
@@ -85,7 +88,7 @@
      "name": "Is Mulch really free?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Enter your email and the download starts right away. Full version, all eight robots, no locked knobs, no trial timer."
+      "text": "Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer."
      }
     },
     {
@@ -98,10 +101,10 @@
     },
     {
      "@type": "Question",
-     "name": "Does Mulch work on synths and bass, not just vocals?",
+     "name": "Can I get the same random sound back later?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Chrome vocoder chords on a synth are instant robot funk, and Sub Bot is built for wubs, dubstep and space house: it follows the pitch of whatever you feed it and generates a huge talking sub layer underneath."
+      "text": "Yes. Every roll of the RANDOMIZE dice is stamped with a SEED number. Type the same seed back in and Mulch rebuilds the exact same instrument, so happy accidents are never lost."
      }
     },
     {
@@ -129,10 +132,10 @@
   <section class="hero">
     <div class="kind">The Sample Mulcher</div>
     <h1>MULCH</h1>
-    <p class="tag">Feed it your samples. Play the monster it becomes.</p>
+    <p class="tag">Feed it any sample. Get a brand new instrument back.</p>
     <div class="cta">
-      <a class="dl" href="downloads/Mulch-v1.0-macOS.pkg">Download Mulch</a>
-      <div class="meta">v1.0 &middot; VST3 + AU instrument &middot; macOS</div>
+      <a class="dl" href="downloads/Mulch-v2.0-macOS.pkg">Download Mulch v2.0</a>
+      <div class="meta">v2.0 &middot; VST3 + AU instrument &middot; macOS</div>
     </div>
   </section>
 
@@ -141,12 +144,26 @@
 
   <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/mulch.png"><source src="img/video/mulch_ui_loop.mp4" type="video/mp4"></video></div>
 
+  <h2>New in v2.0: hold a note, it never dies</h2>
+  <p>Version 1 notes faded out when the grains ran dry. Not anymore. v2.0 has a real ADSR envelope (attack, decay, sustain, release) and regenerating granulation, so a held key keeps growing fresh grains forever. Slow attack plus long release turns any pile into an endless evolving pad. Short and snappy makes it a playable keys patch.</p>
+
+  <h2>New in v2.0: the RANDOMIZE dice</h2>
+  <p>One click on the dice re-rolls the whole machine into a sound you did not know it had. Every roll is stamped with a SEED number, so when the dice lands on something magic, write the seed down. Type it back in later and you get the exact same instrument back. Reproducible chaos.</p>
+  <div class="bot"><b>PITCH SCATTER.</b> Grains wander away from the note you played. A little is detune shimmer, a lot is a choir of strangers.</div>
+  <div class="bot"><b>GRAIN SIZE JITTER.</b> Every grain gets its own random size. The texture stops being a grid and starts being alive.</div>
+  <div class="bot"><b>REVERSE PROBABILITY.</b> The chance any grain plays backwards. Instant tape-ghost flavor.</div>
+  <div class="bot"><b>FILTER DRIFT.</b> A slow random filter walk per voice, so long notes shift color while they sustain.</div>
+  <div class="bot"><b>PAN SCATTER.</b> Grains land all over the stereo field instead of down the middle.</div>
+  <div class="bot"><b>START-POSITION CHAOS.</b> Grains grab pieces from random spots in your samples, not just where you pointed.</div>
+
   <h2>The knobs</h2>
   <div class="knob"><b>MULCH.</b> The big one. At zero, notes grow from your first sample only. Turn it up and the grains start coming from EVERYTHING in the pile at once. Full mulch = total hybrid.</div>
   <div class="knob"><b>CHEW.</b> Grain size. Tiny confetti pieces for shimmering clouds, big chunks for recognizable slices of your source.</div>
   <div class="knob"><b>SPIN.</b> Chaos. Random pitch throws up to a fifth in either direction, plus a chance any grain plays backwards. A little is texture, a lot is a haunted blender.</div>
   <div class="knob"><b>GLUE.</b> Melts the grains into one voice: a warming lowpass plus a soft squash so the pile stops sounding like pieces and starts sounding like an instrument.</div>
-  <div class="knob"><b>ATTACK / RELEASE.</b> Simple amp envelope. Slow attack = evolving pads, fast = playable keys.</div>
+  <div class="knob"><b>ADSR.</b> Full attack, decay, sustain and release. New in v2.0: sustain actually sustains, forever, because the granulator keeps regenerating under your finger.</div>
+  <div class="knob"><b>SMEAR / FREEZE.</b> SMEAR blurs the grains into a soft texture wash. FREEZE locks the grain cloud in place so it hangs like fog while you play over it.</div>
+  <div class="knob"><b>CHAOS.</b> The macro. One knob that leans all six randomization params in at once. Gentle drift at 9 o'clock, haunted blender at full.</div>
   <div class="knob"><b>OUT.</b> Output trim.</div>
 
   <h2>Watch it eat</h2>

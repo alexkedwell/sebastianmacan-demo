@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gremlin | Stutter Glitch Effect VST3/AU Plugin</title>
+<meta name="description" content="Gremlin is a stutter and glitch effect (VST3 and AU for macOS). Tempo-synced slicing, stutter repeats, reverse and octave-jump chaos with reproducible seeds and a GLITCH! pad. Controlled demolition for your drums. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#7dff3d; --g2:#1a3d10; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),#b8ff7a); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#0a0a0c; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),#b8ff7a); box-shadow:0 8px 36px rgba(125,255,61,.26); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:10px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .knob b { color:var(--g1); }
+  .bot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .bot b { color:#b8ff7a; }
+  footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
+  footer a { color:var(--dim); }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Gremlin",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Gremlin is a stutter and glitch effect (VST3 and AU for macOS). Tempo-synced slicing, stutter repeats, reverse and octave-jump chaos with reproducible seeds and a GLITCH! pad. Controlled demolition for your drums. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/gremlin.html",
+   "softwareVersion": "1.0",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I glitch my drums without wrecking the groove?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Gremlin slices in sync with your host tempo (1/4, 1/8, 1/16, 1/32 or a free length), so every stutter, reverse and re-slice lands on the grid. Start with BREAK low in Auto mode and the beat stays danceable while it falls apart."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I trigger glitches manually, like a performance effect?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Flip the trigger to Manual and smash the GLITCH! pad. It glitches only while you hold it, so you can punch in fills at the end of a bar like a finger drummer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Are the random glitches repeatable?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Gremlin's randomness runs on a SEED number. Same seed, same glitches, every playback and every bounce. When a happy accident happens, keep the seed and it is yours forever."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What presets does Gremlin come with?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Twelve factory presets with names like Machine Gun, Rewind, Broken Toy and Stairs Down, each one a different flavor of demolition, from tasteful edge-of-bar fills to total meltdown."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Gremlin work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">Stutter Glitch Machine</div>
+    <h1>GREMLIN</h1>
+    <p class="tag">Controlled demolition for your drums.</p>
+    <div class="cta">
+      <a class="dl" href="downloads/Gremlin-v1.0-macOS.pkg">Download Gremlin</a>
+      <div class="meta">v1.0 &middot; VST3 + AU effect &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Gremlin does</h2>
+  <p>Gremlin grabs your audio, slices it on the beat grid, and breaks it on purpose. Stutters, rewinds, octave jumps, backwards chunks, all tempo-synced so the wreckage still grooves. It was born as the Glitch mode inside Rusty, our robot voice box, and it kept chewing through the wiring until it earned its own cage. Drums are its favorite food, but it will happily demolish vocals, synths and whole mixes.</p>
+
+  <h2>The controls</h2>
+  <div class="knob"><b>BREAK.</b> The hero knob. How broken. At 10 percent it is a tasteful stutter at the end of a bar. At 100 it is a machine eating itself in rhythm.</div>
+  <div class="knob"><b>SLICE.</b> Tempo-synced slice length: 1/4, 1/8, 1/16, 1/32, or a free length when you want it off the grid.</div>
+  <div class="knob"><b>REPEAT.</b> How many times a slice stutters, 1 to 16. Low is a hiccup, high is a machine gun.</div>
+  <div class="knob"><b>REVERSE.</b> The chance any slice plays backwards. Instant rewind moments without touching an edit.</div>
+  <div class="knob"><b>PITCH.</b> Octave-jump steps on repeats. Stutters that climb up or crash down while they fire.</div>
+  <div class="knob"><b>CHAOS.</b> Random re-slicing. The gremlin stops following the plan and starts improvising.</div>
+  <div class="knob"><b>SEED.</b> The leash. Every random decision comes from this number, so the same seed replays the same glitches, take after take, bounce after bounce.</div>
+  <div class="knob"><b>MIX.</b> Dry/wet. Sprinkle glitches over the clean beat or go full wreck.</div>
+  <div class="knob"><b>BYPASS.</b> One click back to civilization.</div>
+
+  <h2>Auto pilot or smash the button</h2>
+  <p>Two ways to drive. <b>Auto</b> mode lets Gremlin decide when to strike, using BREAK as its appetite. <b>Manual</b> mode hands you the <b>GLITCH!</b> pad: a momentary button that glitches only while you hold it. Punch in a fill on the last beat of the bar, let go, and the loop walks out clean like nothing happened.</p>
+
+  <h2>Twelve flavors of broken</h2>
+  <p>Factory presets with names that tell you exactly what they do: <b>Machine Gun</b>, <b>Rewind</b>, <b>Broken Toy</b>, <b>Stairs Down</b> and eight more. Twelve starting points from polite fill generator to full meltdown.</p>
+
+  <h2>What to feed it</h2>
+  <p>Drum loops are the classic: instant fills, turnarounds and edits you would never program by hand. Vocals become stammering hooks. Pads and chords get shredded into rhythmic confetti. Put it on the master for two bars before the drop if you are feeling brave.</p>
+
+  <h2>Is it really free right now?</h2>
+  <p>Yes. Enter your email and the download starts right away. Full version, all twelve presets, no locked knobs, no trial timer.</p>
+
+  <footer>
+    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@aluetion.com">hello@aluetion.com</a></p>
+  </footer>
+</div>
+</body>
+</html>

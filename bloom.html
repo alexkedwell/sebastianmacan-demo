@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom | Melodic House Texture Effect VST3/AU Plugin</title>
+<meta name="description" content="Bloom is a melodic house texture effect (VST3 and AU for macOS). Shimmer, reverb and motion on one BLOOM knob, tempo-synced BREATHE pumping, tape warmth and mono-safe width. Play a plain chord, get a festival sunrise. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#6ee7d8; --g2:#c4b5fd; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(110,231,216,.26); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:10px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .knob b { color:var(--g1); }
+  .bot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
+  .bot b { color:var(--g2); }
+  footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
+  footer a { color:var(--dim); }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Bloom",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Bloom is a melodic house texture effect (VST3 and AU for macOS). Shimmer, reverb and motion on one BLOOM knob, tempo-synced BREATHE pumping, tape warmth and mono-safe width. Play a plain chord, get a festival sunrise. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/bloom.html",
+   "softwareVersion": "1.0",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I get that Anjunadeep melodic house pad sound?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Put Bloom on a plain chord or pad, turn the BLOOM knob up until the shimmer opens, then bring in BREATHE for that tempo-synced sidechain-style pump. The Anjuna Sunrise preset is the one-click version."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does BREATHE sync to my project tempo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. BREATHE follows your host BPM automatically, and the RATE switch picks the pump length: 1/1, 1/2, 1/4 or 1/8."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is the stereo widener safe in mono?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. WIDTH is a mono-safe widener, so your pads stay full when the club system or a phone speaker folds everything to mono."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What presets does Bloom come with?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Eight factory presets: Anjuna Sunrise, Boehmer Breath, Cavern Bloom, Warm Tape Pad, Festival Pump, Slow Aurora, Gentle Halo and Deep Field."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Bloom work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">Melodic House Texture</div>
+    <h1>BLOOM</h1>
+    <p class="tag">Play a plain chord. Get a festival sunrise.</p>
+    <div class="cta">
+      <a class="dl" href="downloads/Bloom-v1.0-macOS.pkg">Download Bloom</a>
+      <div class="meta">v1.0 &middot; VST3 + AU effect &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Bloom does</h2>
+  <p>Bloom is the melodic house glow machine. Drop it on a dry chord, a plucky synth, a piano loop, and turn one knob. Shimmer opens above the sound, reverb wraps around it, slow motion starts drifting through it. Then BREATHE makes the whole thing pump in time with your track, that sidechain sunrise feel that carries an Anjunadeep set at 6am. No routing, no ghost kick track, no five-plugin chain.</p>
+
+  <h2>The knobs</h2>
+  <div class="knob"><b>BLOOM.</b> The hero. One macro that opens shimmer, reverb and motion together. At zero the sound is dry. At full it is a sunrise.</div>
+  <div class="knob"><b>BREATHE.</b> Tempo-synced sidechain-style pumping, no kick input needed. It reads your host BPM and ducks the wash in time, so pads breathe with the groove.</div>
+  <div class="knob"><b>RATE.</b> How long each breath is: 1/1, 1/2, 1/4 or 1/8. Whole-bar swells for intros, 1/4 for that classic club pump.</div>
+  <div class="knob"><b>WARMTH.</b> Tape saturation on the tail. Turns glassy digital shimmer into something golden and a little worn.</div>
+  <div class="knob"><b>WIDTH.</b> Mono-safe stereo widener. Big on headphones, still solid when the PA folds to mono.</div>
+  <div class="knob"><b>MOTION.</b> A slow evolving LFO drift through the texture, so ten seconds of held pad never sounds like a freeze frame.</div>
+  <div class="knob"><b>MIX.</b> Dry/wet. Parallel glow at 30 percent, full ambient wash at 100.</div>
+  <div class="knob"><b>BYPASS.</b> Instant A/B so you can hear what the sunrise is doing.</div>
+
+  <h2>Eight sunrises in the box</h2>
+  <p>Factory presets tuned like set moments, not init patches: <b>Anjuna Sunrise</b>, <b>Boehmer Breath</b>, <b>Cavern Bloom</b>, <b>Warm Tape Pad</b>, <b>Festival Pump</b>, <b>Slow Aurora</b>, <b>Gentle Halo</b> and <b>Deep Field</b>. Load one, play a chord, adjust BLOOM to taste.</p>
+
+  <h2>What to put it on</h2>
+  <p>Plain triad pads become the main event. Pianos turn into 6am festival pianos. Plucks get a glowing tail that pumps with the beat. Vocals get a halo. Even a single sustained note starts to feel like a track.</p>
+
+  <h2>Is it really free right now?</h2>
+  <p>Yes. Enter your email and the download starts right away. Full version, all eight presets, no locked knobs, no trial timer.</p>
+
+  <footer>
+    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@aluetion.com">hello@aluetion.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
