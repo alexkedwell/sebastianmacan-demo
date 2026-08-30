@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candy | Mixing Plugin VST3/AU. Five Lollipops to a Better Mix</title>
+<meta name="description" content="Candy is a free mixing plugin (VST3 and AU for macOS). Five knobs that make tracks sit right in the mix, fast. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#9be8c9; --g2:#f2a3c2; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(155,232,201,.26); animation:float 7s ease-in-out infinite; }
+  .videobox video { display:block; width:100%; height:auto; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(155,232,201,.26); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  li { margin-bottom:10px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} footer{flex-direction:column;text-align:center;} }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Candy",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Candy is a free mixing plugin (VST3 and AU for macOS). Five knobs that make tracks sit right in the mix, fast. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/candy.html",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What does Candy actually do to my mix?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Under the hood it combines EQ shaping, compression and saturation into four musical knobs. Instead of tweaking ten plugins, you turn a couple of knobs until the track sits right. Made for producers who want good mixes without an engineering degree."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Candy really free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Candy work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is there a Windows version of Candy?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I install Candy?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">Instant Mix Polish</div>
+    <h1>CANDY</h1>
+    <p class="tag">Mixes that sit right. Five lollipops.</p>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/candy.png"><source src="img/video/candy_ui_loop.mp4" type="video/mp4"></video></div>
+    <div class="cta">
+      <a class="dl" href="downloads/Candy-v1.1-macOS.pkg">Download Candy Free</a>
+      <div class="meta">v1.1 &middot; VST3 + AU effect &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Candy does</h2>
+  <p>Candy makes tracks sit right in the mix with five knobs and zero engineering degree. Tell it what the track is, then shape it with CLEAN, PUNCH, GLOW, JUICE and WIDTH while auto-gain keeps the volume honest.</p>
+
+  <h2>Get started in 3 steps</h2>
+  <div class="step"><b>1. Put Candy on a track.</b> Vocal, drums, bass, or the whole master: Candy works anywhere.</div>
+  <div class="step"><b>2. Tell it what it is hearing.</b> Pick vocal, drums, bass or master. Candy tunes everything under the hood for that job.</div>
+  <div class="step"><b>3. Turn the five knobs.</b> CLEAN, PUNCH, GLOW, JUICE, WIDTH. Stop when it sounds good. That is the whole manual.</div>
+
+  <h2>Make it yours</h2>
+  <div class="knob"><b>CLEAN.</b> Clears mud and boxiness so the track stops fighting the rest of the mix.</div>
+  <div class="knob"><b>PUNCH.</b> Brings out the hit and snap. Drums wake up, vocals get forward.</div>
+  <div class="knob"><b>GLOW.</b> The expensive top end. Air on vocals, sheen on the master.</div>
+  <div class="knob"><b>JUICE.</b> The energy knob. Three-band upward and downward compression, the same trick behind every modern electronic and hip hop record. Quiet details rise, loud peaks tuck in, everything gets dense and exciting. Slam it on a synth and grin.</div>
+  <div class="knob"><b>WIDTH.</b> Opens the stereo image. Auto-gain keeps louder from fooling your ears the whole time.</div>
+
+  <h3>Pro tip</h3>
+  <p>Because auto-gain matches the volume, whatever sounds better with Candy actually IS better. Trust your first instinct and move on.</p>
+
+
+  <h2>Common questions</h2>
+  <div class="knob"><b>What does Candy actually do to my mix?</b> Under the hood it combines EQ shaping, compression and saturation into four musical knobs. Instead of tweaking ten plugins, you turn a couple of knobs until the track sits right. Made for producers who want good mixes without an engineering degree.</div>
+  <div class="knob"><b>Is Candy really free?</b> Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer.</div>
+  <div class="knob"><b>What DAWs does Candy work in?</b> Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically.</div>
+  <div class="knob"><b>Is there a Windows version of Candy?</b> Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</div>
+  <div class="knob"><b>How do I install Candy?</b> Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin.</div>
+
+  <div class="cta">
+    <a class="dl" href="downloads/Candy-v1.1-macOS.pkg">Download Candy Free</a>
+    <div class="meta">Email required &middot; instant download</div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
+  </footer>
+</div>
+<script src="js/email-gate.js" defer></script>
+</body>
+</html>
