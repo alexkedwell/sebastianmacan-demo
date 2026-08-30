@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayday | Free Riser Generator VST3/AU Plugin</title>
+<meta name="description" content="Mayday is a riser generator plugin (VST3 and AU for macOS). Hold one note and get a massive climbing riser, tempo-synced to your track, with an infinite-climb mode. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#5ad0ff; --g2:#ffb347; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(90,208,255,.26); animation:float 7s ease-in-out infinite; }
+  .videobox video { display:block; width:100%; height:auto; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(90,208,255,.26); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  li { margin-bottom:10px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} footer{flex-direction:column;text-align:center;} }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Mayday",
+   "operatingSystem": "macOS",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Mayday is a riser generator plugin (VST3 and AU for macOS). Hold one note and get a massive climbing riser, tempo-synced to your track, with an infinite-climb mode. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/mayday.html",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Sebastian Macan"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aluetion, LLC",
+    "url": "https://sebastianmacan.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is a riser plugin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It generates the climbing tension sound before a drop or chorus. Instead of hunting sample packs for one that fits your key and tempo, Mayday builds the riser live from the note you hold, synced to your song."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Mayday really free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What DAWs does Mayday work in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is there a Windows version of Mayday?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I install Mayday?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">Riser Generator</div>
+    <h1>MAYDAY</h1>
+    <p class="tag">Hold a note. Brace for takeoff.</p>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/mayday.png"><source src="img/video/mayday_ui_loop.mp4" type="video/mp4"></video></div>
+    <div class="cta">
+      <a class="dl" href="downloads/Mayday-v2.0-macOS.pkg">Download Mayday Free</a>
+      <div class="meta">v1.0 &middot; VST3 + AU instrument &middot; macOS</div>
+    </div>
+  </section>
+
+  <h2>What Mayday does</h2>
+  <p>Mayday is a little jet that makes huge risers on demand. Hold a note and the sound climbs for exactly 1, 2, 4 or 8 bars, then holds at the top until you let go. Truly intense risers are weirdly hard to find. Now they live on one key.</p>
+
+  <h2>Get started in 3 steps</h2>
+  <div class="step"><b>1. Put Mayday on a MIDI track.</b> It is an instrument. One held note is all it needs.</div>
+  <div class="step"><b>2. Set LAUNCH to match your build.</b> 4 bars before the drop? Pick 4 bars. It lands exactly on time.</div>
+  <div class="step"><b>3. Hold the note until the drop hits.</b> Release exactly on the downbeat. Clean fade, no mess.</div>
+
+  <h2>Make it yours</h2>
+  <div class="knob"><b>LAUNCH.</b> How long the climb takes. Tempo-synced bars or free seconds.</div>
+  <div class="knob"><b>CLIMB.</b> How far it rises, 1 to 4 octaves. More octaves, more panic.</div>
+  <div class="knob"><b>JET.</b> The engine-noise layer that sweeps up underneath. Adds the whoosh.</div>
+  <div class="knob"><b>INFINITY.</b> Shepard mode. The riser climbs forever and never arrives. Unsettling in the best way.</div>
+  <div class="knob"><b>SHAKE.</b> Flutter that speeds up near the top, like the airframe rattling.</div>
+  <div class="knob"><b>AFTERBURN.</b> Drive and stereo width that kick in as you approach the peak.</div>
+
+  <h3>Pro tip</h3>
+  <p>Stack two Maydays an octave apart with slightly different LAUNCH times. The offset makes the rise feel enormous, like the whole mix is lifting off.</p>
+
+
+  <h2>Common questions</h2>
+  <div class="knob"><b>What is a riser plugin?</b> It generates the climbing tension sound before a drop or chorus. Instead of hunting sample packs for one that fits your key and tempo, Mayday builds the riser live from the note you hold, synced to your song.</div>
+  <div class="knob"><b>Is Mayday really free?</b> Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer.</div>
+  <div class="knob"><b>What DAWs does Mayday work in?</b> Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically.</div>
+  <div class="knob"><b>Is there a Windows version of Mayday?</b> Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</div>
+  <div class="knob"><b>How do I install Mayday?</b> Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin.</div>
+
+  <div class="cta">
+    <a class="dl" href="downloads/Mayday-v2.0-macOS.pkg">Download Mayday Free</a>
+    <div class="meta">Email required &middot; instant download</div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
+  </footer>
+</div>
+<script src="js/email-gate.js" defer></script>
+</body>
+</html>
