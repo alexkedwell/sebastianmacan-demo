@@ -5,17 +5,12 @@ Each page: hero + basket art + contents list (every item with its own gated down
 
 ITEMS = {
     # name: (kind, tagline, price, page, download)
-    "Ghost":   ("Granular Texture Machine", "Freeze sound. Then haunt it.", 19, "ghost.html",   "downloads/Ghost-v1.1-macOS.pkg"),
-    "Liftoff": ("Space Phaser-Flanger", "Rockets. Actual rockets.", 19, "liftoff.html", "downloads/Liftoff-v1.0-macOS.pkg"),
-    "Orbit":   ("3D Auto-Pan", "Hats that fly around your head.", 19, "orbit.html",   "downloads/Orbit-v1.0-macOS.pkg"),
-    "Reels":   ("Tape Machine", "A real tape machine, in the box.", 19, "reels.html",   "downloads/Reels-v1.0-macOS.pkg"),
-    "Gloss":   ("Instant Mix Polish", "Mixes that sit right. Four knobs.", 19, "gloss.html",   "downloads/Gloss-v1.0-macOS.pkg"),
-    "Halo":    ("Mastering Finisher", "Turn LIFT until the halo closes.", 19, "halo.html",    "downloads/Halo-v1.0-macOS.pkg"),
-    "Biome":   ("Granular Texture Blender", "Drop a rainforest on your beat.", 39, "biome.html",   "downloads/Biome-v1.0-macOS.pkg"),
-    "Magician":("Chord & Melody Generator", "Hit songs on tap. 20 genres.", 39, "magician.html","downloads/Magician-v1.2-macOS.pkg"),
-    "Fauna":   ("Creature Voice Synth", "Play the ocean. Play the sky.", 29, "fauna.html",   "downloads/Fauna-v1.0-macOS.pkg"),
-    "Jelly":   ("Wobble Machine", "Make everything jiggle. Free forever.", 0, "jelly.html",  "downloads/Jelly-v1.0-macOS.pkg"),
-    "Bounce":  ("Beat Repeater", "Stutter like a bouncing ball. Free forever.", 0, "bounce.html", "downloads/Bounce-v1.0-macOS.pkg"),
+    "Orbit":   ("3D Auto-Pan", "Hats that fly around your head.", 15, "orbit.html",   "downloads/Orbit-v1.0-macOS.pkg"),
+    "Reels":   ("Subtle Tape Machine", "Sometimes tape plugins do too much. Reels is just the right amount of vintage.", 15, "reels.html", "downloads/Reels-v2.0.1-macOS.pkg"),
+    "Biome":   ("Granular Texture Blender", "Drop a rainforest on your beat.", 39, "biome.html",   "downloads/Biome-v1.2.1-macOS.pkg"),
+    "Magician":("Chord & Melody Generator", "Hit songs on tap. 20 genres.", 39, "magician.html","downloads/Magician-v1.5.1-macOS.pkg"),
+    "Jelly":   ("Wobble Machine", "Make everything jiggle.", 15, "jelly.html",  "downloads/Jelly-v1.0-macOS.pkg"),
+    "Warble":  ("Drunk Songbird Pitch Wobbler", "Make any sound sing like a weird little bird.", 15, "warble.html", "downloads/Warble-v1.3-macOS.pkg"),
     "Hit Chords 200":  ("MIDI Chord Pack", "200 progressions built for hooks.", 15, None, "downloads/HitChords200-SebastianMacan.zip"),
     "Club Chords 120": ("MIDI Chord Pack", "120 progressions for the floor.", 15, None, "downloads/ClubChords120-SebastianMacan.zip"),
     "Soul Chords 120": ("MIDI Chord Pack", "120 progressions with feel.", 15, None, "downloads/SoulChords120-SebastianMacan.zip"),
@@ -30,24 +25,6 @@ ITEMS = {
 
 BASKETS = [
     {
-        "file": "basket-effects.html", "title": "EFFECTS BASKET", "price": 59, "img": "img/bundles/effects_bundle.png",
-        "g1": "#8b5cf6", "g2": "#60a5fa",
-        "tag": "Six flavors of motion, texture and polish. One basket.",
-        "desc": "All six paid effects in one grab. Freeze it, lift it, spin it, tape it, shine it, drown it in glow.",
-        "items": ["Ghost", "Liftoff", "Orbit", "Reels", "Gloss", "Halo"],
-        "meta": "6 plugins · VST3 + AU · macOS",
-        "big_dl": ("Download the whole basket", "downloads/EffectsBasket-SebastianMacan.zip"),
-    },
-    {
-        "file": "basket-instruments.html", "title": "INSTRUMENTS BASKET", "price": 69, "img": "img/bundles/instruments_bundle.png",
-        "g1": "#3ecf6e", "g2": "#ffd257",
-        "tag": "The three big ones. Texture, hits, creatures.",
-        "desc": "Biome grows textures from any sound, Magician writes the chords and melodies, Fauna is a synth full of living things. The whole instrument shelf.",
-        "items": ["Biome", "Magician", "Fauna"],
-        "meta": "3 plugins · VST3 + AU · macOS",
-        "big_dl": ("Download the whole basket", "downloads/InstrumentsBasket-SebastianMacan.zip"),
-    },
-    {
         "file": "basket-midi.html", "title": "MIDI MEGA BASKET", "price": 49, "img": "img/bundles/midi_mega_bundle.png",
         "g1": "#ff5ca8", "g2": "#8b5cf6",
         "tag": "796 progressions. The complete harmonic arsenal.",
@@ -59,16 +36,13 @@ BASKETS = [
         "big_dl": ("Download all 796", "downloads/MIDIMega796-SebastianMacan.zip"),
     },
     {
-        "file": "basket-candy-shop.html", "title": "THE WHOLE CANDY SHOP", "price": 99, "img": "img/bundles/everything_bundle.png",
-        "g1": "#ff3d5a", "g2": "#ffd257",
-        "tag": "Every plugin. Every MIDI pack. All of it.",
-        "desc": "One basket to rule the store: all 11 plugins (the free ones too, obviously) plus all 796 MIDI progressions. If it is on the shelf, it is in this basket.",
-        "items": ["Biome", "Magician", "Fauna", "Ghost", "Liftoff", "Orbit", "Reels", "Gloss", "Halo", "Jelly", "Bounce",
-                  "Hit Chords 200", "Club Chords 120", "Soul Chords 120",
-                  "Ionian Mode 48", "Dorian Mode 48", "Phrygian Mode 48", "Lydian Mode 48",
-                  "Mixolydian Mode 48", "Aeolian Mode 48", "Locrian Mode 48"],
-        "meta": "11 plugins + 796 MIDI files",
-        "big_dl": ("Download the whole candy shop", "downloads/WholeCandyShop-SebastianMacan.zip"),
+        "file": "basket-lofi.html", "title": "LOFI BUNDLE", "price": 25, "img": "img/bundles/lofi_bundle.png",
+        "g1": "#f5a623", "g2": "#2bb59a",
+        "tag": "The bedroom lofi starter kit. Tape and birdsong.",
+        "desc": "Reels puts your keys on beautiful old tape. Warble makes them sing like a weird little bird. Together they are the whole lofi mood in two plugins.",
+        "items": ["Reels", "Warble"],
+        "meta": "2 plugins · VST3 + AU · macOS",
+        "big_dl": ("Download the whole bundle", "downloads/LofiBundle-SebastianMacan.zip"),
     },
 ]
 
