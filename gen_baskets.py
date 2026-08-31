@@ -12,10 +12,10 @@ ITEMS = {
     "Jelly":   ("Wobble Machine", "Make everything jiggle.", 15, "jelly.html",  "downloads/Jelly-v1.0-macOS.pkg"),
     "Warble":  ("Drunk Songbird Pitch Wobbler", "Make any sound sing like a weird little bird.", 15, "warble.html", "downloads/Warble-v1.3-macOS.pkg"),
     "Fireplace": ("Ambience Machine", "Real crackling rooms under your beat. Fire, rain, vinyl.", 15, "fireplace.html", "downloads/Fireplace-v1.1-macOS.pkg"),
-    "Halo":    ("One-Knob Mastering", "Drop it on your master. Turn LIFT until the halo closes.", 29, "halo.html", "downloads/Halo-v1.2.1-macOS.pkg"),
-    "Hit Chords 200":  ("MIDI Chord Pack", "200 progressions built for hooks.", 15, None, "downloads/HitChords200-SebastianMacan.zip"),
-    "Club Chords 120": ("MIDI Chord Pack", "120 progressions for the floor.", 15, None, "downloads/ClubChords120-SebastianMacan.zip"),
-    "Soul Chords 120": ("MIDI Chord Pack", "120 progressions with feel.", 15, None, "downloads/SoulChords120-SebastianMacan.zip"),
+    "Halo":    ("One-Knob Mastering", "Drop it on your master. Turn LIFT until the halo closes.", 29, "halo.html", "downloads/Halo-v1.2-macOS.pkg"),
+    "Hit Chords 500":  ("MIDI Chord Pack", "500 progressions built for hooks, every key covered.", 20, None, "downloads/HitChords500-SebastianMacan.zip"),
+    "Club Chords 240": ("MIDI Chord Pack", "240 progressions for the floor, every key covered.", 15, None, "downloads/ClubChords240-SebastianMacan.zip"),
+    "Soul Chords 240": ("MIDI Chord Pack", "240 progressions with feel, every key covered.", 15, None, "downloads/SoulChords240-SebastianMacan.zip"),
     "Ionian Mode 48":     ("MIDI Mode Pack", "48 progressions. The bright classic.", 10, None, "downloads/IonianMode48-SebastianMacan.zip"),
     "Dorian Mode 48":     ("MIDI Mode Pack", "48 progressions. Smooth and soulful.", 10, None, "downloads/DorianMode48-SebastianMacan.zip"),
     "Phrygian Mode 48":   ("MIDI Mode Pack", "48 progressions. Dark and exotic.", 10, None, "downloads/PhrygianMode48-SebastianMacan.zip"),
@@ -29,13 +29,13 @@ BASKETS = [
     {
         "file": "basket-midi.html", "title": "MIDI MEGA BASKET", "price": 49, "img": "img/bundles/midi_mega_bundle.png",
         "g1": "#ff5ca8", "g2": "#8b5cf6",
-        "tag": "796 progressions. The complete harmonic arsenal.",
+        "tag": "1316 progressions. The complete harmonic arsenal.",
         "desc": "Every MIDI pack we make: all 3 genre chord packs plus all 7 mode packs. Drag and drop into any DAW, works with any synth or piano you already own.",
-        "items": ["Hit Chords 200", "Club Chords 120", "Soul Chords 120",
+        "items": ["Hit Chords 500", "Club Chords 240", "Soul Chords 240",
                   "Ionian Mode 48", "Dorian Mode 48", "Phrygian Mode 48", "Lydian Mode 48",
                   "Mixolydian Mode 48", "Aeolian Mode 48", "Locrian Mode 48"],
-        "meta": "10 packs · 796 MIDI files · any DAW",
-        "big_dl": ("Download all 796", "downloads/MIDIMega796-SebastianMacan.zip"),
+        "meta": "10 packs · 1316 MIDI files · any DAW",
+        "big_dl": ("Download all 1316", "downloads/MIDIMega1316-SebastianMacan.zip"),
     },
     {
         "file": "basket-modes.html", "title": "ALL 7 MODES BASKET", "price": 39, "img": "img/bundles/modes_bundle.png",
@@ -48,22 +48,22 @@ BASKETS = [
         "big_dl": ("Download all 7 modes", "downloads/AllModes336-SebastianMacan.zip"),
     },
     {
-        "file": "basket-lofi.html", "title": "LOFI BUNDLE", "price": 30, "img": "img/bundles/lofi_bundle.png",
+        "file": "basket-lofi.html", "title": "LOFI BASKET", "price": 25, "img": "img/bundles/lofi_bundle.png",
         "g1": "#f5a623", "g2": "#2bb59a",
-        "tag": "The bedroom lofi starter kit. Tape, birdsong and a crackling fire.",
-        "desc": "Reels puts your keys on beautiful old tape. Warble makes them sing like a weird little bird. Fireplace tucks a crackling room under the whole beat. The complete lofi mood in three plugins.",
-        "items": ["Fireplace", "Reels", "Warble"],
-        "meta": "3 plugins · VST3 + AU · macOS",
-        "big_dl": ("Download the whole bundle", "downloads/LofiBundle-SebastianMacan.zip"),
+        "tag": "The bedroom lofi starter kit. Subtle tape and a weird little songbird.",
+        "desc": "Reels puts your keys on beautiful old tape. Warble makes them sing like a weird little bird. The bedroom lofi mood in two plugins.",
+        "items": ["Reels", "Warble"],
+        "meta": "2 plugins · VST3 + AU · macOS",
+        "big_dl": ("Download the whole basket", "downloads/LofiBundle-SebastianMacan.zip"),
     },
     {
-        "file": "basket-lofi-mastering.html", "title": "LOFI BUNDLE + MASTERING", "price": 49, "img": "img/bundles/lofi_mastering_bundle.png",
+        "file": "basket-lofi-mastering.html", "title": "LOFI BASKET + MASTERING", "price": 39, "img": "img/bundles/lofi_mastering_bundle.png",
         "g1": "#f5a623", "g2": "#ffd47e",
         "tag": "Make the beat, then master the beat. Everything lofi in one basket.",
-        "desc": "The whole Lofi Bundle, Fireplace, Reels and Warble, plus Halo to finish the job. Drop Halo on your master, pick the Club target to really make your lofi bounce, and turn LIFT until the halo closes.",
-        "items": ["Fireplace", "Reels", "Warble", "Halo"],
-        "meta": "4 plugins · VST3 + AU · macOS",
-        "big_dl": ("Download the whole bundle", "downloads/LofiMasteringBundle-SebastianMacan.zip"),
+        "desc": "The whole Lofi Basket, Reels and Warble, plus Halo to finish the job. Drop Halo on your master, pick the Club target to really make your lofi bounce, and turn LIFT until the halo closes.",
+        "items": ["Reels", "Warble", "Halo"],
+        "meta": "3 plugins · VST3 + AU · macOS",
+        "big_dl": ("Download the whole basket", "downloads/LofiMasteringBundle-SebastianMacan.zip"),
     },
 ]
 
@@ -192,7 +192,6 @@ def page(b):
 
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-BASKETS = [b for b in BASKETS if "lofi" in b["file"]]
 for b in BASKETS:
     open(b["file"], "w").write(page(b))
     print("wrote", b["file"])

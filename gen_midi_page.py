@@ -6,24 +6,24 @@ To drop a video in: replace data-yt="" with data-yt="VIDEOID" in the PACKS list
 and rerun. Run from site dir: python3 gen_midi_page.py"""
 
 PACKS = [
-    {"id": "hitchords", "name": "HIT CHORDS 200+", "kind": "MIDI Chord Pack", "n": "220 .mid files",
+    {"id": "hitchords", "name": "HIT CHORDS 500", "kind": "MIDI Chord Pack", "n": "500 .mid files",
      "g1": "#ff5ca8", "g2": "#ffd257",
      "tag": "The progressions behind the hits.",
-     "desc": "220 chord progressions across 11 genres: Pop, Trap, RnB, EDM, LoFi, Rock, Latin, Cinematic, Country, Gospel/Jazz, K-Pop. Genre-true voicings with the 7ths and 9ths already in place.",
-     "inside": ["11 genres, 20 progressions each", "Voiced like the records, not block triads", "Labeled by genre and key, drag straight in"],
-     "dl": "downloads/HitChords200-SebastianMacan.zip", "yt": ""},
-    {"id": "clubchords", "name": "CLUB CHORDS 120", "kind": "MIDI Chord Pack", "n": "120 .mid files",
+     "desc": "500 chord progressions across 11 genres: Pop, Trap, RnB, EDM, LoFi, Rock, Latin, Cinematic, Country, Gospel/Jazz, K-Pop. Genre-true voicings with the 7ths and 9ths already in place.",
+     "inside": ["11 genres, 500 progressions, all 24 keys", "Voiced like the records, not block triads", "Labeled by genre and key, drag straight in"],
+     "dl": "downloads/HitChords500-SebastianMacan.zip", "yt": ""},
+    {"id": "clubchords", "name": "CLUB CHORDS 240", "kind": "MIDI Chord Pack", "n": "240 .mid files",
      "g1": "#60a5fa", "g2": "#8b5cf6",
      "tag": "Chords for the dancefloor.",
-     "desc": "120 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum & Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.",
-     "inside": ["6 club genres, 20 progressions each", "Stab voicings and pads that cut through a mix", "Tested against four-on-the-floor grooves"],
-     "dl": "downloads/ClubChords120-SebastianMacan.zip", "yt": ""},
-    {"id": "soulchords", "name": "SOUL CHORDS 120", "kind": "MIDI Chord Pack", "n": "120 .mid files",
+     "desc": "240 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum & Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.",
+     "inside": ["6 club genres, 40 progressions each, all 24 keys", "Stab voicings and pads that cut through a mix", "Tested against four-on-the-floor grooves"],
+     "dl": "downloads/ClubChords240-SebastianMacan.zip", "yt": ""},
+    {"id": "soulchords", "name": "SOUL CHORDS 240", "kind": "MIDI Chord Pack", "n": "240 .mid files",
      "g1": "#f5a623", "g2": "#ff5ca8",
      "tag": "The rich stuff. 9ths, 11ths, church.",
-     "desc": "120 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.",
-     "inside": ["6 soul genres, 20 progressions each", "Real extended voicings: 9ths, 11ths, 13ths", "Turnarounds and walkups included"],
-     "dl": "downloads/SoulChords120-SebastianMacan.zip", "yt": ""},
+     "desc": "240 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.",
+     "inside": ["6 soul genres, 40 progressions each, all 24 keys", "Real extended voicings: 9ths, 11ths, 13ths", "Turnarounds and walkups included"],
+     "dl": "downloads/SoulChords240-SebastianMacan.zip", "yt": ""},
     {"id": "ionian", "name": "IONIAN MODE 48", "kind": "Modal Series", "n": "48 .mid files",
      "g1": "#ffd84a", "g2": "#ff9f1c",
      "tag": "Pure major. The sound of every anthem chorus ever written.",
@@ -120,7 +120,7 @@ html = f'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free MIDI Chord Packs &amp; Mode Packs | Sebastian Macan</title>
-<meta name="description" content="796 MIDI chord progressions: genre chord packs (Pop, Trap, RnB, Club, Soul) and the complete Modal Series covering all 7 modes. Drag-and-drop .mid files that work in every DAW. Free during launch.">
+<meta name="description" content="1316 MIDI chord progressions: genre chord packs (Pop, Trap, RnB, Club, Soul) and the complete Modal Series covering all 7 modes. Drag-and-drop .mid files that work in every DAW. Free during launch.">
 <style>
   :root {{ --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; }}
   * {{ margin:0; padding:0; box-sizing:border-box; }}
@@ -194,7 +194,7 @@ html = f'''<!DOCTYPE html>
 
   <section class="hero">
     <div class="kind">MIDI Packs</div>
-    <h1>796 PROGRESSIONS</h1>
+    <h1>1316 PROGRESSIONS</h1>
     <p>Every chord pack and mode pack in the store, up close. Drag any .mid file into your DAW, drop it on any synth or piano you already own, and it plays. No plugin required, works everywhere MIDI works.</p>
     <div class="toc">
 {toc}
@@ -205,8 +205,8 @@ html = f'''<!DOCTYPE html>
 
   <div class="megabar">
     <h2>WANT ALL OF IT?</h2>
-    <p>The MIDI Mega Basket packs all 3 chord packs and all 7 mode packs, 796 progressions, into one download.</p>
-    <a class="dl" href="downloads/MIDIMega796-SebastianMacan.zip">Download all 796</a>
+    <p>The MIDI Mega Basket packs all 3 chord packs and all 7 mode packs, 1316 progressions, into one download.</p>
+    <a class="dl" href="downloads/MIDIMega1316-SebastianMacan.zip">Download all 1316</a>
     <div class="meta" style="margin-top:12px;"><a href="basket-midi.html" style="color:var(--dim);">or open the MIDI Mega Basket &rarr;</a></div>
   </div>
 
