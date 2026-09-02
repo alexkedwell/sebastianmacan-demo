@@ -27,7 +27,7 @@ ITEMS = {
 
 BASKETS = [
     {
-        "file": "basket-midi.html", "title": "MIDI MEGA BASKET", "price": 49, "img": "img/bundles/midi_mega_bundle.png",
+        "file": "basket-midi.html", "cart_id": "midimega", "title": "MIDI MEGA BASKET", "price": 49, "img": "img/bundles/midi_mega_bundle.png",
         "g1": "#ff5ca8", "g2": "#8b5cf6",
         "tag": "1316 progressions. The complete harmonic arsenal.",
         "desc": "Every MIDI pack we make: all 3 genre chord packs plus all 7 mode packs. Drag and drop into any DAW, works with any synth or piano you already own.",
@@ -38,7 +38,7 @@ BASKETS = [
         "big_dl": ("Download all 1316", "downloads/MIDIMega1316-SebastianMacan.zip"),
     },
     {
-        "file": "basket-modes.html", "title": "ALL 7 MODES BASKET", "price": 39, "img": "img/bundles/modes_bundle.png",
+        "file": "basket-modes.html", "cart_id": "allmodes", "title": "ALL 7 MODES BASKET", "price": 39, "img": "img/bundles/modes_bundle.png",
         "g1": "#8b5cf6", "g2": "#39e6d0",
         "tag": "The whole Modal Series. Every secret flavor in one basket.",
         "desc": "All 7 mode packs from the Modal Series: Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian and Locrian. 336 progressions, every chord true to its mode, the signature color chord in every loop.",
@@ -48,7 +48,7 @@ BASKETS = [
         "big_dl": ("Download all 7 modes", "downloads/AllModes336-SebastianMacan.zip"),
     },
     {
-        "file": "basket-lofi.html", "title": "LOFI BASKET", "price": 25, "img": "img/bundles/lofi_bundle.png",
+        "file": "basket-lofi.html", "cart_id": "lofibasket", "title": "LOFI BASKET", "price": 25, "img": "img/bundles/lofi_bundle.png",
         "g1": "#f5a623", "g2": "#2bb59a",
         "tag": "The bedroom lofi starter kit. Subtle tape and a weird little songbird.",
         "desc": "Reels puts your keys on beautiful old tape. Warble makes them sing like a weird little bird. The bedroom lofi mood in two plugins.",
@@ -57,7 +57,7 @@ BASKETS = [
         "big_dl": ("Download the whole basket", "downloads/LofiBundle-SebastianMacan.zip"),
     },
     {
-        "file": "basket-lofi-mastering.html", "title": "LOFI BASKET + MASTERING", "price": 39, "img": "img/bundles/lofi_mastering_bundle.png",
+        "file": "basket-lofi-mastering.html", "cart_id": "lofimastering", "title": "LOFI BASKET + MASTERING", "price": 39, "img": "img/bundles/lofi_mastering_bundle.png",
         "g1": "#f5a623", "g2": "#ffd47e",
         "tag": "Make the beat, then master the beat. Everything lofi in one basket.",
         "desc": "The whole Lofi Basket, Reels and Warble, plus Halo to finish the job. Drop Halo on your master, pick the Club target to really make your lofi bounce, and turn LIFT until the halo closes.",
@@ -89,10 +89,16 @@ def page(b):
     rows = "\n".join(row(n) for n in b["items"])
     big = ""
     hero_dl = ""
+    cartrow = ""
+    if b.get("cart_id"):
+        cid = b["cart_id"]
+        cartrow = (f'<div class="cartrow" style="justify-content:center;">'
+                   f'<span class="cartbtn add" role="button" tabindex="0" data-cart-add="{cid}">Add to Cart</span>'
+                   f'<span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="{cid}">Buy Now</span></div>')
     if b.get("big_dl"):
         label, href = b["big_dl"]
-        big = f'<div class="cta"><a class="dl" href="{href}">{label}</a><div class="meta">One zip, everything inside. Download once, unzip, done.</div></div>'
-        hero_dl = f'<div class="cta" style="margin-top:22px;"><a class="dl" href="{href}">{label}</a></div>'
+        big = f'<div class="cta"><a class="dl" href="{href}">{label}</a>{cartrow}<div class="meta">One zip, everything inside. Download once, unzip, done.</div></div>'
+        hero_dl = f'<div class="cta" style="margin-top:22px;"><a class="dl" href="{href}">{label}</a>{cartrow}</div>'
     n_items = len(b["items"])
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -186,7 +192,7 @@ def page(b):
     <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
   </footer>
 </div>
-<script src="js/email-gate.js" defer></script>
+<script src="js/cart.js" defer></script>\n<script src="js/email-gate.js" defer></script>
 </body>
 </html>'''
 

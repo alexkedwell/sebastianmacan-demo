@@ -3,7 +3,12 @@
 7 mode packs + the 336 bundle), each with a styled video placeholder slot that
 becomes a YouTube embed when Alex films his Ableton demos.
 To drop a video in: replace data-yt="" with data-yt="VIDEOID" in the PACKS list
-and rerun. Run from site dir: python3 gen_midi_page.py"""
+and rerun. Run from site dir: python3 gen_midi_page.py
+WARNING (Sep 2 2026): this generator is STALE vs the live midi-packs.html -
+the live page carries the hand-added HITMAKER CHORDS section and the
+artist-name scrub (Paddle compliance). Do NOT rerun without first folding
+those into PACKS/copy, or the regen wipes them. Cart buttons (cartrow) ARE
+included below and map data-cart-add/buy ids to js/cart.js CATALOG keys."""
 
 PACKS = [
     {"id": "hitchords", "name": "HIT CHORDS 500", "kind": "MIDI Chord Pack", "n": "500 .mid files",
@@ -108,6 +113,7 @@ def section(p, flip):
         <a class="dl" href="{p["dl"]}">Download the Pack</a>
         <span class="meta">{p["n"]} &middot; works in every DAW</span>
       </div>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="{p["id"]}">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="{p["id"]}">Buy Now</span></div>
     </div>
   </section>'''
 
@@ -207,6 +213,7 @@ html = f'''<!DOCTYPE html>
     <h2>WANT ALL OF IT?</h2>
     <p>The MIDI Mega Basket packs all 3 chord packs and all 7 mode packs, 1316 progressions, into one download.</p>
     <a class="dl" href="downloads/MIDIMega1316-SebastianMacan.zip">Download all 1316</a>
+    <div class="cartrow" style="justify-content:center;"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="midimega">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="midimega">Buy Now</span></div>
     <div class="meta" style="margin-top:12px;"><a href="basket-midi.html" style="color:var(--dim);">or open the MIDI Mega Basket &rarr;</a></div>
   </div>
 
@@ -215,6 +222,7 @@ html = f'''<!DOCTYPE html>
     <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
   </footer>
 </div>
+<script src="js/cart.js" defer></script>
 <script src="js/email-gate.js" defer></script>
 </body>
 </html>'''
