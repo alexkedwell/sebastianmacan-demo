@@ -142,7 +142,7 @@
     ' header:has(#smcart-tab.innav:not(.pin)){flex-wrap:wrap;gap:8px 0;}header nav:has(#smcart-tab.innav:not(.pin)){display:inline-flex;flex-wrap:wrap;align-items:center;row-gap:8px;}',
     ' header nav:has(#smcart-tab.innav:not(.pin)) a{margin-left:0;margin-right:16px;}#smcart-tab.innav:not(.pin)[role]{margin-left:0;}',
     /* homepage stacks logo over a scrolling nav strip: pin the cart on the logo line so it can never scroll away */
-    ' #smcart-tab.innav.pin[role]{margin:0 10px;display:inline-block;}}'
+    ' #smcart-tab.innav.pin[role]{display:inline;vertical-align:baseline;}}'
   ].join('\n');
 
   var CART_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>';
@@ -169,6 +169,12 @@
       var hdr = nav.closest('header');
       if (hdr && getComputedStyle(hdr).flexDirection === 'column') tab.classList.add('pin');
       nav.appendChild(tab);
+      var syncSpacing = function () {
+        var prev = tab.previousElementSibling; if (!prev) return;
+        var cs = getComputedStyle(prev);
+        tab.style.marginLeft = cs.marginLeft; tab.style.marginRight = cs.marginRight; tab.style.display = cs.display;
+      };
+      syncSpacing(); window.addEventListener('resize', syncSpacing);
       window.addEventListener('resize', function () {
         if (!hdr) return;
         tab.classList.toggle('pin', getComputedStyle(hdr).flexDirection === 'column');
