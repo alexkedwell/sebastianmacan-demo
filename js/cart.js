@@ -128,28 +128,26 @@
     ' box-shadow:0 4px 18px var(--shadow,rgba(123,92,255,.3));}',
     '.cartbtn.added{border-color:#39e6d0;color:#39e6d0;}',
     '@media (max-width:640px){#smcart-tab{top:10px;left:10px;padding:8px 12px;}}',
-    /* in-nav variant C: candy pill, gradient outline (matches the Buy Now buttons). nav is a flex row so it centres on the text */
+    /* in-nav variant 6: bare shopping-bag icon, no border, no word; candy count badge on the corner */
     'header nav:has(#smcart-tab.innav){display:inline-flex;align-items:center;flex-wrap:nowrap;}',
-    '#smcart-tab.innav,#smcart-tab.innav[role]{position:relative;top:auto;left:auto;display:inline-flex;align-items:center;gap:8px;margin-left:22px;',
-    ' padding:7px 14px;border-radius:999px;border:0;box-shadow:none;background:#0a0a0c;color:#f2f2f4;',
-    ' font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease;}',
-    '#smcart-tab.innav::before{content:"";position:absolute;inset:0;border-radius:999px;padding:1.5px;pointer-events:none;',
-    ' background:linear-gradient(135deg,#ff3d5a,#7b5cff,#39e6d0);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;}',
-    '#smcart-tab.innav:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(123,92,255,.35);border-color:transparent;}',
-    '#smcart-tab.innav svg{width:15px;height:15px;stroke-width:2.2;}',
-    '#smcart-tab.innav #smcart-badge{min-width:18px;height:18px;font-size:10.5px;padding:0 5px;}',
+    '#smcart-tab.innav,#smcart-tab.innav[role]{position:relative;top:auto;left:auto;display:inline-flex;align-items:center;justify-content:center;margin-left:22px;',
+    ' width:28px;height:28px;padding:0;border:0;border-radius:0;box-shadow:none;background:transparent;color:#f2f2f4;vertical-align:middle;',
+    ' transition:transform .15s ease,color .15s ease;}',
+    '#smcart-tab.innav:hover{transform:translateY(-1px);color:#fff;border-color:transparent;}',
+    '#smcart-tab.innav svg{width:20px;height:20px;}',
+    '#smcart-tab.innav .smcart-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}',
+    '#smcart-tab.innav #smcart-badge{position:absolute;top:-5px;right:-8px;min-width:16px;height:16px;font-size:10px;padding:0 4px;box-shadow:0 0 0 2px #0a0a0c;}',
     /* mobile: header stacks logo over a scrolling nav strip; pin the cart top-right of the header so it is never scrolled away */
-    '@media (max-width:640px){#smcart-tab.innav[role]{margin-left:12px;padding:6px 12px;font-size:11px;}#smcart-tab.innav svg{width:14px;height:14px;}',
+    '@media (max-width:640px){#smcart-tab.innav[role]{margin-left:14px;}',
     /* single-row sub-page headers: let the nav wrap instead of overflowing the phone screen */
     ' header:has(#smcart-tab.innav:not(.pin)){flex-wrap:wrap;gap:8px 0;}header nav:has(#smcart-tab.innav:not(.pin)){display:inline-flex;flex-wrap:wrap;align-items:center;row-gap:8px;}',
     ' header nav:has(#smcart-tab.innav:not(.pin)) a{margin-left:0;margin-right:16px;}#smcart-tab.innav:not(.pin)[role]{margin-left:0;}',
     /* homepage stacks logo over a scrolling nav strip: pin the cart on the logo line so it can never scroll away */
-    ' #smcart-tab.innav.pin[role]{position:fixed;top:14px;right:16px;left:auto;margin:0;padding:7px 12px;background:rgba(10,10,12,.94);box-shadow:0 4px 18px rgba(0,0,0,.5);backdrop-filter:blur(6px);}',
-    ' #smcart-tab.innav.pin .smcart-label{display:none;}#smcart-tab.innav.pin svg{width:16px;height:16px;}',
+    ' #smcart-tab.innav.pin[role]{position:fixed;top:17px;right:16px;left:auto;margin:0;}',
     ' header nav:has(#smcart-tab.innav.pin){display:block;}}'
   ].join('\n');
 
-  var CART_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2.5 3h3l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6.2"/></svg>';
+  var CART_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>';
 
   var els = {};
 
