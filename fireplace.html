@@ -3,6 +3,9 @@
 <head>
 <meta name="robots" content="noindex, nofollow">
 <script src="js/gate.js"></script>
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/fox-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/fox-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/fox-180.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fireplace | Cozy Ambience Machine VST3/AU Plugin</title>
@@ -24,6 +27,10 @@
   h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
     background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(255,122,47,.28); animation:float 7s ease-in-out infinite; }
+  .videobox video { display:block; width:100%; height:auto; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
   .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
     background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(255,140,66,.26); transition:transform .15s; }
@@ -52,7 +59,7 @@
    "operatingSystem": "macOS",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Fireplace is a cozy ambience layer plugin (VST3 and AU for macOS). Four synthesized rooms of atmosphere with music-aware ducking, tone and distance controls. By Sebastian Macan.",
+   "description": "Fireplace is a cozy ambience layer plugin (VST3 and AU for macOS). Four rooms of atmosphere (three synthesized, one real forest rain recording) with music-aware ducking, tone and distance controls. By Sebastian Macan.",
    "url": "https://sebastianmacan.com/fireplace.html",
    "offers": {
     "@type": "Offer",
@@ -130,20 +137,19 @@
     <div class="kind">The Cozy Ambience Machine</div>
     <h1>FIREPLACE</h1>
     <p class="tag">A living room for your lofi beat.</p>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/fireplace.png?v=1.3"><source src="img/video/fireplace_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
     <div class="cta">
-      <a class="dl" href="downloads/Fireplace-v1.3-macOS.pkg">Download Fireplace</a>
+      <a class="dl" href="downloads/Fireplace-v1.3-macOS.pkg">Download Fireplace Free</a>
       <div class="meta">v1.3 &middot; VST3 + AU effect &middot; macOS</div>
     </div>
   </section>
 
   <h2>What Fireplace does</h2>
-  <p>Fireplace puts a room around your music. Drop it on your master or a bus and it lays living atmosphere UNDER the beat: a crackling fire, rain on a window, a dusty attic record player, an old tape machine room. It is not a noise loop. Everything is generated live, it never repeats, and it listens to your music so it can get out of the way.</p>
-
-  <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/fireplace.png"><source src="img/video/fireplace_ui_loop.mp4" type="video/mp4"></video></div>
+  <p>Fireplace puts a room around your music. Drop it on your master or a bus and it lays living atmosphere UNDER the beat: a crackling fire, rain on a window, a dusty attic record player, an old tape machine room. It is not a noise loop. The fire, the attic and the tape room are generated live and never repeat. The rain is a real forest downpour Sebastian recorded himself, played back in random windows with slow crossfades so it never loops either. And the whole thing listens to your music so it can get out of the way.</p>
 
   <h2>Pick your room</h2>
   <div class="bot"><b>FIREPLACE.</b> The classic. Warm low roar, snapping crackle bursts, embers fizzing up the chimney. The fire in the window actually burns, and it burns brighter as you turn it up.</div>
-  <div class="bot"><b>RAIN ON WINDOW.</b> Steady rain bed, droplets pinging the glass, distant rumble. The city outside the window is having a worse night than you.</div>
+  <div class="bot"><b>RAIN ON WINDOW.</b> A real forest rainstorm, recorded by Sebastian in 24-bit. Not synthesized, not a two-second loop: the plugin drifts through the recording in random windows with slow crossfades, so it plays for hours without repeating. The city outside the window is having a worse night than you.</div>
   <div class="bot"><b>VINYL ATTIC.</b> A dusty record spinning in the corner: needle hiss, dust ticks, turntable rumble. Instant "found this beat in a crate" energy.</div>
   <div class="bot"><b>TAPE ROOM.</b> The machine room: tape hiss with a slow wow drift, faint mains hum, blinking meters. For beats that want to sound like they were left running overnight.</div>
 
@@ -155,14 +161,22 @@
   <div class="knob"><b>OUT.</b> Output trim, plus a true bypass button.</div>
 
   <h2>Why it beats a noise sample</h2>
-  <p>A crackle sample loops. You hear the loop, your listeners hear the loop, and it sits ON TOP of your mix fighting the drums. Fireplace never repeats because nothing is recorded, and the DUCK knob keeps the atmosphere underneath the music where it belongs. That is the difference between an ambience layer and a WAV file.</p>
+  <p>A crackle sample loops. You hear the loop, your listeners hear the loop, and it sits ON TOP of your mix fighting the drums. Fireplace never repeats: three rooms are generated live from scratch, and the rain room plays a long real recording in shuffled windows. The DUCK knob keeps the atmosphere underneath the music where it belongs. That is the difference between an ambience layer and a WAV file.</p>
 
-  <h2>Is it really free right now?</h2>
-  <p>Yes. Enter your email and the download starts right away. Full version, all four rooms, no locked knobs, no trial timer.</p>
+  <h2>Common questions</h2>
+  <div class="knob"><b>Is Fireplace really free?</b> Yes. Enter your email and the download starts right away. Full version, all four rooms, no locked knobs, no trial timer.</div>
+  <div class="knob"><b>Where does the rain come from?</b> Sebastian recorded it in a forest during a real storm. It ships inside the plugin, so the download is bigger than our other effects (about 28 MB). Worth it.</div>
+  <div class="knob"><b>Is there a Windows version of Fireplace?</b> Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</div>
+
+  <div class="cta">
+    <a class="dl" href="downloads/Fireplace-v1.3-macOS.pkg">Download Fireplace Free</a>
+  </div>
 
   <footer>
-    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@aluetion.com">hello@aluetion.com</a></p>
+    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@sebastianmacan.com">hello@sebastianmacan.com</a></p>
   </footer>
 </div>
+<script src="js/cart.js" defer></script>
+<script src="js/email-gate.js" defer></script>
 </body>
 </html>
