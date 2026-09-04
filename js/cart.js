@@ -128,23 +128,21 @@
     ' box-shadow:0 4px 18px var(--shadow,rgba(123,92,255,.3));}',
     '.cartbtn.added{border-color:#39e6d0;color:#39e6d0;}',
     '@media (max-width:640px){#smcart-tab{top:10px;left:10px;padding:8px 12px;}}',
-    /* in-nav variant 6: bare shopping-bag icon, no border, no word; candy count badge on the corner */
-    'header nav:has(#smcart-tab.innav){display:inline-flex;align-items:center;flex-wrap:nowrap;}',
-    '#smcart-tab.innav,#smcart-tab.innav[role]{position:relative;top:auto;left:auto;display:inline-flex;align-items:center;justify-content:center;margin-left:22px;',
-    ' width:28px;height:28px;padding:0;border:0;border-radius:0;box-shadow:none;background:transparent;color:#f2f2f4;vertical-align:middle;',
-    ' transition:transform .15s ease,color .15s ease;}',
-    '#smcart-tab.innav:hover{transform:translateY(-1px);color:#fff;border-color:transparent;}',
-    '#smcart-tab.innav svg{width:20px;height:20px;}',
-    '#smcart-tab.innav .smcart-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}',
-    '#smcart-tab.innav #smcart-badge{position:absolute;top:-5px;right:-8px;min-width:16px;height:16px;font-size:10px;padding:0 4px;box-shadow:0 0 0 2px #0a0a0c;}',
+    /* in-nav FINAL: plain text "Cart" link, styled exactly like the other nav links; candy count badge only when non-empty */
+    '#smcart-tab.innav,#smcart-tab.innav[role]{position:relative;top:auto;left:auto;display:inline;margin-left:22px;padding:0;border:0;border-radius:0;box-shadow:none;background:transparent;',
+    ' color:#8a8a94;font:inherit;font-size:14px;font-weight:400;letter-spacing:0;text-transform:none;vertical-align:baseline;transition:color .15s ease;}',
+    '#smcart-tab.innav:hover{color:#f2f2f4;transform:none;border-color:transparent;}',
+    '#smcart-tab.innav svg{display:none;}',
+    '#smcart-tab.innav .smcart-label{position:static;width:auto;height:auto;overflow:visible;clip:auto;}',
+    '#smcart-tab.innav #smcart-badge{display:none;position:relative;top:-1px;margin-left:5px;min-width:16px;height:16px;font-size:10px;padding:0 4px;vertical-align:middle;}',
+    '#smcart-tab.innav #smcart-badge.on{display:inline-flex;}',
     /* mobile: header stacks logo over a scrolling nav strip; pin the cart top-right of the header so it is never scrolled away */
-    '@media (max-width:640px){#smcart-tab.innav[role]{margin-left:14px;}',
+    '@media (max-width:640px){#smcart-tab.innav[role]{margin-left:0;margin-right:16px;}',
     /* single-row sub-page headers: let the nav wrap instead of overflowing the phone screen */
     ' header:has(#smcart-tab.innav:not(.pin)){flex-wrap:wrap;gap:8px 0;}header nav:has(#smcart-tab.innav:not(.pin)){display:inline-flex;flex-wrap:wrap;align-items:center;row-gap:8px;}',
     ' header nav:has(#smcart-tab.innav:not(.pin)) a{margin-left:0;margin-right:16px;}#smcart-tab.innav:not(.pin)[role]{margin-left:0;}',
     /* homepage stacks logo over a scrolling nav strip: pin the cart on the logo line so it can never scroll away */
-    ' #smcart-tab.innav.pin[role]{position:fixed;top:17px;right:16px;left:auto;margin:0;}',
-    ' header nav:has(#smcart-tab.innav.pin){display:block;}}'
+    ' #smcart-tab.innav.pin[role]{margin:0 10px;display:inline-block;}}'
   ].join('\n');
 
   var CART_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>';
