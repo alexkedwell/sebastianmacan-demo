@@ -11,7 +11,7 @@ ITEMS = {
     "Magician":("Chord & Melody Generator", "Hit songs on tap. 20 genres.", 39, "magician.html","downloads/Magician-v1.5.1-macOS.pkg"),
     "Jelly":   ("Wobble Machine", "Make everything jiggle.", 15, "jelly.html",  "downloads/Jelly-v1.0-macOS.pkg"),
     "Warble":  ("Drunk Songbird Pitch Wobbler", "Make any sound sing like a weird little bird.", 15, "warble.html", "downloads/Warble-v1.3.4-macOS.pkg"),
-    "Fireplace": ("Ambience Machine", "Real crackling rooms under your beat. Fire, rain, vinyl.", 15, "fireplace.html", "downloads/Fireplace-v1.1-macOS.pkg"),
+    "Fireplace": ("Cozy Ambience Machine", "Crackling fire, real forest rain, vinyl attic, tape room. Ducks under your beat.", 15, "fireplace.html", "downloads/Fireplace-v1.3-macOS.pkg"),
     "Halo":    ("One-Knob Mastering", "Drop it on your master. Turn LIFT until the halo closes.", 29, "halo.html", "downloads/Halo-v1.2-macOS.pkg"),
     "Hit Chords 500":  ("MIDI Chord Pack", "500 progressions built for hooks, every key covered.", 20, None, "downloads/HitChords500-SebastianMacan.zip"),
     "Club Chords 240": ("MIDI Chord Pack", "240 progressions for the floor, every key covered.", 15, None, "downloads/ClubChords240-SebastianMacan.zip"),
@@ -48,20 +48,20 @@ BASKETS = [
         "big_dl": ("Download all 7 modes", "downloads/AllModes336-SebastianMacan.zip"),
     },
     {
-        "file": "basket-lofi.html", "cart_id": "lofibasket", "title": "LOFI BASKET", "price": 25, "img": "img/bundles/lofi_bundle.png",
+        "file": "basket-lofi.html", "cart_id": "lofibasket", "title": "LOFI BASKET", "price": 30, "img": "img/bundles/lofi_bundle.png",
         "g1": "#f5a623", "g2": "#2bb59a",
-        "tag": "The bedroom lofi starter kit. Subtle tape and a weird little songbird.",
-        "desc": "Reels puts your keys on beautiful old tape. Warble makes them sing like a weird little bird. The bedroom lofi mood in two plugins.",
-        "items": ["Reels", "Warble"],
+        "tag": "The complete lofi mood. A crackling room, subtle tape and a weird little songbird.",
+        "desc": "Fireplace lays a living room of atmosphere under the beat. Reels puts your keys on beautiful old tape. Warble makes them sing like a weird little bird. The bedroom lofi mood in three plugins.",
+        "items": ["Fireplace", "Reels", "Warble"],
         "meta": "2 plugins · VST3 + AU · macOS",
         "big_dl": ("Download the whole basket", "downloads/LofiBundle-SebastianMacan.zip"),
     },
     {
-        "file": "basket-lofi-mastering.html", "cart_id": "lofimastering", "title": "LOFI BASKET + MASTERING", "price": 39, "img": "img/bundles/lofi_mastering_bundle.png",
+        "file": "basket-lofi-mastering.html", "cart_id": "lofimastering", "title": "LOFI BASKET + MASTERING", "price": 49, "img": "img/bundles/lofi_mastering_bundle.png",
         "g1": "#f5a623", "g2": "#ffd47e",
         "tag": "Make the beat, then master the beat. Everything lofi in one basket.",
-        "desc": "The whole Lofi Basket, Reels and Warble, plus Halo to finish the job. Drop Halo on your master, pick the Club target to really make your lofi bounce, and turn LIFT until the halo closes.",
-        "items": ["Reels", "Warble", "Halo"],
+        "desc": "The whole Lofi Basket, Fireplace, Reels and Warble, plus Halo to finish the job. Drop Halo on your master, pick the Club target to really make your lofi bounce, and turn LIFT until the halo closes.",
+        "items": ["Fireplace", "Reels", "Warble", "Halo"],
         "meta": "3 plugins · VST3 + AU · macOS",
         "big_dl": ("Download the whole basket", "downloads/LofiMasteringBundle-SebastianMacan.zip"),
     },
@@ -106,6 +106,11 @@ def page(b):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{b["title"].title()} | Sebastian Macan</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/fox-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/fox-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/fox-180.png">
+<meta name="theme-color" content="#000000">
 <meta name="description" content="{b["desc"]}">
 <meta name="robots" content="index,follow">
 <style>
