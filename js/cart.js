@@ -22,7 +22,7 @@
   'use strict';
 
   var PADDLE_ENV = 'production';       // 'sandbox' while testing
-  var PADDLE_CLIENT_TOKEN = '';        // TODO: paste Paddle client-side token before launch
+  var PADDLE_CLIENT_TOKEN = 'live_cdfa8413fc96d7fac44e0f498d0';
 
   var CATALOG = {
     /* plugins */
@@ -31,6 +31,7 @@
     jelly:         { name: 'Jelly',                  cents: 1500, priceId: 'pri_01m1gntsq26gagfdqahmz3thdk' },
     warble:        { name: 'Warble',                 cents: 1500, priceId: 'pri_01m1gntt0z0mpgfr059dve73fj' },
     reels:         { name: 'Reels',                  cents: 1500, priceId: 'pri_01m1gnswg636185tfrqxdgyaqr' },
+    fireplace:     { name: 'Fireplace',              cents: 1500, priceId: 'pri_01m1nckxvaekbaccghkvvh4zva' },
     halo:          { name: 'Halo',                   cents: 2900, priceId: 'pri_01m1gnswspxareqhrervwre5a3' },
     gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
     /* MIDI chord packs */
@@ -48,8 +49,8 @@
     /* bundles / baskets */
     allmodes:      { name: 'All 7 Modes Basket',     cents: 1200, priceId: 'pri_01m1gnszy7hgdp0xw9gfyqe7ha' },
     midimega:      { name: 'MIDI Mega Basket',       cents: 4900, priceId: 'pri_01m09n48fjhgmpb2hxcmr2kyf0' },
-    lofibasket:    { name: 'Lofi Basket',            cents: 2500, priceId: 'pri_01m1gnttabk978z0hhy3nfa0nh' },
-    lofimastering: { name: 'Lofi Basket + Mastering', cents: 3900, priceId: 'pri_01m1gnttn6knzethpg4j3a6hrd' },
+    lofibasket:    { name: 'Lofi Basket',            cents: 3000, priceId: 'pri_01m1nckxzp0m01qh26zs7qq99t' },
+    lofimastering: { name: 'Lofi Basket + Mastering', cents: 4900, priceId: 'pri_01m1nckyery0c9sqt2m971y8zb' },
     hitmakercomplete: { name: 'Hitmaker Chords - Complete Series', cents: 3000, priceId: 'pri_01m1gnttz53wm3x06bvhhrtcmq' }
   };
 
@@ -127,8 +128,23 @@
     ' box-shadow:0 4px 18px var(--shadow,rgba(123,92,255,.3));}',
     '.cartbtn.added{border-color:#39e6d0;color:#39e6d0;}',
     '@media (max-width:640px){#smcart-tab{top:10px;left:10px;padding:8px 12px;}}',
-    '#smcart-tab.innav{position:static;display:inline-flex;margin-left:6px;padding:5px 12px;vertical-align:middle;}',
-    '#smcart-tab.innav svg{width:15px;height:15px;}'
+    /* in-nav variant B: icon-only, candy count badge on the corner. nav becomes a flex row so the circle centres on the text */
+    'header nav:has(#smcart-tab.innav){display:inline-flex;align-items:center;flex-wrap:nowrap;}',
+    '#smcart-tab.innav,#smcart-tab.innav[role]{position:relative;top:auto;left:auto;display:inline-flex;align-items:center;justify-content:center;margin-left:22px;',
+    ' width:36px;height:36px;padding:0;border-radius:999px;border:0;box-shadow:none;background:rgba(255,255,255,.04);',
+    ' color:#f2f2f4;vertical-align:middle;transition:background .15s ease,transform .15s ease;}',
+    '#smcart-tab.innav:hover{background:rgba(255,255,255,.09);border-color:transparent;transform:none;}',
+    '#smcart-tab.innav svg{width:18px;height:18px;stroke-width:2;}',
+    '#smcart-tab.innav .smcart-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}',
+    '#smcart-tab.innav #smcart-badge{position:absolute;top:-4px;right:-5px;min-width:18px;height:18px;font-size:10.5px;padding:0 5px;box-shadow:0 0 0 2px #0a0a0c;}',
+    /* mobile: header stacks logo over a scrolling nav strip; pin the cart top-right of the header so it is never scrolled away */
+    '@media (max-width:640px){#smcart-tab.innav[role]{margin-left:12px;width:32px;height:32px;}#smcart-tab.innav svg{width:16px;height:16px;}',
+    /* single-row sub-page headers: let the nav wrap instead of overflowing the phone screen */
+    ' header:has(#smcart-tab.innav:not(.pin)){flex-wrap:wrap;gap:8px 0;}header nav:has(#smcart-tab.innav:not(.pin)){display:inline-flex;flex-wrap:wrap;align-items:center;row-gap:8px;}',
+    ' header nav:has(#smcart-tab.innav:not(.pin)) a{margin-left:0;margin-right:16px;}#smcart-tab.innav:not(.pin)[role]{margin-left:0;}',
+    /* homepage stacks logo over a scrolling nav strip: pin the cart on the logo line so it can never scroll away */
+    ' #smcart-tab.innav.pin[role]{position:fixed;top:14px;right:16px;left:auto;margin:0;width:34px;height:34px;background:rgba(20,20,24,.92);box-shadow:0 4px 18px rgba(0,0,0,.5);backdrop-filter:blur(6px);}',
+    ' header nav:has(#smcart-tab.innav.pin){display:block;}}'
   ].join('\n');
 
   var CART_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2.5 3h3l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6.2"/></svg>';
@@ -145,11 +161,21 @@
     tab.setAttribute('role', 'button');
     tab.setAttribute('tabindex', '0');
     tab.setAttribute('aria-label', 'Open cart');
-    tab.innerHTML = CART_SVG + '<span>Cart</span><span id="smcart-badge">0</span>';
+    tab.innerHTML = CART_SVG + '<span class="smcart-label">Cart</span><span id="smcart-badge">0</span>';
     /* Preferred home: inside the header nav, right after the last link
        (next to "Bundles"). Fallback: fixed pill top-left. */
     var nav = document.querySelector('header nav, nav');
-    if (nav) { tab.classList.add('innav'); nav.appendChild(tab); }
+    if (nav) {
+      tab.classList.add('innav');
+      // stacked header (logo above nav) = homepage layout; pin the cart there on phones
+      var hdr = nav.closest('header');
+      if (hdr && getComputedStyle(hdr).flexDirection === 'column') tab.classList.add('pin');
+      nav.appendChild(tab);
+      window.addEventListener('resize', function () {
+        if (!hdr) return;
+        tab.classList.toggle('pin', getComputedStyle(hdr).flexDirection === 'column');
+      });
+    }
     else { document.body.appendChild(tab); }
 
     var overlay = document.createElement('div');
