@@ -5,10 +5,15 @@
 <script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Halo | Free Mastering Plugin VST3/AU</title>
-<meta name="description" content="Halo is a free mastering plugin with built-in LUFS metering (VST3 and AU for macOS). Turn LIFT until the halo closes and your track is loud, warm and ready. By Sebastian Macan.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/fox-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/fox-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/fox-180.png">
+<meta name="theme-color" content="#000000">
+<title>Halo | One-Knob Mastering Plugin VST3/AU</title>
+<meta name="description" content="Halo is a one-knob mastering plugin with a built-in verified LUFS meter (VST3 and AU for macOS). Turn LIFT until the halo closes and your track is loud, warm and ready. By Sebastian Macan.">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ffd700; --g2:#fff3b0; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#fbbf24; --g2:#fef3c7; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -30,7 +35,7 @@
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
   .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
-    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(255,215,0,.26); transition:transform .15s; }
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(251,191,36,.26); transition:transform .15s; }
   .dl:hover { transform:translateY(-2px) scale(1.02); }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
@@ -56,7 +61,7 @@
    "operatingSystem": "macOS",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Halo is a free mastering plugin (VST3 and AU for macOS). Turn LIFT until the halo closes and your track is loud, warm and ready. By Sebastian Macan.",
+   "description": "Halo is a one-knob mastering plugin with a built-in verified LUFS meter (VST3 and AU for macOS). Turn LIFT until the halo closes and your track is loud, warm and ready. By Sebastian Macan.",
    "url": "https://sebastianmacan.com/halo.html",
    "offers": {
     "@type": "Offer",
@@ -86,10 +91,10 @@
     },
     {
      "@type": "Question",
-     "name": "Is Halo really free?",
+     "name": "What do I get for $29?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer."
+      "text": "The full plugin, forever. One-knob mastering, all three targets, the verified LUFS meter and METER ONLY mode. No subscription, no locked knobs."
      }
     },
     {
@@ -136,13 +141,13 @@
     <p class="tag">Drop it on your master channel. Turn LIFT until the halo closes.</p>
     <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/halo.png"><source src="img/video/halo_ui_loop.mp4" type="video/mp4"></video></div>
     <div class="cta">
-      <a class="dl" href="downloads/Halo-v1.2-macOS.pkg">Download Halo Free</a>
+      <a class="dl" href="downloads/Halo-v1.2-macOS.pkg">Download Halo</a>
       <div class="meta">v1.2 &middot; VST3 + AU effect &middot; macOS</div>
     </div>
   </section>
 
   <h2>What Halo does</h2>
-  <p>Halo is mastering with one knob and a golden ring. It lives on your master channel, always the last plugin in the chain. Pick a target, turn LIFT until the halo closes around it, and your track lands loud, glued and streaming-ready with a true-peak limiter on the door.</p>\n\n  <p>It is also a free loudness meter. Halo shows live momentary and short-term LUFS plus true peak, measured to the same BS.1770 broadcast standard Spotify and YouTube use to judge your track, and verified accurate against a reference implementation. Flip on METER ONLY mode and Halo gets out of the way completely: bit-transparent passthrough, meters still running. Keep it on your master and you always know your numbers.</p>
+  <p>Halo is mastering with one knob and a golden ring. It lives on your master channel, always the last plugin in the chain. Pick a target, turn LIFT until the halo closes around it, and your track lands loud, glued and streaming-ready with a true-peak limiter on the door.</p>\n\n  <p>It is also a verified loudness meter. Halo shows live momentary and short-term LUFS plus true peak, measured to the same BS.1770 broadcast standard Spotify and YouTube use to judge your track, and verified accurate against a reference implementation. Flip on METER ONLY mode and Halo gets out of the way completely: bit-transparent passthrough, meters still running. Keep it on your master and you always know your numbers.</p>
 
   <h2>Get started in 3 steps</h2>
   <div class="step"><b>1. Put Halo last on your master.</b> It goes at the very end of the chain, after everything else.</div>
@@ -166,13 +171,13 @@
 
   <h2>Common questions</h2>
   <div class="knob"><b>Can I really master a track with one knob?</b> For streaming-ready loudness and polish, yes. Halo chains the essentials of a mastering rack, gain staging, glue, limiting, behind one LIFT control with a visual halo that closes as you approach the sweet spot. Turn until it closes, bounce, upload.</div>
-  <div class="knob"><b>Is Halo really free?</b> Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer.</div>
+  <div class="knob"><b>What do I get for $29?</b> The full plugin, forever. One-knob mastering, all three targets, the verified LUFS meter and METER ONLY mode. No subscription, no locked knobs.</div>
   <div class="knob"><b>What DAWs does Halo work in?</b> Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically.</div>
   <div class="knob"><b>Is there a Windows version of Halo?</b> Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</div>
   <div class="knob"><b>How do I install Halo?</b> Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin.</div>
 
   <div class="cta">
-    <a class="dl" href="downloads/Halo-v1.2-macOS.pkg">Download Halo Free</a>
+    <a class="dl" href="downloads/Halo-v1.2-macOS.pkg">Download Halo</a>
     <div class="meta">Email required &middot; instant download</div>
   </div>
 
@@ -181,6 +186,7 @@
     <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
   </footer>
 </div>
+<script src="js/cart.js?v=t2" defer></script>
 <script src="js/email-gate.js" defer></script>
 </body>
 </html>

@@ -5,8 +5,13 @@
 <script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sebastian Macan - Audio Plugins | 11 Plugins + 10 MIDI Packs</title>
-<meta name="description" content="Creative audio plugins (VST3/AU, macOS) + 796 MIDI chord progressions incl. the Modal Series: Biome, Chordsmith, Jelly, Orbit, Reels, Warble.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/fox-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/fox-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/fox-180.png">
+<meta name="theme-color" content="#000000">
+<title>Sebastian Macan - Audio Plugins | 9 Plugins + 10 MIDI Packs</title>
+<meta name="description" content="Creative audio plugins (VST3/AU, macOS) + 3788 MIDI chord progressions incl. Hitmaker Chords and the Modal Series: Biome, Chordsmith, Fireplace, Halo, Gloss, Jelly, Orbit, Reels, Warble.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -53,21 +58,14 @@
   .jelly  { --g1:#ff7ab8; --g2:#8fe8c0; --glow:#ff7ab8; --shadow:rgba(255,122,184,.26); }
   .fizz   { --g1:#ffb347; --g2:#c8f05a; --glow:#ffb347; --shadow:rgba(255,179,71,.26); }
   .wizard { --g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26); }
-.rustybot { --g1:#e8722c; --g2:#ffd9a0; --glow:#e8722c; --shadow:rgba(232,114,44,.26); }
-  .ghost { --g1:#8b5cf6; --g2:#c4b5fd; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
-  .mayday { --g1:#ef4444; --g2:#fbbf24; --glow:#ef4444; --shadow:rgba(239,68,68,.26); }
-  .fauna { --g1:#22c55e; --g2:#86efac; --glow:#22c55e; --shadow:rgba(34,197,94,.26); }
-  .gloss { --g1:#f0abfc; --g2:#818cf8; --glow:#f0abfc; --shadow:rgba(240,171,252,.26); }
-  .halo { --g1:#fbbf24; --g2:#fef3c7; --glow:#fbbf24; --shadow:rgba(251,191,36,.26); }
-.hearth { --g1:#ff8c2e; --g2:#ffd75e; --glow:#ff8c2e; --shadow:rgba(255,140,46,.26); }
-.chipper { --g1:#58a04a; --g2:#8fdd58; --glow:#8fdd58; --shadow:rgba(143,221,88,.26); }
-.bloom { --g1:#6ee7d8; --g2:#c4b5fd; --glow:#6ee7d8; --shadow:rgba(110,231,216,.26); }
-.gremlin { --g1:#7dff3d; --g2:#b8ff7a; --glow:#7dff3d; --shadow:rgba(125,255,61,.26); }
-.wave { --g1:#2e9ec4; --g2:#58c8e8; --glow:#58c8e8; --shadow:rgba(88,200,232,.26); }
+  .halo { --g1:#ffd47e; --g2:#fff3d0; --glow:#ffd47e; --shadow:rgba(255,212,126,.26); }
+  .reels { --g1:#e8a05c; --g2:#f5d7a1; --glow:#e8a05c; --shadow:rgba(232,160,92,.26); }
+  .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
+  .gloss { --g1:#8b6bff; --g2:#3df0a8; --glow:#8b6bff; --shadow:rgba(139,107,255,.26); }
   .biome  { --g1:#3ecf6e; --g2:#5ad9d0; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
-  .hitchords { --g1:#f2f2f4; --g2:#8b5cf6; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
-  .clubchords { --g1:#4ad9ff; --g2:#ff4ad9; --glow:#4ad9ff; --shadow:rgba(74,217,255,.26); }
-  .soulchords { --g1:#f5a623; --g2:#c084fc; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
+  .hitchords { --g1:#ff5ca8; --g2:#ffd257; --glow:#ff5ca8; --shadow:rgba(255,92,168,.26); }
+  .clubchords { --g1:#60a5fa; --g2:#8b5cf6; --glow:#60a5fa; --shadow:rgba(96,165,250,.26); }
+  .soulchords { --g1:#ffd45c; --g2:#c8791c; --glow:#ffd45c; --shadow:rgba(255,212,92,.26); }
   .featgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; margin-top:16px; }
   .feat { display:flex; flex-direction:column; border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; text-decoration:none; color:var(--txt); position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .feat:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
@@ -82,14 +80,15 @@
   .cardlink { position:absolute; inset:0; z-index:1; }
   .modecard .dl { position:relative; z-index:2; }
   .modecard h3, .modecard .vibe, .modecard .songs { position:relative; pointer-events:none; }
-  .modecard { border:1px solid var(--line); background:var(--card); border-radius:16px; padding:20px 20px 18px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .modecard { border:1px solid var(--line); background:var(--card); border-radius:16px; padding:20px 20px 18px; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .modecard:hover { transform:translateY(-5px); border-color:var(--g1); box-shadow:0 14px 44px var(--shadow); }
   .modecard h3 { font-size:24px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .modecard .vibe { font-size:12px; color:var(--dim); margin-top:2px; min-height:36px; }
   .modecard .songs { font-size:11px; color:var(--dim); margin-top:6px; font-style:italic; }
-  .modecard .dl { margin-top:12px; padding:9px 18px; font-size:13px; display:block; }
+  .modecard .dl { margin-top:auto; padding:9px 18px; font-size:13px; display:block; }
+.modecard .songs { margin-bottom:12px; }
   .warble { --g1:#2bb59a; --g2:#ff9f43; --glow:#2bb59a; --shadow:rgba(43,181,154,.22); }
-  .ionian { --g1:#ffd84a; --g2:#ff9f1c; --glow:#ffd84a; --shadow:rgba(255,216,74,.22); }
+  .ionian { --g1:#c8ff4a; --g2:#22e5ff; --glow:#c8ff4a; --shadow:rgba(200,255,74,.22); }
   .dorian { --g1:#39e6d0; --g2:#4a90ff; --glow:#39e6d0; --shadow:rgba(57,230,208,.22); }
   .phrygian { --g1:#ff3d5a; --g2:#8b0000; --glow:#ff3d5a; --shadow:rgba(255,61,90,.22); }
   .lydian { --g1:#c084fc; --g2:#7dd8ff; --glow:#c084fc; --shadow:rgba(192,132,252,.22); }
@@ -97,6 +96,16 @@
   .aeolian { --g1:#7b8cff; --g2:#3d4a8f; --glow:#7b8cff; --shadow:rgba(123,140,255,.22); }
   .locrian { --g1:#e8e8f0; --g2:#6b21a8; --glow:#a855f7; --shadow:rgba(168,85,247,.24); }
   .allmodes { --g1:#ff3d5a; --g2:#39e6d0; --glow:#ff3d5a; --shadow:rgba(255,61,90,.24); }
+
+  /* in-the-lab (WIP) card palettes */
+  .chipper { --g1:#58a04a; --g2:#8fdd58; --glow:#8fdd58; --shadow:rgba(143,221,88,.26); }
+  .wave { --g1:#2e9ec4; --g2:#58c8e8; --glow:#58c8e8; --shadow:rgba(88,200,232,.26); }
+  .bloom { --g1:#6ee7d8; --g2:#c4b5fd; --glow:#6ee7d8; --shadow:rgba(110,231,216,.26); }
+  .gremlin { --g1:#7dff3d; --g2:#b8ff7a; --glow:#7dff3d; --shadow:rgba(125,255,61,.26); }
+  .ghost { --g1:#8b5cf6; --g2:#c4b5fd; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
+  .mayday { --g1:#ef4444; --g2:#fbbf24; --glow:#ef4444; --shadow:rgba(239,68,68,.26); }
+  .fauna { --g1:#22c55e; --g2:#86efac; --glow:#22c55e; --shadow:rgba(34,197,94,.26); }
+  .rustybot { --g1:#e8722c; --g2:#ffd9a0; --glow:#e8722c; --shadow:rgba(232,114,44,.26); }
   .bundlegrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; margin-top:16px; }
   .bundle { border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; display:flex; flex-direction:column; }
   .bundle:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
@@ -112,6 +121,8 @@
   .everything-b { --g1:#ff3d5a; --g2:#ffd84a; --glow:#ff3d5a; --shadow:rgba(255,61,90,.28); }
   .midi-b { --g1:#ff5ca8; --g2:#8b5cf6; --glow:#ff5ca8; --shadow:rgba(255,92,168,.28); }
   .lofi-b { --g1:#f5a623; --g2:#2bb59a; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
+  .lofim-b { --g1:#f5a623; --g2:#ffd47e; --glow:#ffd47e; --shadow:rgba(255,212,126,.26); }
+  .modes-b { --g1:#8b5cf6; --g2:#39e6d0; --glow:#8b5cf6; --shadow:rgba(139,92,246,.24); }
   .bundle .dl { display:inline-block; margin-top:14px; padding:12px 22px; border-radius:12px; color:#0a0a0c; font-weight:900; text-decoration:none; align-self:flex-start; }
   a.bundle { text-decoration:none; color:var(--txt); cursor:pointer; }
   .bopen { color:#fff; }
@@ -128,6 +139,9 @@
     footer { flex-direction:column; text-align:center; }
   }
   @media (hover: none) { .dl:hover { transform:none; } }
+
+  .modeshot{margin:10px 0 12px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
+  .modeshot video{display:block;width:100%;height:auto;}
 </style>
 </head>
 <body>
@@ -138,9 +152,9 @@
   </header>
 
   <section class="hero">
-    <div class="badge">11 Plugins + 10 MIDI Packs · VST3 + AU · macOS · Free during launch</div>
-    <h1>A whole <em>candy store</em> of sound. Free.</h1>
-    <p class="sub">Eleven plugins and 796 MIDI chord progressions for producers who crave something unique. Download everything, drop it in your DAW, create something sweet.</p>
+    <div class="badge">9 Plugins + 10 MIDI Packs · VST3 + AU · macOS</div>
+    <h1>A whole <em>candy store</em> of sound.</h1>
+    <p class="sub">Nine plugins and 3788 MIDI chord progressions for producers who crave something unique. Grab a flavor, drop it in your DAW, create something sweet.</p>
   </section>
 
   <div class="sect-title" id="instruments">Instruments</div>
@@ -151,8 +165,9 @@
       <h2>BIOME</h2>
       <p class="tag">Drop a rainforest on your beat.</p>
       <p class="desc">Drag in ANY audio (rainforest, birds, vinyl, a vocal) and Biome granulates it into an evolving texture that ducks musically under whatever you're playing. Your sound, your ecosystem.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/biome.png"><source src="img/video/biome_ui_loop.mp4" type="video/mp4"></video></div>
-      <a class="dl" href="downloads/Biome-v1.2.1-macOS.pkg">Download Biome</a>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/biome.png?v=1.4.0b"><source src="img/video/biome_ui_loop.mp4?v=1.4.0b" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Biome-v1.4.0-macOS.pkg">Download Biome</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="biome">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="biome">Buy Now</span></div>
       <a class="more" href="biome.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
     </div>
@@ -161,36 +176,13 @@
       <div class="kind">Chord &amp; Melody Generator</div>
       <h2>CHORDSMITH</h2>
       <p class="tag">Hit songs on tap. 20 genres.</p>
-      <p class="desc">Sebastian's chord generator (formerly Magician). Pick from 20 genres: Pop, Trap, Jazz, Gospel, Drill, Afrobeats, Future Bass and more. All seven modes from Dorian to Locrian. Smash GENERATE, reroll any chord you dislike, drag the MIDI straight into your DAW.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/magician.png?v=1.7.0e"><source src="img/video/magician_ui_loop.mp4?v=1.7.0e" type="video/mp4"></video></div>
+      <p class="desc">Sebastian's chord generator. Pick from 20 genres: Pop, Trap, Jazz, Gospel, Drill, Afrobeats, Future Bass and more. All seven modes from Dorian to Locrian. Smash GENERATE, reroll any chord you dislike, drag the MIDI straight into your DAW.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chordsmith.png?v=1.7.1g"><source src="img/video/chordsmith_ui_loop.mp4?v=1.7.1g" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Chordsmith-v1.7.1-macOS.pkg">Download Chordsmith</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="magician">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="magician">Buy Now</span></div>
       <a class="more" href="chordsmith.html">See how it works &rarr;</a>
-      <div class="meta">v1.7.0 · VST3 + AU instrument</div>
+      <div class="meta">v1.2 · VST3 + AU instrument</div>
     </div>
-    <div class="card chipper">
-      <span class="new">NEW</span>
-      <div class="kind">Sample Mulcher</div>
-      <h2>MULCH</h2>
-      <p class="tag">Feed it any sample. Get a brand new instrument back.</p>
-      <p class="desc">Drag up to 8 samples into the chipper and it births one new playable instrument out of the whole pile. New in v2.0: held notes sustain forever with a real ADSR, plus a RANDOMIZE dice with reproducible seeds, texture smear, freeze and a chaos macro.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/mulch.png"><source src="img/video/mulch_ui_loop.mp4" type="video/mp4"></video></div>
-      <a class="dl" href="downloads/Mulch-v2.0-macOS.pkg">Download Mulch</a>
-      <a class="more" href="mulch.html">See how it works &rarr;</a>
-      <div class="meta">v2.0 · VST3 + AU instrument</div>
-    </div>
-    <div class="card wave">
-      <span class="new">NEW</span>
-      <div class="kind">Future Bass Chord Machine</div>
-      <h2>TSUNAMI</h2>
-      <p class="tag">One key. One wall of supersaw chords.</p>
-      <p class="desc">Five-note chords, seven detuned saws each, clean sub underneath: 35 oscillators per finger. Pick the flavor (Minor 9 anyone?), grab the big CUTOFF knob, let PUMP bounce it. The ocean swells while you play.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/tsunami.png"><source src="img/video/tsunami_ui_loop.mp4" type="video/mp4"></video></div>
-      <a class="dl" href="downloads/Tsunami-v1.0-macOS.pkg">Download Tsunami</a>
-      <a class="more" href="tsunami.html">See how it works &rarr;</a>
-      <div class="meta">v1.0 · VST3 + AU instrument</div>
-    </div>
-    
-
   </div>
 
   <div class="sect-title" id="effects">Color &amp; Motion FX</div>
@@ -201,9 +193,10 @@
       <div class="kind">3D Auto-Pan</div>
       <h2>ORBIT</h2>
       <p class="tag">Hats that fly around your head.</p>
-      <p class="desc">True 3D auto-pan, not just left-right. Darkening, micro-delay and doppler make sounds physically circle the listener. Tempo-synced, with a live orbit visual. Travis-approved space.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/orbit.png"><source src="img/video/orbit_ui_loop.mp4" type="video/mp4"></video></div>
+      <p class="desc">True 3D auto-pan, not just left-right. Darkening, micro-delay and doppler make sounds physically circle the listener. Tempo-synced, with a live orbit visual. Pure rage-trap space.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/orbit.png?v=1.0"><source src="img/video/orbit_ui_loop.mp4?v=1.0" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Orbit-v1.0-macOS.pkg">Download Orbit</a>
+      <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
       <a class="more" href="orbit.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
     </div>
@@ -213,8 +206,9 @@
       <h2>JELLY</h2>
       <p class="tag">Make everything jiggle.</p>
       <p class="desc">One huge wobbling jelly-blob knob drives filter, tremolo, pitch jiggle and pan wiggle from a single tempo-synced LFO. Turn BOUNCE up and it wobbles like a dropped ball of slime.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/jelly.png"><source src="img/video/jelly_ui_loop.mp4" type="video/mp4"></video></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/jelly.png?v=1.0"><source src="img/video/jelly_ui_loop.mp4?v=1.0" type="video/mp4"></video></div>
       <a class="dl" href="downloads/Jelly-v1.0-macOS.pkg">Download Jelly</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="jelly">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="jelly">Buy Now</span></div>
       <a class="more" href="jelly.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
     </div>
@@ -224,13 +218,93 @@
       <h2>WARBLE</h2>
       <p class="tag">Make any sound sing like a weird little bird.</p>
       <p class="desc">Tempo-synced pitch wobble, random chirp flicks and a beak filter that opens with the bend. Smash HATCH for a new bird every time, seeds bring them back.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/warble.png"><source src="img/video/warble_ui_loop.mp4" type="video/mp4"></video></div>
-      <a class="dl" href="downloads/Warble-v1.3-macOS.pkg">Download Warble</a>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/warble.png?v=1.3"><source src="img/video/warble_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Warble-v1.3.4-macOS.pkg">Download Warble</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="warble">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="warble">Buy Now</span></div>
       <a class="more" href="warble.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
     </div>
-    <div class="card bloom">
+
+  </div>
+
+  <div class="sect-title" id="studio">Studio Tools</div>
+  <div class="grid">
+    <div class="card fireplace">
       <span class="new">NEW</span>
+      <div class="kind">Cozy Ambience Machine</div>
+      <h2 style="background:linear-gradient(135deg,#ff7a2f,#ffd27a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">FIREPLACE</h2>
+      <p class="tag">A living room of atmosphere under your beat.</p>
+      <p class="desc">Crackling fire, real forest rain, a dusty vinyl attic and an old tape room. Music-aware ducking tucks it under every hit. The fire in the window actually burns.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/fireplace.png?v=1.3"><source src="img/video/fireplace_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
+      <a class="dl" style="background:linear-gradient(135deg,#ff7a2f,#ffd27a);box-shadow:0 6px 28px rgba(255,122,47,.28);" href="downloads/Fireplace-v1.3-macOS.pkg">Download Fireplace</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="fireplace">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="fireplace">Buy Now</span></div>
+      <a class="more" href="fireplace.html">See how it works &rarr;</a>
+      <div class="meta">v1.3 · VST3 + AU effect</div>
+    </div>
+    <div class="card reels">
+      <span class="new">NEW</span>
+      <div class="kind">Tape Machine</div>
+      <h2 style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">REELS</h2>
+      <p class="tag">A real tape machine, in the box.</p>
+      <p class="desc">Asymmetric tape saturation, head bump, wow &amp; flutter, age and hiss. Three machines from pristine studio 15ips to a 30-year-old cassette. Watch the reels actually spin.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/reels.png?v=2.0.1"><source src="img/video/reels_ui_loop.mp4?v=2.0.1" type="video/mp4"></video></div>
+      <a class="dl" style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);box-shadow:0 6px 28px rgba(232,160,92,.26);" href="downloads/Reels-v2.0.1-macOS.pkg">Download Reels</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="reels">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="reels">Buy Now</span></div>
+      <a class="more" href="reels.html">See how it works &rarr;</a>
+      <div class="meta">v2.0.1 · VST3 + AU effect</div>
+    </div>
+    <div class="card halo">
+      <span class="new">NEW</span>
+      <div class="kind">One-Knob Mastering</div>
+      <h2 style="background:linear-gradient(135deg,#ffd47e,#fff3d0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">HALO</h2>
+      <p class="tag">Drop it on your master. Turn LIFT until the halo closes.</p>
+      <p class="desc">Pick Streaming, Club or Podcast, then turn one knob until the golden ring closes. Loud, glued, streaming-ready. Built-in LUFS meter, verified accurate, with a bit-transparent METER ONLY mode.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/halo.png?v=1.2"><source src="img/video/halo_ui_loop.mp4?v=1.2" type="video/mp4"></video></div>
+      <a class="dl" style="background:linear-gradient(135deg,#fbbf24,#fef3c7);box-shadow:0 6px 28px rgba(251,191,36,.26);" href="downloads/Halo-v1.2-macOS.pkg">Download Halo</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="halo">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="halo">Buy Now</span></div>
+      <a class="more" href="halo.html">See how it works &rarr;</a>
+      <div class="meta">v1.2 · VST3 + AU effect</div>
+    
+    </div>
+    <div class="card gloss">
+      <span class="new">NEW</span>
+      <div class="kind">Instant Mix Polish</div>
+      <h2 style="background:linear-gradient(135deg,#8b6bff,#3df0a8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GLOSS</h2>
+      <p class="tag">Mixes that sit right. Four knobs.</p>
+      <p class="desc">CLEAN scoops the mud, PUNCH tightens the hit, GLOW adds expensive top end, WIDTH opens the stereo. Drop it on any track and turn until it shines.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gloss.png?v=1.0"><source src="img/video/gloss_ui_loop.mp4?v=1.0" type="video/mp4"></video></div>
+      <a class="dl" style="background:linear-gradient(135deg,#8b6bff,#3df0a8);box-shadow:0 6px 28px rgba(139,107,255,.26);" href="downloads/Gloss-v1.0-macOS.pkg">Download Gloss</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="gloss">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="gloss">Buy Now</span></div>
+      <a class="more" href="gloss.html">See how it works &rarr;</a>
+      <div class="meta">v1.0 · VST3 + AU effect</div>
+    </div>
+  </div>
+  <div class="sect-title" id="lab">In the Lab <span style="font-size:.6em;opacity:.6;font-weight:500">(not released - demo only)</span></div>
+  <div class="grid">
+<div class="card chipper">
+      <span class="new" style="background:#666">LAB</span>
+      <div class="kind">Sample Mulcher</div>
+      <h2>MULCH</h2>
+      <p class="tag">Feed it any sample. Get a brand new instrument back.</p>
+      <p class="desc">Drag up to 8 samples into the chipper and it births one new playable instrument out of the whole pile. New in v2.0: held notes sustain forever with a real ADSR, plus a RANDOMIZE dice with reproducible seeds, texture smear, freeze and a chaos macro.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/mulch.png"><source src="img/video/mulch_ui_loop.mp4" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Mulch-v2.0-macOS.pkg">Download Mulch</a>
+      <a class="more" href="mulch.html">See how it works &rarr;</a>
+      <div class="meta">v2.0 · VST3 + AU instrument</div>
+    </div>
+<div class="card wave">
+      <span class="new" style="background:#666">LAB</span>
+      <div class="kind">Future Bass Chord Machine</div>
+      <h2>TSUNAMI</h2>
+      <p class="tag">One key. One wall of supersaw chords.</p>
+      <p class="desc">Five-note chords, seven detuned saws each, clean sub underneath: 35 oscillators per finger. Pick the flavor (Minor 9 anyone?), grab the big CUTOFF knob, let PUMP bounce it. The ocean swells while you play.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/tsunami.png"><source src="img/video/tsunami_ui_loop.mp4" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Tsunami-v1.0-macOS.pkg">Download Tsunami</a>
+      <a class="more" href="tsunami.html">See how it works &rarr;</a>
+      <div class="meta">v1.0 · VST3 + AU instrument</div>
+    </div>
+<div class="card bloom">
+      <span class="new" style="background:#666">LAB</span>
       <div class="kind">Melodic House Texture</div>
       <h2>BLOOM</h2>
       <p class="tag">Play a plain chord. Get a festival sunrise.</p>
@@ -239,8 +313,8 @@
       <a class="more" href="bloom.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
     </div>
-    <div class="card gremlin">
-      <span class="new">NEW</span>
+<div class="card gremlin">
+      <span class="new" style="background:#666">LAB</span>
       <div class="kind">Stutter Glitch Machine</div>
       <h2>GREMLIN</h2>
       <p class="tag">Controlled demolition for your drums.</p>
@@ -249,39 +323,7 @@
       <a class="more" href="gremlin.html">See how it works &rarr;</a>
       <div class="meta">v1.0 · VST3 + AU effect</div>
     </div>
-
-  </div>
-
-  <div class="sect-title" id="studio">Studio Tools</div>
-  <div class="grid">
-    <div class="card reels">
-      <span class="new">NEW</span>
-      <div class="kind">Tape Machine</div>
-      <h2 style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">REELS</h2>
-      <p class="tag">A real tape machine, in the box.</p>
-      <p class="desc">Asymmetric tape saturation, head bump, wow &amp; flutter, age and hiss. Three machines from pristine studio 15ips to a 30-year-old cassette. Watch the reels actually spin.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/reels.png"><source src="img/video/reels_ui_loop.mp4" type="video/mp4"></video></div>
-      <a class="dl" style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);box-shadow:0 6px 28px rgba(232,160,92,.26);" href="downloads/Reels-v2.0.1-macOS.pkg">Download Reels</a>
-      <a class="more" href="reels.html">See how it works &rarr;</a>
-      <div class="meta">v1.0 · VST3 + AU effect</div>
-    </div>
-    <div class="card hearth">
-      <span class="new">NEW</span>
-      <div class="kind">Cozy Ambience Machine</div>
-      <h2>FIREPLACE</h2>
-      <p class="tag">A living room for your lofi beat.</p>
-      <p class="desc">Four rooms of atmosphere under your music: a crackling fireplace, rain on the window, a dusty vinyl attic, an old tape room. It ducks under your beat so it breathes, and the fire actually burns in the plugin window.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/fireplace.png"><source src="img/video/fireplace_ui_loop.mp4" type="video/mp4"></video></div>
-      <a class="dl" href="downloads/Fireplace-v1.3-macOS.pkg">Download Fireplace</a>
-      <a class="more" href="fireplace.html">See how it works &rarr;</a>
-      <div class="meta">v1.0 · VST3 + AU effect</div>
-    </div>
-  </div>
-
-    <div class="sect-title" id="reviewshelf">THE REVIEW SHELF &mdash; AWAITING YOUR VERDICT</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Plugins parked off the main store until they earn their spot back. Test them, judge them, tell us which ones deserve another shot.</p>
-  <div class="grid">
-    <div class="card ghost">
+<div class="card ghost">
       <div class="kind">Granular Texture Machine</div>
       <h2>GHOST</h2>
       <p class="tag">Freeze sound. Then haunt it.</p>
@@ -290,7 +332,7 @@
       <a class="more" href="ghost.html">See how it works &rarr;</a>
       <div class="meta">VST3 + AU &middot; macOS</div>
     </div>
-    <div class="card mayday">
+<div class="card mayday">
       <div class="kind">Riser Generator</div>
       <h2>MAYDAY</h2>
       <p class="tag">Hold a note. Brace for takeoff.</p>
@@ -299,7 +341,7 @@
       <a class="more" href="mayday.html">See how it works &rarr;</a>
       <div class="meta">VST3 + AU &middot; macOS</div>
     </div>
-    <div class="card fauna">
+<div class="card fauna">
       <div class="kind">Creature Voice Synth</div>
       <h2>FAUNA</h2>
       <p class="tag">Play the ocean. Play the sky.</p>
@@ -308,31 +350,8 @@
       <a class="more" href="fauna.html">See how it works &rarr;</a>
       <div class="meta">VST3 + AU &middot; macOS</div>
     </div>
-    <div class="card gloss">
-      <div class="kind">Instant Mix Polish</div>
-      <h2>GLOSS</h2>
-      <p class="tag">Mixes that sit right. Four knobs.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gloss.png?v=1.0"><source src="img/video/gloss_ui_loop.mp4?v=1.0" type="video/mp4"></video></div>
-      <a class="dl" href="downloads/Gloss-v1.0-macOS.pkg">Download Gloss</a>
-      <a class="more" href="gloss.html">See how it works &rarr;</a>
-      <div class="meta">v1.0 &middot; VST3 + AU effect</div>
-    </div>
-    <div class="card halo">
-      <div class="kind">Mastering Finisher</div>
-      <h2>HALO</h2>
-      <p class="tag">Turn LIFT until the halo closes.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/halo.png"><source src="img/video/halo_ui_loop.mp4" type="video/mp4"></video></div>
-      <a class="dl" href="downloads/Halo-v1.2-macOS.pkg">Download Halo</a>
-      <a class="more" href="halo.html">See how it works &rarr;</a>
-      <div class="meta">VST3 + AU &middot; macOS</div>
-    </div>
-  </div>
-
-  <div class="sect-title" id="experimental">EXPERIMENTAL &mdash; FOR CREATIVITY</div>
-  <p style="max-width:720px;margin:-6px auto 22px;text-align:center;color:#b9a9a0;font-size:15px;line-height:1.5;">Weird little machines for $5. Not polished flagships, just sounds you can't get anywhere else. Buy one, break your track in a new way.</p>
-  <div class="grid">
-    <div class="card rustybot">
-      <span class="new">NEW</span>
+<div class="card rustybot">
+      <span class="new" style="background:#666">LAB</span>
       <div class="kind">Robot Voice Machine</div>
       <h2>RUSTY</h2>
       <p class="tag">Eight robots living in one box.</p>
@@ -344,6 +363,7 @@
     </div>
   </div>
 
+
   <div class="sect-title" id="midi">MIDI</div>
   <div class="grid">
     <div class="card" style="--g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26);">
@@ -351,132 +371,168 @@
       <div class="kind">MIDI Chord Pack Series</div>
       <h2>HITMAKER CHORDS</h2>
       <p class="tag">25 packs. 2,472 progressions. Pick your lane.</p>
-      <p class="desc">Hit-researched chords, split into 20 genre packs and 5 mode packs so you only grab the sound you make. Every progression in all 12 keys, named by key and progression. Same research DNA as Chordsmith.</p>
+      <p class="desc">Hit-researched chords split into 20 genre packs and 5 mode packs, so you only grab the sound you make. Every progression in all 12 keys, every clip named with its chords and key. Same research DNA as Chordsmith.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitmaker_poster.jpg?v=1"><source src="img/video/midi/hitmaker_demo.mp4?v=1" type="video/mp4"></video></div>
       <a class="dl" href="midi-packs.html#hitmaker">Browse the 25 Packs</a>
-      <a class="more" href="downloads/midipacks/Hitmaker-Chords-COMPLETE.zip">Download everything &rarr;</a>
-      <div class="meta">2,472 .mid files &middot; works in every DAW</div>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitmakercomplete">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitmakercomplete">Buy Now</span></div>
+      <a class="more" href="midi-packs.html#hitmaker">See all 25 packs &rarr;</a>
     </div>
     <div class="card hitchords">
       <span class="new">NEW</span>
       <div class="kind">MIDI Chord Pack</div>
-      <h2>HIT CHORDS 200+</h2>
+      <h2>HIT CHORDS 500</h2>
       <p class="tag">The progressions behind the hits.</p>
-      <p class="desc">220 chord progressions across 11 genres: Pop, Trap, RnB, EDM, LoFi, Rock, Latin, Cinematic, Country, Gospel/Jazz, K-Pop. Drag-and-drop MIDI with genre-true voicings, 7ths, 9ths and all.</p>
-      <a class="dl" href="downloads/HitChords200-SebastianMacan.zip">Download the Pack</a>
+      <p class="desc">500 chord progressions across 11 genres: Pop, Trap, RnB, EDM, LoFi, Rock, Latin, Cinematic, Country, Gospel/Jazz, K-Pop. Drag-and-drop MIDI with genre-true voicings, 7ths, 9ths and all.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitchords_poster.jpg?v=1"><source src="img/video/midi/hitchords_demo.mp4?v=1" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/HitChords500-SebastianMacan.zip">Download the Pack</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitchords">Buy Now</span></div>
       <a class="more" href="midi-packs.html#hitchords">See what&#39;s inside &rarr;</a>
-      <div class="meta">220 .mid files · works in every DAW</div>
+      <div class="meta">500 .mid files · works in every DAW</div>
     </div>
     <div class="card clubchords">
       <span class="new">NEW</span>
       <div class="kind">MIDI Chord Pack</div>
-      <h2>CLUB CHORDS 120</h2>
+      <h2>CLUB CHORDS 240</h2>
       <p class="tag">Chords for the dancefloor.</p>
-      <p class="desc">120 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum &amp; Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.</p>
-      <a class="dl" href="downloads/ClubChords120-SebastianMacan.zip">Download the Pack</a>
+      <p class="desc">240 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum &amp; Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/clubchords_poster.jpg?v=1"><source src="img/video/midi/clubchords_demo.mp4?v=1" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/ClubChords240-SebastianMacan.zip">Download the Pack</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="clubchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Now</span></div>
       <a class="more" href="midi-packs.html#clubchords">See what&#39;s inside &rarr;</a>
-      <div class="meta">120 .mid files · works in every DAW</div>
+      <div class="meta">240 .mid files · works in every DAW</div>
     </div>
     <div class="card soulchords">
       <span class="new">NEW</span>
       <div class="kind">MIDI Chord Pack</div>
-      <h2>SOUL CHORDS 120</h2>
+      <h2>SOUL CHORDS 240</h2>
       <p class="tag">The rich stuff. 9ths, 11ths, church.</p>
-      <p class="desc">120 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.</p>
-      <a class="dl" href="downloads/SoulChords120-SebastianMacan.zip">Download the Pack</a>
+      <p class="desc">240 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/soulchords_poster.jpg?v=2"><source src="img/video/midi/soulchords_demo.mp4?v=2" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/SoulChords240-SebastianMacan.zip">Download the Pack</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="soulchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="soulchords">Buy Now</span></div>
       <a class="more" href="midi-packs.html#soulchords">See what&#39;s inside &rarr;</a>
-      <div class="meta">120 .mid files · works in every DAW</div>
+      <div class="meta">240 .mid files · works in every DAW</div>
     </div>
   </div>
 
   <div class="sect-title" id="modes">Mode Packs · The Modal Series</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the rest of the candy case, the secret flavors running through records you already love. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Ben Bohmer floats in Lydian. Daft Punk grooved in Dorian. Now you.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the rest of the candy case, the secret flavors running through records you already love. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Melodic house floats in Lydian. French house grooves in Dorian. Now you.</p>
   <div class="modegrid">
     <div class="modecard ionian">
       <a class="cardlink" href="midi-packs.html#ionian" aria-label="Ionian pack details"></a>
       <h3>IONIAN</h3>
       <div class="vibe">Pure major. The sound of every anthem chorus ever written.</div>
-      <div class="songs">Hey Jude · Let It Be · most of pop history</div>
+      <div class="songs">anthem choruses · singalong ballads · most of pop history</div>
+      <div class="modeshot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/ionian_poster.jpg?v=2"><source src="img/video/midi/ionian_demo.mp4?v=2" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/IonianMode48-SebastianMacan.zip">Download 48</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="ionian">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="ionian">Buy Now</span></div>
     </div>
     <div class="modecard dorian">
       <a class="cardlink" href="midi-packs.html#dorian" aria-label="Dorian pack details"></a>
       <h3>DORIAN</h3>
       <div class="vibe">Minor with hope. Groovy, cool, never fully sad.</div>
-      <div class="songs">Get Lucky · Billie Jean · Mad World</div>
+      <div class="songs">French house · classic funk · moody synth-pop</div>
+      <div class="modeshot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/dorian_poster.jpg?v=1"><source src="img/video/midi/dorian_demo.mp4?v=1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/DorianMode48-SebastianMacan.zip">Download 48</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="dorian">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="dorian">Buy Now</span></div>
     </div>
     <div class="modecard phrygian">
       <a class="cardlink" href="midi-packs.html#phrygian" aria-label="Phrygian pack details"></a>
       <h3>PHRYGIAN</h3>
       <div class="vibe">Dark Spanish menace. Techno, trap and trance villain energy.</div>
-      <div class="songs">Sicko Mode vibe · flamenco · dark techno</div>
+      <div class="songs">dark trap · flamenco · dark techno</div>
+      <div class="modeshot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/phrygian_poster.jpg?v=1"><source src="img/video/midi/phrygian_demo.mp4?v=1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/PhrygianMode48-SebastianMacan.zip">Download 48</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="phrygian">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="phrygian">Buy Now</span></div>
     </div>
     <div class="modecard lydian">
       <a class="cardlink" href="midi-packs.html#lydian" aria-label="Lydian pack details"></a>
       <h3>LYDIAN</h3>
       <div class="vibe">Floating, dreamlike major. The melodic house secret weapon.</div>
-      <div class="songs">Ben Bohmer territory · film scores · The Simpsons theme</div>
+      <div class="songs">melodic house · film scores · dreamy TV themes</div>
+      <div class="modeshot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/lydian_poster.jpg?v=1"><source src="img/video/midi/lydian_demo.mp4?v=1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/LydianMode48-SebastianMacan.zip">Download 48</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="lydian">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="lydian">Buy Now</span></div>
     </div>
     <div class="modecard mixolydian">
       <a class="cardlink" href="midi-packs.html#mixolydian" aria-label="Mixolydian pack details"></a>
       <h3>MIXOLYDIAN</h3>
       <div class="vibe">Major with a rebel flat seven. Rock, funk and festival gold.</div>
-      <div class="songs">Sweet Home Alabama · Clocks · Royals</div>
+      <div class="songs">southern rock · stadium pop · radio swagger</div>
+      <div class="modeshot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/mixolydian_poster.jpg?v=1"><source src="img/video/midi/mixolydian_demo.mp4?v=1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/MixolydianMode48-SebastianMacan.zip">Download 48</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="mixolydian">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="mixolydian">Buy Now</span></div>
     </div>
     <div class="modecard aeolian">
       <a class="cardlink" href="midi-packs.html#aeolian" aria-label="Aeolian pack details"></a>
       <h3>AEOLIAN</h3>
       <div class="vibe">Natural minor. The emotional workhorse of modern music.</div>
-      <div class="songs">Lose Yourself · Someone Like You · every sad banger</div>
+      <div class="songs">hip-hop anthems · tearjerker ballads · every sad banger</div>
+      <div class="modeshot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/aeolian_poster.jpg?v=1"><source src="img/video/midi/aeolian_demo.mp4?v=1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AeolianMode48-SebastianMacan.zip">Download 48</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="aeolian">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="aeolian">Buy Now</span></div>
     </div>
     <div class="modecard locrian">
       <a class="cardlink" href="midi-packs.html#locrian" aria-label="Locrian pack details"></a>
       <h3>LOCRIAN</h3>
       <div class="vibe">The forbidden mode. So unstable almost nobody writes in it. We did.</div>
-      <div class="songs">Army of Me · YYZ · you, next</div>
+      <div class="songs">industrial menace · prog experiments · you, next</div>
+      <div class="modeshot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/locrian_poster.jpg?v=1"><source src="img/video/midi/locrian_demo.mp4?v=1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/LocrianMode48-SebastianMacan.zip">Download 48</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="locrian">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="locrian">Buy Now</span></div>
     </div>
     <div class="modecard allmodes">
       <a class="cardlink" href="midi-packs.html#allmodes" aria-label="All modes bundle details"></a>
       <h3>ALL 7 MODES</h3>
       <div class="vibe">The complete modal toolkit. 336 progressions. Who else even makes this?</div>
       <div class="songs">Every mode · every key · one download</div>
+      <div class="modeshot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/allmodes_poster.jpg?v=1"><source src="img/video/midi/allmodes_demo.mp4?v=1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AllModes336-SebastianMacan.zip">Download 336</a>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="allmodes">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="allmodes">Buy Now</span></div>
     </div>
   </div>
 
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Everything is free during launch. When checkout opens, these are the baskets worth grabbing. MIDI has its own ladder: Chord Packs Bundle at $30, Mode Packs Bundle at $39, or the MIDI Mega Bundle with all 796 progressions at $49.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Four baskets, four moods. The MIDI Mega Basket packs all 3788 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket comes two ways: $30 for the full lofi mood or $49 with Halo mastering included.</p>
   <div class="bundlegrid">
     <a class="bundle midi-b" href="basket-midi.html">
       <img src="img/bundles/midi_mega_bundle.png" alt="MIDI Mega Basket: every chord pack and mode pack as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>MIDI MEGA BASKET</h3>
-        <p class="desc">Every MIDI pack we make. 3 genre chord packs + all 7 mode packs. 796 progressions, the complete harmonic arsenal in one basket.</p>
-        <div class="price"><s>$115</s> $49 <span class="freebie">· free during launch</span></div>
+        <p class="desc">Every MIDI pack we make. Hitmaker's 25 packs + 3 genre chord packs + all 7 mode packs. 3788 progressions, the complete harmonic arsenal in one basket.</p>
+        <div class="price">$49</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#ff5ca8,#8b5cf6);">Open the basket</span>
+        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="midimega">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="midimega">Buy Now</span></div>
+      </div>
+    </a>
+    <a class="bundle modes-b" href="basket-modes.html">
+      <img src="img/bundles/modes_bundle.png" alt="All 7 Modes Basket: the complete Modal Series as wrapped candy in a basket" loading="lazy">
+      <div class="binner">
+        <h3>ALL 7 MODES BASKET</h3>
+        <p class="desc">The whole Modal Series in one basket. All 7 modes, 336 progressions, every secret flavor from Dorian to Locrian.</p>
+        <div class="price">$12</div>
+        <span class="dl bopen" style="background:linear-gradient(135deg,#8b5cf6,#39e6d0);">Open the basket</span>
+        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="allmodes">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="allmodes">Buy Now</span></div>
       </div>
     </a>
     <a class="bundle lofi-b" href="basket-lofi.html">
-      <img src="img/bundles/lofi_bundle.png" alt="Lofi Bundle: Fireplace, Reels and Warble as wrapped candy in a basket" loading="lazy">
+      <img src="img/bundles/lofi_bundle.png?v=4" alt="Lofi Basket: Fireplace, Reels and Warble as wrapped candy in a basket" loading="lazy">
       <div class="binner">
-        <h3>LOFI BUNDLE</h3>
+        <h3>LOFI BASKET</h3>
         <p class="desc">Fireplace, Reels and Warble. A crackling room, subtle tape warmth and a weird little songbird. The complete lofi mood.</p>
         <div class="price">$30</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#2bb59a);">Open the basket</span>
+        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="lofibasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="lofibasket">Buy Now</span></div>
       </div>
     </a>
-    <a class="bundle lofi-b" href="basket-lofi-mastering.html">
-      <img src="img/bundles/lofi_mastering_bundle.png" alt="Lofi Bundle + Mastering: Fireplace, Reels, Warble and Halo as wrapped candy in a basket" loading="lazy">
+    <a class="bundle lofim-b" href="basket-lofi-mastering.html">
+      <img src="img/bundles/lofi_mastering_bundle.png?v=2" alt="Lofi Basket + Mastering: Fireplace, Reels, Warble and Halo as wrapped candy in a basket" loading="lazy">
       <div class="binner">
-        <h3>LOFI BUNDLE + MASTERING</h3>
-        <p class="desc">The whole Lofi Bundle plus Halo on the master. Make the beat, then turn LIFT until the halo closes. Done means done.</p>
+        <h3>LOFI BASKET + MASTERING</h3>
+        <p class="desc">The Lofi Basket plus Halo on your master. Make the beat, then master the beat.</p>
         <div class="price">$49</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#ffd47e);">Open the basket</span>
+        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="lofimastering">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="lofimastering">Buy Now</span></div>
       </div>
     </a>
   </div>
@@ -484,9 +540,10 @@
   <footer>
     <div>© 2026 Aluetion, LLC. All rights reserved. Sebastian Macan is an Aluetion, LLC brand.</div>
     <div><a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="privacy.html">Privacy</a> · <a href="EULA.txt">License</a> · <a href="https://instagram.com/sebastianmacanmusic">Instagram</a></div>
-    <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> &middot; <a href="learn/magician.html">Chord generators</a> &middot; <a href="learn/reels.html">Tape emulation</a> &middot; <a href="learn/jelly.html">Wobble FX</a> &middot; <a href="learn/orbit.html">3D auto-pan</a></div>
+    <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> &middot; <a href="learn/chordsmith.html">Chord generators</a> &middot; <a href="learn/reels.html">Tape emulation</a> &middot; <a href="learn/jelly.html">Wobble FX</a> &middot; <a href="learn/orbit.html">3D auto-pan</a></div>
   </footer>
 </div>
+<script src="js/cart.js?v=t2" defer></script>
 <script src="js/email-gate.js" defer></script>
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.
