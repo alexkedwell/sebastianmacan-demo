@@ -49,6 +49,33 @@
     background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 6px 28px var(--shadow); }
   .dl:hover { transform:translateY(-2px); }
   .meta { margin-top:10px; color:var(--dim); font-size:12px; }
+
+  /* MADE WITH — track player */
+  .mw { display:flex; align-items:center; gap:12px; margin-top:14px; padding:10px 12px 10px 10px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--line); position:relative; z-index:2; }
+  .mw-play { flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--g1),var(--g2)); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 18px var(--shadow, rgba(0,0,0,.4)); transition:transform .15s ease; }
+  .mw-play:hover { transform:scale(1.06); }
+  .mw-play svg { width:16px; height:16px; fill:#0a0a0c; margin-left:2px; }
+  .mw.on .mw-play svg.p { display:none; } .mw .mw-play svg.s { display:none; } .mw.on .mw-play svg.s { display:block; margin-left:0; }
+  .mw-body { flex:1; min-width:0; }
+  .mw-lbl { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  .mw-title { font-size:14px; font-weight:800; color:var(--txt); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .mw-title span { color:var(--dim); font-weight:600; }
+  .mw-bar { height:4px; border-radius:2px; background:rgba(255,255,255,.08); margin-top:7px; cursor:pointer; overflow:hidden; }
+  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:2px; }
+  /* MADE WITH — video variant + lightbox */
+  .mw.vid .mw-play svg.p { display:none; } .mw.vid .mw-play::after { content:""; width:0; height:0; border-left:14px solid #0a0a0c; border-top:8px solid transparent; border-bottom:8px solid transparent; margin-left:3px; }
+  .mw.vid .mw-body { cursor:pointer; }
+  .mw.vid .mw-bar { background:linear-gradient(90deg,var(--g1),var(--g2)); opacity:.35; }
+  .mw.vid .mw-lbl::after { content:" · VIDEO"; color:var(--g1); }
+  .mw-lb { position:fixed; inset:0; z-index:9999; background:rgba(6,6,8,.92); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s ease; }
+  .mw-lb.on { opacity:1; pointer-events:auto; }
+  .mw-lb-in { position:relative; height:min(92vh, 1920px); aspect-ratio:9/16; max-width:96vw; border-radius:22px; overflow:hidden; background:#000; box-shadow:0 30px 120px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); transform:scale(.96); transition:transform .25s ease; }
+  .mw-lb.on .mw-lb-in { transform:scale(1); }
+  .mw-lb-in video { width:100%; height:100%; display:block; object-fit:contain; background:#000; }
+  .mw-lb-t { position:absolute; left:16px; top:14px; font-size:12px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#fff; text-shadow:0 1px 8px rgba(0,0,0,.8); pointer-events:none; }
+  .mw-lb-x { position:absolute; right:12px; top:8px; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.12); color:#fff; font-size:26px; line-height:38px; text-align:center; cursor:pointer; }
+  .mw-lb-x:hover { background:rgba(255,255,255,.25); }
+  .mw-time { font-size:11px; color:var(--dim); font-variant-numeric:tabular-nums; flex:0 0 auto; }
   .new { position:absolute; top:16px; right:16px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 10px; border-radius:999px; background:linear-gradient(135deg,var(--g1),var(--g2)); color:#0a0a0c; }
   .chaos  { --g1:#ff3d5a; --g2:#7b5cff; --glow:#ff3d5a; --shadow:rgba(255,61,90,.28); }
   .dusty  { --g1:#f5a623; --g2:#ff6b9d; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
@@ -167,9 +194,19 @@
       <p class="desc">Drag in ANY audio (rainforest, birds, vinyl, a vocal) and Biome granulates it into an evolving texture that ducks musically under whatever you're playing. Your sound, your ecosystem.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/biome.png?v=1.4.0b"><source src="img/video/biome_ui_loop.mp4?v=1.4.0b" type="video/mp4"></video></div>
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="biome">Buy Biome &middot; $39</span>
+      <div class="mw" data-src="audio/galaxy.m4a">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Play Galaxy"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="4" height="11" rx="1"/><rect x="9.5" y="2.5" width="4" height="11" rx="1"/></svg></span>
+        <div class="mw-body"><div class="mw-lbl">Hear it</div><div class="mw-title">Galaxy <span>&middot; Biome</span></div><div class="mw-bar"><i></i></div></div>
+        <span class="mw-time">--:--</span>
+      </div>
+      <div class="mw" data-video="img/video/ecosystem_ad.mp4" data-poster="img/video/ecosystem_ad_poster.jpg">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Watch Ecosystem"></span>
+        <div class="mw-body"><div class="mw-lbl">Hear it</div><div class="mw-title">Ecosystem <span>&middot; Biome + Halo</span></div><div class="mw-bar"><i></i></div></div>
+        <span class="mw-time">--:--</span>
+      </div>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="biome">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="biome">Buy Now</span></div>
       <a class="more" href="biome.html">See how it works &rarr;</a>
-      <div class="meta">v1.0 · VST3 + AU effect</div>
+      <div class="meta">v1.4.0 · VST3 + AU instrument</div>
     </div>
     <div class="card wizard">
       <span class="new">NEW</span>
@@ -181,7 +218,7 @@
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="magician">Buy Chordsmith &middot; $39</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="magician">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="magician">Buy Now</span></div>
       <a class="more" href="chordsmith.html">See how it works &rarr;</a>
-      <div class="meta">v1.2 · VST3 + AU instrument</div>
+      <div class="meta">v1.7.1 · VST3 + AU instrument</div>
     </div>
   </div>
 
@@ -222,7 +259,7 @@
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="warble">Buy Warble &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="warble">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="warble">Buy Now</span></div>
       <a class="more" href="warble.html">See how it works &rarr;</a>
-      <div class="meta">v1.0 · VST3 + AU effect</div>
+      <div class="meta">v1.3.4 · VST3 + AU effect</div>
     </div>
 
   </div>
@@ -261,6 +298,11 @@
       <p class="desc">Pick Streaming, Club or Podcast, then turn one knob until the golden ring closes. Loud, glued, streaming-ready. Built-in LUFS meter, verified accurate, with a bit-transparent METER ONLY mode.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/halo.png?v=1.2"><source src="img/video/halo_ui_loop.mp4?v=1.2" type="video/mp4"></video></div>
       <span class="dl buy" style="background:linear-gradient(135deg,#fbbf24,#fef3c7);box-shadow:0 6px 28px rgba(251,191,36,.26);" role="button" tabindex="0" data-cart-buy="halo">Buy Halo &middot; $29</span>
+      <div class="mw" data-video="img/video/ecosystem_ad.mp4" data-poster="img/video/ecosystem_ad_poster.jpg">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Watch Ecosystem"></span>
+        <div class="mw-body"><div class="mw-lbl">Hear it</div><div class="mw-title">Ecosystem <span>&middot; Biome + Halo</span></div><div class="mw-bar"><i></i></div></div>
+        <span class="mw-time">--:--</span>
+      </div>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="halo">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="halo">Buy Now</span></div>
       <a class="more" href="halo.html">See how it works &rarr;</a>
       <div class="meta">v1.2 · VST3 + AU effect</div>
@@ -588,5 +630,6 @@ document.addEventListener('DOMContentLoaded', function () {
   vids.forEach(function (v) { io.observe(v); });
 });
 </script>
+<script src="js/madewith.js?v=2"></script>
 </body>
 </html>
