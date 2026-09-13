@@ -10,8 +10,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/fox-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/fox-180.png">
 <meta name="theme-color" content="#000000">
-<title>Sebastian Macan - Audio Plugins | 9 Plugins + 10 MIDI Packs</title>
-<meta name="description" content="Creative audio plugins (VST3/AU, macOS) + 3788 MIDI chord progressions incl. Hitmaker Chords and the Modal Series: Biome, Chordsmith, Fireplace, Halo, Gloss, Jelly, Orbit, Reels, Warble.">
+<title>Sebastian Macan - Audio Plugins | 9 Plugins + 11 MIDI Packs</title>
+<meta name="description" content="Creative audio plugins (VST3/AU, macOS) + 4796 MIDI chord progressions incl. Hitmaker Chords and the Modal Series: Biome, Chordsmith, Fireplace, Halo, Gloss, Jelly, Orbit, Reels, Warble.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -90,9 +90,12 @@
   .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
   .gloss { --g1:#8b6bff; --g2:#3df0a8; --glow:#8b6bff; --shadow:rgba(139,107,255,.26); }
   .biome  { --g1:#3ecf6e; --g2:#5ad9d0; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
-  .hitchords { --g1:#ff5ca8; --g2:#ffd257; --glow:#ff5ca8; --shadow:rgba(255,92,168,.26); }
-  .clubchords { --g1:#60a5fa; --g2:#8b5cf6; --glow:#60a5fa; --shadow:rgba(96,165,250,.26); }
+  .hitmaker { --g1:#ff2d3a; --g2:#b3111c; --glow:#ff2d3a; --shadow:rgba(255,59,59,.28); }
+  .clubchords { --g1:#9aa0a8; --g2:#3a3d42; --glow:#c9ced6; --shadow:rgba(154,160,168,.22); }
+  .clubchords .dl, .clubchords .cartbtn.buy { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 10px,rgba(0,0,0,.42) 10px 18px),linear-gradient(135deg,var(--g1),var(--g2)); }
+  .clubchords h2 { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 10px,rgba(0,0,0,.42) 10px 18px),linear-gradient(135deg,#e5e7eb,#9aa0a8); }
   .soulchords { --g1:#ffd45c; --g2:#c8791c; --glow:#ffd45c; --shadow:rgba(255,212,92,.26); }
+  .tears { --g1:#a855f7; --g2:#6d28d9; --glow:#a855f7; --shadow:rgba(168,85,247,.30); }
   .featgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; margin-top:16px; }
   .feat { display:flex; flex-direction:column; border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; text-decoration:none; color:var(--txt); position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .feat:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
@@ -179,9 +182,9 @@
   </header>
 
   <section class="hero">
-    <div class="badge">9 Plugins + 10 MIDI Packs · VST3 + AU · macOS</div>
+    <div class="badge">9 Plugins + 11 MIDI Packs · VST3 + AU · macOS</div>
     <h1>A whole <em>candy store</em> of sound.</h1>
-    <p class="sub">Nine plugins and 3788 MIDI chord progressions for producers who crave something unique. Grab a flavor, drop it in your DAW, create something sweet.</p>
+    <p class="sub">Nine plugins and 4796 MIDI chord progressions for producers who crave something unique. Grab a flavor, drop it in your DAW, create something sweet.</p>
   </section>
 
   <div class="sect-title" id="instruments">Instruments</div>
@@ -196,7 +199,7 @@
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="biome">Buy Biome &middot; $39</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="biome">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="biome">Buy Now</span></div>
       <a class="more" href="biome.html">See how it works &rarr;</a>
-      <div class="meta">v1.4.0 · VST3 + AU instrument</div>
+      <div class="meta">v1.5.0 · VST3 + AU instrument</div>
     </div>
     <div class="card wizard">
       <span class="new">NEW</span>
@@ -393,29 +396,17 @@
 
   <div class="sect-title" id="midi">MIDI</div>
   <div class="grid">
-    <div class="card" style="--g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26);">
+    <div class="card hitmaker">
       <span class="new">NEW</span>
       <div class="kind">MIDI Chord Pack Series</div>
       <h2>HITMAKER CHORDS</h2>
-      <p class="tag">25 packs. 2,472 progressions. Pick your lane.</p>
-      <p class="desc">Hit-researched chords split into 20 genre packs and 5 mode packs, so you only grab the sound you make. Every progression in all 12 keys, every clip named with its chords and key. Same research DNA as Chordsmith.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitmaker_poster.jpg?v=1"><source src="img/video/midi/hitmaker_demo.mp4?v=1" type="video/mp4"></video></div>
-      <a class="dl" href="midi-packs.html#hitmaker">Browse the 25 Packs</a>
-      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitmakercomplete">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitmakercomplete">Buy Now</span></div>
-      <a class="more" href="midi-packs.html#hitmaker">See all 25 packs &rarr;</a>
-      <div class="meta">2,472 .mid files · works in every DAW</div>
-    </div>
-    <div class="card hitchords">
-      <span class="new">NEW</span>
-      <div class="kind">MIDI Chord Pack</div>
-      <h2>HIT CHORDS 500</h2>
-      <p class="tag">The progressions behind the hits.</p>
-      <p class="desc">500 chord progressions across 11 genres: Pop, Trap, RnB, EDM, LoFi, Rock, Latin, Cinematic, Country, Gospel/Jazz, K-Pop. Drag-and-drop MIDI with genre-true voicings, 7ths, 9ths and all.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitchords_poster.jpg?v=1"><source src="img/video/midi/hitchords_demo.mp4?v=1" type="video/mp4"></video></div>
-      <span class="dl buy" role="button" tabindex="0" data-cart-buy="hitchords">Buy Hit Chords 500 &middot; $15</span>
-      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitchords">Buy Now</span></div>
-      <a class="more" href="midi-packs.html#hitchords">See what&#39;s inside &rarr;</a>
-      <div class="meta">500 .mid files · works in every DAW</div>
+      <p class="tag">2,972 progressions. Every genre that charts.</p>
+      <p class="desc">Hit-researched chords across 20 genres plus 5 mode packs and the original Hit Chords 500, all in one download. Every progression in all 12 keys, every clip named with its chords and key. Same research DNA as Chordsmith.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitmaker_poster.jpg?v=3"><source src="img/video/midi/hitmaker_demo.mp4?v=3" type="video/mp4"></video></div>
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="hitmaker">Buy Hitmaker Chords &middot; $25</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitmaker">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitmaker">Buy Now</span></div>
+      <a class="more" href="midi-packs.html#hitmaker">See what&#39;s inside &rarr;</a>
+      <div class="meta">2,972 .mid files · works in every DAW</div>
     </div>
     <div class="card clubchords">
       <span class="new">NEW</span>
@@ -423,20 +414,31 @@
       <h2>CLUB CHORDS 240</h2>
       <p class="tag">Chords for the dancefloor.</p>
       <p class="desc">240 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum &amp; Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/clubchords_poster.jpg?v=1"><source src="img/video/midi/clubchords_demo.mp4?v=1" type="video/mp4"></video></div>
-      <span class="dl buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Club Chords 240 &middot; $12</span>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/clubchords_poster.jpg?v=2"><source src="img/video/midi/clubchords_demo.mp4?v=2" type="video/mp4"></video></div>
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Club Chords 240 &middot; $10</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="clubchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Now</span></div>
       <a class="more" href="midi-packs.html#clubchords">See what&#39;s inside &rarr;</a>
       <div class="meta">240 .mid files · works in every DAW</div>
     </div>
-    <div class="card soulchords">
+    <div class="card tears">
       <span class="new">NEW</span>
+      <div class="kind">MIDI Chord Pack</div>
+      <h2>TEARS</h2>
+      <p class="tag">Beautiful minor progressions. Get emotional.</p>
+      <p class="desc">1,008 MIDI files. 42 of the most beautiful minor-key progressions in ambient, downtempo, future bass, liquid DnB and cinematic music. Extended voicings, voice-led, every key.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/tears_poster.jpg?v=2"><source src="img/video/midi/tears_demo.mp4?v=2" type="video/mp4"></video></div>
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="tears">Buy Tears &middot; $20</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="tears">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="tears">Buy Now</span></div>
+      <a class="more" href="midi-packs.html#tears">See what&#39;s inside &rarr;</a>
+      <div class="meta">1,008 .mid files · works in every DAW</div>
+    </div>
+    <div class="card soulchords">
       <div class="kind">MIDI Chord Pack</div>
       <h2>SOUL CHORDS 240</h2>
       <p class="tag">The rich stuff. 9ths, 11ths, church.</p>
       <p class="desc">240 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/soulchords_poster.jpg?v=2"><source src="img/video/midi/soulchords_demo.mp4?v=2" type="video/mp4"></video></div>
-      <span class="dl buy" role="button" tabindex="0" data-cart-buy="soulchords">Buy Soul Chords 240 &middot; $12</span>
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="soulchords">Buy Soul Chords 240 &middot; $10</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="soulchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="soulchords">Buy Now</span></div>
       <a class="more" href="midi-packs.html#soulchords">See what&#39;s inside &rarr;</a>
       <div class="meta">240 .mid files · works in every DAW</div>
@@ -521,13 +523,13 @@
   </div>
 
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Four baskets, four moods. The MIDI Mega Basket packs all 3788 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket comes two ways: $30 for the full lofi mood or $49 with Halo mastering included.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Four baskets, four moods. The MIDI Mega Basket packs all 4796 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket comes two ways: $30 for the full lofi mood or $49 with Halo mastering included.</p>
   <div class="bundlegrid">
     <a class="bundle midi-b" href="basket-midi.html">
       <img src="img/bundles/midi_mega_bundle.png" alt="MIDI Mega Basket: every chord pack and mode pack as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>MIDI MEGA BASKET</h3>
-        <p class="desc">Every MIDI pack we make. Hitmaker's 25 packs + 3 genre chord packs + all 7 mode packs. 3788 progressions, the complete harmonic arsenal in one basket.</p>
+        <p class="desc">Every MIDI pack we make. Hitmaker Chords + Tears + Club + Soul + all 7 mode packs. 4796 progressions, the complete harmonic arsenal in one basket.</p>
         <div class="price">$49</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#ff5ca8,#8b5cf6);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="midimega">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="midimega">Buy Now</span></div>
@@ -571,7 +573,7 @@
     <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> &middot; <a href="learn/chordsmith.html">Chord generators</a> &middot; <a href="learn/reels.html">Tape emulation</a> &middot; <a href="learn/jelly.html">Wobble FX</a> &middot; <a href="learn/orbit.html">3D auto-pan</a></div>
   </footer>
 </div>
-<script src="js/cart.js?v=p1" defer></script>
+<script src="js/cart.js?v=p2" defer></script>
 <script src="js/email-gate.js" defer></script>
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.

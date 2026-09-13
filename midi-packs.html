@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/fox-180.png">
 <meta name="theme-color" content="#000000">
 <title>MIDI Chord Packs &amp; Mode Packs | Sebastian Macan</title>
-<meta name="description" content="3788 MIDI chord progressions: Hitmaker Chords, genre chord packs (Pop, Trap, RnB, Club, Soul) and the complete Modal Series covering all 7 modes. Drag-and-drop .mid files that work in every DAW. Any pack $5, baskets from $12.">
+<meta name="description" content="4796 MIDI chord progressions: Hitmaker Chords, the Tears, Club and Soul chord packs, and the complete Modal Series covering all 7 modes. Drag-and-drop .mid files that work in every DAW. Mode packs $5, baskets from $12.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -30,6 +30,12 @@
     background:linear-gradient(135deg,#ff5ca8,#8b5cf6); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .hero p { color:var(--dim); max-width:640px; margin:12px auto 0; font-size:15.5px; }
   .toc { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:26px 0 8px; }
+  .keytip { max-width:760px; margin:22px auto 0; padding:14px 18px; border-radius:16px; text-align:left;
+    background:linear-gradient(135deg,rgba(61,240,168,.10),rgba(96,170,255,.08)); border:1px solid rgba(61,240,168,.35); }
+  .keytip .kt-h { font-size:11px; font-weight:800; letter-spacing:.16em; color:#3df0a8; margin-bottom:6px; }
+  .keytip p { margin:0; font-size:14px; line-height:1.55; color:#d6d6de; }
+  .pinfo ul code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; padding:1px 6px; border-radius:5px; background:rgba(255,255,255,.08); color:#fff; }
+  .keytip code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; padding:2px 7px; border-radius:6px; background:rgba(255,255,255,.08); color:#fff; }
   .toc a { font-size:12px; font-weight:800; letter-spacing:.04em; text-decoration:none; padding:8px 14px; border-radius:999px;
     border:1px solid var(--line); color:var(--txt); background:var(--card); transition:transform .15s, border-color .15s; }
   .toc a:hover { transform:translateY(-2px); border-color:var(--g1); }
@@ -73,6 +79,8 @@
     header { flex-direction:column; gap:10px; }
     footer { flex-direction:column; text-align:center; }
   }
+  .striped .dl, .striped .cartbtn.buy, .toc a.striped { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 10px,rgba(0,0,0,.42) 10px 18px),linear-gradient(135deg,var(--g1),var(--g2)); }
+  .pack.striped h2 { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 10px,rgba(0,0,0,.42) 10px 18px),linear-gradient(135deg,#e5e7eb,#9aa0a8); }
 </style>
 </head>
 <body>
@@ -85,12 +93,16 @@
 
   <section class="hero">
     <div class="kind">MIDI Packs</div>
-    <h1>3788 PROGRESSIONS</h1>
+    <h1>4796 PROGRESSIONS</h1>
     <p>Every chord pack and mode pack in the store, up close. Drag any .mid file into your DAW, drop it on any synth or piano you already own, and it plays. No plugin required, works everywhere MIDI works.</p>
+    <div class="keytip">
+      <div class="kt-h">FIND YOUR KEY IN ONE SEARCH</div>
+      <p>Every file ends in a search tag like <code>KEY-Bminor</code>, <code>KEY-Fsmajor</code> (s = sharp), <code>KEY-Ebminor</code>, <code>KEY-Adorian</code>. Type the tag into your DAW browser (Ableton, FL, Logic, Bitwig) and only that key shows up: <code>KEY-Bminor</code> never matches B-flat. Search a progression too: <code>i-VI-III-VII</code>.</p>
+    </div>
     <div class="toc">
-      <a href="#hitmaker" style="--g1:#60aaff;--g2:#9fd4ff;">HITMAKER CHORDS &middot; 25 PACKS</a>
-      <a href="#hitchords" style="--g1:#ff5ca8;--g2:#ffd257;">HIT CHORDS 500</a>
-      <a href="#clubchords" style="--g1:#60a5fa;--g2:#8b5cf6;">CLUB CHORDS 240</a>
+      <a href="#hitmaker" style="--g1:#ff2d3a;--g2:#b3111c;">HITMAKER CHORDS &middot; 2,972</a>
+      <a href="#clubchords" class="striped" style="--g1:#e5e7eb;--g2:#9aa0a8;">CLUB CHORDS 240</a>
+      <a href="#tears" style="--g1:#a855f7;--g2:#6d28d9;">TEARS</a>
       <a href="#soulchords" style="--g1:#ffd45c;--g2:#c8791c;">SOUL CHORDS 240</a>
       <a href="#ionian" style="--g1:#c8ff4a;--g2:#22e5ff;">IONIAN MODE 48</a>
       <a href="#dorian" style="--g1:#39e6d0;--g2:#4a90ff;">DORIAN MODE 48</a>
@@ -104,96 +116,34 @@
   </section>
 
 
-  <section class="pack " id="hitmaker" style="--g1:#60aaff;--g2:#9fd4ff;">
+  <section class="pack " id="hitmaker" style="--g1:#ff2d3a;--g2:#b3111c;">
     <div class="pmedia">
-      <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitmaker_poster.jpg?v=1"><source src="img/video/midi/hitmaker_demo.mp4?v=1" type="video/mp4"></video></div>
+      <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitmaker_poster.jpg?v=3"><source src="img/video/midi/hitmaker_demo.mp4?v=3" type="video/mp4"></video></div>
       <div class="vcap">Born from the same research engine as Chordsmith</div>
     </div>
     <div class="pinfo">
       <div class="kind">MIDI Chord Pack Series</div>
       <h2>HITMAKER CHORDS</h2>
-      <p class="tag">25 packs. 2,472 progressions. Pick your lane.</p>
-      <p class="desc">Hit-researched progressions, pack by pack so you only grab the sound you make. 20 genre packs (about 100 MIDIs each, every progression in all 12 keys) plus 5 mode packs for flavor hunters. Every file named with key and progression, voiced like the records.</p>
+      <p class="tag">2,972 progressions. Every genre that charts.</p>
+      <p class="desc">Hit-researched progressions across 20 genres: Pop, Trap, RnB, Drill, LoFi, House, EDM, Techno, Dubstep, Future Bass, Afrobeats, Reggaeton, Latin, KPop, Gospel, Jazz, Blues, Rock, Country and Ambient. Plus 5 mode packs for flavor hunters and the original Hit Chords 500. Every progression in all 12 keys, voiced like the records.</p>
       <ul>
-          <li>20 genres + 5 modes, sold as separate packs</li>
+          <li>20 genres + 5 mode packs + the original Hit Chords 500, all in one download</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>Each progression in all 12 keys, labeled, drag straight in</li>
           <li>Same research DNA as the Chordsmith HITMAKER engine</li>
       </ul>
-      <style>
-        .hmgrid { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0; }
-        .hmchip { font-size:12px; font-weight:700; letter-spacing:.04em; padding:8px 12px; border-radius:999px;
-          background:rgba(96,170,255,.10); border:1px solid rgba(96,170,255,.35); color:#cfe6ff; text-decoration:none; }
-        .hmchip span { opacity:.55; font-weight:600; }
-        .hmchip b { margin-left:6px; color:#3df0a8; font-weight:800; }
-        .hmchip { cursor:pointer; }
-        .hmchip:hover { background:rgba(96,170,255,.22); }
-        .hmlabel { font-size:11px; letter-spacing:.14em; color:#8a8a94; margin:10px 0 2px; }
-      </style>
-      <div class="hmlabel">GENRE PACKS</div>
-      <div class="hmgrid">
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_pop">POP <span>120</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_trap">TRAP <span>120</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_rnb">RNB <span>132</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_drill">DRILL <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_lofi">LOFI <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_house">HOUSE <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_edm">EDM <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_techno">TECHNO <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_dubstep">DUBSTEP <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_futurebass">FUTURE BASS <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_afrobeats">AFROBEATS <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_reggaeton">REGGAETON <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_latin">LATIN <span>108</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_kpop">KPOP <span>108</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_gospel">GOSPEL <span>120</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_jazz">JAZZ <span>120</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_blues">BLUES <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_rock">ROCK <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_country">COUNTRY <span>96</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_ambient">AMBIENT <span>96</span><b>$5</b></span>
-      </div>
-      <div class="hmlabel">MODE PACKS</div>
-      <div class="hmgrid">
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_dorianmode">DORIAN MODE <span>84</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_phrygianmode">PHRYGIAN MODE <span>84</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_lydianmode">LYDIAN MODE <span>72</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_mixolydianmode">MIXOLYDIAN MODE <span>84</span><b>$5</b></span>
-        <span class="hmchip" role="button" tabindex="0" data-cart-buy="hm_locrianmode">LOCRIAN MODE <span>72</span><b>$5</b></span>
-      </div>
       <div class="actions">
-        <span class="dl buy" role="button" tabindex="0" data-cart-buy="hitmakercomplete">Buy Hitmaker Chords - Complete Series &middot; $30</span>
-        <span class="meta">all 25 packs &middot; 2,472 .mid files &middot; works in every DAW</span>
+        <span class="dl buy" role="button" tabindex="0" data-cart-buy="hitmaker">Buy Hitmaker Chords &middot; $25</span>
+        <span class="meta">2,972 .mid files &middot; works in every DAW</span>
       </div>
-      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitmakercomplete">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitmakercomplete">Buy Now</span></div>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitmaker">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitmaker">Buy Now</span></div>
     </div>
   </section>
 
-  <section class="pack " id="hitchords" style="--g1:#ff5ca8;--g2:#ffd257;">
-    <div class="pmedia">
-      <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitchords_poster.jpg"><source src="img/video/midi/hitchords_demo.mp4" type="video/mp4"></video></div>
-      <div class="vcap">Real progressions straight from the pack, playing on loop</div>
-    </div>
-    <div class="pinfo">
-      <div class="kind">MIDI Chord Pack</div>
-      <h2>HIT CHORDS 500</h2>
-      <p class="tag">The progressions behind the hits.</p>
-      <p class="desc">500 chord progressions across 11 genres: Pop, Trap, RnB, EDM, LoFi, Rock, Latin, Cinematic, Country, Gospel/Jazz, K-Pop. Genre-true voicings with the 7ths and 9ths already in place.</p>
-      <ul>
-          <li>11 genres, 500 progressions, all 24 keys</li>
-          <li>Voiced like the records, not block triads</li>
-          <li>Labeled by genre and key, drag straight in</li>
-      </ul>
-      <div class="actions">
-        <span class="dl buy" role="button" tabindex="0" data-cart-buy="hitchords">Buy Hit Chords 500 &middot; $15</span>
-        <span class="meta">500 .mid files &middot; works in every DAW</span>
-      </div>
-      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitchords">Buy Now</span></div>
-    </div>
-  </section>
 
-  <section class="pack flip" id="clubchords" style="--g1:#60a5fa;--g2:#8b5cf6;">
+  <section class="pack flip striped" id="clubchords" style="--g1:#9aa0a8;--g2:#3a3d42;">
     <div class="pmedia">
-      <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/clubchords_poster.jpg"><source src="img/video/midi/clubchords_demo.mp4" type="video/mp4"></video></div>
+      <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/clubchords_poster.jpg?v=2"><source src="img/video/midi/clubchords_demo.mp4?v=2" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
     </div>
     <div class="pinfo">
@@ -203,14 +153,39 @@
       <p class="desc">240 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum & Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.</p>
       <ul>
           <li>6 club genres, 40 progressions each, all 24 keys</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>Stab voicings and pads that cut through a mix</li>
           <li>Tested against four-on-the-floor grooves</li>
       </ul>
       <div class="actions">
-        <span class="dl buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Club Chords 240 &middot; $12</span>
+        <span class="dl buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Club Chords 240 &middot; $10</span>
         <span class="meta">240 .mid files &middot; works in every DAW</span>
       </div>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="clubchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Now</span></div>
+    </div>
+  </section>
+
+  <section class="pack " id="tears" style="--g1:#a855f7;--g2:#6d28d9;">
+    <div class="pmedia">
+      <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/tears_poster.jpg?v=2"><source src="img/video/midi/tears_demo.mp4?v=2" type="video/mp4"></video></div>
+      <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+    </div>
+    <div class="pinfo">
+      <div class="kind">MIDI Chord Pack</div>
+      <h2>TEARS</h2>
+      <p class="tag">Beautiful minor progressions. Get emotional.</p>
+      <p class="desc">1,008 MIDI files. The 42 most beautiful minor-key progressions in electronic music, pulled from ambient, downtempo, future bass, liquid DnB and film score. Voiced to melt: 9ths, add9s, sus2s, voice-led so every chord flows into the next.</p>
+      <ul>
+          <li>3 worlds: Ambient &amp; Downtempo, Future Bass &amp; Liquid DnB, Cinematic. 14 progressions each</li>
+          <li>All 12 minor keys, two takes per progression: <b>Pad</b> (chord per bar) and <b>Slow</b> (film-score pacing)</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Aminor</code> and only A minor shows up</li>
+          <li>Extended, voice-led voicings. Bass root low, colour up top. Drag onto any instrument</li>
+      </ul>
+      <div class="actions">
+        <span class="dl buy" role="button" tabindex="0" data-cart-buy="tears">Buy Tears &middot; $20</span>
+        <span class="meta">1,008 .mid files &middot; works in every DAW</span>
+      </div>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="tears">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="tears">Buy Now</span></div>
     </div>
   </section>
 
@@ -226,11 +201,12 @@
       <p class="desc">240 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.</p>
       <ul>
           <li>6 soul genres, 40 progressions each, all 24 keys</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>Real extended voicings: 9ths, 11ths, 13ths</li>
           <li>Turnarounds and walkups included</li>
       </ul>
       <div class="actions">
-        <span class="dl buy" role="button" tabindex="0" data-cart-buy="soulchords">Buy Soul Chords 240 &middot; $12</span>
+        <span class="dl buy" role="button" tabindex="0" data-cart-buy="soulchords">Buy Soul Chords 240 &middot; $10</span>
         <span class="meta">240 .mid files &middot; works in every DAW</span>
       </div>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="soulchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="soulchords">Buy Now</span></div>
@@ -249,6 +225,7 @@
       <p class="desc">48 progressions in pure major, the brightest flavor in the case. Anthem choruses, singalong ballads, most of pop history. Every loop lands the mode's signature color.</p>
       <ul>
           <li>48 progressions, every chord true to Ionian</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Anthem-chorus energy on tap</li>
       </ul>
@@ -272,6 +249,7 @@
       <p class="desc">48 progressions in the mode of French house, classic funk and moody synth-pop. Minor that grooves instead of mopes, with the raised sixth doing the magic.</p>
       <ul>
           <li>48 progressions, signature raised-6th color</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>The funk and French-house secret</li>
       </ul>
@@ -295,6 +273,7 @@
       <p class="desc">48 progressions with the flat-2 knife edge: dark techno, trap and trance menace, flamenco fire. The mode you reach for when a track needs a threat.</p>
       <ul>
           <li>48 progressions built on the flat-2 color</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Techno, trap and cinematic tension</li>
       </ul>
@@ -318,6 +297,7 @@
       <p class="desc">48 progressions that float: Melodic house territory, film scores, that raised-4 shimmer that makes a chord sound like it's levitating.</p>
       <ul>
           <li>48 progressions with the raised-4 shimmer</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Melodic house and score writers, feast</li>
       </ul>
@@ -341,6 +321,7 @@
       <p class="desc">48 progressions in the mode of southern rock, stadium pop and radio swagger. Major that swaggers, powered by the flat-7.</p>
       <ul>
           <li>48 progressions on the flat-7 swagger</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Rock, funk, festival anthems</li>
       </ul>
@@ -364,6 +345,7 @@
       <p class="desc">48 progressions in natural minor: Hip-hop anthems, tearjerker ballads, every sad banger ever. The workhorse, done right.</p>
       <ul>
           <li>48 progressions of pure natural minor</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>The emotional backbone of modern music</li>
       </ul>
@@ -387,6 +369,7 @@
       <p class="desc">48 progressions in the mode theory teachers warn you about. Unstable, unresolved, unforgettable. Industrial menace, prog experiments, you next.</p>
       <ul>
           <li>48 progressions taming the diminished tonic</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Sounds nobody else's pack has</li>
       </ul>
@@ -410,6 +393,7 @@
       <p class="desc">Every mode pack in one download: all 7 modes, 48 progressions each, 336 total. The whole rest of the candy case.</p>
       <ul>
           <li>All 7 mode packs in one zip</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>336 progressions, every key</li>
           <li>One download, the full modal palette</li>
       </ul>
@@ -423,7 +407,7 @@
 
   <div class="megabar">
     <h2>WANT ALL OF IT?</h2>
-    <p>The MIDI Mega Basket packs all 4 chord pack series and all 7 mode packs, 3788 progressions, into one download.</p>
+    <p>The MIDI Mega Basket packs Hitmaker Chords, Tears, Club and Soul plus all 7 mode packs, 4796 progressions, into one download.</p>
     <span class="dl buy" role="button" tabindex="0" data-cart-buy="midimega">Buy MIDI Mega Basket &middot; $49</span>
     <div class="cartrow" style="justify-content:center;"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="midimega">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="midimega">Buy Now</span></div>
     <div class="meta" style="margin-top:12px;"><a href="basket-midi.html" style="color:var(--dim);">or open the MIDI Mega Basket &rarr;</a></div>
@@ -434,7 +418,7 @@
     <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
-<script src="js/cart.js?v=p1" defer></script>
+<script src="js/cart.js?v=p2" defer></script>
 <script src="js/email-gate.js" defer></script>
 </body>
 </html>

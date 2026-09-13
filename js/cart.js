@@ -17,7 +17,7 @@
      Complete) - create them at catalog-sync time and fill in.
    - KNOWN STALE PADDLE PRICES (site price shown here is source of truth;
      sync Paddle before launch): Jelly $15 (Paddle $0), Reels $15 (Paddle $19),
-     Halo $29 (Paddle $19), Hit Chords 500 $20 (renamed/repriced pending). */
+     Halo $29 (Paddle $19). */
 (function () {
   'use strict';
 
@@ -35,9 +35,11 @@
     halo:          { name: 'Halo',                   cents: 2900, priceId: 'pri_01m1gnswspxareqhrervwre5a3' },
     gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
     /* MIDI chord packs */
-    hitchords:     { name: 'Hit Chords 500',         cents: 1500, priceId: 'pri_01m1gnsx2qvxew8czas9ym2qa4' },
-    clubchords:    { name: 'Club Chords 240',        cents: 1200, priceId: 'pri_01m1gnsxcvj6w77fanegkzwm1j' },
-    soulchords:    { name: 'Soul Chords 240',        cents: 1200, priceId: 'pri_01m1gnsxngw04eejk0qr67kpmd' },
+    hitmaker:      { name: 'Hitmaker Chords',        cents: 2500, priceId: 'pri_01m2ckt8h7agqfkge6ayanjj2x' },
+    hitmakercomplete: { name: 'Hitmaker Chords',     cents: 2500, priceId: 'pri_01m2ckt8h7agqfkge6ayanjj2x' }, /* alias for stale cached HTML */
+    clubchords:    { name: 'Club Chords 240',        cents: 1000, priceId: 'pri_01m2ckv8205dr3qxdmbhme2apz' },
+    soulchords:    { name: 'Soul Chords 240',        cents: 1000, priceId: 'pri_01m2ckv8b9gm2dt8ka25f87cyq' },
+    tears:         { name: 'Tears - Beautiful Minor Progressions', cents: 2000, priceId: 'pri_01m2ckv7rdr7cxqas4mkvb6cbj' },
     /* Modal Series */
     ionian:        { name: 'Ionian Mode 48',         cents: 500, priceId: 'pri_01m1gnsxxvfs2nbag2280x8ydj' },
     dorian:        { name: 'Dorian Mode 48',         cents: 500, priceId: 'pri_01m1gnsy80zd3s9wnzgxk4dtgc' },
@@ -50,34 +52,7 @@
     allmodes:      { name: 'All 7 Modes Basket',     cents: 1200, priceId: 'pri_01m1gnszy7hgdp0xw9gfyqe7ha' },
     midimega:      { name: 'MIDI Mega Basket',       cents: 4900, priceId: 'pri_01m09n48fjhgmpb2hxcmr2kyf0' },
     lofibasket:    { name: 'Lofi Basket',            cents: 3000, priceId: 'pri_01m1nckxzp0m01qh26zs7qq99t' },
-    lofimastering: { name: 'Lofi Basket + Mastering', cents: 4900, priceId: 'pri_01m1nckyery0c9sqt2m971y8zb' },
-    /* Hitmaker Chords singles */
-    hm_afrobeats: { name: 'Hitmaker Chords - Afrobeats', cents: 500, priceId: 'pri_01m1gntvby216j6b9yprsee8vx' },
-    hm_ambient: { name: 'Hitmaker Chords - Ambient', cents: 500, priceId: 'pri_01m1gntvnq5fesnks72m520q1x' },
-    hm_blues: { name: 'Hitmaker Chords - Blues', cents: 500, priceId: 'pri_01m1gntw00kaxbn77n666xmknk' },
-    hm_country: { name: 'Hitmaker Chords - Country', cents: 500, priceId: 'pri_01m1gntwaktm79qhpez78201hh' },
-    hm_dorianmode: { name: 'Hitmaker Chords - Dorian Mode', cents: 500, priceId: 'pri_01m1gntwmta49j0btcrfyg7bvf' },
-    hm_drill: { name: 'Hitmaker Chords - Drill', cents: 500, priceId: 'pri_01m1gntwyj1kkw02yt29qyqwbd' },
-    hm_dubstep: { name: 'Hitmaker Chords - Dubstep', cents: 500, priceId: 'pri_01m1gntx90k7f7dxt7499xypkw' },
-    hm_edm: { name: 'Hitmaker Chords - EDM', cents: 500, priceId: 'pri_01m1gntxjp1d1nkfay1rq6xqya' },
-    hm_futurebass: { name: 'Hitmaker Chords - Future Bass', cents: 500, priceId: 'pri_01m1gntxxg744fwvcx2cn1amsh' },
-    hm_gospel: { name: 'Hitmaker Chords - Gospel', cents: 500, priceId: 'pri_01m1gnty862z7s52bjx594hz10' },
-    hm_house: { name: 'Hitmaker Chords - House', cents: 500, priceId: 'pri_01m1gntyj7x003w62gz67jssxe' },
-    hm_jazz: { name: 'Hitmaker Chords - Jazz', cents: 500, priceId: 'pri_01m1gntyvs1xd5rsn69d8j8kzt' },
-    hm_kpop: { name: 'Hitmaker Chords - KPop', cents: 500, priceId: 'pri_01m1gntz7ksp5zdk99dpeg6te6' },
-    hm_latin: { name: 'Hitmaker Chords - Latin', cents: 500, priceId: 'pri_01m1gntzk2qk2sw7xc2tgdka1q' },
-    hm_locrianmode: { name: 'Hitmaker Chords - Locrian Mode', cents: 500, priceId: 'pri_01m1gnv07b23z0422qdcp44y7n' },
-    hm_lofi: { name: 'Hitmaker Chords - LoFi', cents: 500, priceId: 'pri_01m1gntzx3jefffn4dmxrhsd73' },
-    hm_lydianmode: { name: 'Hitmaker Chords - Lydian Mode', cents: 500, priceId: 'pri_01m1gnv0h0apgsgk82gxfvx6n0' },
-    hm_mixolydianmode: { name: 'Hitmaker Chords - Mixolydian Mode', cents: 500, priceId: 'pri_01m1gnv0ts99gcc0m71512ye7f' },
-    hm_phrygianmode: { name: 'Hitmaker Chords - Phrygian Mode', cents: 500, priceId: 'pri_01m1gnv16tmr4qpqwbyqsts327' },
-    hm_pop: { name: 'Hitmaker Chords - Pop', cents: 500, priceId: 'pri_01m1gnv1h1hftc01gw7b4y0qqn' },
-    hm_reggaeton: { name: 'Hitmaker Chords - Reggaeton', cents: 500, priceId: 'pri_01m1gnv1vkqqbdx4esrwdpa7e1' },
-    hm_rnb: { name: 'Hitmaker Chords - RnB', cents: 500, priceId: 'pri_01m1gnv2634y71gdjjcme45nc9' },
-    hm_rock: { name: 'Hitmaker Chords - Rock', cents: 500, priceId: 'pri_01m1gnv2g5tg0n03v6ggtnwda1' },
-    hm_techno: { name: 'Hitmaker Chords - Techno', cents: 500, priceId: 'pri_01m1gnv2tneb1kxaesfd29car8' },
-    hm_trap: { name: 'Hitmaker Chords - Trap', cents: 500, priceId: 'pri_01m1gnv351gedapzfcc7fbzfp5' },
-    hitmakercomplete: { name: 'Hitmaker Chords - Complete Series', cents: 3000, priceId: 'pri_01m1gnttz53wm3x06bvhhrtcmq' }
+    lofimastering: { name: 'Lofi Basket + Mastering', cents: 4900, priceId: 'pri_01m1nckyery0c9sqt2m971y8zb' }
   };
 
   var KEY = 'sm_cart_v1';
