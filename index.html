@@ -149,6 +149,7 @@
   .effects-b { --g1:#8b5cf6; --g2:#39e6d0; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
   .instruments-b { --g1:#3ecf6e; --g2:#ffd84a; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
   .everything-b { --g1:#ff3d5a; --g2:#ffd84a; --glow:#ff3d5a; --shadow:rgba(255,61,90,.28); }
+  .chord-b { --g1:#60a5fa; --g2:#ff5ca8; --glow:#60a5fa; --shadow:rgba(96,165,250,.28); }
   .midi-b { --g1:#ff5ca8; --g2:#8b5cf6; --glow:#ff5ca8; --shadow:rgba(255,92,168,.28); }
   .lofi-b { --g1:#f5a623; --g2:#2bb59a; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
   .lofim-b { --g1:#f5a623; --g2:#ffd47e; --glow:#ffd47e; --shadow:rgba(255,212,126,.26); }
@@ -523,8 +524,18 @@
   </div>
 
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Four baskets, four moods. The MIDI Mega Basket packs all 4796 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket comes two ways: $30 for the full lofi mood or $49 with Halo mastering included.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Five baskets, five moods. The Chord Basket is Chordsmith plus every MIDI pack at $69, the MIDI Mega Basket packs all 4796 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket comes two ways: $30 for the full lofi mood or $49 with Halo mastering included.</p>
   <div class="bundlegrid">
+    <a class="bundle chord-b" href="basket-chord.html">
+      <img src="img/bundles/chord_bundle.png" alt="Chord Basket: Chordsmith and every MIDI pack as wrapped candy in a basket" loading="lazy">
+      <div class="binner">
+        <h3>CHORD BASKET</h3>
+        <p class="desc">Chordsmith plus every MIDI pack we make. The chord generator and all 4796 progressions. Every chord in the store, one basket.</p>
+        <div class="price">$69</div>
+        <span class="dl bopen" style="background:linear-gradient(135deg,#60a5fa,#ff5ca8);">Open the basket</span>
+        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="chordbasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="chordbasket">Buy Now</span></div>
+      </div>
+    </a>
     <a class="bundle midi-b" href="basket-midi.html">
       <img src="img/bundles/midi_mega_bundle.png" alt="MIDI Mega Basket: every chord pack and mode pack as wrapped candy in a basket" loading="lazy">
       <div class="binner">
@@ -573,7 +584,7 @@
     <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> &middot; <a href="learn/chordsmith.html">Chord generators</a> &middot; <a href="learn/reels.html">Tape emulation</a> &middot; <a href="learn/jelly.html">Wobble FX</a> &middot; <a href="learn/orbit.html">3D auto-pan</a></div>
   </footer>
 </div>
-<script src="js/cart.js?v=p2" defer></script>
+<script src="js/cart.js?v=p3" defer></script>
 <script src="js/email-gate.js" defer></script>
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.
