@@ -128,7 +128,7 @@
       '<button class="eg-close" aria-label="Close">&times;</button>' +
       '<div class="eg-kind">Free Download</div>' +
       '<h3 class="eg-title">Get <em>' + name + '</em> + future updates</h3>' +
-      '<p class="eg-sub">Drop your email and the download starts instantly. You\u2019ll also get new presets, updates and future plugins first. No spam, unsubscribe anytime.</p>' +
+      '<p class="eg-sub">Drop your email and the download starts instantly. You\u2019ll also get new presets, updates and future plugins first. Unsubscribe anytime.</p>' +
       '<form class="eg-form" novalidate>' +
       '<input class="eg-input" type="email" name="email" placeholder="you@studio.com" autocomplete="email" required>' +
       '<input class="eg-hp" type="text" id="eg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">' +

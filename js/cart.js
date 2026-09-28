@@ -53,8 +53,29 @@
     midimega:      { name: 'MIDI Mega Basket',       cents: 4900, priceId: 'pri_01m09n48fjhgmpb2hxcmr2kyf0' },
     lofibasket:    { name: 'Lofi Basket',            cents: 3000, priceId: 'pri_01m1nckxzp0m01qh26zs7qq99t' },
     lofimastering: { name: 'Lofi Basket + Mastering', cents: 4900, priceId: 'pri_01m1nckyery0c9sqt2m971y8zb' },
-    chordbasket:   { name: 'Chord Basket',           cents: 6900, priceId: 'pri_01m36c5kc3z84gvnnc1nyej57d' }
+    chordbasket:   { name: 'Chord Basket',           cents: 6900, priceId: 'pri_01m36c5kc3z84gvnnc1nyej57d' },
+    instrumentsbasket: { name: 'Instruments Basket', cents: 5900, priceId: 'pri_01m3jrbcjp6hcx8ysjy69b65qa' },
+    effectsbasket: { name: 'Effects Basket',         cents: 4900, priceId: 'pri_01m3jrbcz40geyntgtefncfdjs' },
+    studiobasket:  { name: 'Studio Tools Basket',    cents: 5900, priceId: 'pri_01m3jrbdb9gnqdxxjrp5zp0gwp' }
   };
+
+  /* BASKET MEMBERSHIP -- the ONE place to edit when a product joins/leaves a basket.
+     Drives: product-page "Also in" chips, the in-cart upgrade card, and the cart's
+     basket-swap math. Free items (Orbit) are listed for the copy but priced 0.
+     Adding a product to the store? Give it a row in CATALOG and add it to the baskets
+     it belongs to here (then reprice the basket in Paddle if the roster changed). */
+  var BASKETS = {
+    instrumentsbasket: { page: 'basket-instruments.html', items: ['biome', 'magician'] },
+    effectsbasket:     { page: 'basket-effects.html',     items: ['jelly', 'warble', 'reels', 'gloss'], bonus: ['Orbit'] },
+    studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'halo', 'gloss', 'reels'] },
+    lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'reels', 'warble'] },
+    lofimastering:     { page: 'basket-lofi-mastering.html', items: ['fireplace', 'reels', 'warble', 'halo'] },
+    chordbasket:       { page: 'basket-chord.html',       items: ['magician', 'hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
+    midimega:          { page: 'basket-midi.html',        items: ['hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
+    allmodes:          { page: 'basket-modes.html',       items: ['ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] }
+  };
+  /* Upsell is muted while everything is free (launch window). Flip to true on price-flip day. */
+  var UPSELL_ON = true;
 
   var KEY = 'sm_cart_v1';
 
@@ -119,6 +140,39 @@
     '#smcart-checkout:disabled{opacity:.45;cursor:default;transform:none;}',
     '#smcart-msg{color:#ffd84a;font-size:12.5px;margin-top:10px;display:none;line-height:1.5;}',
     '#smcart-msg.on{display:block;}',
+    /* basket DEAL DROP: pinned to the bottom of the drawer above the footer, candy mascot leaning in */
+    '#smcart-deal{flex:none;padding:0 14px 10px;}',
+    '.smcart-up{position:relative;border-radius:18px;padding:16px 16px 14px 16px;overflow:visible;',
+    ' background:#15151b;border:1.5px solid transparent;',
+    ' background-image:linear-gradient(#15151b,#15151b),linear-gradient(120deg,#ff3d5a,#ffd84a,#39e6d0,#7b5cff,#ff3d5a);',
+    ' background-origin:border-box;background-clip:padding-box,border-box;background-size:100% 100%,300% 100%;',
+    ' animation:smdeal-rim 6s linear infinite, smdeal-in .45s cubic-bezier(.2,.9,.3,1.2) both;',
+    ' box-shadow:0 -10px 40px rgba(0,0,0,.45),0 0 28px rgba(123,92,255,.18);}',
+    '@keyframes smdeal-rim{0%{background-position:0 0,0% 50%}100%{background-position:0 0,300% 50%}}',
+    '@keyframes smdeal-in{0%{transform:translateY(24px);opacity:0}100%{transform:none;opacity:1}}',
+    '.smcart-up .candy{position:absolute;right:-6px;top:-30px;width:84px;height:84px;pointer-events:none;',
+    ' filter:drop-shadow(0 8px 16px rgba(0,0,0,.55));animation:smdeal-bob 3.2s ease-in-out infinite;}',
+    '@keyframes smdeal-bob{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-4px)}}',
+    '.smcart-up .kick{font-size:10.5px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#ffd84a;margin-bottom:6px;}',
+    '.smcart-up .t{font-size:13.5px;font-weight:800;line-height:1.4;padding-right:64px;color:#f2f2f4;}',
+    '.smcart-up .t b{color:#fff;}',
+    '.smcart-up .t b.px{color:#39e6d0;}',
+    '.smcart-up .s{font-size:12px;color:#9a9aa6;margin-top:4px;line-height:1.45;padding-right:64px;}',
+    '.smcart-up .btns{display:flex;gap:8px;margin-top:12px;align-items:center;}',
+    '.smcart-up .go{flex:1;border:0;border-radius:999px;padding:11px 12px;cursor:pointer;font-size:12.5px;font-weight:900;letter-spacing:.04em;color:#0a0a0c;',
+    ' background:linear-gradient(135deg,#ffd84a,#39e6d0);transition:transform .15s;white-space:nowrap;}',
+    '.smcart-up .go:hover{transform:translateY(-1px);}',
+    '.smcart-up .go .sv{font-weight:800;opacity:.75;margin-left:6px;}',
+    '.smcart-up .no{border:0;background:none;padding:10px 6px;cursor:pointer;font-size:12px;font-weight:700;color:#6f6f7a;text-decoration:underline;text-underline-offset:3px;}',
+    '.smcart-up .no:hover{color:#f2f2f4;}',
+    '.smcart-up.loud .kick{color:#39e6d0;}',
+    /* product-page "Also in" chips */
+    '.smchips{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;justify-content:center;margin:12px auto 0;max-width:640px;font-size:12px;color:#8a8a94;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;}',
+    '.smchips .lbl{font-weight:700;margin-right:2px;}',
+    '.smchip{display:inline-block;padding:5px 11px;border-radius:999px;border:1px solid #2a2a32;color:#c8c8d2;text-decoration:none;font-weight:700;',
+    ' transition:border-color .15s,color .15s,transform .15s;background:rgba(255,255,255,.02);}',
+    '.smchip:hover{border-color:#7b5cff;color:#fff;transform:translateY(-1px);}',
+    '.smchip .sv{color:#39e6d0;margin-left:5px;font-weight:900;}',
     /* product-card buttons */
     '.cartrow{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;position:relative;z-index:2;}',
     '.cartbtn{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;',
@@ -195,6 +249,7 @@
       '<div class="smhead"><h2>Your Candy Bag</h2>' +
       '<button id="smcart-close" aria-label="Close cart">&times;</button></div>' +
       '<div id="smcart-items"></div>' +
+      '<div id="smcart-deal"></div>' +
       '<div id="smcart-foot">' +
       '  <div id="smcart-sub"><span>Subtotal</span><span class="amt">$0</span></div>' +
       '  <div id="smcart-taxnote">Prices in USD. Any tax or VAT is added at checkout by Paddle, our merchant of record.</div>' +
@@ -208,6 +263,7 @@
     els.overlay = overlay;
     els.drawer = drawer;
     els.items = drawer.querySelector('#smcart-items');
+    els.deal = drawer.querySelector('#smcart-deal');
     els.sub = drawer.querySelector('#smcart-sub .amt');
     els.checkout = drawer.querySelector('#smcart-checkout');
     els.msg = drawer.querySelector('#smcart-msg');
@@ -243,6 +299,95 @@
     els.checkout.addEventListener('click', function () { checkout(cart.slice()); });
   }
 
+  /* ---------- basket upgrade logic ---------- */
+
+  /* "No thanks" = quiet ALL cards for this session until the shopper adds something NEW
+     (an item that was not in the cart when they dismissed). One card at a time, never a
+     second pitch for the same bag. Session-scoped: a later visit may show it once more. */
+  var DISMISS_KEY = 'sm_up_dismiss_v1';
+  function dismissedSnapshot() { try { return JSON.parse(sessionStorage.getItem(DISMISS_KEY) || 'null'); } catch (e) { return null; } }
+  function dismiss() { try { sessionStorage.setItem(DISMISS_KEY, JSON.stringify(cart.slice())); } catch (e) {} }
+  function quiet() {
+    var snap = dismissedSnapshot();
+    if (!snap) return false;
+    return cart.every(function (i) { return snap.indexOf(i) !== -1; });
+  }
+  /* after a dismissal, only pitch baskets that contain something added SINCE the dismissal */
+  function isFresh(id) { var snap = dismissedSnapshot(); return !snap || snap.indexOf(id) === -1; }
+
+  function basketsOf(id) {
+    return Object.keys(BASKETS).filter(function (b) { return BASKETS[b].items.indexOf(id) !== -1; });
+  }
+  function listNames(ids, extra) {
+    var names = ids.map(function (i) { return CATALOG[i].name; }).concat(extra || []);
+    if (names.length <= 1) return names.join('');
+    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+  }
+
+  /* Pick ONE basket offer for the current cart: the basket whose upgrade costs the
+     customer the least on top of what they already picked (closest to complete).
+     Returns null if nothing applies, the basket is already in the cart, or it was dismissed. */
+  function bestOffer() {
+    if (!UPSELL_ON || quiet()) return null;
+    var best = null;
+    Object.keys(BASKETS).forEach(function (bid) {
+      if (cart.indexOf(bid) !== -1 || !CATALOG[bid] || !CATALOG[bid].priceId) return;
+      var b = BASKETS[bid];
+      var inCart = b.items.filter(function (i) { return cart.indexOf(i) !== -1; });
+      if (!inCart.length || !inCart.some(isFresh)) return;
+      /* skip if the cart already holds a basket that covers these items */
+      var covered = cart.some(function (c) { return BASKETS[c] && inCart.every(function (i) { return BASKETS[c].items.indexOf(i) !== -1; }); });
+      if (covered) return;
+      var have = inCart.reduce(function (s, i) { return s + CATALOG[i].cents; }, 0);
+      var full = b.items.reduce(function (s, i) { return s + CATALOG[i].cents; }, 0);
+      var more = CATALOG[bid].cents - have;
+      if (more < 0) more = 0;
+      var missing = b.items.filter(function (i) { return cart.indexOf(i) === -1; });
+      var la = lastAdded();
+      var cand = { bid: bid, inCart: inCart, missing: missing, more: more, save: full - CATALOG[bid].cents, loud: inCart.length >= 2,
+                   hasLast: la && b.items.indexOf(la) !== -1 ? 1 : 0 };
+      /* rank (Alex, Sep 23): basket containing the item they JUST added > covers more of the cart > cheaper swap > bigger saving */
+      if (!best || cand.hasLast > best.hasLast ||
+          (cand.hasLast === best.hasLast && (cand.inCart.length > best.inCart.length ||
+          (cand.inCart.length === best.inCart.length && (cand.more < best.more || (cand.more === best.more && cand.save > best.save)))))) best = cand;
+    });
+    return best;
+  }
+
+  function offerHTML(o) {
+    var b = BASKETS[o.bid], p = CATALOG[o.bid];
+    var others = listNames(o.missing, b.bonus);
+    var price = money(p.cents);
+    var title, sub, kick;
+    if (o.loud) {
+      kick = 'Sweet deal';
+      title = '<b>' + listNames(o.inCart) + '</b> are in the ' + p.name + '. Get the whole basket for <b class="px">' + price + '</b>.';
+      sub = others ? others + ' included.' : '';
+    } else {
+      kick = 'Basket deal';
+      var la = lastAdded();
+      var lead = (la && o.inCart.indexOf(la) !== -1) ? la : (o.inCart.filter(isFresh)[0] || o.inCart[0]);
+      title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name + '. Get the whole basket, ' + CATALOG[lead].name + ' included, for <b class="px">' + price + '</b>.';
+      sub = others ? 'That\u2019s ' + others + ' too.' : '';
+    }
+    return '<div class="smcart-up' + (o.loud ? ' loud' : '') + '" data-up="' + o.bid + '">' +
+      '<img class="candy" src="/img/candy-deal.png" alt="">' +
+      '<div class="kick">' + kick + '</div>' +
+      '<div class="t">' + title + '</div>' +
+      (sub ? '<div class="s">' + sub + '</div>' : '') +
+      '<div class="btns"><button class="go" data-up-go="' + o.bid + '">Get the basket \u00b7 ' + price +
+      (o.save > 0 ? '<span class="sv">save ' + money(o.save) + '</span>' : '') + '</button>' +
+      '<button class="no" data-up-no="' + o.bid + '">No thanks</button></div></div>';
+  }
+
+  /* swap: remove every single that the basket covers, add the basket */
+  function upgradeTo(bid) {
+    var b = BASKETS[bid];
+    cart = cart.filter(function (i) { return b.items.indexOf(i) === -1; });
+    if (cart.indexOf(bid) === -1) cart.push(bid);
+    save(cart); render(); pulseBadge();
+  }
+
   function render() {
     var n = cart.length;
     els.badge.textContent = String(n);
@@ -260,6 +405,12 @@
           '<button class="smcart-rm" data-cart-remove="' + id + '" aria-label="Remove ' + p.name + '">&times;</button>' +
           '</div></div>';
       }).join('');
+    }
+    var offer = n ? bestOffer() : null;
+    var key = offer ? offer.bid + ':' + cart.join(',') : '';
+    if (els.deal.getAttribute('data-key') !== key) {
+      els.deal.innerHTML = offer ? offerHTML(offer) : '';
+      els.deal.setAttribute('data-key', key);
     }
     var total = cart.reduce(function (s, id) { return s + CATALOG[id].cents; }, 0);
     els.sub.textContent = money(total);
@@ -281,12 +432,15 @@
   function closeDrawer() { els.drawer.classList.remove('open'); els.overlay.classList.remove('open'); setMsg(''); }
   function toggleDrawer() { els.drawer.classList.contains('open') ? closeDrawer() : openDrawer(); }
 
+  var LAST_KEY = 'sm_last_added_v1';
+  function lastAdded() { try { return sessionStorage.getItem(LAST_KEY); } catch (e) { return null; } }
   function add(id, opts) {
     if (!CATALOG[id]) return;
     if (cart.indexOf(id) === -1) {
       cart.push(id);
       save(cart);
     }
+    try { sessionStorage.setItem(LAST_KEY, id); } catch (e) {}
     render();
     pulseBadge();
     if (!opts || !opts.silent) openDrawer();
@@ -382,13 +536,45 @@
     /* remove buttons are re-rendered, delegate on the drawer */
     els.items.addEventListener('click', function (e) {
       var btn = e.target.closest('[data-cart-remove]');
-      if (btn) remove(btn.getAttribute('data-cart-remove'));
+      if (btn) return remove(btn.getAttribute('data-cart-remove'));
     });
+    els.deal.addEventListener('click', function (e) {
+      var go = e.target.closest('[data-up-go]');
+      if (go) return upgradeTo(go.getAttribute('data-up-go'));
+      var no = e.target.closest('[data-up-no]');
+      if (no) { dismiss(); render(); }
+    });
+  }
+
+  /* "Also in" chips under the hero buy button on single-product pages.
+     A page opts in by having a hero <div class="cta"> containing data-cart-buy="<id>"
+     where <id> is a non-basket product. Chips are quiet links to the basket pages. */
+  function addChips() {
+    if (!UPSELL_ON) return;
+    var cta = document.querySelector('section.hero .cta, .hero .cta');
+    if (!cta) return;
+    var btn = cta.querySelector('[data-cart-buy]');
+    if (!btn) return;
+    var id = btn.getAttribute('data-cart-buy');
+    if (!CATALOG[id] || BASKETS[id]) return;
+    var bids = basketsOf(id);
+    if (!bids.length) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'smchips';
+    wrap.innerHTML = '<span class="lbl">Also in:</span>' + bids.map(function (bid) {
+      var full = BASKETS[bid].items.reduce(function (s, i) { return s + CATALOG[i].cents; }, 0);
+      var sv = full - CATALOG[bid].cents;
+      return '<a class="smchip" href="' + BASKETS[bid].page + '">' + CATALOG[bid].name + ' ' + money(CATALOG[bid].cents) +
+        (sv > 0 ? ' <span class="sv">save ' + money(sv) + '</span>' : '') + '</a>';
+    }).join('');
+    var meta = cta.querySelector('.meta');
+    if (meta) cta.insertBefore(wrap, meta); else cta.appendChild(wrap);
   }
 
   function init() {
     buildUI();
     bindButtons();
+    addChips();
     render();
   }
 
@@ -396,5 +582,5 @@
   else init();
 
   /* expose for other scripts / debugging */
-  window.SM_CART = { add: add, remove: remove, open: openDrawer, close: closeDrawer, items: function () { return cart.slice(); }, catalog: CATALOG };
+  window.SM_CART = { add: add, remove: remove, open: openDrawer, close: closeDrawer, items: function () { return cart.slice(); }, catalog: CATALOG, baskets: BASKETS, offer: bestOffer, upgrade: upgradeTo };
 })();
