@@ -87,6 +87,7 @@
   .wizard { --g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26); }
   .halo { --g1:#ffd47e; --g2:#fff3d0; --glow:#ffd47e; --shadow:rgba(255,212,126,.26); }
   .reels { --g1:#e8a05c; --g2:#f5d7a1; --glow:#e8a05c; --shadow:rgba(232,160,92,.26); }
+  .honey { --g1:#f0a04a; --g2:#ffd98a; --glow:#f0a04a; --shadow:rgba(240,160,74,.30); }
   .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
   .gloss { --g1:#8b6bff; --g2:#3df0a8; --glow:#8b6bff; --shadow:rgba(139,107,255,.26); }
   .biome  { --g1:#3ecf6e; --g2:#5ad9d0; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
@@ -153,6 +154,7 @@
     .instr-b { --g1:#39e6d0; --g2:#60a5fa; --glow:#39e6d0; --shadow:rgba(57,230,208,.26); }
     .fx-b { --g1:#ff5ca8; --g2:#8b5cf6; --glow:#ff5ca8; --shadow:rgba(255,92,168,.26); }
     .studio-b { --g1:#f5a623; --g2:#60a5fa; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
+    .tape-b { --g1:#f0a04a; --g2:#ffd98a; --glow:#f0a04a; --shadow:rgba(240,160,74,.30); }
   .midi-b { --g1:#ff5ca8; --g2:#8b5cf6; --glow:#ff5ca8; --shadow:rgba(255,92,168,.28); }
   .lofi-b { --g1:#f5a623; --g2:#2bb59a; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
   .lofim-b { --g1:#f5a623; --g2:#ffd47e; --glow:#ffd47e; --shadow:rgba(255,212,126,.26); }
@@ -277,15 +279,27 @@
     </div>
     <div class="card reels">
       <span class="new">NEW</span>
-      <div class="kind">Tape Machine</div>
+      <div class="kind">Dirty Tape for Lofi Drums</div>
       <h2 style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">REELS</h2>
-      <p class="tag">A real tape machine, in the box.</p>
-      <p class="desc">Asymmetric tape saturation, head bump, wow &amp; flutter, age and hiss. Three machines from pristine studio 15ips to a 30-year-old cassette. Watch the reels actually spin.</p>
+      <p class="tag">Dirty tape for lofi drums. Make it filthier.</p>
+      <p class="desc">Put your drum bus on a tape machine that has seen things. Head bump, wow &amp; flutter, age, hiss, crackle and hum. Three machines from studio reel to a 30-year-old cassette. Watch the reels actually spin.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/reels.png?v=2.0.1"><source src="img/video/reels_ui_loop.mp4?v=2.0.1" type="video/mp4"></video></div>
       <span class="dl buy" style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);box-shadow:0 6px 28px rgba(232,160,92,.26);" role="button" tabindex="0" data-cart-buy="reels">Buy Reels &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="reels">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="reels">Buy Now</span></div>
       <a class="more" href="reels.html">See how it works &rarr;</a>
       <div class="meta">v2.1.0 · VST3 + AU effect</div>
+    </div>
+    <div class="card honey">
+      <span class="new">NEW</span>
+      <div class="kind">Tape Smoothness</div>
+      <h2 style="background:linear-gradient(135deg,#f0a04a,#ffd98a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">HONEY</h2>
+      <p class="tag">Tape smoothness for chords, pads and melodies.</p>
+      <p class="desc">Real tape physics, not a distortion box. Three machines, three faces: a studio deck, a cassette on the desk, a worn-out Walkman. Your chords come back smoother than they went in.</p>
+      <div class="shot"><img src="img/ui/honey_cassette.png?v=1.0.0" alt="Honey tape plugin, cassette face" loading="lazy" width="1800" height="1160" style="display:block;width:100%;height:auto;"></div>
+      <span class="dl buy" style="background:linear-gradient(135deg,#f0a04a,#ffd98a);box-shadow:0 6px 28px rgba(240,160,74,.30);" role="button" tabindex="0" data-cart-buy="honey">Buy Honey &middot; $15</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="honey">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="honey">Buy Now</span></div>
+      <a class="more" href="honey.html">See how it works &rarr;</a>
+      <div class="meta">v1.0.0 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card halo">
       <span class="new">NEW</span>
@@ -527,7 +541,7 @@
   </div>
 
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Eight baskets. Instruments $59, Effects $49 and Studio Tools $59 sort the plugins by what they do. The Chord Basket is Chordsmith plus every MIDI pack at $69, the MIDI Mega Basket packs all 4796 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket comes two ways: $30 for the full lofi mood or $49 with Halo mastering included.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Nine baskets. Instruments $59, Effects $49 and Studio Tools $59 sort the plugins by what they do, and the Tape Pair puts Honey and Reels together for $22. The Chord Basket is Chordsmith plus every MIDI pack at $69, the MIDI Mega Basket packs all 4796 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket comes two ways: $30 for the full lofi mood or $49 with Halo mastering included.</p>
   <div class="bundlegrid">
     <a class="bundle instr-b" href="basket-instruments.html">
       <img src="img/bundles/instruments_bundle.png?v=3" alt="Instruments Basket: Biome and Chordsmith as wrapped candy in a basket" loading="lazy">
@@ -550,13 +564,23 @@
       </div>
     </a>
     <a class="bundle studio-b" href="basket-studio.html">
-      <img src="img/bundles/studio_bundle.png?v=3" alt="Studio Tools Basket: Fireplace, Halo, Gloss and Reels as wrapped candy in a basket" loading="lazy">
+      <img src="img/bundles/studio_bundle.png?v=4" alt="Studio Tools Basket: Fireplace, Halo, Gloss, Reels and Honey as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>STUDIO TOOLS BASKET</h3>
-        <p class="desc">Fireplace, Halo, Gloss and Reels. Atmosphere, a one-knob master, mix polish and tape. The finishing tools.</p>
+        <p class="desc">Fireplace, Halo, Gloss, Reels and Honey. Atmosphere, a one-knob master, mix polish and both tape machines. The finishing tools.</p>
         <div class="price">$59</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#60a5fa);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="studiobasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="studiobasket">Buy Now</span></div>
+      </div>
+    </a>
+    <a class="bundle tape-b" href="basket-tape.html">
+      <img src="img/bundles/tape_bundle.png?v=1" alt="Tape Pair: Honey and Reels as wrapped candy in a basket" loading="lazy">
+      <div class="binner">
+        <h3>TAPE PAIR</h3>
+        <p class="desc">Honey and Reels. Tape smoothness for the chords, dirty tape for the drums. Both machines, one price.</p>
+        <div class="price">$22</div>
+        <span class="dl bopen" style="background:linear-gradient(135deg,#f0a04a,#ffd98a);">Open the basket</span>
+        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="tapepair">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="tapepair">Buy Now</span></div>
       </div>
     </a>
     <a class="bundle chord-b" href="basket-chord.html">
@@ -593,7 +617,7 @@
       <img src="img/bundles/lofi_bundle.png?v=4" alt="Lofi Basket: Fireplace, Reels and Warble as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>LOFI BASKET</h3>
-        <p class="desc">Fireplace, Reels and Warble. A crackling room, subtle tape warmth and a weird little songbird. The complete lofi mood.</p>
+        <p class="desc">Fireplace, Reels and Warble. A crackling room, dirty tape drums and a weird little songbird. The complete lofi mood.</p>
         <div class="price">$30</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#2bb59a);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="lofibasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="lofibasket">Buy Now</span></div>
@@ -617,7 +641,7 @@
     <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> &middot; <a href="learn/chordsmith.html">Chord generators</a> &middot; <a href="learn/reels.html">Tape emulation</a> &middot; <a href="learn/jelly.html">Wobble FX</a> &middot; <a href="learn/orbit.html">3D auto-pan</a></div>
   </footer>
 </div>
-<script src="js/cart.js?v=p8" defer></script>
+<script src="js/cart.js?v=p9" defer></script>
 <script src="js/email-gate.js" defer></script>
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.
