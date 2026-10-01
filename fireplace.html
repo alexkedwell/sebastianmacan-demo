@@ -31,7 +31,9 @@
   .vidstack { margin:26px 0 6px; }
   .vidstack .big { border-radius:18px; overflow:hidden; border:1px solid var(--line); background:#0b0806; aspect-ratio:16/9; position:relative; }
   .vidstack .big video, .vidstack .big img { display:block; width:100%; height:100%; object-fit:cover; }
-  .vidrow { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:10px; }
+  .vidrow { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:10px; }
+  .vidrow.three { grid-template-columns:repeat(3,1fr); }
+  @media (max-width:560px){ .vidrow, .vidrow.three { grid-template-columns:repeat(2,1fr); } }
   .vidrow .sm { border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#0b0806; aspect-ratio:16/9; position:relative; }
   .vidrow .sm video, .vidrow .sm img { display:block; width:100%; height:100%; object-fit:cover; }
   .vidrow .sm span, .vidstack .big span { position:absolute; left:8px; bottom:6px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.9); }
@@ -42,6 +44,12 @@
   .play::after { content:""; position:absolute; left:8px; top:5px; border-left:8px solid #fff; border-top:6px solid transparent; border-bottom:6px solid transparent; }
   [data-vid].on .play { display:none; }
   .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
+  .vidstack .big .seek { position:absolute; left:0; right:0; bottom:0; height:26px; background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0)); cursor:pointer; opacity:0; transition:opacity .25s; }
+  .vidstack .big:hover .seek, .vidstack .big.on .seek { opacity:1; }
+  .vidstack .big .seek i { position:absolute; left:10px; right:10px; bottom:9px; height:3px; background:rgba(255,255,255,.25); border-radius:2px; display:block; }
+  .vidstack .big .seek i { background:linear-gradient(90deg,var(--g1),var(--g2)) no-repeat, rgba(255,255,255,.25); background-size:var(--p,0%) 100%, 100% 100%; }
+  .vidstack .big .seek b { position:absolute; right:12px; bottom:14px; font-size:11px; font-weight:600; color:#fff; letter-spacing:.04em; text-shadow:0 1px 4px rgba(0,0,0,.9); }
+  .vidstack .big.on span { opacity:0; }
   .pitch { font-size:20px; line-height:1.45; color:var(--text); }
   .pitch b { color:var(--g1); }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
@@ -73,7 +81,7 @@
   {
    "@type": "SoftwareApplication",
    "name": "Fireplace",
-   "operatingSystem": "macOS",
+   "operatingSystem": "macOS, Windows",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
    "description": "Fireplace is an ambience layer plugin (VST3 and AU for macOS). Seven rooms of atmosphere under your music, built from real recordings, plus Your Texture: drop any sound and it becomes an endless ducking texture bed.",
@@ -154,10 +162,10 @@
     <div class="kind">The Cozy Ambience Machine</div>
     <h1>FIREPLACE</h1>
     <p class="tag">Duck anything. Bring your own texture.</p>
-    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/fireplace.png?v=1.3"><source src="img/video/fireplace_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/fireplace.png?v=1.7"><source src="img/video/fireplace_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="fireplace">Buy Fireplace &middot; $15</span>
-      <div class="meta">v1.4.0 &middot; VST3 + AU effect &middot; macOS</div>
+      <div class="meta">v1.7.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
 
@@ -167,32 +175,38 @@
   <div class="vidstack">
     <div class="big"><img src="img/ui/fireplace_room_texture.jpg?v=1.7" alt="Fireplace Your Texture room with a dropped sample"><span>Your Texture: drop a sound, get an endless bed</span></div>
     <div class="vidrow">
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_fire.jpg?v=1.7"><source src="img/video/fireplace_room_fire.mp4?v=1.7" type="video/mp4"></video><span>Fireplace</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_rain.jpg?v=1.7"><source src="img/video/fireplace_room_rain.mp4?v=1.7" type="video/mp4"></video><span>Rain</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_sm404.jpg?v=1.7"><source src="img/video/fireplace_room_sm404.mp4?v=1.7" type="video/mp4"></video><span>SM-404</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_sm303.jpg?v=1.7"><source src="img/video/fireplace_room_sm303.mp4?v=1.7" type="video/mp4"></video><span>SM-303</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_vinyl.jpg?v=1.7"><source src="img/video/fireplace_room_vinyl.mp4?v=1.7" type="video/mp4"></video><span>Vinyl Attic</span><i class="play"></i></div>
+      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_fire.jpg?v=1.7g"><source src="img/video/fireplace_room_fire.mp4?v=1.7g" type="video/mp4"></video><span>Fireplace</span><i class="play"></i></div>
+      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_rain.jpg?v=1.7g"><source src="img/video/fireplace_room_rain.mp4?v=1.7g" type="video/mp4"></video><span>Rain on Window</span><i class="play"></i></div>
+      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_sm404.jpg?v=1.7g"><source src="img/video/fireplace_room_sm404.mp4?v=1.7g" type="video/mp4"></video><span>SM-404</span><i class="play"></i></div>
+      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_sm303.jpg?v=1.7g"><source src="img/video/fireplace_room_sm303.mp4?v=1.7g" type="video/mp4"></video><span>SM-303</span><i class="play"></i></div>
+    </div>
+    <div class="vidrow three">
+      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_vinyl.jpg?v=1.7g"><source src="img/video/fireplace_room_vinyl.mp4?v=1.7g" type="video/mp4"></video><span>Vinyl Attic</span><i class="play"></i></div>
+      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_wind.jpg?v=1.7g"><source src="img/video/fireplace_room_wind.mp4?v=1.7g" type="video/mp4"></video><span>Wind</span><i class="play"></i></div>
+      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_tape.jpg?v=1.7g"><source src="img/video/fireplace_room_tape.mp4?v=1.7g" type="video/mp4"></video><span>Tape Room</span><i class="play"></i></div>
     </div>
     <div class="vidhint">Tap a room to hear the actual recording, straight out of the plugin. Sound on.</div>
   </div>
 <script>
-(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');v.load();});});})();
+(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');var big=box.classList.contains('big');var bar=null,fill=null,tm=null;if(big){bar=document.createElement('div');bar.className='seek';fill=document.createElement('i');bar.appendChild(fill);tm=document.createElement('b');bar.appendChild(tm);box.appendChild(bar);var seekTo=function(ev){var r=bar.getBoundingClientRect();var x=(ev.touches?ev.touches[0].clientX:ev.clientX)-r.left;var p=Math.max(0,Math.min(1,x/r.width));if(v.duration)v.currentTime=p*v.duration;};var drag=false;bar.addEventListener('mousedown',function(ev){ev.stopPropagation();drag=true;seekTo(ev);});window.addEventListener('mousemove',function(ev){if(drag)seekTo(ev);});window.addEventListener('mouseup',function(){drag=false;});bar.addEventListener('touchstart',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('touchmove',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('click',function(ev){ev.stopPropagation();});var fmt=function(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+s%60).slice(-2);};v.addEventListener('timeupdate',function(){if(v.duration){fill.style.setProperty('--p',(100*v.currentTime/v.duration)+'%');tm.textContent=fmt(v.currentTime)+' / '+fmt(v.duration);}});v.addEventListener('loadedmetadata',function(){tm.textContent='0:00 / '+fmt(v.duration);});}box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');if(!big)v.load();});});})();
 </script>
 
   <h2>What Fireplace does</h2>
-  <p>Fireplace puts a room around your music. Drop it on your master or a bus and it lays living atmosphere UNDER the beat. Seven rooms, and every one of them is either generated live or built from a real recording Sebastian made himself. Nothing loops. Nothing sits on top of your drums. The whole plugin listens to your music and gets out of the way.</p>
+  <p>Fireplace puts a room around your music. Drop it on your master or a bus and it lays living atmosphere UNDER the beat. Eight rooms, and every one of them is either generated live or built from a real recording Sebastian made himself. Nothing loops. Nothing sits on top of your drums. The whole plugin listens to your music and gets out of the way.</p>
 
   <h2>Pick your room</h2>
-  <div class="bot"><b>FIREPLACE.</b> A real hearth, recorded up close. Low roar, wood snapping, embers fizzing up the chimney. Played back in long overlapping windows so the fire burns for hours and never repeats. The flames in the window burn brighter as you turn it up.</div>
+  <p>One dropdown, eight rooms. Every room comes with its own scene in the window, and every scene moves with the sound.</p>
+  <div class="bot"><b>FIREPLACE.</b> A real hearth, recorded up close. Low roar, wood snapping, embers fizzing up the chimney. Played back in long overlapping windows so the fire burns for hours and never repeats. The flames burn brighter as you turn it up.</div>
   <div class="bot"><b>RAIN ON WINDOW.</b> A real forest downpour Sebastian recorded during a storm. Steady, soft and endless. Rain on the glass, you inside, warm.</div>
   <div class="bot"><b>SM-404 CRACKLE.</b> Vinyl sim and DJFX crackle recorded straight off an SP-404, completely untouched. The pops, the dust, the box. The pads on screen flash on every real crackle.</div>
   <div class="bot"><b>SM-303 CRACKLE.</b> The older box. Recorded from an SP-303, raw. Sparser, rounder, meaner. For beats that want that early 2000s basement feel.</div>
-  <div class="bot"><b>VINYL ATTIC.</b> A dusty record spinning in the corner: pure crackle, no hiss. Sharp dust ticks and soft round pops, each one landing somewhere new across your headphones.</div>
+  <div class="bot"><b>VINYL ATTIC.</b> Sebastian's studio tape machine, recorded running with nothing on the reel, then filtered down to pure crackle: sharp dust ticks and soft round pops, each one landing somewhere new across your headphones. No hiss, no rumble.</div>
+  <div class="bot"><b>WIND.</b> New in 1.7. A real gust recorded in the open, stretched into weather that never repeats. The window opens on Pine Hollow: dark conifers, ferns and a creek running toward you, and the whole forest bends with every gust. DUCK calms it down while your track plays.</div>
   <div class="bot"><b>TAPE ROOM.</b> The machine room: tape hiss with a slow wow drift, faint mains hum, blinking meters. For beats that sound like they were left running overnight.</div>
-  <div class="bot"><b>YOUR TEXTURE.</b> The empty room. Drag a wav, aiff, flac, mp3 or ogg from Finder or hit LOAD TEXTURE. Fireplace turns it into a seamless bed with no audible seam, ducks it under your music, and saves the file path inside your preset.</div>
+  <div class="bot"><b>YOUR TEXTURE.</b> The empty room. Drag a wav, aiff, flac, mp3 or ogg from Finder or hit LOAD TEXTURE. Fireplace turns it into a seamless bed with no audible seam, ducks it under your music, and keeps your file loaded while you flip through the other rooms. Save it as a preset and the path travels with it.</div>
 
   <h2>Presets</h2>
-  <p>The name tag in the header is your preset browser. Click the arrows to step through rooms, click the name for the menu: factory rooms, your saved presets, save, delete. Load your own texture, name it, and it shows up under YOUR PRESETS next time you open any session. Unlimited saves.</p>
+  <p>The room dropdown is the whole browser. Open it: the eight rooms up top, YOUR PRESETS underneath, then SAVE PRESET and DELETE PRESET. Dial in a room, save it under your own name, and it is there in every session on this machine. Pick a room while a preset is loaded and you jump straight back to the factory sound. Unlimited saves.</p>
 
   <h2>The knobs</h2>
   <div class="knob"><b>AMOUNT.</b> How much room you pour under the music. The fire grows with it.</div>
@@ -206,10 +220,10 @@
   <p>A crackle sample loops. You hear the loop, your listeners hear the loop, and it sits ON TOP of your mix fighting the drums. Fireplace never repeats: the recorded rooms play in long shuffled windows with slow crossfades, the generated rooms are built live from scratch, and your own textures get the same treatment. The DUCK knob keeps all of it underneath the music where it belongs. That is the difference between an ambience layer and a WAV file.</p>
 
   <h2>Common questions</h2>
-  <div class="knob"><b>How much is Fireplace?</b> $15, one-time. Instant download after checkout. Full version, all seven rooms, no locked knobs, no subscription.</div>
-  <div class="knob"><b>Are the recordings real?</b> Yes. The fire, the rain and both SP crackle rooms are Sebastian's own recordings, shipped inside the plugin exactly as recorded. No synthesized crackle layered on top. That is why the download is bigger than our other effects (about 65 MB). Worth it.</div>
+  <div class="knob"><b>How much is Fireplace?</b> $15, one-time. Instant download after checkout. Full version, all eight rooms, no locked knobs, no subscription.</div>
+  <div class="knob"><b>Are the recordings real?</b> Yes. The fire, the rain, the wind, both SP crackle rooms and the Vinyl Attic tape machine are Sebastian's own recordings, shipped inside the plugin exactly as recorded. No synthesized crackle layered on top. That is why the download is bigger than our other effects (about 70 MB). Worth it.</div>
   <div class="knob"><b>What can I drop into Your Texture?</b> Any wav, aiff, flac, mp3 or ogg, any length. Short files get stretched into a seamless bed, long files play in random windows so they never loop. Drag from Finder or use LOAD TEXTURE (DAW browser drags hand over clips, not files, so use Finder).</div>
-  <div class="knob"><b>Is there a Windows version of Fireplace?</b> Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</div>
+  <div class="knob"><b>Is there a Windows version of Fireplace?</b> Yes. Fireplace ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms.</div>
 
   <div class="cta">
     <span class="dl buy" role="button" tabindex="0" data-cart-buy="fireplace">Buy Fireplace &middot; $15</span>
@@ -219,7 +233,7 @@
     <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@sebastianmacan.com">hello@sebastianmacan.com</a> &middot; <a href="downloads.html">Re-download</a></p>
   </footer>
 </div>
-<script src="js/cart.js?v=p9" defer></script>
+<script src="js/cart.js?v=p11" defer></script>
 <script src="js/email-gate.js" defer></script>
 </body>
 </html>

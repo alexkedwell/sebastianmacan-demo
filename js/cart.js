@@ -32,6 +32,7 @@
     warble:        { name: 'Warble',                 cents: 1500, priceId: 'pri_01m1gntt0z0mpgfr059dve73fj' },
     reels:         { name: 'Reels',                  cents: 1500, priceId: 'pri_01m1gnswg636185tfrqxdgyaqr' },
     honey:         { name: 'Honey',                  cents: 1500, priceId: 'pri_01m3nvfqfgwp0hn49hbr0zw2dt' },
+    gremlin:       { name: 'Gremlin',                cents: 1500, priceId: 'pri_01m3rmmy11e41nxdpkp9rdjq4d' },
     fireplace:     { name: 'Fireplace',              cents: 1500, priceId: 'pri_01m1nckxvaekbaccghkvvh4zva' },
     halo:          { name: 'Halo',                   cents: 2900, priceId: 'pri_01m1gnswspxareqhrervwre5a3' },
     gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
@@ -68,7 +69,7 @@
      it belongs to here (then reprice the basket in Paddle if the roster changed). */
   var BASKETS = {
     instrumentsbasket: { page: 'basket-instruments.html', items: ['biome', 'magician'] },
-    effectsbasket:     { page: 'basket-effects.html',     items: ['jelly', 'warble', 'reels', 'gloss'], bonus: ['Orbit'] },
+    effectsbasket:     { page: 'basket-effects.html',     items: ['jelly', 'warble', 'reels', 'gloss', 'gremlin'], bonus: ['Orbit'] },
     studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'halo', 'gloss', 'reels', 'honey'] },
     tapepair:          { page: 'basket-tape.html',        items: ['honey', 'reels'] },
     lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'reels', 'warble'] },
@@ -493,7 +494,8 @@
     loadPaddle().then(function (Paddle) {
       Paddle.Checkout.open({
         items: ids.map(function (id) { return { priceId: CATALOG[id].priceId, quantity: 1 }; }),
-        settings: { displayMode: 'overlay', theme: 'dark', locale: 'en' }
+        settings: { displayMode: 'overlay', theme: 'dark', locale: 'en',
+          successUrl: 'https://dl.sebastianmacan.com/claim?txn={transaction_id}' }
       });
     }).catch(function (e) {
       openDrawer();

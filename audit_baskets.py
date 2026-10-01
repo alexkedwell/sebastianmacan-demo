@@ -18,7 +18,7 @@ paddle = {i["price_id"]: i for i in json.load(open(f"{H}/paddle/catalog.json"))[
 prod = json.load(open(f"{H}/delivery/products.json"))
 RETIRED = ["Subtle Tape Machine", "Sometimes tape plugins do too much", "right amount of vintage", "A real tape machine, in the box"]
 FILE_OF = {"biome": "Biome", "magician": "Chordsmith", "jelly": "Jelly", "warble": "Warble", "reels": "Reels", "gloss": "Gloss",
-           "orbit": "Orbit", "fireplace": "Fireplace", "halo": "Halo", "honey": "Honey"}
+           "orbit": "Orbit", "fireplace": "Fireplace", "halo": "Halo", "honey": "Honey", "gremlin": "Gremlin"}
 bad = []
 # 1. roster: cart.js basket vs delivered files
 for cid, (page, items) in BASK.items():
@@ -44,6 +44,23 @@ for page in glob.glob(f"{S}/*.html"):
             if kind not in s and tag not in s:
                 bad.append(f"COPY {name}: sells {pname} but has neither kind '{kind}' nor tag '{tag[:40]}...'")
 print(f"catalog {len(CAT)} items, {len(BASK)} baskets, {len(ITEMS)} product copies")
+# 4. plugin count: hero copy on index (and demo-site) must equal the number of plugin cards. Alex caught "Ten" after Gremlin (Sep 30).
+WORDS = {9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}
+idx = open(f"{S}/index.html").read()
+midi_cards = {"hitmaker", "clubchords", "tears", "soulchords"}
+ncards = len(set(re.findall(r'class="card (\w+)"', idx)) - midi_cards)
+for page in [f"{S}/index.html", f"{H}/demo-site/index.html"]:
+    if not os.path.exists(page): continue
+    s = open(page).read(); name = page.replace(H + "/", "")
+    for m in re.findall(r"(\d+) Plugins \+", s):
+        if int(m) != ncards: bad.append(f"COUNT {name}: says '{m} Plugins' but {ncards} plugin cards")
+    for m in re.findall(r"(\w+) plugins and \d+ MIDI", s):
+        if m != WORDS.get(ncards): bad.append(f"COUNT {name}: hero says '{m} plugins' but {ncards} plugin cards")
+# 5. Effects Basket page lists every member from cart.js
+if "effectsbasket" in BASK:
+    be = open(f"{S}/basket-effects.html").read()
+    for i in BASK["effectsbasket"][1]:
+        if f'data-cart-buy="{i}"' not in be: bad.append(f"BASKET PAGE basket-effects.html: missing row for {i}")
 if bad:
     print("\n".join(bad)); print(f"\n{len(bad)} PROBLEMS"); sys.exit(1)
 print("baskets + copy + prices consistent, 0 problems")

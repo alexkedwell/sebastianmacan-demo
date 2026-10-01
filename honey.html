@@ -31,7 +31,7 @@
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
     box-shadow:0 20px 80px rgba(240,160,74,.30); animation:float 7s ease-in-out infinite; }
-  .videobox img { display:block; width:100%; height:auto; }
+  .videobox video, .videobox img { display:block; width:100%; height:auto; }
   .faces { display:flex; justify-content:center; gap:8px; margin-top:22px; }
   .face { cursor:pointer; user-select:none; font-size:12px; font-weight:800; letter-spacing:.14em; padding:9px 18px; border-radius:999px; border:1px solid var(--line); color:var(--dim); background:var(--card); transition:all .15s; }
   .face:hover { color:var(--txt); }
@@ -103,7 +103,7 @@
     <div class="faces">
       <span class="face on" data-face="cassette">CASSETTE</span><span class="face" data-face="studio">STUDIO</span><span class="face" data-face="walkman">WALKMAN</span>
     </div>
-    <div class="videobox"><img id="honeyface" src="img/ui/honey_cassette.png?v=1.0.0" alt="Honey tape plugin, cassette face" width="1800" height="1160"></div>
+    <div class="videobox"><video id="honeyface" autoplay muted loop playsinline poster="img/ui/honey_cassette.png?v=1.0.0"><source src="img/video/honey_face_cassette.mp4?v=1.0.0" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="honey">Buy Honey &middot; $15</span>
       <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
@@ -150,8 +150,8 @@
     <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
-<script src="js/cart.js?v=p9" defer></script>
+<script src="js/cart.js?v=p11" defer></script>
 <script src="js/email-gate.js" defer></script>
-<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.src="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.alt="Honey tape plugin, "+f.dataset.face+" face";});});</script>
+<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.poster="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.querySelector("source").src="img/video/honey_face_"+f.dataset.face+".mp4?v=1.0.0";i.load();i.play();});});</script>
 </body>
 </html>
