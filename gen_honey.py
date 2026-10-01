@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate site/honey.html (product page) + site/basket-tape.html (Tape Pair) from the house template.
+"""Generate site/honey.html (product page) + site/basket-tape.html (Tape Basket) from the house template.
 Run from ~/sebastianmacan/site. Idempotent."""
 import re, os
 S = os.path.dirname(os.path.abspath(__file__))
@@ -33,7 +33,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
    "@type": "FAQPage",
    "mainEntity": [
     { "@type": "Question", "name": "What is the difference between Honey and Reels?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Honey is tape smoothness for chords, pads and melodies: it takes the digital edge off and glues. Reels is dirty tape for lofi drums: it makes the vibe filthier. Same producer, different tracks. The Tape Pair basket has both for $22." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Honey is tape smoothness for chords, pads and melodies: it takes the digital edge off and glues. Reels is dirty tape for lofi drums: it makes the vibe filthier. Same producer, different tracks. The Tape Basket has both for $22." } },
     { "@type": "Question", "name": "How much is Honey?",
       "acceptedAnswer": { "@type": "Answer", "text": "Honey is $15, one-time. Instant download after checkout, full version, no locked knobs, no subscription." } },
     { "@type": "Question", "name": "What DAWs does Honey work in?",
@@ -70,7 +70,7 @@ body = '''  <section class="hero">
   <div class="step"><b>3. Turn DRIVE until it smiles.</b> Then WARMTH for the head bump, WOBBLE for movement, AGE for years of wear. Save it as a preset when it is yours.</div>
 
   <h2>Honey and Reels</h2>
-  <div class="step"><b>Honey is for chords, pads and melodies.</b> Tape smoothness. It takes the digital edge off and glues. <b>Reels is for lofi drums.</b> Dirty tape. It makes the vibe filthier. Same producer, different tracks in the same session. <a href="basket-tape.html" style="color:var(--g1);font-weight:800;">Tape Pair: both for $22 &rarr;</a></div>
+  <div class="step"><b>Honey is for chords, pads and melodies.</b> Tape smoothness. It takes the digital edge off and glues. <b>Reels is for lofi drums.</b> Dirty tape. It makes the vibe filthier. Same producer, different tracks in the same session. <a href="basket-tape.html" style="color:var(--g1);font-weight:800;">Tape Basket: both for $22 &rarr;</a></div>
 
   <h2>Make it yours</h2>
   <div class="knob"><b>DRIVE.</b> How hard you hit the tape. Low is glue, high is soft saturation that stays smooth because the highs saturate first.</div>
@@ -85,7 +85,7 @@ body = '''  <section class="hero">
   <p>Put Honey on the chord bus in CASSETTE with DRIVE around 11 o'clock and WOBBLE just past off. Then put Reels on the drum bus. That is the lofi session in two plugins.</p>
 
   <h2>Common questions</h2>
-  <div class="knob"><b>What is the difference between Honey and Reels?</b> Honey is tape smoothness for chords, pads and melodies. Reels is dirty tape for lofi drums. Same producer, different tracks. The Tape Pair basket has both for $22.</div>
+  <div class="knob"><b>What is the difference between Honey and Reels?</b> Honey is tape smoothness for chords, pads and melodies. Reels is dirty tape for lofi drums. Same producer, different tracks. The Tape Basket has both for $22.</div>
   <div class="knob"><b>How much is Honey?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
   <div class="knob"><b>What DAWs does Honey work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
   <div class="knob"><b>Is there a Windows version of Honey?</b> Yes. macOS (VST3 + AU) and Windows (VST3), code-signed on both.</div>
@@ -108,7 +108,7 @@ h = h.replace('<script src="js/email-gate.js" defer></script>',
  '<script src="js/email-gate.js" defer></script>\n<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.src="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.alt="Honey tape plugin, "+f.dataset.face+" face";});});</script>')
 open(f"{S}/honey.html", "w").write(h); print("wrote honey.html", len(h))
 
-# ---------- TAPE PAIR basket ----------
+# ---------- TAPE BASKET basket ----------
 b = open(f"{S}/basket-effects.html").read()
 print("basket template markers:", "effectsbasket" in b, b.count("data-cart-buy"))
 open("/tmp/basket_effects_ref.html", "w").write(b)

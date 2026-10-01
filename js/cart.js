@@ -59,7 +59,9 @@
     instrumentsbasket: { name: 'Instruments Basket', cents: 5900, priceId: 'pri_01m3jrbcjp6hcx8ysjy69b65qa' },
     effectsbasket: { name: 'Effects Basket',         cents: 4900, priceId: 'pri_01m3jrbcz40geyntgtefncfdjs' },
     studiobasket:  { name: 'Studio Tools Basket',    cents: 5900, priceId: 'pri_01m3jrbdb9gnqdxxjrp5zp0gwp' },
-    tapepair:      { name: 'Tape Pair',              cents: 2200, priceId: 'pri_01m3nvfqtcx6cak39y4ey07jnq' }
+    tapepair:      { name: 'Tape Basket',              cents: 2200, priceId: 'pri_01m3nvfqtcx6cak39y4ey07jnq' },
+    taperoom:      { name: 'Tape Room Basket',       cents: 3300, priceId: 'pri_01m3wta6680q5ehavfp6jben5q' },
+    cozy:          { name: 'Cozy Basket',            cents: 2200, priceId: 'pri_01m3wta6frehvbb94wkk6m7ew4' }
   };
 
   /* BASKET MEMBERSHIP -- the ONE place to edit when a product joins/leaves a basket.
@@ -72,8 +74,10 @@
     effectsbasket:     { page: 'basket-effects.html',     items: ['jelly', 'warble', 'reels', 'gloss', 'gremlin'], bonus: ['Orbit'] },
     studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'halo', 'gloss', 'reels', 'honey'] },
     tapepair:          { page: 'basket-tape.html',        items: ['honey', 'reels'] },
-    lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'reels', 'warble'] },
-    lofimastering:     { page: 'basket-lofi-mastering.html', items: ['fireplace', 'reels', 'warble', 'halo'] },
+    taperoom:          { page: 'basket-taperoom.html',    items: ['reels', 'honey', 'fireplace'] },
+    cozy:              { page: 'basket-cozy.html',        items: ['honey', 'fireplace'] },
+    lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'reels', 'warble', 'honey'] },
+    lofimastering:     { page: 'basket-lofi-mastering.html', items: ['fireplace', 'reels', 'warble', 'honey', 'halo'] },
     chordbasket:       { page: 'basket-chord.html',       items: ['magician', 'hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
     midimega:          { page: 'basket-midi.html',        items: ['hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
     allmodes:          { page: 'basket-modes.html',       items: ['ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] }

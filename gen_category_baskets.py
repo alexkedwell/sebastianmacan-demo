@@ -9,7 +9,7 @@ ITEMS = {
   "reels":     ("Dirty Tape for Lofi Drums", "Reels", "Dirty tape for lofi drums. Make it filthier.", 15, "reels.html"),
   "gloss":     ("Instant Mix Polish", "Gloss", "Four knobs that make tracks sit right in the mix, fast.", 19, "gloss.html"),
   "orbit":     ("3D Auto-Pan", "Orbit", "Hats that fly around your head. Free forever, and in the basket anyway.", 0, "orbit.html"),
-  "fireplace": ("Cozy Ambience Machine", "Fireplace", "Crackling fire, real forest rain, vinyl attic, tape room. Ducks under your beat.", 15, "fireplace.html"),
+  "fireplace": ("Ambience", "Fireplace", "Eight real rooms recorded on tape. Put your track somewhere.", 15, "fireplace.html"),
   "halo":      ("One-Knob Mastering", "Halo", "Drop it on your master. Turn LIFT until the halo closes.", 29, "halo.html"),
   "honey":     ("Tape Smoothness", "Honey", "Tape smoothness for chords, pads and melodies. Three machines, three faces.", 15, "honey.html"),
 }
@@ -32,7 +32,7 @@ BASKETS = [
        desc="Fireplace lays a living room of atmosphere under the beat. Reels puts the drums on dirty tape. Honey puts the chords on smooth tape. Gloss makes every track sit right. Halo finishes the master with one knob and a verified LUFS meter. From rough idea to release, one basket.",
        items=["fireplace", "halo", "gloss", "reels", "honey"], meta="5 plugins · VST3 + AU · macOS + Windows",
        mdesc="Fireplace, Halo, Gloss, Reels and Honey. The Sebastian Macan finishing tools, one basket, VST3 + AU."),
-  dict(file="basket-tape.html", cid="tapepair", title="TAPE PAIR", name="Tape Pair", price=22,
+  dict(file="basket-tape.html", cid="tapepair", title="TAPE BASKET", name="Tape Basket", price=22,
        img="img/bundles/tape_bundle.png?v=1", g1="#f0a04a", g2="#ffd98a",
        tag="Both tape machines. Honey for the chords, Reels for the drums.",
        desc="Honey is tape smoothness for chords, pads and melodies: it takes the digital edge off and glues. Reels is dirty tape for lofi drums: it makes the vibe filthier. Same session, two tracks, two machines.",
