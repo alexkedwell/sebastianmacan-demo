@@ -20,7 +20,7 @@ BASKETS = [
        desc="Biome turns any audio into huge evolving textures, pads and drones. Chordsmith writes chords and melodies in any genre, key and mode and drags them straight into your DAW. The sound and the song, one basket.",
        items=["biome", "magician"], meta="2 plugins · VST3 + AU · macOS",
        mdesc="Biome and Chordsmith. Both Sebastian Macan instruments, one basket, VST3 + AU for macOS."),
-  dict(file="basket-effects.html", cid="effectsbasket", title="EFFECTS BASKET", name="Effects Basket", price=49,
+  dict(file="basket-effects.html", cid="effectsbasket", title="EFFECTS BASKET", name="Effects Basket", price=59,
        img="img/bundles/effects_bundle.png?v=3", g1="#ff5ca8", g2="#8b5cf6",
        tag="Every effect in the store. Wobble, warble, tape and polish, with Orbit thrown in.",
        desc="Jelly makes things jiggle. Warble makes them sing like a weird little bird. Reels puts them on tape. Gloss makes them sit right in the mix. Orbit flies them around your head, free. Every effect we make, one basket.",
