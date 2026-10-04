@@ -57,7 +57,7 @@
     lofimastering: { name: 'Lofi Basket + Mastering', cents: 4900, priceId: 'pri_01m1nckyery0c9sqt2m971y8zb' },
     chordbasket:   { name: 'Chord Basket',           cents: 6900, priceId: 'pri_01m36c5kc3z84gvnnc1nyej57d' },
     instrumentsbasket: { name: 'Instruments Basket', cents: 5900, priceId: 'pri_01m3jrbcjp6hcx8ysjy69b65qa' },
-    effectsbasket: { name: 'Effects Basket',         cents: 4900, priceId: 'pri_01m3jrbcz40geyntgtefncfdjs' },
+    effectsbasket: { name: 'Effects Basket',         cents: 5900, priceId: 'pri_01m3jrbcz40geyntgtefncfdjs' },
     studiobasket:  { name: 'Studio Tools Basket',    cents: 5900, priceId: 'pri_01m3jrbdb9gnqdxxjrp5zp0gwp' },
     tapepair:      { name: 'Tape Basket',              cents: 2200, priceId: 'pri_01m3nvfqtcx6cak39y4ey07jnq' },
     taperoom:      { name: 'Tape Room Basket',       cents: 3300, priceId: 'pri_01m3wta6680q5ehavfp6jben5q' },
