@@ -15,8 +15,11 @@ VIDCSS = '''  .vidstack { margin:26px 0 6px; }
   .vidstack .big span { font-size:13px; left:14px; bottom:10px; }
   @media (max-width:640px){ .vidrow { grid-template-columns:repeat(3,1fr); } }
   .sm, .big { cursor:pointer; }
-  .play { position:absolute; right:8px; top:8px; width:22px; height:22px; border-radius:50%; background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.35); }
-  .play::after { content:""; position:absolute; left:8px; top:5px; border-left:8px solid #fff; border-top:6px solid transparent; border-bottom:6px solid transparent; }
+  .play { position:absolute; left:50%; top:50%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%; background:rgba(0,0,0,.55); border:2px solid rgba(255,255,255,.85); box-shadow:0 6px 24px rgba(0,0,0,.5); transition:transform .18s, background .18s; }
+  .play::after { content:""; position:absolute; left:17px; top:12px; border-left:16px solid #fff; border-top:10px solid transparent; border-bottom:10px solid transparent; }
+  .vidstack .big .play { width:84px; height:84px; margin:-42px 0 0 -42px; background:linear-gradient(135deg,var(--g1),var(--g2)); border:3px solid rgba(255,255,255,.9); }
+  .vidstack .big .play::after { left:33px; top:24px; border-left:30px solid #fff; border-top:18px solid transparent; border-bottom:18px solid transparent; }
+  [data-vid]:hover .play { transform:scale(1.08); }
   [data-vid].on .play { display:none; }
   .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
   .vidstack .big .seek { position:absolute; left:0; right:0; bottom:0; height:26px; background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0)); cursor:pointer; opacity:0; transition:opacity .25s; }
@@ -87,12 +90,8 @@ body = '''  <section class="hero">
   <h2>Three sections, one box</h2>
   <div class="vidstack">
     <div class="big" data-vid><video preload="none" playsinline poster="img/ui/gremlin_demo.jpg?v=3.1.0d"><source src="img/video/gremlin_demo.mp4?v=3.1.0d" type="video/mp4"></video><span>Before / after, in Ableton</span><i class="play"></i></div>
-    <div class="vidrow three">
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_chop.jpg?v=3.1.0c"><source src="img/video/gremlin_chop.mp4?v=3.1.0c" type="video/mp4"></video><span>Chop</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_stutter.jpg?v=3.1.0c"><source src="img/video/gremlin_stutter.mp4?v=3.1.0c" type="video/mp4"></video><span>Stutter</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_smear.jpg?v=3.1.0c"><source src="img/video/gremlin_smear.mp4?v=3.1.0c" type="video/mp4"></video><span>Smear</span><i class="play"></i></div>
-    </div>
-    <div class="vidhint">Tap a gremlin to hear it. Two bars dry, then it bites. Sound on.</div>
+    <div class="big" data-vid style="margin-top:12px"><video preload="none" playsinline poster="img/ui/gremlin_production.jpg?v=1"><source src="img/video/gremlin_production.mp4?v=2" type="video/mp4"></video><span>Sebastian using Gremlin in his production</span><i class="play"></i></div>
+    <div class="vidhint">Tap to play. Sound on.</div>
   </div>
   <div class="bot"><b>CHOP.</b> A tempo-synced gate and slicer. Pick a rate from 1/4 down to 1/32, set the GATE length, choose a pattern or roll a new one with the seed. Instant trance gates, triplet holes and rhythmic silence that always lands on the grid.</div>
   <div class="bot"><b>STUTTER.</b> Buffer repeats on demand. RATE sets the slice, REPEATS how many times it fires, REVERSE flips them backwards, and PITCH is true pitch from -12 to +12 semitones. Every repeat in a burst shares one interval, so stutters stay musical instead of turning to mush. Noon is 0 st, plain repeats.</div>

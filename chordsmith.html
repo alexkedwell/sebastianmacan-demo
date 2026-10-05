@@ -47,6 +47,31 @@
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
   @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
+  .vidstack { margin:26px 0 6px; }
+  .vidstack .big { border-radius:18px; overflow:hidden; border:1px solid var(--line); background:#07100a; aspect-ratio:16/9; position:relative; }
+  .vidstack .big video, .vidstack .big img { display:block; width:100%; height:100%; object-fit:cover; }
+  .vidrow { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:10px; }
+  .vidrow.three { grid-template-columns:repeat(3,1fr); }
+  @media (max-width:560px){ .vidrow, .vidrow.three { grid-template-columns:repeat(2,1fr); } }
+  .vidrow .sm { border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#07100a; aspect-ratio:16/9; position:relative; }
+  .vidrow .sm video, .vidrow .sm img { display:block; width:100%; height:100%; object-fit:cover; }
+  .vidrow .sm span, .vidstack .big span { position:absolute; left:8px; bottom:6px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.9); }
+  .vidstack .big span { font-size:13px; left:14px; bottom:10px; }
+  @media (max-width:640px){ .vidrow { grid-template-columns:repeat(3,1fr); } }
+  .sm, .big { cursor:pointer; }
+  .play { position:absolute; left:50%; top:50%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%; background:rgba(0,0,0,.55); border:2px solid rgba(255,255,255,.85); box-shadow:0 6px 24px rgba(0,0,0,.5); transition:transform .18s, background .18s; }
+  .play::after { content:""; position:absolute; left:17px; top:12px; border-left:16px solid #fff; border-top:10px solid transparent; border-bottom:10px solid transparent; }
+  .vidstack .big .play { width:84px; height:84px; margin:-42px 0 0 -42px; background:linear-gradient(135deg,var(--g1),var(--g2)); border:3px solid rgba(255,255,255,.9); }
+  .vidstack .big .play::after { left:33px; top:24px; border-left:30px solid #fff; border-top:18px solid transparent; border-bottom:18px solid transparent; }
+  [data-vid]:hover .play { transform:scale(1.08); }
+  [data-vid].on .play { display:none; }
+  .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
+  .vidstack .big .seek { position:absolute; left:0; right:0; bottom:0; height:26px; background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0)); cursor:pointer; opacity:0; transition:opacity .25s; }
+  .vidstack .big:hover .seek, .vidstack .big.on .seek { opacity:1; }
+  .vidstack .big .seek i { position:absolute; left:10px; right:10px; bottom:9px; height:3px; background:rgba(255,255,255,.25); border-radius:2px; display:block; }
+  .vidstack .big .seek i { background:linear-gradient(90deg,var(--g1),var(--g2)) no-repeat, rgba(255,255,255,.25); background-size:var(--p,0%) 100%, 100% 100%; }
+  .vidstack .big .seek b { position:absolute; right:12px; bottom:14px; font-size:11px; font-weight:600; color:#fff; letter-spacing:.04em; text-shadow:0 1px 4px rgba(0,0,0,.9); }
+  .vidstack .big.on span { opacity:0; }
 </style>
 <script type="application/ld+json">
 {
@@ -146,6 +171,12 @@
   <h2>What Chordsmith does</h2>
   <p>Chordsmith writes chord progressions and melodies for you. Pick a genre, smash GENERATE, and you get a fresh progression with a matching melody every single click. When you hear one you love, drag the MIDI straight into your DAW and it is yours.</p>
 
+  <h2>How Sebastian made a beat with Chordsmith</h2>
+  <div class="vidstack">
+    <div class="big" data-vid><video preload="none" playsinline poster="img/ui/chordsmith_demo.jpg?v=1"><source src="img/video/chordsmith_demo.mp4?v=2" type="video/mp4"></video><span>Blank piano roll to full beat, in Ableton</span><i class="play"></i></div>
+    <div class="vidhint">Tap to play. Sound on.</div>
+  </div>
+
   <h2>Get started in 3 steps</h2>
   <div class="step"><b>1. Put Chordsmith on a track.</b> In your DAW, add Chordsmith as an instrument on a MIDI track.</div>
   <div class="step"><b>2. Pick a genre and hit GENERATE.</b> Every click writes a brand new progression and melody in that style. Flipping too fast? The little &lt; and &gt; arrows next to GENERATE walk you back and forward through everything you just heard, so a great one is never lost.</div>
@@ -198,5 +229,6 @@
 </div>
 <script src="js/email-gate.js" defer></script>
 <script src="js/cart.js?v=p13"></script>
+<script>(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');var big=box.classList.contains('big');var bar=null,fill=null,tm=null;if(big){bar=document.createElement('div');bar.className='seek';fill=document.createElement('i');bar.appendChild(fill);tm=document.createElement('b');bar.appendChild(tm);box.appendChild(bar);var seekTo=function(ev){var r=bar.getBoundingClientRect();var x=(ev.touches?ev.touches[0].clientX:ev.clientX)-r.left;var p=Math.max(0,Math.min(1,x/r.width));if(v.duration)v.currentTime=p*v.duration;};var drag=false;bar.addEventListener('mousedown',function(ev){ev.stopPropagation();drag=true;seekTo(ev);});window.addEventListener('mousemove',function(ev){if(drag)seekTo(ev);});window.addEventListener('mouseup',function(){drag=false;});bar.addEventListener('touchstart',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('touchmove',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('click',function(ev){ev.stopPropagation();});var fmt=function(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+s%60).slice(-2);};v.addEventListener('timeupdate',function(){if(v.duration){fill.style.setProperty('--p',(100*v.currentTime/v.duration)+'%');tm.textContent=fmt(v.currentTime)+' / '+fmt(v.duration);}});v.addEventListener('loadedmetadata',function(){tm.textContent='0:00 / '+fmt(v.duration);});}box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');if(!big)v.load();});});})();</script>
 </body>
 </html>
