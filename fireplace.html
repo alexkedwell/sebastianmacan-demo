@@ -88,6 +88,8 @@
   .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
   .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(96,170,255,.18); }
   .studio video { display:block; width:100%; height:auto; }
+.studio.texture { max-width:640px; margin-top:28px; }
+.studio.texture .frame .play span { width:64px; height:64px; }
 .studio .soon { aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:radial-gradient(ellipse at 50% 60%, #2a1608 0%, #0b0806 70%); }
 .studio .soon span { font-size:clamp(28px,6vw,64px); font-weight:900; letter-spacing:.08em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
 .studio .soon em { font-style:normal; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); }
@@ -209,8 +211,7 @@
   <script>(function(){var v=document.getElementById('studioVid');if(!v)return;var w=document.getElementById('studio'),p=document.getElementById('studioPlay');p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();</script>
 
   <div class="vidstack">
-    <div class="vidrow">
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_texture.jpg?v=1"><source src="img/video/fireplace_texture.mp4?v=2" type="video/mp4"></video><span>Your Texture</span><i class="play"></i></div>
+    <div class="vidrow three">
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_fire.jpg?v=1.7g"><source src="img/video/fireplace_room_fire.mp4?v=1.7h" type="video/mp4"></video><span>Fireplace</span><i class="play"></i></div>
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_rain.jpg?v=1.7g"><source src="img/video/fireplace_room_rain.mp4?v=1.7h" type="video/mp4"></video><span>Rain on Window</span><i class="play"></i></div>
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_sm404.jpg?v=1.7g"><source src="img/video/fireplace_room_sm404.mp4?v=1.7h" type="video/mp4"></video><span>SM-404</span><i class="play"></i></div>
@@ -220,8 +221,23 @@
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_vinyl.jpg?v=1.7g"><source src="img/video/fireplace_room_vinyl.mp4?v=1.7h" type="video/mp4"></video><span>Vinyl Attic</span><i class="play"></i></div>
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_wind.jpg?v=1.7g"><source src="img/video/fireplace_room_wind.mp4?v=1.7h" type="video/mp4"></video><span>Wind</span><i class="play"></i></div>
     </div>
-    <div class="vidhint">Tap a room to hear the actual recording, straight out of the plugin. Your Texture: drop in any sound, it plays forever. Sound on.</div>
+    <div class="vidhint">Tap a room to hear the actual recording, straight out of the plugin. Sound on.</div>
   </div>
+
+  <div class="studio texture" id="texture">
+    <div class="label">Your Texture &middot; Drop in any sound, it plays forever</div>
+    <div class="frame">
+      <video id="textureVid" playsinline preload="metadata" poster="img/ui/fireplace_texture.jpg?v=1" controlslist="nodownload"><source src="img/video/fireplace_texture.mp4?v=2" type="video/mp4"></video>
+      <div class="play" id="texturePlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Birds.</b> One of Sebastian's own recordings dropped straight onto Fireplace in Ableton. Not a preset: any sound you own becomes an endless texture bed.</p>
+  </div>
+  <script>
+    (function(){var v=document.getElementById('textureVid'),w=document.getElementById('texture'),p=document.getElementById('texturePlay');
+    p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});
+    v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();
+  </script>
 <script>
 (function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');var big=box.classList.contains('big');var bar=null,fill=null,tm=null;if(big){bar=document.createElement('div');bar.className='seek';fill=document.createElement('i');bar.appendChild(fill);tm=document.createElement('b');bar.appendChild(tm);box.appendChild(bar);var seekTo=function(ev){var r=bar.getBoundingClientRect();var x=(ev.touches?ev.touches[0].clientX:ev.clientX)-r.left;var p=Math.max(0,Math.min(1,x/r.width));if(v.duration)v.currentTime=p*v.duration;};var drag=false;bar.addEventListener('mousedown',function(ev){ev.stopPropagation();drag=true;seekTo(ev);});window.addEventListener('mousemove',function(ev){if(drag)seekTo(ev);});window.addEventListener('mouseup',function(){drag=false;});bar.addEventListener('touchstart',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('touchmove',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('click',function(ev){ev.stopPropagation();});var fmt=function(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+s%60).slice(-2);};v.addEventListener('timeupdate',function(){if(v.duration){fill.style.setProperty('--p',(100*v.currentTime/v.duration)+'%');tm.textContent=fmt(v.currentTime)+' / '+fmt(v.duration);}});v.addEventListener('loadedmetadata',function(){tm.textContent='0:00 / '+fmt(v.duration);});}box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');if(!big)v.load();});if(big){var fs=document.createElement('u');fs.className='fsbtn';fs.title='Full screen';fs.setAttribute('aria-label','Full screen');fs.addEventListener('click',function(ev){ev.stopPropagation();ev.preventDefault();if(v.webkitEnterFullscreen&&!box.requestFullscreen){v.muted=false;v.webkitEnterFullscreen();if(v.paused){v.play();box.classList.add('on');}return;}var el=box;if(document.fullscreenElement||document.webkitFullscreenElement){(document.exitFullscreen||document.webkitExitFullscreen).call(document);}else{(el.requestFullscreen||el.webkitRequestFullscreen).call(el);if(v.paused){v.muted=false;v.play();box.classList.add('on');}}});box.appendChild(fs);}});})();
 </script>
