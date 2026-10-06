@@ -125,12 +125,13 @@ html = f'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/base.css?v=1">
 <title>Free MIDI Chord Packs &amp; Mode Packs | Sebastian Macan</title>
 <meta name="description" content="1316 MIDI chord progressions: genre chord packs (Pop, Trap, RnB, Club, Soul) and the complete Modal Series covering all 7 modes. Drag-and-drop .mid files that work in every DAW. Free during launch.">
 <style>
   :root {{ --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; }}
   * {{ margin:0; padding:0; box-sizing:border-box; }}
-  body {{ background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }}
+  body {{ background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }}
   .wrap {{ max-width:1080px; margin:0 auto; padding:0 24px; }}
   header {{ padding:28px 0; display:flex; justify-content:space-between; align-items:center; }}
   .logo {{ font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }}
@@ -163,7 +164,7 @@ html = f'''<!DOCTYPE html>
   .dl:hover {{ transform:translateY(-2px) scale(1.02); }}
   .meta {{ color:var(--dim); font-size:12.5px; }}
   .vslot {{ position:relative; aspect-ratio:16/9; border-radius:18px; overflow:hidden; border:1px solid var(--line);
-    background:radial-gradient(120% 120% at 30% 20%, color-mix(in srgb, var(--g1) 16%, #101014), #0d0d10);
+    background:#101014; background:radial-gradient(120% 120% at 30% 20%, color-mix(in srgb, var(--g1) 16%, #101014), #0d0d10);
     display:flex; align-items:center; justify-content:center; animation:float 7s ease-in-out infinite; }}
   .vslot iframe, .vslot video {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }}
   .vslot.live {{ animation:none; }}

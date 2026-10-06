@@ -105,6 +105,7 @@ def page(b):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/base.css?v=1">
 <title>{b["title"].title()} | Sebastian Macan</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/fox-32.png">
@@ -116,7 +117,7 @@ def page(b):
 <style>
   :root {{ --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:{b["g1"]}; --g2:{b["g2"]}; }}
   * {{ margin:0; padding:0; box-sizing:border-box; }}
-  body {{ background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }}
+  body {{ background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }}
   .wrap {{ max-width:960px; margin:0 auto; padding:0 24px; }}
   header {{ padding:28px 0; display:flex; justify-content:space-between; align-items:center; }}
   .logo {{ font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }}

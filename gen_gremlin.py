@@ -21,6 +21,11 @@ VIDCSS = '''  .vidstack { margin:26px 0 6px; }
   .vidstack .big .play::after { left:33px; top:24px; border-left:30px solid #fff; border-top:18px solid transparent; border-bottom:18px solid transparent; }
   [data-vid]:hover .play { transform:scale(1.08); }
   [data-vid].on .play { display:none; }
+  .vidstack .big .fsbtn { position:absolute; right:10px; top:10px; width:34px; height:34px; border-radius:9px; background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.35); cursor:pointer; opacity:.85; transition:opacity .2s, transform .15s; z-index:3; }
+  .vidstack .big .fsbtn:hover { opacity:1; transform:scale(1.06); background:rgba(0,0,0,.75); }
+  .vidstack .big .fsbtn::before { content:""; position:absolute; left:9px; top:9px; width:14px; height:14px; border:2px solid #fff; border-radius:2px; -webkit-mask:linear-gradient(#000 0 0) top left/6px 6px no-repeat, linear-gradient(#000 0 0) top right/6px 6px no-repeat, linear-gradient(#000 0 0) bottom left/6px 6px no-repeat, linear-gradient(#000 0 0) bottom right/6px 6px no-repeat; mask:linear-gradient(#000 0 0) top left/6px 6px no-repeat, linear-gradient(#000 0 0) top right/6px 6px no-repeat, linear-gradient(#000 0 0) bottom left/6px 6px no-repeat, linear-gradient(#000 0 0) bottom right/6px 6px no-repeat; }
+  .vidstack .big:fullscreen, .vidstack .big:-webkit-full-screen { border-radius:0; border:0; background:#000; width:100vw; height:100vh; aspect-ratio:auto; }
+  .vidstack .big:fullscreen video, .vidstack .big:-webkit-full-screen video { object-fit:contain; }
   .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
   .vidstack .big .seek { position:absolute; left:0; right:0; bottom:0; height:26px; background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0)); cursor:pointer; opacity:0; transition:opacity .25s; }
   .vidstack .big:hover .seek, .vidstack .big.on .seek { opacity:1; }
@@ -77,7 +82,7 @@ body = '''  <section class="hero">
     <div class="kind">The Mangler Box</div>
     <h1>GREMLIN</h1>
     <p class="tag">Chop it. Stutter it. Smear it. The glitch box for beats.</p>
-    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/gremlin.png?v=3.1.0"><source src="img/video/gremlin_ui_loop.mp4?v=3.1.0" type="video/mp4"></video></div>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/gremlin.png?v=3.1.0"><source src="img/video/gremlin_ui_loop.mp4?v=3.1.0c" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
       <div class="meta">v3.1.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
@@ -88,11 +93,6 @@ body = '''  <section class="hero">
   <p>$15 buys you the mangler box. Gremlin takes a boring loop and breaks it on purpose: tempo-synced gate chops, buffer stutters that pitch every repeat, and a granular smear that melts your beat into a plate reverb. It is an effect, not an instrument. Put it on drums, chords, vocals, the whole bus, and turn a straight loop into a moment.</p>
 
   <h2>Three sections, one box</h2>
-  <div class="vidstack">
-    <div class="big" data-vid><video preload="none" playsinline poster="img/ui/gremlin_demo.jpg?v=3.1.0d"><source src="img/video/gremlin_demo.mp4?v=3.1.0d" type="video/mp4"></video><span>Before / after, in Ableton</span><i class="play"></i></div>
-    <div class="big" data-vid style="margin-top:12px"><video preload="none" playsinline poster="img/ui/gremlin_production.jpg?v=1"><source src="img/video/gremlin_production.mp4?v=2" type="video/mp4"></video><span>Sebastian using Gremlin in his production</span><i class="play"></i></div>
-    <div class="vidhint">Tap to play. Sound on.</div>
-  </div>
   <div class="bot"><b>CHOP.</b> A tempo-synced gate and slicer. Pick a rate from 1/4 down to 1/32, set the GATE length, choose a pattern or roll a new one with the seed. Instant trance gates, triplet holes and rhythmic silence that always lands on the grid.</div>
   <div class="bot"><b>STUTTER.</b> Buffer repeats on demand. RATE sets the slice, REPEATS how many times it fires, REVERSE flips them backwards, and PITCH is true pitch from -12 to +12 semitones. Every repeat in a burst shares one interval, so stutters stay musical instead of turning to mush. Noon is 0 st, plain repeats.</div>
   <div class="bot"><b>SMEAR.</b> Grain blur into a Dattorro plate reverb. WASH sets how much of the signal melts, DECAY runs from 0.6 s to 14 s, DEPTH pushes the verb further back in the room, TONE darkens or opens it, SHIMMER adds a +12 st feedback pitch shift, and FREEZE holds the tail forever.</div>
