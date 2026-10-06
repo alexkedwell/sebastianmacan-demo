@@ -104,7 +104,7 @@
   var css = [
     '#smcart-tab{position:fixed;top:16px;left:16px;z-index:9990;display:flex;align-items:center;gap:8px;',
     ' background:#141418;border:1px solid #2a2a32;border-radius:999px;padding:9px 14px;cursor:pointer;',
-    ' color:#f2f2f4;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;',
+    ' color:#f2f2f4;font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif;',
     ' font-size:13px;font-weight:800;letter-spacing:.04em;box-shadow:0 6px 24px rgba(0,0,0,.5);',
     ' transition:transform .15s ease,border-color .15s ease;user-select:none;-webkit-user-select:none;}',
     '#smcart-tab:hover{transform:translateY(-2px);border-color:#7b5cff;}',
@@ -115,13 +115,13 @@
     '#smcart-badge.on{display:flex;}',
     '#smcart-badge.pulse{animation:smcart-pulse .3s ease;}',
     '@keyframes smcart-pulse{0%{transform:scale(1)}50%{transform:scale(1.45)}100%{transform:scale(1)}}',
-    '#smcart-overlay{position:fixed;inset:0;background:rgba(6,6,8,.6);backdrop-filter:blur(2px);z-index:9991;',
+    '#smcart-overlay{position:fixed;inset:0;background:rgba(6,6,8,.6);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:9991;',
     ' opacity:0;pointer-events:none;transition:opacity .25s ease;}',
     '#smcart-overlay.open{opacity:1;pointer-events:auto;}',
     '#smcart-drawer{position:fixed;top:0;left:0;bottom:0;width:min(380px,92vw);z-index:9992;',
     ' background:#101014;border-right:1px solid #222228;transform:translateX(-102%);',
     ' transition:transform .28s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;',
-    ' font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;color:#f2f2f4;',
+    ' font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif;color:#f2f2f4;',
     ' box-shadow:24px 0 80px rgba(0,0,0,.55);}',
     '#smcart-drawer.open{transform:translateX(0);}',
     '#smcart-drawer .smhead{display:flex;align-items:center;justify-content:space-between;padding:20px 22px 14px;border-bottom:1px solid #222228;}',
@@ -175,7 +175,7 @@
     '.smcart-up .no:hover{color:#f2f2f4;}',
     '.smcart-up.loud .kick{color:#39e6d0;}',
     /* product-page "Also in" chips */
-    '.smchips{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;justify-content:center;margin:12px auto 0;max-width:640px;font-size:12px;color:#8a8a94;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;}',
+    '.smchips{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;justify-content:center;margin:12px auto 0;max-width:640px;font-size:12px;color:#8a8a94;font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif;}',
     '.smchips .lbl{font-weight:700;margin-right:2px;}',
     '.smchip{display:inline-block;padding:5px 11px;border-radius:999px;border:1px solid #2a2a32;color:#c8c8d2;text-decoration:none;font-weight:700;',
     ' transition:border-color .15s,color .15s,transform .15s;background:rgba(255,255,255,.02);}',
@@ -203,8 +203,8 @@
     /* mobile: header stacks logo over a scrolling nav strip; pin the cart top-right of the header so it is never scrolled away */
     '@media (max-width:640px){#smcart-tab.innav[role]{margin-left:0;margin-right:16px;}',
     /* single-row sub-page headers: let the nav wrap instead of overflowing the phone screen */
-    ' header:has(#smcart-tab.innav:not(.pin)){flex-wrap:wrap;gap:8px 0;}header nav:has(#smcart-tab.innav:not(.pin)){display:inline-flex;flex-wrap:wrap;align-items:center;row-gap:8px;}',
-    ' header nav:has(#smcart-tab.innav:not(.pin)) a{margin-left:0;margin-right:16px;}#smcart-tab.innav:not(.pin)[role]{margin-left:0;}',
+    ' header.smcart-wrap{flex-wrap:wrap;gap:8px 0;}header.smcart-wrap nav{display:inline-flex;flex-wrap:wrap;align-items:center;row-gap:8px;}',
+    ' header.smcart-wrap nav a{margin-left:0;margin-right:16px;}#smcart-tab.innav:not(.pin)[role]{margin-left:0;}',
     /* homepage stacks logo over a scrolling nav strip: pin the cart on the logo line so it can never scroll away */
     ' #smcart-tab.innav.pin[role]{display:inline;vertical-align:baseline;}}'
   ].join('\n');
@@ -231,7 +231,8 @@
       tab.classList.add('innav');
       // stacked header (logo above nav) = homepage layout; pin the cart there on phones
       var hdr = nav.closest('header');
-      if (hdr && getComputedStyle(hdr).flexDirection === 'column') tab.classList.add('pin');
+      var setPin = function () { var pin = !!hdr && getComputedStyle(hdr).flexDirection === 'column'; tab.classList.toggle('pin', pin); if (hdr) hdr.classList.toggle('smcart-wrap', !pin); };
+      setPin();
       nav.appendChild(tab);
       var syncSpacing = function () {
         var prev = tab.previousElementSibling; if (!prev) return;
@@ -239,10 +240,7 @@
         tab.style.marginLeft = cs.marginLeft; tab.style.marginRight = cs.marginRight; tab.style.display = cs.display;
       };
       syncSpacing(); window.addEventListener('resize', syncSpacing);
-      window.addEventListener('resize', function () {
-        if (!hdr) return;
-        tab.classList.toggle('pin', getComputedStyle(hdr).flexDirection === 'column');
-      });
+      window.addEventListener('resize', setPin);
     }
     else { document.body.appendChild(tab); }
 

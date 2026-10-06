@@ -22,7 +22,7 @@
 
   function showGate() {
     document.documentElement.style.visibility = "";
-    var css = ".smg-wrap{position:fixed;inset:0;background:#0a0a0c;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif}" +
+    var css = ".smg-wrap{position:fixed;inset:0;background:#0a0a0c;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif}" +
       ".smg-box{text-align:center;padding:40px}" +
       ".smg-t{color:#f2f2f4;font-size:22px;font-weight:900;letter-spacing:-.02em;margin-bottom:6px}" +
       ".smg-s{color:#8a8a94;font-size:13px;margin-bottom:24px}" +

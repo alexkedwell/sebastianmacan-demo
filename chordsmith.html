@@ -5,6 +5,7 @@
 <script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/base.css?v=1">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
@@ -15,7 +16,7 @@
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#60aaff; --g2:#9fd4ff; }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
   header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
   .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
@@ -228,7 +229,7 @@
   </footer>
 </div>
 <script src="js/email-gate.js" defer></script>
-<script src="js/cart.js?v=p13"></script>
+<script src="js/cart.js?v=p14"></script>
 <script>(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');var big=box.classList.contains('big');var bar=null,fill=null,tm=null;if(big){bar=document.createElement('div');bar.className='seek';fill=document.createElement('i');bar.appendChild(fill);tm=document.createElement('b');bar.appendChild(tm);box.appendChild(bar);var seekTo=function(ev){var r=bar.getBoundingClientRect();var x=(ev.touches?ev.touches[0].clientX:ev.clientX)-r.left;var p=Math.max(0,Math.min(1,x/r.width));if(v.duration)v.currentTime=p*v.duration;};var drag=false;bar.addEventListener('mousedown',function(ev){ev.stopPropagation();drag=true;seekTo(ev);});window.addEventListener('mousemove',function(ev){if(drag)seekTo(ev);});window.addEventListener('mouseup',function(){drag=false;});bar.addEventListener('touchstart',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('touchmove',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('click',function(ev){ev.stopPropagation();});var fmt=function(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+s%60).slice(-2);};v.addEventListener('timeupdate',function(){if(v.duration){fill.style.setProperty('--p',(100*v.currentTime/v.duration)+'%');tm.textContent=fmt(v.currentTime)+' / '+fmt(v.duration);}});v.addEventListener('loadedmetadata',function(){tm.textContent='0:00 / '+fmt(v.duration);});}box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');if(!big)v.load();});});})();</script>
 </body>
 </html>
