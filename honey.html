@@ -50,6 +50,20 @@
   li { margin-bottom:10px; }
   .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
   .step b { color:var(--txt); }
+  /* In the studio — real recording of Sebastian using the plugin */
+  .studio { margin:34px auto 6px; max-width:920px; }
+  .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
+  .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(240,160,74,.18); }
+  .studio video { display:block; width:100%; height:auto; }
+  .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(0,0,0,.05), rgba(0,0,0,.45)); transition:opacity .25s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(240,160,74,.45); transition:transform .15s; }
+  .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
+  .studio .play:hover span { transform:scale(1.07); }
+  .studio.playing .play { opacity:0; pointer-events:none; }
+  .studio .sound { position:absolute; top:14px; right:14px; font-size:11px; font-weight:800; letter-spacing:.1em; color:#0a0a0c; background:var(--g1); padding:6px 10px; border-radius:999px; }
+  .studio .cap { color:var(--dim); font-size:15px; margin:12px 4px 0; line-height:1.55; }
+  .studio .cap b { color:var(--txt); }
   .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
   .knob b { color:var(--txt); }
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
@@ -100,7 +114,7 @@
   <section class="hero">
     <div class="kind">Tape Smoothness</div>
     <h1>HONEY</h1>
-    <p class="tag">Tape smoothness for chords, pads and melodies. Three machines, three faces.</p>
+    <p class="tag">Subtle tape to get your synths and guitars in the box. Pulls them in where they belong, without losing the feeling.</p>
     <div class="faces">
       <span class="face on" data-face="cassette">CASSETTE</span><span class="face" data-face="studio">STUDIO</span><span class="face" data-face="walkman">WALKMAN</span>
     </div>
@@ -110,6 +124,24 @@
       <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
+
+  <h2>Synths and guitars, in the box</h2>
+  <p>Synths and guitars get out of control sometimes. Stacked oscillators, big unison patches, bright strummed chords, anything with those flying harmonics pushes past the line, and you get that slight distortion that ruins the clean, crisp feel you worked for. Honey pulls them back in. It is a soft tape stage that rounds the peaks and glues the layers, while everything you love about your progression stays intact. Same notes, same movement, same shine. Just sitting inside the mix instead of fighting it. It makes that subtle difference you have been looking for.</p>
+
+  <div class="studio" id="studio">
+    <div class="label">In the studio &middot; Before and after Honey</div>
+    <div class="frame">
+      <video id="studioVid" playsinline preload="metadata" poster="img/ui/honey_demo.jpg?v=1" controlslist="nodownload"><source src="img/video/honey_demo.mp4?v=1" type="video/mp4"></video>
+      <div class="play" id="studioPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Honey.</b> Real session, real audio.</p>
+  </div>
+  <script>
+    (function(){var v=document.getElementById('studioVid'),w=document.getElementById('studio'),p=document.getElementById('studioPlay');
+    p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});
+    v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();
+  </script>
 
   <h2>What Honey does</h2>
   <p>Honey is what happens to your chords when they get printed to good tape. It is built on real tape physics: the record and playback emphasis curves, magnetic hysteresis, gentle tape compression, head bump, high-frequency loss, wow and flutter and hiss, all modelled instead of faked. The result is not distortion. It is smoothness. Digital edges round off, sustains glue together, and pads sit back in the mix like they belong there.</p>

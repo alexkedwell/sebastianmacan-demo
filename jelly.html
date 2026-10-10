@@ -46,6 +46,20 @@
   li { margin-bottom:10px; }
   .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
   .step b { color:var(--txt); }
+  /* In the studio — real recording of Sebastian using the plugin */
+  .studio { margin:34px auto 6px; max-width:920px; }
+  .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
+  .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(255,122,184,.18); }
+  .studio video { display:block; width:100%; height:auto; }
+  .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(0,0,0,.05), rgba(0,0,0,.45)); transition:opacity .25s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(255,122,184,.45); transition:transform .15s; }
+  .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
+  .studio .play:hover span { transform:scale(1.07); }
+  .studio.playing .play { opacity:0; pointer-events:none; }
+  .studio .sound { position:absolute; top:14px; right:14px; font-size:11px; font-weight:800; letter-spacing:.1em; color:#0a0a0c; background:var(--g1); padding:6px 10px; border-radius:999px; }
+  .studio .cap { color:var(--dim); font-size:15px; margin:12px 4px 0; line-height:1.55; }
+  .studio .cap b { color:var(--txt); }
   .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
   .knob b { color:var(--txt); }
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
@@ -147,6 +161,20 @@
     </div>
   </section>
 
+  <div class="studio" id="studio">
+    <div class="label">In the studio &middot; Messin with Jelly</div>
+    <div class="frame">
+      <video id="studioVid" playsinline preload="metadata" poster="img/ui/jelly_demo.jpg?v=1" controlslist="nodownload"><source src="img/video/jelly_demo.mp4?v=1" type="video/mp4"></video>
+      <div class="play" id="studioPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Jelly.</b> Real session, real audio.</p>
+  </div>
+  <script>
+    (function(){var v=document.getElementById('studioVid'),w=document.getElementById('studio'),p=document.getElementById('studioPlay');
+    p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});
+    v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();
+  </script>
   <h2>What Jelly does</h2>
   <p>Jelly is one huge wobbling blob that drives filter, tremolo, pitch jiggle and pan wiggle from a single tempo-synced motion. Grab the blob, everything jiggles together, and it always lands on the beat.</p>
 
