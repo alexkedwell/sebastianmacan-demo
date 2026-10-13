@@ -118,12 +118,55 @@
     <div class="faces">
       <span class="face on" data-face="cassette">CASSETTE</span><span class="face" data-face="studio">STUDIO</span><span class="face" data-face="walkman">WALKMAN</span>
     </div>
-    <div class="videobox"><video id="honeyface" autoplay muted loop playsinline poster="img/ui/honey_cassette.png?v=1.0.0"><source src="img/video/honey_face_cassette.mp4?v=1.0.0" type="video/mp4"></video></div>
+    <div class="videobox"><video id="honeyface" autoplay muted loop playsinline poster="img/ui/honey_cassette.png?v=1.0.0"><source src="img/video/honey_face_cassette.mp4?v=fix2" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="honey">Buy Honey &middot; $15</span>
-      <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
+      <div class="meta">v1.1.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
+
+
+  <div class="studio" id="st_phaser">
+    <div class="label">In the studio &middot; The accidental phaser</div>
+    <div class="frame">
+      <video id="st_phaserVid" playsinline preload="metadata" poster="img/ui/honey_phaser_demo.jpg?v=2" controlslist="nodownload"><source src="img/video/honey_phaser_demo.mp4?v=2" type="video/mp4"></video>
+      <div class="play" id="st_phaserPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Made an accidental phaser on a tape machine.</b> Leave MIX part way and the tape path drifts against the dry signal. Mistakes lead to cool things in music, so we kept it.</p>
+  </div>
+  <div class="studio" id="st_cassette">
+    <div class="label">In the studio &middot; Honey (Cassette)</div>
+    <div class="frame">
+      <video id="st_cassetteVid" playsinline preload="metadata" poster="img/ui/honey_cassette_demo.jpg?v=1" controlslist="nodownload"><source src="img/video/honey_cassette_demo.mp4?v=2" type="video/mp4"></video>
+      <div class="play" id="st_cassettePlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Honey on the CASSETTE.</b> Real session, real audio.</p>
+  </div>
+  <div class="studio" id="st_walkman">
+    <div class="label">In the studio &middot; Honey (Walkman)</div>
+    <div class="frame">
+      <video id="st_walkmanVid" playsinline preload="metadata" poster="img/ui/honey_walkman_demo.jpg?v=2" controlslist="nodownload"><source src="img/video/honey_walkman_demo.mp4?v=3" type="video/mp4"></video>
+      <div class="play" id="st_walkmanPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Honey on the WALKMAN.</b> Real session, real audio.</p>
+  </div>
+  <div class="studio" id="st_studio">
+    <div class="label">In the studio &middot; Honey (Studio)</div>
+    <div class="frame">
+      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/honey_studio_demo.jpg?v=2" controlslist="nodownload"><source src="img/video/honey_studio_demo.mp4?v=2" type="video/mp4"></video>
+      <div class="play" id="st_studioPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Honey on the STUDIO deck.</b> Real session, real audio.</p>
+  </div>
+  <script>
+    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+  </script>
 
   <h2>Synths and guitars, in the box</h2>
   <p>Synths and guitars get out of control sometimes. Stacked oscillators, big unison patches, bright strummed chords, anything with those flying harmonics pushes past the line, and you get that slight distortion that ruins the clean, crisp feel you worked for. Honey pulls them back in. It is a soft tape stage that rounds the peaks and glues the layers, while everything you love about your progression stays intact. Same notes, same movement, same shine. Just sitting inside the mix instead of fighting it. It makes that subtle difference you have been looking for.</p>
@@ -141,13 +184,14 @@
   <div class="step"><b>Honey is for chords, pads and melodies.</b> Tape smoothness. It takes the digital edge off and glues. <b>Reels is for lofi drums.</b> Dirty tape. It makes the vibe filthier. Same producer, different tracks in the same session. <a href="basket-tape.html" style="color:var(--g1);font-weight:800;">Tape Basket: both for $22 &rarr;</a></div>
 
   <h2>Make it yours</h2>
-  <div class="knob"><b>DRIVE.</b> How hard you hit the tape. Low is glue, high is soft saturation that stays smooth because the highs saturate first.</div>
-  <div class="knob"><b>WARMTH.</b> Head bump and low-mid weight, tuned per machine. Where chords get their body.</div>
-  <div class="knob"><b>WOBBLE.</b> Wow and flutter. A little is human, a lot is a memory.</div>
+  <div class="knob"><b>DRIVE.</b> How hard you hit the tape. Below 12 o'clock is glue. Past 12 it climbs hard: soft saturation that stays smooth because the highs saturate first, all the way to crushed tape at the top, level-matched so it never just gets louder.</div>
+  <div class="knob"><b>WARMTH.</b> Head bump and low-mid weight, tuned per machine. Where chords get their body. Past 12 o'clock the top end rolls off and the lows swell until it sounds like the tape is melting.</div>
+  <div class="knob"><b>WOBBLE.</b> Wow and flutter. A little is human, a lot is a memory. Past 12 o'clock it goes seasick: nearly four semitones of drift at the top.</div>
   <div class="knob"><b>HISS.</b> Real tape noise, dosed to taste, machine-dependent. Cassette is louder, Studio is faint.</div>
-  <div class="knob"><b>AGE.</b> Years of wear. Dulls the top, adds dropouts on Walkman, softens everything.</div>
+  <div class="knob"><b>AGE.</b> Years of wear. Dulls the top, adds dropouts, softens everything. Crank it and the tape starts falling apart: dropouts every few hundred milliseconds and a top end that is barely there.</div>
   <div class="knob"><b>MIX and OUTPUT.</b> Parallel blend and level. Same positions on every face, so your hands always know where they are. <b>Leave MIX halfway on a chord loop:</b> the tape path drifts against the dry signal and the chords start to phase. It is a glitch we kept on purpose. Automate MIX slowly and it becomes a flanger that breathes with the tape.</div>
-  <div class="knob"><b>PRESETS + INIT.</b> Preset pill in the header, save unlimited of your own. Right-click, two-finger tap or Cmd-click any knob for INIT: that one control snaps back to the preset you loaded.</div>
+  <div class="knob"><b>PRESETS + INIT.</b> Preset pill in the header, 16 factory sounds (Worn, Walkman '94, Chewed and Crushed live at the loud end), save unlimited of your own. Right-click, two-finger tap or Cmd-click any knob for INIT: that one control snaps back to the preset you loaded.</div>
+  <div class="knob"><b>READOUT.</b> Grab any knob and a small readout appears in the bottom-right corner showing exactly where you are (66%, 67%, -3.5 dB). Let go and it fades. Every knob's bottom half is the original Honey sound, so your old sessions and presets sound exactly the same.</div>
 
   <h3>Pro tip</h3>
   <p>Put Honey on the chord bus in CASSETTE with DRIVE around 11 o'clock and WOBBLE just past off. Then put Reels on the drum bus. That is the lofi session in two plugins.</p>
@@ -172,6 +216,6 @@
 </div>
 <script src="js/cart.js?v=p14" defer></script>
 <script src="js/email-gate.js" defer></script>
-<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.poster="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.querySelector("source").src="img/video/honey_face_"+f.dataset.face+".mp4?v=1.0.0";i.load();i.play();});});</script>
+<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.poster="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.querySelector("source").src="img/video/honey_face_"+f.dataset.face+".mp4?v=fix2";i.load();i.play();});});</script>
 </body>
 </html>
