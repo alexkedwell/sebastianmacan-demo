@@ -50,20 +50,11 @@ BASKETS = [
     {
         "file": "basket-lofi.html", "cart_id": "lofibasket", "title": "LOFI BASKET", "price": 30, "img": "img/bundles/lofi_bundle.png",
         "g1": "#f5a623", "g2": "#2bb59a",
-        "tag": "The complete lofi mood. A crackling room, subtle tape and a weird little songbird.",
-        "desc": "Fireplace lays a living room of atmosphere under the beat. Reels puts your keys on beautiful old tape. Warble makes them sing like a weird little bird. The bedroom lofi mood in three plugins.",
-        "items": ["Fireplace", "Reels", "Warble"],
+        "tag": "The complete lofi mood. A crackling room, a weird little songbird and smooth tape.",
+        "desc": "Fireplace lays a living room of atmosphere under the beat. Warble makes your keys sing like a weird little bird. Honey puts the chords on smooth tape. The bedroom lofi mood in three plugins.",
+        "items": ["Fireplace", "Warble", "Honey"],
         "meta": "2 plugins · VST3 + AU · macOS",
         "big_dl": ("Download the whole basket", "downloads/LofiBundle-SebastianMacan.zip"),
-    },
-    {
-        "file": "basket-lofi-mastering.html", "cart_id": "lofimastering", "title": "LOFI BASKET + MASTERING", "price": 49, "img": "img/bundles/lofi_mastering_bundle.png",
-        "g1": "#f5a623", "g2": "#ffd47e",
-        "tag": "Make the beat, then master the beat. Everything lofi in one basket.",
-        "desc": "The whole Lofi Basket, Fireplace, Reels and Warble, plus Halo to finish the job. Drop Halo on your master, pick the Club target to really make your lofi bounce, and turn LIFT until the halo closes.",
-        "items": ["Fireplace", "Reels", "Warble", "Halo"],
-        "meta": "3 plugins · VST3 + AU · macOS",
-        "big_dl": ("Download the whole basket", "downloads/LofiMasteringBundle-SebastianMacan.zip"),
     },
 ]
 
