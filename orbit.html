@@ -161,20 +161,6 @@
     </div>
   </section>
 
-  <div class="studio" id="studio">
-    <div class="label">In the studio &middot; Orbit</div>
-    <div class="frame">
-      <video id="studioVid" playsinline preload="metadata" poster="img/ui/orbit_demo.jpg?v=1" controlslist="nodownload"><source src="img/video/orbit_demo.mp4?v=1" type="video/mp4"></video>
-      <div class="play" id="studioPlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Grey is before. Color is Orbit.</b> Real session, real audio.</p>
-  </div>
-  <script>
-    (function(){var v=document.getElementById('studioVid'),w=document.getElementById('studio'),p=document.getElementById('studioPlay');
-    p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});
-    v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();
-  </script>
   <h2>What Orbit does</h2>
   <p>Orbit moves sound around the listener in real 3D, not just left-right. Darkening, micro-delay and doppler make the sound physically circle your head. Headphone candy that still works on speakers.</p>
 
