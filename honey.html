@@ -116,7 +116,7 @@
     <div class="faces">
       <span class="face on" data-face="cassette">CASSETTE</span><span class="face" data-face="studio">STUDIO</span><span class="face" data-face="walkman">WALKMAN</span>
     </div>
-    <div class="videobox"><video id="honeyface" autoplay muted loop playsinline poster="img/ui/honey_cassette.png?v=1.0.0"><source src="img/video/honey_face_cassette.mp4?v=fix2" type="video/mp4"></video></div>
+    <div class="videobox"><video id="honeyface" autoplay muted loop playsinline poster="img/ui/honey_cassette.png?v=1.0.0"><source src="https://video.sebastianmacan.com/img/video/honey_face_cassette.mp4?v=fix2" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="honey">Buy Honey &middot; $15</span>
       <div class="meta">v1.1.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
@@ -127,7 +127,7 @@
   <div class="studio" id="st_phaser">
     <div class="label">In the studio &middot; The accidental phaser</div>
     <div class="frame">
-      <video id="st_phaserVid" playsinline preload="metadata" poster="img/ui/honey_phaser_demo.jpg?v=2" controlslist="nodownload"><source src="img/video/honey_phaser_demo.mp4?v=2" type="video/mp4"></video>
+      <video id="st_phaserVid" playsinline preload="metadata" poster="img/ui/honey_phaser_demo.jpg?v=2" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_phaser_demo.mp4?v=2" type="video/mp4"></video>
       <div class="play" id="st_phaserPlay" aria-label="Play"><span></span></div>
       <div class="sound">&#9654; WITH SOUND</div>
     </div>
@@ -136,7 +136,7 @@
   <div class="studio" id="st_cassette">
     <div class="label">In the studio &middot; Honey (Cassette)</div>
     <div class="frame">
-      <video id="st_cassetteVid" playsinline preload="metadata" poster="img/ui/honey_cassette_demo.jpg?v=1" controlslist="nodownload"><source src="img/video/honey_cassette_demo.mp4?v=2" type="video/mp4"></video>
+      <video id="st_cassetteVid" playsinline preload="metadata" poster="img/ui/honey_cassette_demo.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_cassette_demo.mp4?v=2" type="video/mp4"></video>
       <div class="play" id="st_cassettePlay" aria-label="Play"><span></span></div>
       <div class="sound">&#9654; WITH SOUND</div>
     </div>
@@ -145,7 +145,7 @@
   <div class="studio" id="st_walkman">
     <div class="label">In the studio &middot; Honey (Walkman)</div>
     <div class="frame">
-      <video id="st_walkmanVid" playsinline preload="metadata" poster="img/ui/honey_walkman_demo.jpg?v=2" controlslist="nodownload"><source src="img/video/honey_walkman_demo.mp4?v=3" type="video/mp4"></video>
+      <video id="st_walkmanVid" playsinline preload="metadata" poster="img/ui/honey_walkman_demo.jpg?v=2" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_walkman_demo.mp4?v=3" type="video/mp4"></video>
       <div class="play" id="st_walkmanPlay" aria-label="Play"><span></span></div>
       <div class="sound">&#9654; WITH SOUND</div>
     </div>
@@ -154,7 +154,7 @@
   <div class="studio" id="st_studio">
     <div class="label">In the studio &middot; Honey (Studio)</div>
     <div class="frame">
-      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/honey_studio_demo.jpg?v=2" controlslist="nodownload"><source src="img/video/honey_studio_demo.mp4?v=2" type="video/mp4"></video>
+      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/honey_studio_demo.jpg?v=2" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_studio_demo.mp4?v=2" type="video/mp4"></video>
       <div class="play" id="st_studioPlay" aria-label="Play"><span></span></div>
       <div class="sound">&#9654; WITH SOUND</div>
     </div>
@@ -212,6 +212,6 @@
 </div>
 <script src="js/cart.js?v=p15" defer></script>
 <script src="js/email-gate.js" defer></script>
-<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.poster="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.querySelector("source").src="img/video/honey_face_"+f.dataset.face+".mp4?v=fix2";i.load();i.play();});});</script>
+<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.poster="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.querySelector("source").src="https://video.sebastianmacan.com/img/video/honey_face_"+f.dataset.face+".mp4?v=fix2";i.load();i.play();});});</script>
 </body>
 </html>

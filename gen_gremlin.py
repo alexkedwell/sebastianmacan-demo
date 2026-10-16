@@ -82,7 +82,7 @@ body = '''  <section class="hero">
     <div class="kind">The Mangler Box</div>
     <h1>GREMLIN</h1>
     <p class="tag">Chop it. Stutter it. Smear it. The glitch box for beats.</p>
-    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/gremlin.png?v=3.1.0"><source src="img/video/gremlin_ui_loop.mp4?v=3.1.0c" type="video/mp4"></video></div>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/gremlin.png?v=3.1.0"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=3.1.0c" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
       <div class="meta">v3.1.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>

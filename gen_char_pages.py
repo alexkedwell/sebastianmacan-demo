@@ -21,7 +21,7 @@ def build(slug, name, kind, tag, g1, g2, glow, desc_meta, what, steps, knobs, pr
     h = h.replace("<h1>JELLY</h1>", f"<h1>{name.upper()}</h1>")
     h = h.replace('<p class="tag">Make everything jiggle.</p>', f'<p class="tag">{tag}</p>')
     h = h.replace('poster="img/ui/jelly.png"', f'poster="img/ui/{slug}.png"')
-    h = h.replace("img/video/jelly_ui_loop.mp4", f"img/video/{slug}_ui_loop.mp4")
+    h = h.replace("https://video.sebastianmacan.com/img/video/jelly_ui_loop.mp4", f"https://video.sebastianmacan.com/img/video/{slug}_ui_loop.mp4")
     h = h.replace('href="downloads/Jelly-v1.0-macOS.pkg">Download Jelly Free</a>',
                   f'href="downloads/{pkg}">Download {name} Free</a>')
     h = h.replace("v1.0 &middot; VST3 + AU effect &middot; macOS", f"v1.0 &middot; VST3 + AU {av_type} &middot; macOS")
