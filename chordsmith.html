@@ -43,6 +43,9 @@
   p, li { color:#c8c8d0; font-size:15.5px; }
   .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
   .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  .studio + .studio { margin-top:44px; }
   .genres { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0; }
   .genres span { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:6px 14px; font-size:13px; color:#c8c8d0; }
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
@@ -171,10 +174,21 @@
     </div>
     <p class="cap"><b>Blank piano roll to full beat, in Ableton.</b> Real session, real audio.</p>
   </div>
+
+  <div class="studio" id="tutorial">
+    <div class="label">Full tutorial &middot; Every step, start to finish</div>
+    <div class="frame">
+      <video id="tutorialVid" playsinline preload="metadata" poster="img/ui/chordsmith_tutorial.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/chordsmith_tutorial.mp4?v=1" type="video/mp4"></video>
+      <div class="play" id="tutorialPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Generate, reroll one chord, loop a bar, switch modes, drag the MIDI out and add a vocal.</b> 2 minutes, nothing cut.</p>
+  </div>
   <script>
-    (function(){var v=document.getElementById('studioVid'),w=document.getElementById('studio'),p=document.getElementById('studioPlay');
-    p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});
-    v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();
+    (function(){document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');if(!v||!p)return;
+    p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');
+    document.querySelectorAll('.studio video').forEach(function(o){if(o!==v&&!o.paused)o.pause();});});
+    v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});})();
   </script>
 
   <h2>Get started in 3 steps</h2>
