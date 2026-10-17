@@ -161,6 +161,18 @@
     </div>
   </section>
 
+  <div class="studio" id="st_rage">
+    <div class="label">In the studio &middot; Orbit</div>
+    <div class="frame">
+      <video id="studioVid" playsinline preload="metadata" poster="img/ui/orbit_studio.jpg?v=1">
+        <source src="https://video.sebastianmacan.com/img/video/orbit_studio.mp4?v=1" type="video/mp4">
+      </video>
+      <div class="play"><span></span></div>
+      <div class="sound">WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Orbit.</b> Hats on a rage beat, one Orbit on the hi-hat track, and the hat starts circling the room. Real session, real audio.</p>
+  </div>
+
   <h2>What Orbit does</h2>
   <p>Orbit moves sound around the listener in real 3D, not just left-right. Darkening, micro-delay and doppler make the sound physically circle your head. Headphone candy that still works on speakers.</p>
 
@@ -198,5 +210,15 @@
 </div>
 <script src="js/cart.js?v=p15" defer></script>
 <script src="js/email-gate.js" defer></script>
+
+  <script>
+    document.querySelectorAll('.studio').forEach(w => {
+      const v = w.querySelector('video'); if (!v) return;
+      const go = () => { document.querySelectorAll('.studio video').forEach(o => { if (o !== v) o.pause(); }); v.muted = false; v.controls = true; v.play(); w.classList.add('playing'); };
+      w.querySelector('.play').addEventListener('click', go);
+      v.addEventListener('play', () => w.classList.add('playing'));
+      v.addEventListener('pause', () => { if (!v.ended) return; w.classList.remove('playing'); v.controls = false; });
+    });
+  </script>
 </body>
 </html>
