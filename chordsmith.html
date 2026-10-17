@@ -46,8 +46,19 @@
   .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
   .knob b { color:var(--txt); }
   .studio + .studio { margin-top:44px; }
-  .genres { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0; }
-  .genres span { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:6px 14px; font-size:13px; color:#c8c8d0; }
+  .vidpair { display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:920px; margin:30px auto 6px; }
+  .vidpair .studio { margin:0; }
+  .vidpair .studio .label { font-size:11px; min-height:2.6em; align-items:flex-end; }
+  .vidpair .studio .play span { width:56px; height:56px; }
+  .vidpair .studio .play span::before { border-width:10px 0 10px 17px; margin-left:4px; }
+  .vidpair .studio .cap { font-size:13.5px; }
+  .vidpair .studio.soon .frame { opacity:.55; }
+  .vidpair .studio.soon .play { display:none; }
+  .vidpair .studio.soon .sound { background:var(--line); color:var(--dim); }
+  @media (max-width:560px){ .vidpair { gap:8px; } .vidpair .studio .label { font-size:9.5px; letter-spacing:.08em; min-height:3em; } .vidpair .studio .cap { font-size:12px; margin-top:8px; } .vidpair .studio .sound { font-size:9px; top:8px; right:8px; padding:4px 7px; } }
+  .genres { display:grid; grid-template-columns:repeat(4,1fr); margin:6px 0 0; border-top:1px solid var(--line); }
+  .genres span { padding:11px 4px; border-bottom:1px solid var(--line); font-size:15px; color:#c8c8d0; letter-spacing:.01em; }
+  @media (max-width:560px){ .genres { grid-template-columns:repeat(2,1fr); } }
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
   @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
@@ -165,16 +176,6 @@
   <h2>What Chordsmith does</h2>
   <p>Chordsmith writes chord progressions and melodies for you. Pick a genre, smash GENERATE, and you get a fresh progression with a matching melody every single click. When you hear one you love, drag the MIDI straight into your DAW and it is yours.</p>
 
-  <div class="studio" id="studio">
-    <div class="label">In the studio &middot; How Sebastian made a beat with Chordsmith</div>
-    <div class="frame">
-      <video id="studioVid" playsinline preload="metadata" poster="img/ui/chordsmith_demo.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/chordsmith_demo.mp4?v=4" type="video/mp4"></video>
-      <div class="play" id="studioPlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Blank piano roll to full beat, in Ableton.</b> Real session, real audio.</p>
-  </div>
-
   <div class="studio" id="tutorial">
     <div class="label">Full tutorial &middot; Every step, start to finish</div>
     <div class="frame">
@@ -184,8 +185,29 @@
     </div>
     <p class="cap"><b>Generate, reroll one chord, loop a bar, switch modes, drag the MIDI out and add a vocal.</b> 2 minutes, nothing cut.</p>
   </div>
+
+  <div class="vidpair">
+    <div class="studio" id="studio">
+      <div class="label">In the studio &middot; Trap beat</div>
+      <div class="frame">
+        <video id="studioVid" playsinline preload="metadata" poster="img/ui/chordsmith_demo.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/chordsmith_demo.mp4?v=4" type="video/mp4"></video>
+        <div class="play" id="studioPlay" aria-label="Play"><span></span></div>
+        <div class="sound">&#9654; WITH SOUND</div>
+      </div>
+      <p class="cap"><b>Blank piano roll to full beat.</b> Real session, real audio.</p>
+    </div>
+    <div class="studio soon" id="studio2">
+      <div class="label">In the studio II &middot; Soon</div>
+      <div class="frame">
+        <video playsinline preload="none" poster="img/ui/chordsmith_demo.jpg?v=1"></video>
+        <div class="play" aria-label="Play"><span></span></div>
+        <div class="sound">COMING SOON</div>
+      </div>
+      <p class="cap"><b>Another beat, another genre.</b> Recording it now.</p>
+    </div>
+  </div>
   <script>
-    (function(){document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');if(!v||!p)return;
+    (function(){document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');if(!v||!p||w.classList.contains('soon'))return;
     p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');
     document.querySelectorAll('.studio video').forEach(function(o){if(o!==v&&!o.paused)o.pause();});});
     v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});})();
