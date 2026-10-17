@@ -124,43 +124,7 @@
   </section>
 
 
-  <div class="studio" id="st_phaser">
-    <div class="label">In the studio &middot; The accidental phaser</div>
-    <div class="frame">
-      <video id="st_phaserVid" playsinline preload="metadata" poster="img/ui/honey_phaser_demo.jpg?v=2" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_phaser_demo.mp4?v=2" type="video/mp4"></video>
-      <div class="play" id="st_phaserPlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Made an accidental phaser on a tape machine.</b> Leave MIX part way and the tape path drifts against the dry signal. Mistakes lead to cool things in music, so we kept it.</p>
-  </div>
-  <div class="studio" id="st_cassette">
-    <div class="label">In the studio &middot; Honey (Cassette)</div>
-    <div class="frame">
-      <video id="st_cassetteVid" playsinline preload="metadata" poster="img/ui/honey_cassette_demo.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_cassette_demo.mp4?v=2" type="video/mp4"></video>
-      <div class="play" id="st_cassettePlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Grey is before. Color is Honey on the CASSETTE.</b> Real session, real audio.</p>
-  </div>
-  <div class="studio" id="st_walkman">
-    <div class="label">In the studio &middot; Honey (Walkman)</div>
-    <div class="frame">
-      <video id="st_walkmanVid" playsinline preload="metadata" poster="img/ui/honey_walkman_demo.jpg?v=2" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_walkman_demo.mp4?v=3" type="video/mp4"></video>
-      <div class="play" id="st_walkmanPlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Grey is before. Color is Honey on the WALKMAN.</b> Real session, real audio.</p>
-  </div>
-  <div class="studio" id="st_studio">
-    <div class="label">In the studio &middot; Honey (Studio)</div>
-    <div class="frame">
-      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/honey_studio_demo.jpg?v=2" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_studio_demo.mp4?v=2" type="video/mp4"></video>
-      <div class="play" id="st_studioPlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Grey is before. Color is Honey on the STUDIO deck.</b> Real session, real audio.</p>
-  </div>
-  <script>
+<script>
     document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
     p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
     v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
