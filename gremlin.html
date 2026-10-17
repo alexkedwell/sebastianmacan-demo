@@ -6,10 +6,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/base.css?v=1">
-<title>Gremlin | Stutter Glitch Effect VST3/AU Plugin</title>
-<meta name="description" content="Gremlin is a stutter and glitch effect (VST3 and AU for macOS). Tempo-synced slicing, stutter repeats, reverse and octave-jump chaos with reproducible seeds and a GLITCH! pad. Controlled demolition for your drums. By Sebastian Macan.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
+<meta name="theme-color" content="#000000">
+<title>Gremlin | Glitch, Stutter and Granular Mangler VST3/AU Plugin</title>
+<meta name="description" content="Gremlin is the glitch box for beats: tempo-synced chops, pitched stutters and granular smear into a plate reverb. One plugin, three sections. VST3 and AU. By Sebastian Macan.">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#7dff3d; --g2:#1a3d10; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#2ed14f; --g2:#c9ff4a; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -23,25 +28,78 @@
   .hero { text-align:center; padding:26px 0 8px; }
   .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
   h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
-    background:linear-gradient(135deg,var(--g1),#b8ff7a); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(46,209,79,.30); animation:float 7s ease-in-out infinite; }
+  .videobox video { display:block; width:100%; height:auto; }
+  .vidstack { margin:26px 0 6px; }
+  .vidstack .big { border-radius:18px; overflow:hidden; border:1px solid var(--line); background:#07100a; aspect-ratio:16/9; position:relative; }
+  .vidstack .big video, .vidstack .big img { display:block; width:100%; height:100%; object-fit:cover; }
+  .vidrow { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:10px; }
+  .vidrow.three { grid-template-columns:repeat(3,1fr); }
+  @media (max-width:560px){ .vidrow, .vidrow.three { grid-template-columns:repeat(2,1fr); } }
+  .vidrow .sm { border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#07100a; aspect-ratio:16/9; position:relative; }
+  .vidrow .sm video, .vidrow .sm img { display:block; width:100%; height:100%; object-fit:cover; }
+  .vidrow .sm span, .vidstack .big span { position:absolute; left:8px; bottom:6px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.9); }
+  .vidstack .big span { font-size:13px; left:14px; bottom:10px; }
+  @media (max-width:640px){ .vidrow { grid-template-columns:repeat(3,1fr); } }
+  .sm, .big { cursor:pointer; }
+  .play { position:absolute; left:50%; top:50%; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%; background:rgba(0,0,0,.55); border:2px solid rgba(255,255,255,.85); box-shadow:0 6px 24px rgba(0,0,0,.5); transition:transform .18s, background .18s; }
+  .play::after { content:""; position:absolute; left:17px; top:12px; border-left:16px solid #fff; border-top:10px solid transparent; border-bottom:10px solid transparent; }
+  .vidstack .big .play { width:84px; height:84px; margin:-42px 0 0 -42px; background:linear-gradient(135deg,var(--g1),var(--g2)); border:3px solid rgba(255,255,255,.9); }
+  .vidstack .big .play::after { left:33px; top:24px; border-left:30px solid #fff; border-top:18px solid transparent; border-bottom:18px solid transparent; }
+  [data-vid]:hover .play { transform:scale(1.08); }
+  [data-vid].on .play { display:none; }
+  .vidstack .big .fsbtn { position:absolute; right:10px; top:10px; width:34px; height:34px; border-radius:9px; background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.35); cursor:pointer; opacity:.85; transition:opacity .2s, transform .15s; z-index:3; }
+  .vidstack .big .fsbtn:hover { opacity:1; transform:scale(1.06); background:rgba(0,0,0,.75); }
+  .vidstack .big .fsbtn::before { content:""; position:absolute; left:9px; top:9px; width:14px; height:14px; border:2px solid #fff; border-radius:2px; -webkit-mask:linear-gradient(#000 0 0) top left/6px 6px no-repeat, linear-gradient(#000 0 0) top right/6px 6px no-repeat, linear-gradient(#000 0 0) bottom left/6px 6px no-repeat, linear-gradient(#000 0 0) bottom right/6px 6px no-repeat; mask:linear-gradient(#000 0 0) top left/6px 6px no-repeat, linear-gradient(#000 0 0) top right/6px 6px no-repeat, linear-gradient(#000 0 0) bottom left/6px 6px no-repeat, linear-gradient(#000 0 0) bottom right/6px 6px no-repeat; }
+  .vidstack .big:fullscreen, .vidstack .big:-webkit-full-screen { border-radius:0; border:0; background:#000; width:100vw; height:100vh; aspect-ratio:auto; }
+  .vidstack .big:fullscreen video, .vidstack .big:-webkit-full-screen video { object-fit:contain; }
+  .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
+  .vidstack .big .seek { position:absolute; left:0; right:0; bottom:0; height:26px; background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0)); cursor:pointer; opacity:0; transition:opacity .25s; }
+  .vidstack .big:hover .seek, .vidstack .big.on .seek { opacity:1; }
+  .vidstack .big .seek i { position:absolute; left:10px; right:10px; bottom:9px; height:3px; background:rgba(255,255,255,.25); border-radius:2px; display:block; }
+  .vidstack .big .seek i { background:linear-gradient(90deg,var(--g1),var(--g2)) no-repeat, rgba(255,255,255,.25); background-size:var(--p,0%) 100%, 100% 100%; }
+  .vidstack .big .seek b { position:absolute; right:12px; bottom:14px; font-size:11px; font-weight:600; color:#fff; letter-spacing:.04em; text-shadow:0 1px 4px rgba(0,0,0,.9); }
+  .vidstack .big.on span { opacity:0; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
-  .dl { display:inline-block; color:#0a0a0c; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
-    background:linear-gradient(135deg,var(--g1),#b8ff7a); box-shadow:0 8px 36px rgba(125,255,61,.26); transition:transform .15s; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(46,209,79,.30); transition:transform .15s; }
   .dl:hover { transform:translateY(-2px) scale(1.02); }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
   h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
   p, li { color:#c8c8d0; font-size:15.5px; }
   ol, ul { padding-left:24px; margin:10px 0; }
-  .step { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin:10px 0; }
+  li { margin-bottom:10px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
   .step b { color:var(--txt); }
-  .knob { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
-  .knob b { color:var(--g1); }
-  .bot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
-  .bot b { color:#b8ff7a; }
-  footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
+/* In the studio — real recording of Sebastian using the plugin */
+  .studio { margin:34px auto 6px; max-width:920px; }
+  .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
+  .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(46,209,79,.18); }
+  .studio video { display:block; width:100%; height:auto; }
+  .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(0,0,0,.05), rgba(0,0,0,.45)); transition:opacity .25s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(46,209,79,.45); transition:transform .15s; }
+  .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
+  .studio .play:hover span { transform:scale(1.07); }
+  .studio.playing .play { opacity:0; pointer-events:none; }
+  .studio .sound { position:absolute; top:14px; right:14px; font-size:11px; font-weight:800; letter-spacing:.1em; color:#0a0a0c; background:var(--g1); padding:6px 10px; border-radius:999px; }
+  .studio .cap { color:var(--dim); font-size:15px; margin:12px 4px 0; line-height:1.55; }
+  .studio .cap b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
 </style>
 <script type="application/ld+json">
 {
@@ -50,70 +108,26 @@
   {
    "@type": "SoftwareApplication",
    "name": "Gremlin",
-   "operatingSystem": "macOS",
+   "operatingSystem": "macOS, Windows",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Gremlin is a stutter and glitch effect (VST3 and AU for macOS). Tempo-synced slicing, stutter repeats, reverse and octave-jump chaos with reproducible seeds and a GLITCH! pad. Controlled demolition for your drums. By Sebastian Macan.",
+   "description": "Gremlin is the glitch box for beats: tempo-synced chops, pitched stutters and granular smear into a plate reverb. One plugin, three switchable sections. By Sebastian Macan.",
    "url": "https://sebastianmacan.com/gremlin.html",
-   "softwareVersion": "1.0",
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   },
-   "author": {
-    "@type": "Person",
-    "name": "Sebastian Macan"
-   },
-   "publisher": {
-    "@type": "Organization",
-    "name": "Aluetion, LLC",
-    "url": "https://sebastianmacan.com"
-   }
+   "offers": { "@type": "Offer", "price": "15", "priceCurrency": "USD" },
+   "author": { "@type": "Person", "name": "Sebastian Macan" },
+   "publisher": { "@type": "Organization", "name": "Aluetion, LLC", "url": "https://sebastianmacan.com" }
   },
   {
    "@type": "FAQPage",
    "mainEntity": [
-    {
-     "@type": "Question",
-     "name": "How do I glitch my drums without wrecking the groove?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Gremlin slices in sync with your host tempo (1/4, 1/8, 1/16, 1/32 or a free length), so every stutter, reverse and re-slice lands on the grid. Start with BREAK low in Auto mode and the beat stays danceable while it falls apart."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Can I trigger glitches manually, like a performance effect?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Yes. Flip the trigger to Manual and smash the GLITCH! pad. It glitches only while you hold it, so you can punch in fills at the end of a bar like a finger drummer."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Are the random glitches repeatable?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Yes. Gremlin's randomness runs on a SEED number. Same seed, same glitches, every playback and every bounce. When a happy accident happens, keep the seed and it is yours forever."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What presets does Gremlin come with?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Twelve factory presets with names like Machine Gun, Rewind, Broken Toy and Stairs Down, each one a different flavor of demolition, from tasteful edge-of-bar fills to total meltdown."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What DAWs does Gremlin work in?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
-     }
-    }
+    { "@type": "Question", "name": "How much is Gremlin?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Gremlin is $15, one-time. Instant download after checkout, full version, no locked knobs, no subscription." } },
+    { "@type": "Question", "name": "Is Gremlin three plugins?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Gremlin is one plugin with three switchable sections: CHOP, STUTTER and SMEAR. All three sit side by side, each with its own ON switch, so you can run one, two or all three at once." } },
+    { "@type": "Question", "name": "What DAWs does Gremlin work in?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically." } },
+    { "@type": "Question", "name": "Is there a Windows version of Gremlin?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Gremlin ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms." } }
    ]
   }
  ]
@@ -129,15 +143,46 @@
   <a class="back" href="/">&larr; Back to all plugins</a>
 
   <section class="hero">
-    <div class="kind">Stutter Glitch Machine</div>
+    <div class="kind">The Mangler Box</div>
     <h1>GREMLIN</h1>
-    <p class="tag">Controlled demolition for your drums.</p>
+    <p class="tag">Chop it. Stutter it. Smear it. The glitch box for beats.</p>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/gremlin.png?v=3.1.0"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=3.1.0c" type="video/mp4"></video></div>
     <div class="cta">
-      <a class="dl" href="downloads/Gremlin-v1.0-macOS.pkg">Download Gremlin</a>
-      <div class="meta">v1.0 &middot; VST3 + AU effect &middot; macOS</div>
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
+      <div class="meta">v3.2.2 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
 
+  
+  <div class="studio" id="st_chop">
+    <div class="label">In the studio &middot; Gremlin (Chop)</div>
+    <div class="frame">
+      <video id="st_chopVid" playsinline preload="metadata" poster="img/ui/gremlin_chop_demo.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/gremlin_chop_demo.mp4?v=2" type="video/mp4"></video>
+      <div class="play" id="st_chopPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is CHOP.</b> Real session, real audio.</p>
+  </div>
+
+  <div class="studio" id="st_chopsmear">
+    <div class="label">In the studio &middot; Gremlin (Chop + Smear)</div>
+    <div class="frame">
+      <video id="st_chopsmearVid" playsinline preload="metadata" poster="img/ui/gremlin_chopsmear_demo.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/gremlin_chopsmear_demo.mp4?v=1" type="video/mp4"></video>
+      <div class="play" id="st_chopsmearPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is CHOP + SMEAR.</b> Real session, real audio.</p>
+  </div>
+
+<div class="studio" id="st_stutter">
+    <div class="label">In the studio &middot; Gremlin (Stutter)</div>
+    <div class="frame">
+      <video id="st_stutterVid" playsinline preload="metadata" poster="img/ui/gremlin_stutter_demo.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/gremlin_stutter_demo.mp4?v=1" type="video/mp4"></video>
+      <div class="play" id="st_stutterPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is STUTTER.</b> Real session, real audio.</p>
+  </div>
   <div class="studio" id="st_become">
     <div class="label">Become a Gremlin &middot; Every section, start to finish</div>
     <div class="frame">
@@ -148,35 +193,59 @@
     <p class="cap"><b>Three plugins in one.</b> One sample, Gremlin off, then Chop, Stutter and Smear each on their own and all three mixed together. 90 seconds, nothing cut.</p>
   </div>
 
-  <h2>What Gremlin does</h2>
-  <p>Gremlin grabs your audio, slices it on the beat grid, and breaks it on purpose. Stutters, rewinds, octave jumps, backwards chunks, all tempo-synced so the wreckage still grooves. It was born as the Glitch mode inside Rusty, our robot voice box, and it kept chewing through the wiring until it earned its own cage. Drums are its favorite food, but it will happily demolish vocals, synths and whole mixes.</p>
+<h2>What Gremlin does</h2>
+  <p>$15 buys you the mangler box. Gremlin takes a boring loop and breaks it on purpose: tempo-synced gate chops, buffer stutters that pitch every repeat, and a granular smear that melts your beat into a plate reverb. It is an effect, not an instrument. Put it on drums, chords, vocals, the whole bus, and turn a straight loop into a moment.</p>
 
-  <h2>The controls</h2>
-  <div class="knob"><b>BREAK.</b> The hero knob. How broken. At 10 percent it is a tasteful stutter at the end of a bar. At 100 it is a machine eating itself in rhythm.</div>
-  <div class="knob"><b>SLICE.</b> Tempo-synced slice length: 1/4, 1/8, 1/16, 1/32, or a free length when you want it off the grid.</div>
-  <div class="knob"><b>REPEAT.</b> How many times a slice stutters, 1 to 16. Low is a hiccup, high is a machine gun.</div>
-  <div class="knob"><b>REVERSE.</b> The chance any slice plays backwards. Instant rewind moments without touching an edit.</div>
-  <div class="knob"><b>PITCH.</b> Octave-jump steps on repeats. Stutters that climb up or crash down while they fire.</div>
-  <div class="knob"><b>CHAOS.</b> Random re-slicing. The gremlin stops following the plan and starts improvising.</div>
-  <div class="knob"><b>SEED.</b> The leash. Every random decision comes from this number, so the same seed replays the same glitches, take after take, bounce after bounce.</div>
-  <div class="knob"><b>MIX.</b> Dry/wet. Sprinkle glitches over the clean beat or go full wreck.</div>
-  <div class="knob"><b>BYPASS.</b> One click back to civilization.</div>
+  <h2>Three sections, one box</h2>
+  <div class="bot"><b>CHOP.</b> A tempo-synced gate and slicer. Pick a rate from 1/4 down to 1/32, set the GATE length, choose a pattern or roll a new one with the seed. Instant trance gates, triplet holes and rhythmic silence that always lands on the grid.</div>
+  <div class="bot"><b>STUTTER.</b> Buffer repeats on demand. RATE sets the slice, REPEATS how many times it fires, REVERSE flips them backwards, PITCH is true pitch from -12 to +12 semitones, and DECLICK smooths the clicks a chopped loop leaves at the start of each repeat without softening the hit. Every repeat in a burst shares one interval, so stutters stay musical instead of turning to mush. Noon is 0 st, plain repeats.</div>
+  <div class="bot"><b>SMEAR.</b> Grain blur into a Dattorro plate reverb. WASH sets how much of the signal melts, DECAY runs from 0.6 s to 14 s, DEPTH pushes the verb further back in the room, TONE darkens or opens it, SHIMMER adds a +12 st feedback pitch shift, and FREEZE holds the tail forever.</div>
 
-  <h2>Auto pilot or smash the button</h2>
-  <p>Two ways to drive. <b>Auto</b> mode lets Gremlin decide when to strike, using BREAK as its appetite. <b>Manual</b> mode hands you the <b>GLITCH!</b> pad: a momentary button that glitches only while you hold it. Punch in a fill on the last beat of the bar, let go, and the loop walks out clean like nothing happened.</p>
+  <h2>Get started in 3 steps</h2>
+  <div class="step"><b>1. Put Gremlin on a loop.</b> Drums are the classic. It opens on Init: Stutter only, at 1/8, so you hear it working immediately.</div>
+  <div class="step"><b>2. Switch on the gremlins you want.</b> CHOP for rhythmic holes, STUTTER for repeats and pitch tricks, SMEAR to melt it into reverb. Run one, or all three at once; each keeps its own settings.</div>
+  <div class="step"><b>3. Raid the presets.</b> Machine Gun, Frozen Lake, Full Meltdown. Find one that ruins your loop in the right way, then tweak and save your own.</div>
 
-  <h2>Twelve flavors of broken</h2>
-  <p>Factory presets with names that tell you exactly what they do: <b>Machine Gun</b>, <b>Rewind</b>, <b>Broken Toy</b>, <b>Stairs Down</b> and eight more. Twelve starting points from polite fill generator to full meltdown.</p>
+  <h2>Make it yours</h2>
+  <div class="knob"><b>CHOP: RATE.</b> Tempo-synced slice size, 1/4 down to 1/32. Always on your DAW's grid.</div>
+  <div class="knob"><b>CHOP: GATE.</b> How long each slice stays open. Short is choppy, long is pumping.</div>
+  <div class="knob"><b>CHOP: PATTERNS + SEED.</b> Pick a gate pattern or roll the seed for a new one. Same seed, same pattern, every time.</div>
+  <div class="knob"><b>STUTTER: RATE and REPEATS.</b> Slice size and how many times the buffer fires.</div>
+  <div class="knob"><b>STUTTER: REVERSE.</b> Plays the repeats backwards. Instant tape-rewind moments.</div>
+  <div class="knob"><b>STUTTER: PITCH.</b> True pitch, -12 to +12 semitones. All repeats in a burst share one interval; noon is 0 st.</div>
+  <div class="knob"><b>STUTTER: DECLICK.</b> Stutters copy whatever hard edges are in the loop, so a chopped sample can click at the start of every repeat. DECLICK finds those exact spots and smooths only them, a few milliseconds each. Hits keep their punch. Leave it at 0 if you want the clicks; a quarter turn is usually enough to lose them.</div>
+  <div class="knob"><b>SMEAR: WASH and DECAY.</b> How much melts, and for how long: 0.6 s up to a 14 s tail.</div>
+  <div class="knob"><b>SMEAR: DEPTH.</b> Predelay, early/late balance and a high-cut in one move, so the verb sits further back instead of on top.</div>
+  <div class="knob"><b>SMEAR: TONE, SHIMMER, FREEZE and MIX.</b> Darken or open the tail, add a +12 st shimmer to the feedback, freeze it forever, blend it in.</div>
+  <div class="knob"><b>PRESETS + INIT.</b> Preset dropdown in the header, save unlimited of your own. Right-click, two-finger tap or Cmd-click any knob for INIT: that one control snaps back to the preset you loaded.</div>
 
-  <h2>What to feed it</h2>
-  <p>Drum loops are the classic: instant fills, turnarounds and edits you would never program by hand. Vocals become stammering hooks. Pads and chords get shredded into rhythmic confetti. Put it on the master for two bars before the drop if you are feeling brave.</p>
+  <h2>Presets</h2>
+  <p>12 to start: Init, Chop, Smear, Gentle Hiccup, Plucky Cloud, Rewind Room, Machine Gun, Frozen Lake, Broken Toy, Tape Chewer, Sugar Rush and Full Meltdown. From polite hiccups to a beat that no longer exists.</p>
 
-  <h2>Is it really free right now?</h2>
-  <p>Yes. Enter your email and the download starts right away. Full version, all twelve presets, no locked knobs, no trial timer.</p>
+  <h2>Common questions</h2>
+  <div class="knob"><b>How much is Gremlin?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
+  <div class="knob"><b>Is Gremlin three plugins?</b> No. One plugin with three switchable sections: CHOP, STUTTER and SMEAR. All three sit side by side, each with its own ON switch, so you can run one, two or all three at once.</div>
+  <div class="knob"><b>What DAWs does Gremlin work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
+  <div class="knob"><b>Is there a Windows version of Gremlin?</b> Yes. Gremlin ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms.</div>
+  <div class="knob"><b>How do I install Gremlin?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
+
+  <div class="cta">
+    <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
+    <div class="meta">Email required &middot; instant download</div>
+  </div>
 
   <footer>
-    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@aluetion.com">hello@aluetion.com</a></p>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
+<script src="js/cart.js?v=p15" defer></script>
+<script src="js/email-gate.js" defer></script>
+<script>(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');var big=box.classList.contains('big');var bar=null,fill=null,tm=null;if(big){bar=document.createElement('div');bar.className='seek';fill=document.createElement('i');bar.appendChild(fill);tm=document.createElement('b');bar.appendChild(tm);box.appendChild(bar);var seekTo=function(ev){var r=bar.getBoundingClientRect();var x=(ev.touches?ev.touches[0].clientX:ev.clientX)-r.left;var p=Math.max(0,Math.min(1,x/r.width));if(v.duration)v.currentTime=p*v.duration;};var drag=false;bar.addEventListener('mousedown',function(ev){ev.stopPropagation();drag=true;seekTo(ev);});window.addEventListener('mousemove',function(ev){if(drag)seekTo(ev);});window.addEventListener('mouseup',function(){drag=false;});bar.addEventListener('touchstart',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('touchmove',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('click',function(ev){ev.stopPropagation();});var fmt=function(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+s%60).slice(-2);};v.addEventListener('timeupdate',function(){if(v.duration){fill.style.setProperty('--p',(100*v.currentTime/v.duration)+'%');tm.textContent=fmt(v.currentTime)+' / '+fmt(v.duration);}});v.addEventListener('loadedmetadata',function(){tm.textContent='0:00 / '+fmt(v.duration);});}box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');if(!big)v.load();});if(big){var fs=document.createElement('u');fs.className='fsbtn';fs.title='Full screen';fs.setAttribute('aria-label','Full screen');fs.addEventListener('click',function(ev){ev.stopPropagation();ev.preventDefault();if(v.webkitEnterFullscreen&&!box.requestFullscreen){v.muted=false;v.webkitEnterFullscreen();if(v.paused){v.play();box.classList.add('on');}return;}var el=box;if(document.fullscreenElement||document.webkitFullscreenElement){(document.exitFullscreen||document.webkitExitFullscreen).call(document);}else{(el.requestFullscreen||el.webkitRequestFullscreen).call(el);if(v.paused){v.muted=false;v.play();box.classList.add('on');}}});box.appendChild(fs);}});})();</script>
+<script>
+    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+  </script>
 </body>
 </html>
