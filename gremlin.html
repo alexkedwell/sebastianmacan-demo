@@ -127,6 +127,21 @@
   </section>
 
   
+<div class="studio" id="st_things">
+    <div class="label">Some things Gremlin can do &middot; Chop, Stutter, Smear</div>
+    <div class="frame">
+      <video id="st_thingsVid" playsinline preload="metadata" poster="img/ui/gremlin_things.jpg?v=v1019" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/gremlin_things.mp4?v=v1019" type="video/mp4"></video>
+      <div class="play" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Original sample first, then Gremlin.</b> Chop, then Stutter, then Smear on the same loop. Real session, real audio: nothing is cut.</p>
+  </div>
+  <script>
+    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+  </script>
+
 <h2>What Gremlin does</h2>
   <p>Gremlin is the mangler box. It takes a boring loop and breaks it on purpose: tempo-synced gate chops, buffer stutters that pitch every repeat, and a granular smear that melts your beat into a plate reverb. It is an effect, not an instrument. Put it on drums, chords, vocals, the whole bus, and turn a straight loop into a moment.</p>
 
