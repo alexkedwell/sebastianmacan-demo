@@ -124,39 +124,9 @@
     </div>
   </section>
 
-
-
-
   <h2>Synths and guitars, in the box</h2>
   <p>Synths and guitars get out of control sometimes. Stacked oscillators, big unison patches, bright strummed chords, anything with those flying harmonics pushes past the line, and you get that slight distortion that ruins the clean, crisp feel you worked for. Honey pulls them back in. It is a soft tape stage that rounds the peaks and glues the layers, while everything you love about your progression stays intact. Same notes, same movement, same shine. Just sitting inside the mix instead of fighting it. It makes that subtle difference you have been looking for.</p>
-  <div class="studio" id="st_studio">
-    <div class="label">In the studio &middot; Honey</div>
-    <div class="frame">
-      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/honey_studio_demo.jpg?v=3" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_studio_demo.mp4?v=4" type="video/mp4"></video>
-      <div class="play" id="st_studioPlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Grey is before. Color is Honey.</b> Real session, real audio.</p>
-  </div>
-
-  <div class="studio" id="st_phaser">
-    <div class="label">In the studio &middot; The accidental phaser</div>
-    <div class="frame">
-      <video id="st_phaserVid" playsinline preload="metadata" poster="img/ui/honey_phaser_demo.jpg?v=2" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_phaser_demo.mp4?v=3" type="video/mp4"></video>
-      <div class="play" id="st_phaserPlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Not a preset. A happy accident.</b> Sweep MIX while chords play and the tape path drifts against the dry signal: a phaser nobody designed. We kept it.</p>
-  </div>
-
-
-
-  <script>
-    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
-    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
-    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
-  </script>
-
+      
   <h2>What Honey does</h2>
   <p>Honey is what happens to your chords when they get printed to good tape. It is built on real tape physics: the record and playback emphasis curves, magnetic hysteresis, gentle tape compression, head bump, high-frequency loss, wow and flutter and hiss, all modelled instead of faked. The result is not distortion. It is smoothness. Digital edges round off, sustains glue together, and pads sit back in the mix like they belong there.</p>
 
@@ -164,7 +134,6 @@
   <div class="step"><b>1. Put Honey on your chords.</b> Keys, pads, guitars, melodies, vocals. It is warmer than dry with nothing touched.</div>
   <div class="step"><b>2. Pick a machine.</b> STUDIO is a two-inch deck at 15 ips: expensive glue. CASSETTE is the default: moderate hiss, a little wobble. WALKMAN is a worn tape on dying batteries: heavy wow, dropouts, a ceiling around 9 kHz. The whole face changes with it.</div>
   <div class="step"><b>3. Turn DRIVE until it smiles.</b> Then WARMTH for the head bump, WOBBLE for movement, AGE for years of wear. Save it as a preset when it is yours.</div>
-
 
   <h2>Make it yours</h2>
   <div class="knob"><b>DRIVE.</b> How hard you hit the tape. Below 12 o'clock is glue. Past 12 it climbs hard: soft saturation that stays smooth because the highs saturate first, all the way to crushed tape at the top, level-matched so it never just gets louder.</div>
