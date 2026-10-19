@@ -62,6 +62,7 @@
   .studio .play:hover span { transform:scale(1.07); }
   .studio.playing .play { opacity:0; pointer-events:none; }
   .studio .sound { position:absolute; top:14px; right:14px; font-size:11px; font-weight:800; letter-spacing:.1em; color:#0a0a0c; background:var(--g1); padding:6px 10px; border-radius:999px; }
+  .studio.playing .sound { display:none; }
   .studio .cap { color:var(--dim); font-size:15px; margin:12px 4px 0; line-height:1.55; }
   .studio .cap b { color:var(--txt); }
 </style>
@@ -159,21 +160,7 @@
       <div class="meta">v1.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
-  <div class="studio" id="st_cut">
-    <div class="label">In the studio &middot; Gloss</div>
-    <div class="frame">
-      <video id="st_cutVid" playsinline preload="metadata" poster="img/ui/gloss_studio.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/gloss_studio.mp4?v=1" type="video/mp4"></video>
-      <div class="play" id="st_cutPlay" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Helps any sound cut through the mix.</b> Real session, real audio: a background sound that was getting buried, then Gloss on it.</p>
-  </div>
-  <script>
-    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
-    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
-    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
-  </script>
-
+  
 
   <h2>What Gloss does</h2>
   <p>Gloss makes tracks sit right in the mix with four knobs and zero engineering degree. Tell it what the track is, then shape it with CLEAN, PUNCH, GLOW and WIDTH while auto-gain keeps the volume honest.</p>
@@ -191,7 +178,6 @@
 
   <h3>Pro tip</h3>
   <p>Because auto-gain matches the volume, whatever sounds better with Gloss actually IS better. Trust your first instinct and move on.</p>
-
 
   <h2>Common questions</h2>
   <div class="knob"><b>What does Gloss actually do to my mix?</b> Under the hood it combines EQ shaping, compression and saturation into four musical knobs. Instead of tweaking ten plugins, you turn a couple of knobs until the track sits right. Made for producers who want good mixes without an engineering degree.</div>

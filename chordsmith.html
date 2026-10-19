@@ -75,6 +75,7 @@
   .studio .play:hover span { transform:scale(1.07); }
   .studio.playing .play { opacity:0; pointer-events:none; }
   .studio .sound { position:absolute; top:14px; right:14px; font-size:11px; font-weight:800; letter-spacing:.1em; color:#0a0a0c; background:var(--g1); padding:6px 10px; border-radius:999px; }
+  .studio.playing .sound { display:none; }
   .studio .cap { color:var(--dim); font-size:15px; margin:12px 4px 0; line-height:1.55; }
   .studio .cap b { color:var(--txt); }
 </style>
@@ -186,27 +187,7 @@
     <p class="cap"><b>Generate, reroll one chord, loop a bar, switch modes, drag the MIDI out and add a vocal.</b> 2 minutes, nothing cut.</p>
   </div>
 
-  <div class="vidpair">
-    <div class="studio" id="studio">
-      <div class="label">In the studio &middot; Trap beat</div>
-      <div class="frame">
-        <video id="studioVid" playsinline preload="metadata" poster="img/ui/chordsmith_demo.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/chordsmith_demo.mp4?v=4" type="video/mp4"></video>
-        <div class="play" id="studioPlay" aria-label="Play"><span></span></div>
-        <div class="sound">&#9654; WITH SOUND</div>
-      </div>
-      <p class="cap"><b>Blank piano roll to full beat.</b> Real session, real audio.</p>
-    </div>
-    <div class="studio" id="studio2">
-      <div class="label">In the studio II &middot; Rage trap beat</div>
-      <div class="frame">
-        <video id="studio2Vid" playsinline preload="metadata" poster="img/ui/chordsmith_rage.jpg?v=1" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/chordsmith_rage.mp4?v=1" type="video/mp4"></video>
-        <div class="play" id="studio2Play" aria-label="Play"><span></span></div>
-        <div class="sound">&#9654; WITH SOUND</div>
-      </div>
-      <p class="cap"><b>Rage trap in G minor, start to finish.</b> Real session, real audio.</p>
-    </div>
-  </div>
-  <script>
+    <script>
     (function(){document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');if(!v||!p||w.classList.contains('soon'))return;
     p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');
     document.querySelectorAll('.studio video').forEach(function(o){if(o!==v&&!o.paused)o.pause();});});
