@@ -18,7 +18,7 @@ paddle = {i["price_id"]: i for i in json.load(open(f"{H}/paddle/catalog.json"))[
 prod = json.load(open(f"{H}/delivery/products.json"))
 RETIRED = ["Subtle Tape Machine", "Sometimes tape plugins do too much", "right amount of vintage", "A real tape machine, in the box"]
 FILE_OF = {"biome": "Biome", "magician": "Chordsmith", "jelly": "Jelly", "warble": "Warble", "gloss": "Gloss",
-           "orbit": "Orbit", "fireplace": "Fireplace", "honey": "Honey", "gremlin": "Gremlin"}
+           "orbit": "Orbit", "fireplace": "Fireplace", "honey": "Honey", "gremlin": "Gremlin", "pocket": "Pocket"}
 bad = []
 # 1. roster: cart.js basket vs delivered files
 for cid, (page, items) in BASK.items():

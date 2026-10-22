@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/base.css?v=1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
+<meta name="theme-color" content="#000000">
+<title>Pocket | Snare Depth VST3/AU Plugin</title>
+<meta name="description" content="Pocket puts your snare in the mix instead of on top of it. One DEPTH knob pulls the hit back into the room and keeps it dead centre. VST3 and AU, macOS and Windows. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#f08a3c; --g2:#f3d9ae; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(240,138,60,.30); animation:float 7s ease-in-out infinite; }
+  .videobox img { display:block; width:100%; height:auto; }
+  .sm, .big { cursor:pointer; }
+  .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(240,138,60,.30); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  li { margin-bottom:10px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Pocket",
+   "operatingSystem": "macOS, Windows",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Pocket puts your snare in the mix instead of on top of it. One DEPTH knob darkens the top, adds distance pre-delay and brings up the room, while the snare stays dead centre. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/pocket.html",
+   "offers": { "@type": "Offer", "price": "15", "priceCurrency": "USD" },
+   "author": { "@type": "Person", "name": "Sebastian Macan" },
+   "publisher": { "@type": "Organization", "name": "Aluetion, LLC", "url": "https://sebastianmacan.com" }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    { "@type": "Question", "name": "How much is Pocket?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pocket is $15, one-time. Instant download after checkout, full version, no locked knobs, no subscription." } },
+    { "@type": "Question", "name": "Is Pocket just an EQ and a reverb?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The DEPTH knob moves four things together the way real distance does: it darkens the top end from 16 kHz down to 4.5 kHz, adds up to 12 ms of distance pre-delay, brings up the room and dips the level up to 3 dB. The first reflection is mono, so the snare itself never leaves the centre." } },
+    { "@type": "Question", "name": "What DAWs does Pocket work in?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically." } },
+    { "@type": "Question", "name": "Is there a Windows version of Pocket?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pocket ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms." } }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">Snare Depth</div>
+    <h1>POCKET</h1>
+    <p class="tag">Puts your snare in the mix instead of on top of it.</p>
+    <div class="videobox"><img src="img/ui/pocket.png?v=1.0.0" alt="Pocket plugin UI: a snare on a dark stage with DEPTH, CRACK, BODY, ROOM, WIDTH, MIX and OUTPUT knobs"></div>
+    <div class="cta">
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="pocket">Buy Pocket &middot; $15</span>
+      <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
+    </div>
+  </section>
+
+  <h2>What Pocket does</h2>
+  <p>$15 buys you the depth engine. Most snares sit on top of the beat like a sticker. Pocket moves the snare back into the room: one DEPTH knob darkens the top end the way air does, adds a few milliseconds of distance, brings up the room around it and dips the level, all in one move. The snare stays dead centre the whole way. It stops fighting your vocal and starts living with your drums.</p>
+
+  <h2>Where it comes from</h2>
+  <p>Orbit, the free auto-pan, had a side effect nobody planned: it mixed hats in. The darkening and the tiny pre-delay it used to fake distance turned out to be the useful part. Pocket is that depth engine with the motion stripped out and the source pinned to the centre, rebuilt for the one drum that needs it most.</p>
+
+  <h2>One big knob, five helpers</h2>
+  <div class="bot"><b>DEPTH.</b> The knob. Together it darkens the top from 16 kHz down to 4.5 kHz, adds 0 to 12 ms of distance pre-delay, brings up the room and dips the level up to 3 dB. Zero is your dry snare. Turn it up and the snare walks to the back of the room without ever leaving the centre.</div>
+  <div class="bot"><b>CRACK.</b> The transient. Pull it back to tuck the hit under the beat, push it to snap. Centre is untouched.</div>
+  <div class="bot"><b>BODY.</b> 200 Hz, plus or minus 6 dB. Thicken a thin snare or clean up a boomy one. Centre is flat.</div>
+  <div class="bot"><b>ROOM.</b> Early reflections plus a short tail, 80 to 450 ms. The first reflection is mono, so the direct sound stays centred no matter how big the room gets.</div>
+  <div class="bot"><b>WIDTH.</b> Stereo width of the room only, never the direct. The snare stays mono-solid while the space around it opens up.</div>
+
+  <h2>Get started in 3 steps</h2>
+  <div class="step"><b>1. Put Pocket on the snare.</b> Snare track, snare bus, or the whole top kit. It opens on Init, which is close to dry.</div>
+  <div class="step"><b>2. Turn DEPTH until the snare sits.</b> Somewhere between 30 and 60 percent it stops poking out and starts sounding placed. That is the pocket.</div>
+  <div class="step"><b>3. Shape it.</b> CRACK for the hit, BODY for the weight, ROOM and WIDTH for the space. MIX blends it with the dry signal, OUTPUT trims the result.</div>
+
+  <h2>Make it yours</h2>
+  <div class="knob"><b>DEPTH.</b> Darkening, distance pre-delay, room lift and a level dip in one move. The whole plugin lives here.</div>
+  <div class="knob"><b>CRACK.</b> Transient control. Back is tucked, forward is snappy, centre leaves the hit alone.</div>
+  <div class="knob"><b>BODY.</b> 200 Hz shelf, plus or minus 6 dB. Centre is flat.</div>
+  <div class="knob"><b>ROOM.</b> Early reflections and a short 80 to 450 ms tail. First reflection is mono so the snare never drifts.</div>
+  <div class="knob"><b>WIDTH.</b> Widens the room, never the snare.</div>
+  <div class="knob"><b>MIX and OUTPUT.</b> Parallel blend and output trim. BYPASS pill in the header for honest A/B.</div>
+  <div class="knob"><b>PRESETS.</b> Preset bar in the header, save unlimited of your own. Zero latency, so it is safe on the way in or at mixdown.</div>
+
+  <h2>Presets</h2>
+  <p>7 to start: Init, Trap Dry, Boom Bap, Live Room, Back Of The Club, Stadium and Snap Forward. From bone dry and tucked to a snare echoing off the back wall, plus unlimited slots for your own.</p>
+
+  <h2>Common questions</h2>
+  <div class="knob"><b>How much is Pocket?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
+  <div class="knob"><b>Is Pocket just an EQ and a reverb?</b> No. DEPTH moves four things together the way real distance does: darkening from 16 kHz down to 4.5 kHz, up to 12 ms of pre-delay, room lift and up to a 3 dB level dip. The first reflection is mono, so the snare itself never leaves the centre.</div>
+  <div class="knob"><b>Does it work on things other than snares?</b> It is tuned for snares and claps, but anything that sits too far forward is fair game: percussion, plucks, even a vocal ad-lib.</div>
+  <div class="knob"><b>What DAWs does Pocket work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
+  <div class="knob"><b>Is there a Windows version of Pocket?</b> Yes. Pocket ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.</div>
+  <div class="knob"><b>How do I install Pocket?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
+
+  <div class="cta">
+    <span class="dl buy" role="button" tabindex="0" data-cart-buy="pocket">Buy Pocket &middot; $15</span>
+    <div class="meta">Email required &middot; instant download</div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
+  </footer>
+</div>
+<script src="js/cart.js?v=p16" defer></script>
+<script src="js/email-gate.js" defer></script>
+
+</body>
+</html>

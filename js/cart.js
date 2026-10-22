@@ -32,6 +32,7 @@
     warble:        { name: 'Warble',                 cents: 1500, priceId: 'pri_01m1gntt0z0mpgfr059dve73fj' },
     honey:         { name: 'Honey',                  cents: 1500, priceId: 'pri_01m3nvfqfgwp0hn49hbr0zw2dt' },
     gremlin:       { name: 'Gremlin',                cents: 1500, priceId: 'pri_01m3rmmy11e41nxdpkp9rdjq4d' },
+    pocket:        { name: 'Pocket',                 cents: 1500, priceId: 'pri_01m5jmgg27ch339v1v5gkr6g7a' },
     fireplace:     { name: 'Fireplace',              cents: 1500, priceId: 'pri_01m1nckxvaekbaccghkvvh4zva' },
     gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
     /* MIDI chord packs */
@@ -67,7 +68,7 @@
   var BASKETS = {
     instrumentsbasket: { page: 'basket-instruments.html', items: ['biome', 'magician'] },
     effectsbasket:     { page: 'basket-effects.html',     items: ['jelly', 'warble', 'gloss', 'gremlin'], bonus: ['Orbit'] },
-    studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'gloss', 'honey'] },
+    studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'gloss', 'honey', 'pocket'] },
     cozy:              { page: 'basket-cozy.html',        items: ['honey', 'fireplace'] },
     lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'warble', 'honey'] },
     chordbasket:       { page: 'basket-chord.html',       items: ['magician', 'hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },

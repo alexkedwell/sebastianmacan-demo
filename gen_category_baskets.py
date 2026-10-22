@@ -10,6 +10,7 @@ ITEMS = {
   "orbit":     ("3D Auto-Pan", "Orbit", "Hats that fly around your head. Free forever, and in the basket anyway.", 0, "orbit.html"),
   "fireplace": ("Ambience", "Fireplace", "Eight real rooms recorded on tape. Put your track somewhere.", 15, "fireplace.html"),
   "honey":     ("Tape Smoothness", "Honey", "Tape smoothness for chords, pads and melodies. Three machines, three faces.", 15, "honey.html"),
+  "pocket":    ("Snare Depth", "Pocket", "Puts your snare in the mix instead of on top of it.", 15, "pocket.html"),
 }
 BASKETS = [
   dict(file="basket-instruments.html", cid="instrumentsbasket", title="INSTRUMENTS BASKET", name="Instruments Basket", price=59,
