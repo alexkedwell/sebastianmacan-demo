@@ -53,7 +53,7 @@ body = '''  <section class="hero">
     <div class="kind">Snare Depth</div>
     <h1>POCKET</h1>
     <p class="tag">Puts your snare in the mix instead of on top of it.</p>
-    <div class="videobox"><img src="img/ui/pocket.png?v=1.0.0" alt="Pocket plugin UI: a snare on a dark stage with DEPTH, CRACK, BODY, ROOM, WIDTH, MIX and OUTPUT knobs"></div>
+    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/pocket.png?v=1.0.0" aria-label="Pocket plugin UI: a snare on a dark stage walking back and forward with the DEPTH knob"><source src="https://video.sebastianmacan.com/img/video/pocket_ui_loop.mp4?v=1.0.0a" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="pocket">Buy Pocket &middot; $15</span>
       <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
@@ -106,8 +106,7 @@ body = '''  <section class="hero">
 '''
 h = h[:body_start] + body + h[body_end:]
 # static hero image instead of the ui loop video
-h = h.replace("  .videobox video { display:block; width:100%; height:auto; }",
-              "  .videobox img { display:block; width:100%; height:auto; }")
+pass  # hero is a video like the other pages
 # drop the leftover "In the studio" video CSS block (Pocket has no studio video yet; also kills the em dash)
 _a = h.index("/* In the studio")
 _b = h.index("  .knob {", _a)

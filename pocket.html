@@ -32,7 +32,7 @@
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
     box-shadow:0 20px 80px rgba(240,138,60,.30); animation:float 7s ease-in-out infinite; }
-  .videobox img { display:block; width:100%; height:auto; }
+  .videobox video { display:block; width:100%; height:auto; }
   .sm, .big { cursor:pointer; }
   .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
@@ -104,7 +104,7 @@
     <div class="kind">Snare Depth</div>
     <h1>POCKET</h1>
     <p class="tag">Puts your snare in the mix instead of on top of it.</p>
-    <div class="videobox"><img src="img/ui/pocket.png?v=1.0.0" alt="Pocket plugin UI: a snare on a dark stage with DEPTH, CRACK, BODY, ROOM, WIDTH, MIX and OUTPUT knobs"></div>
+    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/pocket.png?v=1.0.0" aria-label="Pocket plugin UI: a snare on a dark stage walking back and forward with the DEPTH knob"><source src="https://video.sebastianmacan.com/img/video/pocket_ui_loop.mp4?v=1.0.0a" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="pocket">Buy Pocket &middot; $15</span>
       <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
