@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/base.css?v=1">
 <title>Instruments Basket | Sebastian Macan</title>
-<meta name="description" content="Biome grows textures from any sound, Magician writes the chords and melodies, Fauna is a synth full of living things. The whole instrument shelf.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Biome and Chordsmith. Both Sebastian Macan instruments, one basket, VST3 + AU for macOS.">
 <meta name="robots" content="index,follow">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#3ecf6e; --g2:#ffd257; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#39e6d0; --g2:#60a5fa; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -56,7 +60,7 @@
   .mathbox b { color:var(--txt); }
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
-  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} .iact{width:100%;justify-content:space-between;} }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} footer{flex-direction:column;text-align:center;} .iact{width:100%;justify-content:space-between;} }
 </style>
 </head>
 <body>
@@ -70,63 +74,52 @@
   <section class="hero">
     <div class="kind">Candy Basket</div>
     <h1>INSTRUMENTS BASKET</h1>
-    <p class="tag">The three big ones. Texture, hits, creatures.</p>
-    <img class="bimg" src="img/bundles/instruments_bundle.png" alt="INSTRUMENTS BASKET basket art">
-    <div class="pricebar"><span class="big"><s>$107</s> $69</span> <span class="freebie">&middot; free during launch</span></div>
-    <div class="meta">3 plugins · VST3 + AU · macOS</div>
-    <div class="cta" style="margin-top:22px;"><a class="dl" href="downloads/InstrumentsBasket-SebastianMacan.zip">Download the whole basket</a></div>
+    <p class="tag">Both instruments in the store. Grow textures, then write the chords on top.</p>
+    <img class="bimg" src="img/bundles/instruments_bundle.png?v=3" alt="INSTRUMENTS BASKET basket art">
+    <div class="pricebar"><span class="big">$59</span></div>
+    <div class="meta">2 plugins · VST3 + AU · macOS</div>
+    <div class="cta" style="margin-top:22px;"><span class="dl buy" role="button" tabindex="0" data-cart-buy="instrumentsbasket">Buy Instruments Basket &middot; $59</span><div class="cartrow" style="justify-content:center;"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="instrumentsbasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="instrumentsbasket">Buy Now</span></div></div>
   </section>
 
   <h2>What's in the basket</h2>
-  <p class="sub">Biome grows textures from any sound, Magician writes the chords and melodies, Fauna is a synth full of living things. The whole instrument shelf. Every item below is yours &mdash; grab them one by one, all free during launch.</p>
+  <p class="sub">Biome turns any audio into huge evolving textures, pads and drones. Chordsmith writes chords and melodies in any genre, key and mode and drags them straight into your DAW. The sound and the song, one basket. Every item below is sold on its own too, or take the whole basket at once.</p>
     <div class="item">
       <div class="iinfo">
         <div class="ikind">Granular Texture Blender</div>
         <div class="iname">Biome</div>
-        <p class="itag">Drop a rainforest on your beat.</p>
+        <p class="itag">Drop a rainforest on your beat. Drag in any audio and grow it into huge evolving textures.</p>
         <a class="rowlink" href="biome.html">See how it works &rarr;</a>
       </div>
       <div class="iact">
-        <div class="iprice"><s>$39</s></div>
-        <a class="dl idl" href="downloads/Biome-v1.2.1-macOS.pkg">Download</a>
+        <div class="iprice">$39</div>
+        <span class="dl buy idl" role="button" tabindex="0" data-cart-buy="biome">Buy Biome &middot; $39</span>
       </div>
     </div>
     <div class="item">
       <div class="iinfo">
         <div class="ikind">Chord & Melody Generator</div>
-        <div class="iname">Magician</div>
-        <p class="itag">Hit songs on tap. 20 genres.</p>
+        <div class="iname">Chordsmith</div>
+        <p class="itag">Pick a genre, key and mode, hit GENERATE. Chords and a melody, ready to drag into your DAW.</p>
         <a class="rowlink" href="chordsmith.html">See how it works &rarr;</a>
       </div>
       <div class="iact">
-        <div class="iprice"><s>$39</s></div>
-        <a class="dl idl" href="downloads/Magician-v1.5.1-macOS.pkg">Download</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="iinfo">
-        <div class="ikind">Creature Voice Synth</div>
-        <div class="iname">Fauna</div>
-        <p class="itag">Play the ocean. Play the sky.</p>
-        <a class="rowlink" href="fauna.html">See how it works &rarr;</a>
-      </div>
-      <div class="iact">
-        <div class="iprice"><s>$29</s></div>
-        <a class="dl idl" href="downloads/Fauna-v1.0-macOS.pkg">Download</a>
+        <div class="iprice">$39</div>
+        <span class="dl buy idl" role="button" tabindex="0" data-cart-buy="magician">Buy Chordsmith &middot; $39</span>
       </div>
     </div>
 
-  <div class="cta"><a class="dl" href="downloads/InstrumentsBasket-SebastianMacan.zip">Download the whole basket</a><div class="meta">One zip, everything inside. Download once, unzip, done.</div></div>
+  <div class="cta"><span class="dl buy" role="button" tabindex="0" data-cart-buy="instrumentsbasket">Buy Instruments Basket &middot; $59</span><div class="cartrow" style="justify-content:center;"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="instrumentsbasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="instrumentsbasket">Buy Now</span></div><div class="meta">2 installers in one email. Download, install, done.</div></div>
 
   <div class="mathbox">
-    Bought one by one this basket adds up to <b>$107</b>. As a basket it's <b>$69</b> when checkout opens &mdash; and <b>free right now during launch</b>. 3 items, zero catches.
+    Bought one by one this basket adds up to <b>$78</b>. As a basket it's <b>$59</b>, one-time. 2 items, zero catches.
   </div>
 
   <footer>
     <div>&copy; 2026 Aluetion, LLC &middot; Sebastian Macan</div>
-    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
+<script src="js/cart.js?v=p17" defer></script>
 <script src="js/email-gate.js" defer></script>
 </body>
 </html>

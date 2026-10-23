@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/base.css?v=1">
 <title>Effects Basket | Sebastian Macan</title>
-<meta name="description" content="Five effects in one grab. Freeze it, spin it, tape it, shine it, master it.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Jelly, Warble, Gloss, Gremlin and Orbit. Every Sebastian Macan effect, one basket, VST3 + AU for macOS.">
 <meta name="robots" content="index,follow">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#8b5cf6; --g2:#60a5fa; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff5ca8; --g2:#8b5cf6; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -56,7 +60,7 @@
   .mathbox b { color:var(--txt); }
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
-  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} .iact{width:100%;justify-content:space-between;} }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} footer{flex-direction:column;text-align:center;} .iact{width:100%;justify-content:space-between;} }
 </style>
 </head>
 <body>
@@ -70,87 +74,88 @@
   <section class="hero">
     <div class="kind">Candy Basket</div>
     <h1>EFFECTS BASKET</h1>
-    <p class="tag">Five flavors of motion, texture and polish. One basket.</p>
-    <img class="bimg" src="img/bundles/effects_bundle.png" alt="EFFECTS BASKET basket art">
-    <div class="pricebar"><span class="big"><s>$68</s> $59</span> <span class="freebie">&middot; free during launch</span></div>
-    <div class="meta">5 plugins · VST3 + AU · macOS</div>
-    <div class="cta" style="margin-top:22px;"><a class="dl" href="downloads/EffectsBasket-SebastianMacan.zip">Download the whole basket</a></div>
+    <p class="tag">Every effect in the store. Wobble, warble, polish and glitch, with Orbit thrown in.</p>
+    <img class="bimg" src="img/bundles/effects_bundle.png?v=4" alt="EFFECTS BASKET basket art">
+    <div class="pricebar"><span class="big">$49</span></div>
+    <div class="meta">4 plugins + Orbit · VST3 + AU · macOS</div>
+    <div class="cta" style="margin-top:22px;"><span class="dl buy" role="button" tabindex="0" data-cart-buy="effectsbasket">Buy Effects Basket &middot; $49</span><div class="cartrow" style="justify-content:center;"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="effectsbasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="effectsbasket">Buy Now</span></div></div>
   </section>
 
   <h2>What's in the basket</h2>
-  <p class="sub">Five effects in one grab. Freeze it, spin it, tape it, shine it, master it. Every item below is yours &mdash; grab them one by one, all free during launch.</p>
+  <p class="sub">Jelly makes things jiggle. Warble makes them sing like a weird little bird. Gloss makes them sit right in the mix. Gremlin chops, stutters and smears them into something new. Orbit flies them around your head, free. Every effect we make, one basket. Every item below is sold on its own too, or take the whole basket at once.</p>
     <div class="item">
       <div class="iinfo">
-        <div class="ikind">Granular Texture Machine</div>
-        <div class="iname">Ghost</div>
-        <p class="itag">Freeze sound. Then haunt it.</p>
-        <a class="rowlink" href="ghost.html">See how it works &rarr;</a>
+        <div class="ikind">Wobble Machine</div>
+        <div class="iname">Jelly</div>
+        <p class="itag">Make everything jiggle. LFO-driven movement for basses, synths and anything that sits too still.</p>
+        <a class="rowlink" href="jelly.html">See how it works &rarr;</a>
       </div>
       <div class="iact">
-        <div class="iprice"><s>$19</s></div>
-        <a class="dl idl" href="downloads/Ghost-v1.1-macOS.pkg">Download</a>
+        <div class="iprice">$15</div>
+        <span class="dl buy idl" role="button" tabindex="0" data-cart-buy="jelly">Buy Jelly &middot; $15</span>
       </div>
     </div>
     <div class="item">
       <div class="iinfo">
-        <div class="ikind">3D Auto-Pan</div>
-        <div class="iname">Orbit</div>
-        <p class="itag">Hats that fly around your head.</p>
-        <a class="rowlink" href="orbit.html">See how it works &rarr;</a>
+        <div class="ikind">Drunk Songbird Pitch Wobbler</div>
+        <div class="iname">Warble</div>
+        <p class="itag">Make any sound sing like a weird little bird.</p>
+        <a class="rowlink" href="warble.html">See how it works &rarr;</a>
       </div>
       <div class="iact">
-        <div class="iprice"><s>$15</s></div>
-        <a class="dl idl" href="downloads/Orbit-v1.0-macOS.pkg">Download</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="iinfo">
-        <div class="ikind">Subtle Tape Machine</div>
-        <div class="iname">Reels</div>
-        <p class="itag">Sometimes tape plugins do too much. Reels is just the right amount of vintage.</p>
-        <a class="rowlink" href="reels.html">See how it works &rarr;</a>
-      </div>
-      <div class="iact">
-        <div class="iprice"><s>$15</s></div>
-        <a class="dl idl" href="downloads/Reels-v2.0.1-macOS.pkg">Download</a>
+        <div class="iprice">$15</div>
+        <span class="dl buy idl" role="button" tabindex="0" data-cart-buy="warble">Buy Warble &middot; $15</span>
       </div>
     </div>
     <div class="item">
       <div class="iinfo">
         <div class="ikind">Instant Mix Polish</div>
         <div class="iname">Gloss</div>
-        <p class="itag">Mixes that sit right. Four knobs.</p>
+        <p class="itag">Four knobs that make tracks sit right in the mix, fast.</p>
         <a class="rowlink" href="gloss.html">See how it works &rarr;</a>
       </div>
       <div class="iact">
-        <div class="iprice"><s>$19</s></div>
-        <a class="dl idl" href="downloads/Gloss-v1.0-macOS.pkg">Download</a>
+        <div class="iprice">$19</div>
+        <span class="dl buy idl" role="button" tabindex="0" data-cart-buy="gloss">Buy Gloss &middot; $19</span>
       </div>
     </div>
     <div class="item">
       <div class="iinfo">
-        <div class="ikind">Mastering Finisher</div>
-        <div class="iname">Halo</div>
-        <p class="itag">Turn LIFT until the halo closes. Free forever.</p>
-        <a class="rowlink" href="halo.html">See how it works &rarr;</a>
+        <div class="ikind">The Mangler Box</div>
+        <div class="iname">Gremlin</div>
+        <p class="itag">Chop it. Stutter it. Smear it. The glitch box for beats, three gremlins in one plugin.</p>
+        <a class="rowlink" href="gremlin.html">See how it works &rarr;</a>
+      </div>
+      <div class="iact">
+        <div class="iprice">$15</div>
+        <span class="dl buy idl" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">3D Auto-Pan</div>
+        <div class="iname">Orbit</div>
+        <p class="itag">Hats that fly around your head. Free forever, and in the basket anyway.</p>
+        <a class="rowlink" href="orbit.html">See how it works &rarr;</a>
       </div>
       <div class="iact">
         <div class="iprice"><span class="freetag">FREE forever</span></div>
-        <a class="dl idl" href="downloads/Halo-v1.2-macOS.pkg">Download</a>
+        <a class="dl idl" href="orbit.html">Get it free</a>
       </div>
     </div>
 
-  <div class="cta"><a class="dl" href="downloads/EffectsBasket-SebastianMacan.zip">Download the whole basket</a><div class="meta">One zip, everything inside. Download once, unzip, done.</div></div>
+  <div class="cta"><span class="dl buy" role="button" tabindex="0" data-cart-buy="effectsbasket">Buy Effects Basket &middot; $49</span><div class="cartrow" style="justify-content:center;"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="effectsbasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="effectsbasket">Buy Now</span></div><div class="meta">5 installers in one email. Download, install, done.</div></div>
 
   <div class="mathbox">
-    Bought one by one this basket adds up to <b>$68</b>. As a basket it's <b>$59</b> when checkout opens &mdash; and <b>free right now during launch</b>. 5 items, zero catches.
+    Bought one by one this basket adds up to <b>$64</b>. As a basket it's <b>$49</b>, one-time. 5 items, zero catches.
   </div>
 
   <footer>
     <div>&copy; 2026 Aluetion, LLC &middot; Sebastian Macan</div>
-    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
+<script src="js/cart.js?v=p17" defer></script>
 <script src="js/email-gate.js" defer></script>
 </body>
 </html>
