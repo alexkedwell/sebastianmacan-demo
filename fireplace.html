@@ -33,6 +33,8 @@
   .vidrow { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:10px; }
   .vidrow.three { grid-template-columns:repeat(3,1fr); }
   @media (max-width:560px){ .vidrow, .vidrow.three { grid-template-columns:repeat(2,1fr); } }
+  .vidrow.two { grid-template-columns:1fr 1fr; width:66.6%; margin-left:auto; margin-right:auto; }
+  @media (max-width:560px){ .vidrow.two { width:100%; } }
   .vidrow .sm { border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#0b0806; aspect-ratio:16/9; position:relative; }
   .vidrow .sm video, .vidrow .sm img { display:block; width:100%; height:100%; object-fit:cover; }
   .vidrow .sm span, .vidstack .big span { position:absolute; left:8px; bottom:6px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.9); }
@@ -207,9 +209,8 @@
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_rain.jpg?v=1.7g"><source src="https://video.sebastianmacan.com/img/video/fireplace_room_rain.mp4?v=1.7h" type="video/mp4"></video><span>Rain on Window</span><i class="play"></i></div>
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_sm404.jpg?v=1.7g"><source src="https://video.sebastianmacan.com/img/video/fireplace_room_sm404.mp4?v=1.7h" type="video/mp4"></video><span>SM-404</span><i class="play"></i></div>
     </div>
-    <div class="vidrow three">
+    <div class="vidrow two">
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_sm303.jpg?v=1.7g"><source src="https://video.sebastianmacan.com/img/video/fireplace_room_sm303.mp4?v=1.7h" type="video/mp4"></video><span>SM-303</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_vinyl.jpg?v=1.7g"><source src="https://video.sebastianmacan.com/img/video/fireplace_room_vinyl.mp4?v=1.7h" type="video/mp4"></video><span>Vinyl Attic</span><i class="play"></i></div>
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_wind.jpg?v=1.7g"><source src="https://video.sebastianmacan.com/img/video/fireplace_room_wind.mp4?v=1.7h" type="video/mp4"></video><span>Wind</span><i class="play"></i></div>
     </div>
     <div class="vidhint">Tap a room to hear the actual recording, straight out of the plugin. Sound on.</div>
