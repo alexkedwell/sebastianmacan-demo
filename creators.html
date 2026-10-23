@@ -13,7 +13,7 @@
 <title>Creator Program - Sebastian Macan</title>
 <meta name="description" content="Get paid $10 per video for using Sebastian Macan plugins in your sessions. Full catalogue free. Real sessions, real audio.">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#5fd07a; --g2:#b8f5c4; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#5fd07a; --g2:#b8f5c4; --blue:#4da3ff; --blue2:#9ad1ff; --amber:#ffb347; --amber2:#ffe08a; --pink:#ff5fb8; --pink2:#ffb3dd; --purple:#a97bff; --purple2:#d6c2ff; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.7; }
   .wrap { max-width:820px; margin:0 auto; padding:0 24px; }
@@ -34,7 +34,11 @@
   a { color:var(--g1); }
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0 6px; }
   .tile { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 18px 16px; }
-  .tile b { display:block; font-size:30px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tile b { display:block; font-size:30px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--c1),var(--c2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tile { --c1:var(--g1); --c2:var(--g2); border-top:3px solid var(--c1); }
+  .tile.amber { --c1:var(--amber); --c2:var(--amber2); } .tile.pink { --c1:var(--pink); --c2:var(--pink2); } .tile.blue { --c1:var(--blue); --c2:var(--blue2); } .tile.purple { --c1:var(--purple); --c2:var(--purple2); }
+  .grid.five { grid-template-columns:repeat(5,1fr); }
+  .tile.five b { font-size:24px; }
   .tile span { color:var(--dim); font-size:13px; }
   .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
   .knob b { color:var(--txt); }
@@ -44,8 +48,13 @@
   input, select, textarea { width:100%; background:#0a0a0c; border:1px solid var(--line); border-radius:10px; color:var(--txt); font:inherit; font-size:15px; padding:11px 13px; outline:none; }
   input:focus, select:focus, textarea:focus { border-color:var(--g1); }
   textarea { min-height:84px; resize:vertical; }
-  .btn { display:inline-block; margin-top:18px; padding:14px 26px; border-radius:999px; border:0; cursor:pointer; font:inherit; font-weight:800; font-size:15px; color:#0a0a0c;
-    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(95,208,122,.28); transition:transform .15s; }
+  .btn { display:inline-block; margin-top:18px; padding:14px 26px; border-radius:999px; border:0; cursor:pointer; font:inherit; font-weight:800; font-size:15px; color:#0a0a0c; text-decoration:none;
+    background:linear-gradient(135deg,var(--blue),var(--blue2)); box-shadow:0 8px 36px rgba(77,163,255,.28); transition:transform .15s; }
+  .form a, .fine a { color:var(--blue); }
+  .getbox { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 24px; margin-top:14px; display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
+  .getbox p { margin:0; max-width:520px; }
+  .getbox .btn { margin-top:0; white-space:nowrap; }
+  input:focus, select:focus, textarea:focus { border-color:var(--blue); }
   .btn:hover { transform:translateY(-1px); }
   .btn[disabled] { opacity:.6; cursor:default; }
   .msg { margin-top:14px; font-size:14px; min-height:20px; }
@@ -54,7 +63,7 @@
   .fine { color:var(--dim); font-size:13px; margin-top:14px; }
   footer { border-top:1px solid var(--line); margin-top:64px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
-  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav a{margin:0 10px;display:inline-block;} .grid{grid-template-columns:1fr;} .row{grid-template-columns:1fr;} footer{flex-direction:column;text-align:center;} }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav a{margin:0 10px;display:inline-block;} .grid, .grid.five{grid-template-columns:1fr 1fr;} .row{grid-template-columns:1fr;} footer{flex-direction:column;text-align:center;} }
 </style>
 </head>
 <body>
@@ -66,33 +75,46 @@
   <a class="back" href="/">&larr; Back to all plugins</a>
 
   <h1>Use my plugins. <em>Get paid.</em></h1>
-  <p class="sub">Record yourself using a Sebastian Macan plugin in a real session. Send the raw video. I pay $10 for every one I accept. The whole catalogue is yours, free.</p>
+  <p class="sub">Record yourself using a Sebastian Macan plugin in a real session. Send the raw video. I pay $10 for every one I accept (terms below). The whole catalogue is yours, free.</p>
 
-  <div class="grid">
-    <div class="tile"><b>$10</b><span>per accepted video</span></div>
-    <div class="tile"><b>$25&ndash;50</b><span>bonus when I feature it on the site or in an ad</span></div>
-    <div class="tile"><b>Free</b><span>every plugin and chord pack, yours to keep</span></div>
+  <div class="grid five">
+    <div class="tile five"><b>$10</b><span>per accepted video. You meet the requirements, you get paid.</span></div>
+    <div class="tile five amber"><b>$25&ndash;50</b><span>bonus when I feature your video on the site or in an ad</span></div>
+    <div class="tile five purple"><b>$50</b><span>per Instagram-ready ad, if you like making ads</span></div>
+    <div class="tile five blue"><b>$50&ndash;500</b><span>to demo a product to your YouTube subscribers, based on channel size</span></div>
+    <div class="tile five pink"><b>Free</b><span>every plugin and chord pack, yours to keep</span></div>
+  </div>
+
+  <h2>Get the plugins</h2>
+  <div class="getbox">
+    <p>Email <a href="mailto:hello@sebastianmacan.com?subject=Creator%20program%20-%20send%20me%20the%20plugins">hello@sebastianmacan.com</a> with your name and what you make. You get the full catalogue, Mac and Windows, no strings. Then make the videos.</p>
+    <a class="btn" href="mailto:hello@sebastianmacan.com?subject=Creator%20program%20-%20send%20me%20the%20plugins">Get the plugins</a>
   </div>
 
   <h2>How it works</h2>
   <ol>
-    <li><b>Record.</b> Screen-capture your DAW with the plugin in the chain. 30 to 90 seconds. Show it off, show it on, let it play. QuickTime, OBS, your phone pointed at the screen, whatever you have.</li>
-    <li><b>Submit.</b> Upload the file anywhere (Google Drive, Dropbox, WeTransfer) and paste the link in the form below.</li>
-    <li><b>Get paid.</b> I watch every video myself. If it meets the checklist, $10 lands in your PayPal within 3 days. If I feature it, you get the bonus on top.</li>
-    <li><b>Repeat.</b> Up to 5 videos per person, any plugin, any genre. Send your first one and the full catalogue download links come back with the payment.</li>
+    <li><b>Record a before and after.</b> Your DAW, your session, the plugin on screen. Show the sound with the plugin off, then with the plugin on. How you switch it is up to you. 30 to 90 seconds.</li>
+    <li><b>Audio has to be clear.</b> Screen capture with the DAW audio, or a phone video of the screen with the session audio attached behind it. However you get there is fine. If the audio quality is not there, the video is not accepted.</li>
+    <li><b>Submit with the form below.</b> Upload the file anywhere (Google Drive, Dropbox, WeTransfer) and paste the link. One form per video.</li>
+    <li><b>Start with 1 to 5 videos, then wait to hear back.</b> I do not want to waste your time if it is not a good fit. If it is, I will ask for more. No cap after that.</li>
+    <li><b>Get paid.</b> I watch every video myself. Meets the requirements, $10 to your PayPal within 3 days. Featured on the site or in an ad, $25 to $50 on top.</li>
   </ol>
 
+  <h2>Ads and YouTube</h2>
+  <div class="knob"><b>Instagram-ready ads: $50 each.</b> If you are creative and like making ads, make us one. Vertical, 15 to 60 seconds, captions, a plugin shown working, our name at the end. Submit it through the same form and say "ad" in the notes.</div>
+  <div class="knob"><b>YouTube demos: $50 to $500.</b> If you have a channel and want to demo one of our products to your subscribers, email <a href="mailto:hello@sebastianmacan.com?subject=YouTube%20demo">hello@sebastianmacan.com</a> with your channel link. Rate depends on channel size. Bigger than that, get in touch and we will talk.</div>
+
   <h2>The checklist</h2>
-  <p>This is the whole bar. Hit these and it is accepted. Taste does not come into it.</p>
-  <div class="knob"><b>Real session.</b> Your own project, your own sounds. Not a loop you downloaded, not a preset demo.</div>
+  <p>These are the requirements. Hit all of them and the video is accepted.</p>
+  <div class="knob"><b>Real session.</b> Your own project, your own production.</div>
   <div class="knob"><b>Plugin on screen.</b> The plugin window is visible and you touch it at least once.</div>
-  <div class="knob"><b>Before and after.</b> Bypass it, then turn it on. Even once. That is the moment people buy on.</div>
-  <div class="knob"><b>Audio in the file.</b> Screen capture with the DAW audio, or a phone video with the speakers up. We need to hear it.</div>
+  <div class="knob"><b>Before and after.</b> Plugin off, then plugin on. However you want to do it.</div>
+  <div class="knob"><b>Clear audio.</b> Screen capture with the DAW audio, or a phone video with the session audio attached behind it. You are responsible for the audio sounding clear. If the audio quality is there, we pay.</div>
   <div class="knob"><b>30 to 90 seconds, 1080p or better, MP4 or MOV.</b> No editing needed. Raw is better. No other brand logos or watermarks.</div>
-  <div class="knob"><b>You own the music.</b> Nothing with samples or songs you do not have the rights to.</div>
+  <div class="knob"><b>You own the music.</b> Nothing with songs you do not have the rights to.</div>
 
   <h2>What you are agreeing to</h2>
-  <p>By submitting, you give Sebastian Macan / Aluetion, LLC a perpetual, worldwide, royalty-free license to use the footage in marketing: website, ads, social, YouTube. You keep full rights to post the same video yourself, tag us, and tell people you made it. Payment is for accepted videos only; anything that misses the checklist gets a one-line note on why, and you are welcome to resubmit. Five videos per person. One submission per video.</p>
+  <p>By submitting, you give Sebastian Macan / Aluetion, LLC a perpetual, worldwide, royalty-free license to use the footage in marketing: website, ads, social, YouTube. You keep full rights to post the same video yourself, tag us, and tell people you made it. Payment is for accepted videos only; anything that misses the checklist gets a one-line note on why, and you are welcome to resubmit. Start with 1 to 5 videos and wait to hear back before sending more. One form per video.</p>
 
   <h2>Send a video</h2>
   <div class="form">
@@ -112,12 +134,12 @@
             <option>Biome</option><option>Chaos</option><option>Chordsmith</option><option>Dusty</option><option>Fireplace</option>
             <option>Ghost</option><option>Gloss</option><option>Gremlin</option><option>Halo</option><option>Honey</option>
             <option>Jelly</option><option>Orbit</option><option>Pocket</option><option>Reels</option><option>Taffy</option><option>Warble</option>
-            <option value="Chord pack">A chord pack</option>
+            <option value="Chord pack">A chord pack</option><option value="Ad">Instagram ad</option>
           </select></div>
         <div><label for="link">Video link</label><input id="link" name="link" type="url" required maxlength="500" placeholder="https://drive.google.com/..."></div>
       </div>
       <label for="notes">Anything I should know (optional)</label>
-      <textarea id="notes" name="notes" maxlength="600" placeholder="What the session is, where the plugin sits, anything you want me to hear"></textarea>
+      <textarea id="notes" name="notes" maxlength="600" placeholder="What the session is, where the plugin sits, say &quot;ad&quot; if this is an ad"></textarea>
       <input class="hp" name="hp" tabindex="-1" autocomplete="off">
       <button class="btn" type="submit">Submit video</button>
       <div class="msg" id="msg"></div>
