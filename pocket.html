@@ -122,21 +122,6 @@
       <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
-
-  <div class="studio" id="st_snare">
-    <div class="label">In the studio &middot; Put your snare in the pocket</div>
-    <div class="frame">
-      <video id="st_snareVid" playsinline preload="metadata" poster="img/ui/pocket_snare.jpg?v=v1022b" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/pocket_snare.mp4?v=v1022b" type="video/mp4"></video>
-      <div class="play" aria-label="Play"><span></span></div>
-      <div class="sound">&#9654; WITH SOUND</div>
-    </div>
-    <p class="cap"><b>Pocket off, then Pocket on.</b> Same snare, same loop. It sits the snare back where it belongs without you touching the volume. Real session, real audio.</p>
-  </div>
-  <script>
-    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
-    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
-    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
-  </script>
   <h2>What Pocket does</h2>
   <p>Snare not sounding right in the car? You are trying to keep things loud, but the snare is the first thing that falls apart. Pocket keeps things loud without you having to worry about your drums. Most snares sit on top of the beat like a sticker. Pocket moves the snare back into the room: one DEPTH knob darkens the top end the way air does, adds a few milliseconds of distance, brings up the room around it and dips the level, all in one move. The snare stays dead centre the whole way. It stops fighting your vocal and starts living with your drums.</p>
 
