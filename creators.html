@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/base.css?v=1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="noindex, follow">
+<title>Creator Program - Sebastian Macan</title>
+<meta name="description" content="Get paid $10 per video for using Sebastian Macan plugins in your sessions. Full catalogue free. Real sessions, real audio.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#5fd07a; --g2:#b8f5c4; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.7; }
+  .wrap { max-width:820px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; color:var(--dim); text-decoration:none; font-size:14px; margin-top:8px; }
+  h1 { font-size:clamp(30px,5.4vw,46px); font-weight:900; letter-spacing:-.03em; margin:36px 0 4px; line-height:1.1; }
+  h1 em { font-style:normal; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .sub { color:var(--dim); font-size:17px; margin:10px 0 28px; max-width:620px; }
+  h2 { font-size:20px; font-weight:800; margin:40px 0 10px; }
+  h3 { font-size:15px; font-weight:800; margin:18px 0 4px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15px; }
+  ul, ol { padding-left:22px; margin:8px 0; }
+  li { margin:4px 0; }
+  a { color:var(--g1); }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0 6px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 18px 16px; }
+  .tile b { display:block; font-size:30px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tile span { color:var(--dim); font-size:13px; }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  .form { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; margin-top:16px; }
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  label { display:block; font-size:12px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin:12px 0 5px; }
+  input, select, textarea { width:100%; background:#0a0a0c; border:1px solid var(--line); border-radius:10px; color:var(--txt); font:inherit; font-size:15px; padding:11px 13px; outline:none; }
+  input:focus, select:focus, textarea:focus { border-color:var(--g1); }
+  textarea { min-height:84px; resize:vertical; }
+  .btn { display:inline-block; margin-top:18px; padding:14px 26px; border-radius:999px; border:0; cursor:pointer; font:inherit; font-weight:800; font-size:15px; color:#0a0a0c;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(95,208,122,.28); transition:transform .15s; }
+  .btn:hover { transform:translateY(-1px); }
+  .btn[disabled] { opacity:.6; cursor:default; }
+  .msg { margin-top:14px; font-size:14px; min-height:20px; }
+  .msg.ok { color:var(--g1); } .msg.err { color:#ff5f6d; }
+  .hp { position:absolute; left:-9999px; }
+  .fine { color:var(--dim); font-size:13px; margin-top:14px; }
+  footer { border-top:1px solid var(--line); margin-top:64px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav a{margin:0 10px;display:inline-block;} .grid{grid-template-columns:1fr;} .row{grid-template-columns:1fr;} footer{flex-direction:column;text-align:center;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <h1>Use my plugins. <em>Get paid.</em></h1>
+  <p class="sub">Record yourself using a Sebastian Macan plugin in a real session. Send the raw video. I pay $10 for every one I accept. The whole catalogue is yours, free.</p>
+
+  <div class="grid">
+    <div class="tile"><b>$10</b><span>per accepted video</span></div>
+    <div class="tile"><b>$25&ndash;50</b><span>bonus when I feature it on the site or in an ad</span></div>
+    <div class="tile"><b>Free</b><span>every plugin and chord pack, yours to keep</span></div>
+  </div>
+
+  <h2>How it works</h2>
+  <ol>
+    <li><b>Record.</b> Screen-capture your DAW with the plugin in the chain. 30 to 90 seconds. Show it off, show it on, let it play. QuickTime, OBS, your phone pointed at the screen, whatever you have.</li>
+    <li><b>Submit.</b> Upload the file anywhere (Google Drive, Dropbox, WeTransfer) and paste the link in the form below.</li>
+    <li><b>Get paid.</b> I watch every video myself. If it meets the checklist, $10 lands in your PayPal within 3 days. If I feature it, you get the bonus on top.</li>
+    <li><b>Repeat.</b> Up to 5 videos per person, any plugin, any genre. Send your first one and the full catalogue download links come back with the payment.</li>
+  </ol>
+
+  <h2>The checklist</h2>
+  <p>This is the whole bar. Hit these and it is accepted. Taste does not come into it.</p>
+  <div class="knob"><b>Real session.</b> Your own project, your own sounds. Not a loop you downloaded, not a preset demo.</div>
+  <div class="knob"><b>Plugin on screen.</b> The plugin window is visible and you touch it at least once.</div>
+  <div class="knob"><b>Before and after.</b> Bypass it, then turn it on. Even once. That is the moment people buy on.</div>
+  <div class="knob"><b>Audio in the file.</b> Screen capture with the DAW audio, or a phone video with the speakers up. We need to hear it.</div>
+  <div class="knob"><b>30 to 90 seconds, 1080p or better, MP4 or MOV.</b> No editing needed. Raw is better. No other brand logos or watermarks.</div>
+  <div class="knob"><b>You own the music.</b> Nothing with samples or songs you do not have the rights to.</div>
+
+  <h2>What you are agreeing to</h2>
+  <p>By submitting, you give Sebastian Macan / Aluetion, LLC a perpetual, worldwide, royalty-free license to use the footage in marketing: website, ads, social, YouTube. You keep full rights to post the same video yourself, tag us, and tell people you made it. Payment is for accepted videos only; anything that misses the checklist gets a one-line note on why, and you are welcome to resubmit. Five videos per person. One submission per video.</p>
+
+  <h2>Send a video</h2>
+  <div class="form">
+    <form id="cf" autocomplete="on">
+      <div class="row">
+        <div><label for="name">Name or artist name</label><input id="name" name="name" required maxlength="80"></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required maxlength="254"></div>
+      </div>
+      <div class="row">
+        <div><label for="paypal">PayPal email (if different)</label><input id="paypal" name="paypal" type="email" maxlength="254" placeholder="same as email"></div>
+        <div><label for="handle">Instagram / YouTube (optional)</label><input id="handle" name="handle" maxlength="80" placeholder="@you"></div>
+      </div>
+      <div class="row">
+        <div><label for="plugin">Plugin in the video</label>
+          <select id="plugin" name="plugin" required>
+            <option value="">Pick one</option>
+            <option>Biome</option><option>Chaos</option><option>Chordsmith</option><option>Dusty</option><option>Fireplace</option>
+            <option>Ghost</option><option>Gloss</option><option>Gremlin</option><option>Halo</option><option>Honey</option>
+            <option>Jelly</option><option>Orbit</option><option>Pocket</option><option>Reels</option><option>Taffy</option><option>Warble</option>
+            <option value="Chord pack">A chord pack</option>
+          </select></div>
+        <div><label for="link">Video link</label><input id="link" name="link" type="url" required maxlength="500" placeholder="https://drive.google.com/..."></div>
+      </div>
+      <label for="notes">Anything I should know (optional)</label>
+      <textarea id="notes" name="notes" maxlength="600" placeholder="What the session is, where the plugin sits, anything you want me to hear"></textarea>
+      <input class="hp" name="hp" tabindex="-1" autocomplete="off">
+      <button class="btn" type="submit">Submit video</button>
+      <div class="msg" id="msg"></div>
+    </form>
+    <p class="fine">Prefer email, or want to be paid some other way than PayPal? Write to <a href="mailto:hello@sebastianmacan.com">hello@sebastianmacan.com</a> and we will sort it out.</p>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
+  </footer>
+</div>
+<script>
+(function(){
+  var f=document.getElementById('cf'), m=document.getElementById('msg'), b=f.querySelector('.btn');
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault(); m.className='msg'; m.textContent='';
+    var d={}; new FormData(f).forEach(function(v,k){ d[k]=v; });
+    b.disabled=true; b.textContent='Sending...';
+    fetch('https://forms.sebastianmacan.com/creators',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if(j.ok){ m.className='msg ok'; m.textContent='Got it. I watch every one myself; you will hear back within 3 days.'; f.reset(); b.textContent='Submitted'; }
+        else { throw new Error(j.error||'error'); }
+      })
+      .catch(function(){ m.className='msg err'; m.textContent='Something went wrong. Email the link to hello@sebastianmacan.com and I will take it from there.'; b.disabled=false; b.textContent='Submit video'; });
+  });
+})();
+</script>
+</body>
+</html>
