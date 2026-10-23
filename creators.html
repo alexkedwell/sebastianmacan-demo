@@ -38,7 +38,9 @@
   .tile { --c1:var(--g1); --c2:var(--g2); border-top:3px solid var(--c1); }
   .tile.amber { --c1:var(--amber); --c2:var(--amber2); } .tile.pink { --c1:var(--pink); --c2:var(--pink2); } .tile.blue { --c1:var(--blue); --c2:var(--blue2); } .tile.purple { --c1:var(--purple); --c2:var(--purple2); }
   .grid.five { grid-template-columns:repeat(5,1fr); }
-  .tile.five b { font-size:24px; }
+  .tile.five { padding:16px 12px 14px; }
+  .tile.five b { font-size:21px; white-space:nowrap; }
+  .tile.five span { font-size:12px; line-height:1.45; display:block; }
   .tile span { color:var(--dim); font-size:13px; }
   .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
   .knob b { color:var(--txt); }
