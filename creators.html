@@ -24,7 +24,7 @@
   nav a:hover { color:var(--txt); }
   .back { display:inline-block; color:var(--dim); text-decoration:none; font-size:14px; margin-top:8px; }
   h1 { font-size:clamp(30px,5.4vw,46px); font-weight:900; letter-spacing:-.03em; margin:36px 0 4px; line-height:1.1; }
-  h1 em { font-style:normal; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  h1 em { font-style:normal; background:linear-gradient(135deg,var(--purple),var(--purple2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .sub { color:var(--dim); font-size:17px; margin:10px 0 28px; max-width:620px; }
   h2 { font-size:20px; font-weight:800; margin:40px 0 10px; }
   h3 { font-size:15px; font-weight:800; margin:18px 0 4px; color:var(--g1); }
@@ -35,7 +35,7 @@
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0 6px; }
   .tile { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 18px 16px; }
   .tile b { display:block; font-size:30px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--c1),var(--c2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-  .tile { --c1:var(--g1); --c2:var(--g2); border-top:3px solid var(--c1); }
+  .tile { --c1:var(--purple); --c2:var(--purple2); border-top:3px solid var(--c1); }
   .tile.amber { --c1:var(--amber); --c2:var(--amber2); } .tile.pink { --c1:var(--pink); --c2:var(--pink2); } .tile.blue { --c1:var(--blue); --c2:var(--blue2); } .tile.purple { --c1:var(--purple); --c2:var(--purple2); }
   .grid.five { grid-template-columns:repeat(5,1fr); }
   .tile.five { padding:16px 12px 14px; }
@@ -81,10 +81,10 @@
 
   <div class="grid five">
     <div class="tile five"><b>$10</b><span>per accepted video. You meet the requirements, you get paid.</span></div>
-    <div class="tile five amber"><b>$25&ndash;50</b><span>bonus when I feature your video on the site or in an ad</span></div>
-    <div class="tile five purple"><b>$50</b><span>per Instagram-ready ad, if you like making ads</span></div>
-    <div class="tile five blue"><b>$50&ndash;500</b><span>to demo a product to your YouTube subscribers, based on channel size</span></div>
-    <div class="tile five pink"><b>Free</b><span>every plugin and chord pack, yours to keep</span></div>
+    <div class="tile five"><b>$25&ndash;50</b><span>bonus if your video gets featured on sebastianmacan.com</span></div>
+    <div class="tile five"><b>$50</b><span>per Instagram-ready ad, if you like making ads</span></div>
+    <div class="tile five"><b>$50&ndash;500</b><span>to demo a product to your YouTube subscribers, based on channel size</span></div>
+    <div class="tile five"><b>Free</b><span>every plugin and chord pack, yours to keep</span></div>
   </div>
 
   <h2>Get the plugins</h2>
@@ -99,7 +99,8 @@
     <li><b>Audio has to be clear.</b> Screen capture with the DAW audio, or a phone video of the screen with the session audio attached behind it. However you get there is fine. If the audio quality is not there, the video is not accepted.</li>
     <li><b>Submit with the form below.</b> Upload the file anywhere (Google Drive, Dropbox, WeTransfer) and paste the link. One form per video.</li>
     <li><b>Start with 1 to 5 videos, then wait to hear back.</b> I do not want to waste your time if it is not a good fit. If it is, I will ask for more. No cap after that.</li>
-    <li><b>Get paid.</b> I watch every video myself. Meets the requirements, $10 to your PayPal within 3 days. Featured on the site or in an ad, $25 to $50 on top.</li>
+    <li><b>Get paid.</b> I watch every video myself. Meets the requirements, $10 to your PayPal within 3 days. Featured on sebastianmacan.com, $25 to $50 on top.</li>
+    <li><b>Drop your socials.</b> Put your Instagram, TikTok and YouTube handles in the form. We pay to push these videos on our socials, and when we post yours we tag you. Free exposure on top of the cash.</li>
   </ol>
 
   <h2>Ads and YouTube</h2>
@@ -127,7 +128,7 @@
       </div>
       <div class="row">
         <div><label for="paypal">PayPal email (if different)</label><input id="paypal" name="paypal" type="email" maxlength="254" placeholder="same as email"></div>
-        <div><label for="handle">Instagram / YouTube (optional)</label><input id="handle" name="handle" maxlength="80" placeholder="@you"></div>
+        <div><label for="handle">Your @s: Instagram, TikTok, YouTube (we tag you when we post)</label><input id="handle" name="handle" maxlength="160" placeholder="@you on IG, @you on TikTok, youtube.com/@you"></div>
       </div>
       <div class="row">
         <div><label for="plugin">Plugin in the video</label>
