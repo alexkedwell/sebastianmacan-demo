@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/base.css?v=1">
@@ -127,6 +129,18 @@
   .aeolian { --g1:#7b8cff; --g2:#3d4a8f; --glow:#7b8cff; --shadow:rgba(123,140,255,.22); }
   .locrian { --g1:#e8e8f0; --g2:#6b21a8; --glow:#a855f7; --shadow:rgba(168,85,247,.24); }
   .allmodes { --g1:#ff3d5a; --g2:#39e6d0; --glow:#ff3d5a; --shadow:rgba(255,61,90,.24); }
+
+  /* in-the-lab (WIP) card palettes */
+  .halo { --g1:#ffd47e; --g2:#fff3d0; --glow:#ffd47e; --shadow:rgba(255,212,126,.26); }
+  .reels { --g1:#e8a05c; --g2:#f5d7a1; --glow:#e8a05c; --shadow:rgba(232,160,92,.26); }
+  .chipper { --g1:#58a04a; --g2:#8fdd58; --glow:#8fdd58; --shadow:rgba(143,221,88,.26); }
+  .wave { --g1:#2e9ec4; --g2:#58c8e8; --glow:#58c8e8; --shadow:rgba(88,200,232,.26); }
+  .bloom { --g1:#6ee7d8; --g2:#c4b5fd; --glow:#6ee7d8; --shadow:rgba(110,231,216,.26); }
+  .gremlin { --g1:#7dff3d; --g2:#b8ff7a; --glow:#7dff3d; --shadow:rgba(125,255,61,.26); }
+  .ghost { --g1:#8b5cf6; --g2:#c4b5fd; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
+  .mayday { --g1:#ef4444; --g2:#fbbf24; --glow:#ef4444; --shadow:rgba(239,68,68,.26); }
+  .fauna { --g1:#22c55e; --g2:#86efac; --glow:#22c55e; --shadow:rgba(34,197,94,.26); }
+  .rustybot { --g1:#e8722c; --g2:#ffd9a0; --glow:#e8722c; --shadow:rgba(232,114,44,.26); }
   .bundlegrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; margin-top:16px; }
   .bundle { border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; display:flex; flex-direction:column; }
   .bundle:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
@@ -329,6 +343,115 @@
       <div class="meta">v1.0 · VST3 + AU effect · macOS + Windows</div>
     </div>
   </div>
+  <div class="sect-title" id="lab">In the Lab <span style="font-size:.6em;opacity:.6;font-weight:500">(not released - demo only)</span></div>
+  <div class="grid">
+    <div class="card halo">
+      <span class="new">PARKED</span>
+      <div class="kind">One-Knob Mastering</div>
+      <h2 style="background:linear-gradient(135deg,#ffd47e,#fff3d0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">HALO</h2>
+      <p class="tag">Drop it on your master. Turn LIFT until the halo closes.</p>
+      <p class="desc">Pick Streaming, Club or Podcast, then turn one knob until the golden ring closes. Loud, glued, streaming-ready. Built-in LUFS meter, verified accurate, with a bit-transparent METER ONLY mode.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/halo.png?v=1.2"><source src="https://video.sebastianmacan.com/img/video/halo_ui_loop.mp4?v=1.2" type="video/mp4"></video></div>
+      <span class="dl buy" style="background:linear-gradient(135deg,#fbbf24,#fef3c7);box-shadow:0 6px 28px rgba(251,191,36,.26);" role="button" tabindex="0" data-cart-buy="halo">Buy Halo &middot; $29</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="halo">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="halo">Buy Now</span></div>
+      <a class="more" href="halo.html">See how it works &rarr;</a>
+      <div class="meta">v1.2 · VST3 + AU effect · macOS + Windows</div>
+    
+    </div>
+    <div class="card reels">
+      <span class="new">PARKED</span>
+      <div class="kind">Dirty Tape for Lofi Drums</div>
+      <h2 style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">REELS</h2>
+      <p class="tag">Dirty tape for lofi drums. Make it filthier.</p>
+      <p class="desc">Put your drum bus on a tape machine that has seen things. Head bump, wow &amp; flutter, age, hiss, crackle and hum. Three machines from studio reel to a 30-year-old cassette. Watch the reels actually spin.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/reels.png?v=2.0.1"><source src="https://video.sebastianmacan.com/img/video/reels_ui_loop.mp4?v=2.0.1" type="video/mp4"></video></div>
+      <span class="dl buy" style="background:linear-gradient(135deg,#e8a05c,#f5d7a1);box-shadow:0 6px 28px rgba(232,160,92,.26);" role="button" tabindex="0" data-cart-buy="reels">Buy Reels &middot; $15</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="reels">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="reels">Buy Now</span></div>
+      <a class="more" href="reels.html">See how it works &rarr;</a>
+      <div class="meta">v2.1.0 · VST3 + AU effect · macOS + Windows</div>
+    </div>
+<div class="card chipper">
+      <span class="new" style="background:#666">LAB</span>
+      <div class="kind">Sample Mulcher</div>
+      <h2>MULCH</h2>
+      <p class="tag">Feed it any sample. Get a brand new instrument back.</p>
+      <p class="desc">Drag up to 8 samples into the chipper and it births one new playable instrument out of the whole pile. New in v2.0: held notes sustain forever with a real ADSR, plus a RANDOMIZE dice with reproducible seeds, texture smear, freeze and a chaos macro.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/mulch.png"><source src="https://video.sebastianmacan.com/img/video/mulch_ui_loop.mp4" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Mulch-v2.0-macOS.pkg">Download Mulch</a>
+      <a class="more" href="mulch.html">See how it works &rarr;</a>
+      <div class="meta">v2.0 · VST3 + AU instrument</div>
+    </div>
+<div class="card wave">
+      <span class="new" style="background:#666">LAB</span>
+      <div class="kind">Future Bass Chord Machine</div>
+      <h2>TSUNAMI</h2>
+      <p class="tag">One key. One wall of supersaw chords.</p>
+      <p class="desc">Five-note chords, seven detuned saws each, clean sub underneath: 35 oscillators per finger. Pick the flavor (Minor 9 anyone?), grab the big CUTOFF knob, let PUMP bounce it. The ocean swells while you play.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/tsunami.png"><source src="https://video.sebastianmacan.com/img/video/tsunami_ui_loop.mp4" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Tsunami-v1.0-macOS.pkg">Download Tsunami</a>
+      <a class="more" href="tsunami.html">See how it works &rarr;</a>
+      <div class="meta">v1.0 · VST3 + AU instrument</div>
+    </div>
+<div class="card bloom">
+      <span class="new" style="background:#666">LAB</span>
+      <div class="kind">Melodic House Texture</div>
+      <h2>BLOOM</h2>
+      <p class="tag">Play a plain chord. Get a festival sunrise.</p>
+      <p class="desc">One BLOOM knob opens shimmer, reverb and motion. BREATHE pumps it in time with your track, WARMTH adds tape glow, WIDTH stays mono-safe. Eight presets from Anjuna Sunrise to Deep Field.</p>
+      <a class="dl" href="downloads/Bloom-v1.0-macOS.pkg">Download Bloom</a>
+      <a class="more" href="bloom.html">See how it works &rarr;</a>
+      <div class="meta">v1.0 · VST3 + AU effect</div>
+    </div>
+<div class="card gremlin">
+      <span class="new" style="background:#666">LAB</span>
+      <div class="kind">Stutter Glitch Machine</div>
+      <h2>GREMLIN</h2>
+      <p class="tag">Controlled demolition for your drums.</p>
+      <p class="desc">Tempo-synced slicing, 1 to 16 stutter repeats, reverse and octave-jump chaos, all on a reproducible SEED. Auto mode strikes on its own, or smash the GLITCH! pad for manual fills. Twelve presets from Machine Gun to Stairs Down.</p>
+      <a class="dl" href="downloads/Gremlin-v1.0-macOS.pkg">Download Gremlin</a>
+      <a class="more" href="gremlin.html">See how it works &rarr;</a>
+      <div class="meta">v1.0 · VST3 + AU effect</div>
+    </div>
+<div class="card ghost">
+      <div class="kind">Granular Texture Machine</div>
+      <h2>GHOST</h2>
+      <p class="tag">Freeze sound. Then haunt it.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/ghost.png"><source src="https://video.sebastianmacan.com/img/video/ghost_ui_loop.mp4" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Ghost-v1.1-macOS.pkg">Download Ghost</a>
+      <a class="more" href="ghost.html">See how it works &rarr;</a>
+      <div class="meta">VST3 + AU &middot; macOS</div>
+    </div>
+<div class="card mayday">
+      <div class="kind">Riser Generator</div>
+      <h2>MAYDAY</h2>
+      <p class="tag">Hold a note. Brace for takeoff.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/mayday.png"><source src="https://video.sebastianmacan.com/img/video/mayday_ui_loop.mp4" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Mayday-v2.0-macOS.pkg">Download Mayday</a>
+      <a class="more" href="mayday.html">See how it works &rarr;</a>
+      <div class="meta">VST3 + AU &middot; macOS</div>
+    </div>
+<div class="card fauna">
+      <div class="kind">Creature Voice Synth</div>
+      <h2>FAUNA</h2>
+      <p class="tag">Play the ocean. Play the sky.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/fauna.png"><source src="https://video.sebastianmacan.com/img/video/fauna_ui_loop.mp4" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Fauna-v1.0-macOS.pkg">Download Fauna</a>
+      <a class="more" href="fauna.html">See how it works &rarr;</a>
+      <div class="meta">VST3 + AU &middot; macOS</div>
+    </div>
+<div class="card rustybot">
+      <span class="new" style="background:#666">LAB</span>
+      <div class="kind">Robot Voice Machine</div>
+      <h2>RUSTY</h2>
+      <p class="tag">Eight robots living in one box.</p>
+      <p class="desc">Vocoder chrome, singing talkbox, angry Dalek, 80s toy, talking dubstep sub bass, demon ghost choir, dial-up modem screams and a stutter glitch gremlin. SPARK rolls the slot machine, STACK doubles, triples, choruses, phases and flanges the robot wide.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/rusty.png"><source src="https://video.sebastianmacan.com/img/video/rusty_ui_loop.mp4" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Rusty-v3.2-macOS.pkg">Download Rusty &middot; $5</a>
+      <a class="more" href="rusty.html">See how it works &rarr;</a>
+      <div class="meta">v3.2 &middot; VST3 + AU effect</div>
+    </div>
+  </div>
+
 
   <div class="sect-title" id="midi">MIDI</div>
   <div class="grid">
