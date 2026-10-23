@@ -24,7 +24,8 @@
   nav a:hover { color:var(--txt); }
   .back { display:inline-block; color:var(--dim); text-decoration:none; font-size:14px; margin-top:8px; }
   h1 { font-size:clamp(30px,5.4vw,46px); font-weight:900; letter-spacing:-.03em; margin:36px 0 4px; line-height:1.1; }
-  h1 em { font-style:normal; background:linear-gradient(135deg,var(--purple),var(--purple2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  h1 em { font-style:normal; background:linear-gradient(120deg,#ff3d5a,#7b5cff,#39e6d0,#ffd84a,#ff3d5a); background-size:300% 100%; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; animation:candy 8s linear infinite; }
+  @keyframes candy { 0%{background-position:0% 0%} 100%{background-position:300% 0%} }
   .sub { color:var(--dim); font-size:17px; margin:10px 0 28px; max-width:620px; }
   h2 { font-size:20px; font-weight:800; margin:40px 0 10px; }
   h3 { font-size:15px; font-weight:800; margin:18px 0 4px; color:var(--g1); }
@@ -35,7 +36,7 @@
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0 6px; }
   .tile { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 18px 16px; }
   .tile b { display:block; font-size:30px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--c1),var(--c2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-  .tile { --c1:var(--purple); --c2:var(--purple2); border-top:3px solid var(--c1); }
+  .tile { --c1:var(--blue); --c2:var(--blue2); border-top:3px solid var(--c1); }
   .tile.amber { --c1:var(--amber); --c2:var(--amber2); } .tile.pink { --c1:var(--pink); --c2:var(--pink2); } .tile.blue { --c1:var(--blue); --c2:var(--blue2); } .tile.purple { --c1:var(--purple); --c2:var(--purple2); }
   .grid.five { grid-template-columns:repeat(5,1fr); }
   .tile.five { padding:16px 12px 14px; }
@@ -95,24 +96,24 @@
 
   <h2>How it works</h2>
   <ol>
-    <li><b>Record a before and after.</b> Your DAW, your session, the plugin on screen. Show the sound with the plugin off, then with the plugin on. How you switch it is up to you. 30 to 90 seconds.</li>
-    <li><b>Audio has to be clear.</b> Screen capture with the DAW audio, or a phone video of the screen with the session audio attached behind it. However you get there is fine. If the audio quality is not there, the video is not accepted.</li>
+    <li><b>Record a before and after.</b> Your DAW, your session, the plugin on screen. Show the sound with the plugin off, then with the plugin on. You can do that by turning the plugin off and back on, or with the bypass button. The best videos start recording the second you drop the plugin on: we watch you play with the knobs, and once you get to a point where you like what you have, turn the plugin off and back on so we can hear the change. 30 to 90 seconds.</li>
+    <li><b>Audio has to be clear.</b> Screen capture with the DAW audio, a phone video of the screen with the session audio attached behind it, or a phone video with the speakers turned up loud. However you get there is fine. If the audio quality is not there, the video is not accepted.</li>
     <li><b>Submit with the form below.</b> Upload the file anywhere (Google Drive, Dropbox, WeTransfer) and paste the link. One form per video.</li>
     <li><b>Start with 1 to 5 videos, then wait to hear back.</b> I do not want to waste your time if it is not a good fit. If it is, I will ask for more. No cap after that.</li>
-    <li><b>Get paid.</b> I watch every video myself. Meets the requirements, $10 to your PayPal within 3 days. Featured on sebastianmacan.com, $25 to $50 on top.</li>
+    <li><b>Get paid.</b> I watch every video myself. Meets the requirements, $10 to your PayPal within 3 days. The extra $25 to $50 is only for videos that get featured on sebastianmacan.com. Accepted videos may also be used in our ads; that is covered by the $10.</li>
     <li><b>Drop your socials.</b> Put your Instagram, TikTok and YouTube handles in the form. We pay to push these videos on our socials, and when we post yours we tag you. Free exposure on top of the cash.</li>
   </ol>
 
   <h2>Ads and YouTube</h2>
-  <div class="knob"><b>Instagram-ready ads: $50 each.</b> If you are creative and like making ads, make us one. Vertical, 15 to 60 seconds, captions, a plugin shown working, our name at the end. Submit it through the same form and say "ad" in the notes.</div>
-  <div class="knob"><b>YouTube demos: $50 to $500.</b> If you have a channel and want to demo one of our products to your subscribers, email <a href="mailto:hello@sebastianmacan.com?subject=YouTube%20demo">hello@sebastianmacan.com</a> with your channel link. Rate depends on channel size. Bigger than that, get in touch and we will talk.</div>
+  <div class="knob"><b>Instagram-ready ads: $50 each.</b> If you are creative and like making ads, make us one. Vertical, 15 to 60 seconds, captions or voice over or neither. However you want to make your ad, you have total creative freedom. A plugin shown working, our name at the end (sebastianmacan.com). Submit it through the same form and say "ad" in the notes.</div>
+  <div class="knob"><b>YouTube demos: $50 to $500.</b> If you have a channel and want to demo one of our products to your subscribers, email <a href="mailto:hello@sebastianmacan.com?subject=YouTube%20demo">hello@sebastianmacan.com</a> with your channel link. Rate depends on channel size.</div>
 
   <h2>The checklist</h2>
   <p>These are the requirements. Hit all of them and the video is accepted.</p>
   <div class="knob"><b>Real session.</b> Your own project, your own production.</div>
   <div class="knob"><b>Plugin on screen.</b> The plugin window is visible and you touch it at least once.</div>
   <div class="knob"><b>Before and after.</b> Plugin off, then plugin on. However you want to do it.</div>
-  <div class="knob"><b>Clear audio.</b> Screen capture with the DAW audio, or a phone video with the session audio attached behind it. You are responsible for the audio sounding clear. If the audio quality is there, we pay.</div>
+  <div class="knob"><b>Clear audio.</b> Screen capture with the DAW audio, a phone video with the session audio attached behind it, or a phone video with the speakers turned up loud. You are responsible for the audio sounding clear. If the audio quality is there, we pay.</div>
   <div class="knob"><b>30 to 90 seconds, 1080p or better, MP4 or MOV.</b> No editing needed. Raw is better. No other brand logos or watermarks.</div>
   <div class="knob"><b>You own the music.</b> Nothing with songs you do not have the rights to.</div>
 
