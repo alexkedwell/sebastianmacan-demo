@@ -14,7 +14,7 @@
 <title>Honey | Old Tape for Lofi Drums (VST3/AU)</title>
 <meta name="description" content="Honey is a tape plugin built on real tape physics that makes your drums sound old and vintage. Built for lofi. Real tape physics, dialled for drums. VST3 and AU. By Sebastian Macan.">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#f0a04a; --g2:#ffd98a; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#d4712f; --g2:#e8d9bb; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -31,16 +31,16 @@
     background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
-    box-shadow:0 20px 80px rgba(240,160,74,.30); animation:float 7s ease-in-out infinite; }
+    box-shadow:0 20px 80px rgba(212,113,47,.30); animation:float 7s ease-in-out infinite; }
   .videobox video, .videobox img { display:block; width:100%; height:auto; }
   .faces { display:flex; justify-content:center; gap:8px; margin-top:22px; }
   .face { cursor:pointer; user-select:none; font-size:12px; font-weight:800; letter-spacing:.14em; padding:9px 18px; border-radius:999px; border:1px solid var(--line); color:var(--dim); background:var(--card); transition:all .15s; }
   .face:hover { color:var(--txt); }
-  .face.on { color:#1a1208; background:linear-gradient(135deg,var(--g1),var(--g2)); border-color:transparent; box-shadow:0 6px 24px rgba(240,160,74,.30); }
+  .face.on { color:#1a1208; background:linear-gradient(135deg,var(--g1),var(--g2)); border-color:transparent; box-shadow:0 6px 24px rgba(212,113,47,.30); }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
   .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
-    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(240,160,74,.30); transition:transform .15s; }
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(212,113,47,.30); transition:transform .15s; }
   .dl:hover { transform:translateY(-2px) scale(1.02); }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
@@ -54,10 +54,10 @@
   .studio { margin:34px auto 6px; max-width:920px; }
   .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
   .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
-  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(240,160,74,.18); }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(212,113,47,.18); }
   .studio video { display:block; width:100%; height:auto; }
   .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(0,0,0,.05), rgba(0,0,0,.45)); transition:opacity .25s; }
-  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(240,160,74,.45); transition:transform .15s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(212,113,47,.45); transition:transform .15s; }
   .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
   .studio .play:hover span { transform:scale(1.07); }
   .studio.playing .play { opacity:0; pointer-events:none; }
