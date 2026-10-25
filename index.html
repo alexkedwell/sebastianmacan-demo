@@ -86,9 +86,9 @@
   .jelly  { --g1:#ff7ab8; --g2:#8fe8c0; --glow:#ff7ab8; --shadow:rgba(255,122,184,.26); }
   .fizz   { --g1:#ffb347; --g2:#c8f05a; --glow:#ffb347; --shadow:rgba(255,179,71,.26); }
   .wizard { --g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26); }
+  .honey { --g1:#f0a04a; --g2:#ffd98a; --glow:#f0a04a; --shadow:rgba(240,160,74,.30); }
   .gremlin { --g1:#2ed14f; --g2:#c9ff4a; --glow:#2ed14f; --shadow:rgba(46,209,79,.30); }
   .pocket { --g1:#f08a3c; --g2:#f3d9ae; --glow:#f08a3c; --shadow:rgba(240,138,60,.30); }
-  .taffy { --g1:#c9c9c9; --g2:#ffb545; --glow:#ffb545; --shadow:rgba(255,181,69,.30); }
   .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
   .gloss { --g1:#8b6bff; --g2:#3df0a8; --glow:#8b6bff; --shadow:rgba(139,107,255,.26); }
   .biome  { --g1:#3ecf6e; --g2:#5ad9d0; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
@@ -130,7 +130,7 @@
   .allmodes { --g1:#ff3d5a; --g2:#39e6d0; --glow:#ff3d5a; --shadow:rgba(255,61,90,.24); }
 
   /* in-the-lab (WIP) card palettes */
-  .honey { --g1:#f0a04a; --g2:#ffd98a; --glow:#f0a04a; --shadow:rgba(240,160,74,.30); }
+  .taffy { --g1:#c9c9c9; --g2:#ffb545; --glow:#ffb545; --shadow:rgba(255,181,69,.30); }
   .halo { --g1:#ffd47e; --g2:#fff3d0; --glow:#ffd47e; --shadow:rgba(255,212,126,.26); }
   .reels { --g1:#e8a05c; --g2:#f5d7a1; --glow:#e8a05c; --shadow:rgba(232,160,92,.26); }
   .chipper { --g1:#58a04a; --g2:#8fdd58; --glow:#8fdd58; --shadow:rgba(143,221,88,.26); }
@@ -160,6 +160,7 @@
     .studio-b { --g1:#f5a623; --g2:#60a5fa; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
     .tape-b { --g1:#f0a04a; --g2:#ffd98a; --glow:#f0a04a; --shadow:rgba(240,160,74,.30); }
     .taperoom-b { --g1:#ff7a3d; --g2:#ffd98a; --glow:#ff7a3d; --shadow:rgba(255,122,61,.30); }
+    .cozy-b { --g1:#ff5e3a; --g2:#ffb86b; --glow:#ff5e3a; --shadow:rgba(255,94,58,.30); }
   .midi-b { --g1:#ff5ca8; --g2:#8b5cf6; --glow:#ff5ca8; --shadow:rgba(255,92,168,.28); }
   .lofi-b { --g1:#f5a623; --g2:#2bb59a; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
   .lofim-b { --g1:#f5a623; --g2:#ffd47e; --glow:#ffd47e; --shadow:rgba(255,212,126,.26); }
@@ -269,18 +270,6 @@
 
   <div class="sect-title" id="studio">Studio Tools</div>
   <div class="grid">
-    <div class="card taffy">
-      <span class="new">NEW</span>
-      <div class="kind">Transient Shaper</div>
-      <h2 style="background:linear-gradient(135deg,#c9c9c9,#ffb545);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">TAFFY</h2>
-      <p class="tag">Transients are sticky.</p>
-      <p class="desc">ATTACK makes it hit harder or softer, SUSTAIN stretches the body out or dries it up. Drums punch through, plucky synths bite and ring. ROUND smooths out distortion, and the stretch bar shows it all happening. Rack-unit UI, zero latency.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/taffy.png?v=1.0.3"><source src="https://video.sebastianmacan.com/img/video/taffy_ui_loop.mp4?v=1.0.3" type="video/mp4"></video></div>
-      <span class="dl buy" style="background:linear-gradient(135deg,#c9c9c9,#ffb545);box-shadow:0 6px 28px rgba(255,181,69,.30);" role="button" tabindex="0" data-cart-buy="taffy">Buy Taffy &middot; $15</span>
-      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="taffy">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="taffy">Buy Now</span></div>
-      <a class="more" href="taffy.html">See how it works &rarr;</a>
-      <div class="meta">v1.0.3 · VST3 + AU effect · macOS + Windows</div>
-    </div>
     <div class="card pocket">
       <span class="new">NEW</span>
       <div class="kind">Snare Depth</div>
@@ -292,6 +281,18 @@
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="pocket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="pocket">Buy Now</span></div>
       <a class="more" href="pocket.html">See how it works &rarr;</a>
       <div class="meta">v1.0.0 · VST3 + AU effect · macOS + Windows</div>
+    </div>
+    <div class="card honey">
+      <span class="new">NEW</span>
+      <div class="kind">Tape Smoothness</div>
+      <h2 style="background:linear-gradient(135deg,#f0a04a,#ffd98a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">HONEY</h2>
+      <p class="tag">Tape smoothness for chords, pads and melodies.</p>
+      <p class="desc">Real tape physics, not a distortion box. Three machines, three faces: a studio deck, a cassette on the desk, a worn-out Walkman. Your chords come back smoother than they went in.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/honey_studio.png?v=1.0.0"><source src="https://video.sebastianmacan.com/img/video/honey_ui_loop.mp4?v=1.0.0" type="video/mp4"></video></div>
+      <span class="dl buy" style="background:linear-gradient(135deg,#f0a04a,#ffd98a);box-shadow:0 6px 28px rgba(240,160,74,.30);" role="button" tabindex="0" data-cart-buy="honey">Buy Honey &middot; $15</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="honey">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="honey">Buy Now</span></div>
+      <a class="more" href="honey.html">See how it works &rarr;</a>
+      <div class="meta">v3.0.2 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card fireplace">
       <span class="new">NEW</span>
@@ -332,18 +333,17 @@
   </div>
   <div class="sect-title" id="lab">In the Lab <span style="font-size:.6em;opacity:.6;font-weight:500">(not released - demo only)</span></div>
   <div class="grid">
-    <div class="card honey">
+    <div class="card taffy">
       <span class="new" style="background:#666">LAB</span>
-      <div class="kind">Tape Smoothness</div>
-      <h2 style="background:linear-gradient(135deg,#f0a04a,#ffd98a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">HONEY</h2>
-      <p class="tag">Tape smoothness for chords, pads and melodies.</p>
-      <p class="desc">Real tape physics, not a distortion box. Three machines, three faces: a studio deck, a cassette on the desk, a worn-out Walkman. Your chords come back smoother than they went in.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/honey_studio.png?v=1.0.0"><source src="https://video.sebastianmacan.com/img/video/honey_ui_loop.mp4?v=1.0.0" type="video/mp4"></video></div>
-      <a class="dl" href="downloads/Honey-v1.1.0-macOS.pkg" style="background:linear-gradient(135deg,#f0a04a,#ffd98a);">OG Honey 1.1.0</a>
-      <a class="dl" href="downloads/Honey-v3.0.2-macOS.pkg" style="background:linear-gradient(135deg,#f0a04a,#ffd98a);margin-top:8px;">Honey 3.0.2 (last gold)</a>
-      <a class="dl" href="downloads/Honey-v3.1.0-macOS.pkg" style="background:linear-gradient(135deg,#f0a04a,#ffd98a);margin-top:8px;">Honey 3.1.0 (true dry/wet + resize)</a>
-      <a class="more" href="honey.html">See how it works &rarr;</a>
-      <div class="meta">Lab · three builds to compare · VST3 + AU · macOS</div>
+      <div class="kind">Transient Shaper</div>
+      <h2 style="background:linear-gradient(135deg,#c9c9c9,#ffb545);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">TAFFY</h2>
+      <p class="tag">Transients are sticky.</p>
+      <p class="desc">ATTACK makes it hit harder or softer, SUSTAIN stretches the body out or dries it up. Drums punch through, plucky synths bite and ring. ROUND smooths out distortion, and the stretch bar shows it all happening. Rack-unit UI, zero latency.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/taffy.png?v=1.0.3"><source src="https://video.sebastianmacan.com/img/video/taffy_ui_loop.mp4?v=1.0.3" type="video/mp4"></video></div>
+      <a class="dl" href="downloads/Taffy-v1.0.3-macOS.pkg" style="background:linear-gradient(135deg,#c9c9c9,#ffb545);">Taffy 1.0.3 (gold)</a>
+      <a class="dl" href="downloads/Taffy-v1.1.0-macOS.pkg" style="background:linear-gradient(135deg,#c9c9c9,#ffb545);margin-top:8px;">Taffy 1.1.0 (TS2-style engine, rejected)</a>
+      <a class="more" href="taffy.html">See how it works &rarr;</a>
+      <div class="meta">Lab · parked, revisit · VST3 + AU · macOS</div>
     </div>
     <div class="card halo">
       <span class="new">PARKED</span>
@@ -582,7 +582,7 @@
   </div>
 
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Seven baskets. Instruments at $59, Effects at $49 and Studio Tools at $35 sort the plugins by what they do. The Chord Basket is Chordsmith plus every MIDI pack at $69, the MIDI Mega Basket packs all 4796 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket is $30 for the lofi mood.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Eight baskets. Instruments at $59, Effects at $49 and Studio Tools at $35 sort the plugins by what they do, and the Cozy Basket is $22 for Honey and Fireplace. The Chord Basket is Chordsmith plus every MIDI pack at $69, the MIDI Mega Basket packs all 4796 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket is $30 for the full lofi mood with Honey inside.</p>
   <div class="bundlegrid">
     <a class="bundle instr-b" href="basket-instruments.html">
       <img src="img/bundles/instruments_bundle.png?v=3" alt="Instruments Basket: Biome and Chordsmith as wrapped candy in a basket" loading="lazy">
@@ -605,13 +605,23 @@
       </div>
     </a>
     <a class="bundle studio-b" href="basket-studio.html">
-      <img src="img/bundles/studio_bundle.png?v=7" alt="Studio Tools Basket: Fireplace, Gloss, Pocket and Taffy as wrapped candy in a basket" loading="lazy">
+      <img src="img/bundles/studio_bundle.png?v=7" alt="Studio Tools Basket: Fireplace, Gloss, Honey and Pocket as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>STUDIO TOOLS BASKET</h3>
-        <p class="desc">Fireplace, Gloss, Pocket and Taffy. Atmosphere, mix polish, snare depth and transient shaping. The finishing tools.</p>
+        <p class="desc">Fireplace, Gloss, Honey and Pocket. Atmosphere, mix polish, lofi drum tape and snare character. The finishing tools.</p>
         <div class="price">$35</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#60a5fa);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="studiobasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="studiobasket">Buy Now</span></div>
+      </div>
+    </a>
+    <a class="bundle cozy-b" href="basket-cozy.html">
+      <img src="img/bundles/cozy_bundle.png" alt="Cozy Basket: Honey and Fireplace as wrapped candy in a basket" loading="lazy">
+      <div class="binner">
+        <h3>COZY BASKET</h3>
+        <p class="desc">Honey and Fireplace. Smooth tape for your chords and the cozy room around them.</p>
+        <div class="price">$22</div>
+        <span class="dl bopen" style="background:linear-gradient(135deg,#ff5e3a,#ffb86b);">Open the basket</span>
+        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="cozy">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="cozy">Buy Now</span></div>
       </div>
     </a>
     <a class="bundle chord-b" href="basket-chord.html">
@@ -645,10 +655,10 @@
       </div>
     </a>
     <a class="bundle lofi-b" href="basket-lofi.html">
-      <img src="img/bundles/lofi_bundle.png?v=6" alt="Lofi Basket: Fireplace and Warble as wrapped candy in a basket" loading="lazy">
+      <img src="img/bundles/lofi_bundle.png?v=5" alt="Lofi Basket: Fireplace, Warble and Honey as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>LOFI BASKET</h3>
-        <p class="desc">Fireplace and Warble. A crackling room and a weird little songbird. The lofi mood in two plugins.</p>
+        <p class="desc">Fireplace, Warble and Honey. A crackling room, a weird little songbird and smooth tape for the chords. The complete lofi mood.</p>
         <div class="price">$30</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#2bb59a);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="lofibasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="lofibasket">Buy Now</span></div>
@@ -662,7 +672,7 @@
     <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> &middot; <a href="learn/chordsmith.html">Chord generators</a> &middot; <a href="learn/jelly.html">Wobble FX</a> &middot; <a href="learn/orbit.html">3D auto-pan</a></div>
   </footer>
 </div>
-<script src="js/cart.js?v=h1024" defer></script>
+<script src="js/cart.js?v=t1024" defer></script>
 <script src="js/email-gate.js" defer></script>
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.
