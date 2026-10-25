@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
 <meta name="theme-color" content="#000000">
 <title>Honey | Old Tape for Lofi Drums (VST3/AU)</title>
-<meta name="description" content="Honey is a tape plugin built on real tape physics that makes your drums sound old and vintage. Built for lofi. Three machines, three faces. VST3 and AU. By Sebastian Macan.">
+<meta name="description" content="Honey is a tape plugin built on real tape physics that makes your drums sound old and vintage. Built for lofi. Real tape physics, dialled for drums. VST3 and AU. By Sebastian Macan.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#f0a04a; --g2:#ffd98a; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -81,7 +81,7 @@
    "operatingSystem": "macOS, Windows",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Honey is a tape plugin built on real tape physics. Tape smoothness for chords, pads and melodies. Three machines, three faces. By Sebastian Macan.",
+   "description": "Honey is a tape plugin built on real tape physics. Tape smoothness for chords, pads and melodies. Real tape physics, dialled for drums. By Sebastian Macan.",
    "url": "https://sebastianmacan.com/honey.html",
    "offers": { "@type": "Offer", "price": "15", "priceCurrency": "USD" },
    "author": { "@type": "Person", "name": "Sebastian Macan" },
@@ -114,10 +114,7 @@
     <div class="kind">Old Tape for Drums</div>
     <h1>HONEY</h1>
     <p class="tag">Put your drums on an old tape. They come back dusty, worn and vintage, like they were recorded years ago. Built for lofi.</p>
-    <div class="faces">
-      <span class="face on" data-face="cassette">CASSETTE</span><span class="face" data-face="studio">STUDIO</span><span class="face" data-face="walkman">WALKMAN</span>
-    </div>
-    <div class="videobox"><video id="honeyface" autoplay muted loop playsinline poster="img/ui/honey_cassette.png?v=1.0.0"><source src="https://video.sebastianmacan.com/img/video/honey_face_cassette.mp4?v=fix2" type="video/mp4"></video></div>
+    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/honey_cassette.png?v=3.2.4" aria-label="Honey tape plugin UI: cassette deck, reels turning, DRIVE sweeping"><source src="https://video.sebastianmacan.com/img/video/honey_ui_loop.mp4?v=3.2.4" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="honey">Buy Honey &middot; $15</span>
       <div class="meta">v3.2.4 &middot; VST3 + AU effect &middot; macOS + Windows</div>
@@ -132,23 +129,23 @@
 
   <h2>Get started in 3 steps</h2>
   <div class="step"><b>1. Put Honey on your drum bus.</b> The whole kit, or just the snare. It already sounds older with nothing touched.</div>
-  <div class="step"><b>2. Pick a machine.</b> STUDIO is a two-inch deck at 15 ips: expensive glue. CASSETTE is the default: moderate hiss, a little wobble. WALKMAN is a worn tape on dying batteries: heavy wow, dropouts, a ceiling around 9 kHz. The whole face changes with it.</div>
+  <div class="step"><b>2. Pick the hiss.</b> The pill under the deck chooses the noise bed: TAPE is real cassette hiss, SM-404 and SM-303 are the crackle beds pulled off two samplers. HISS sets how much.</div>
   <div class="step"><b>3. Turn WARMTH up, then DRIVE until it crunches.</b> WOBBLE for movement, AGE for years of wear, HISS for the room tone. Save it as a preset when it is yours.</div>
 
   <h2>Make it yours</h2>
   <div class="knob"><b>DRIVE.</b> How hard you hit the tape. Below 12 o'clock is glue. Past 12 it climbs hard: soft saturation that stays smooth because the highs saturate first, all the way to crushed tape at the top, level-matched so it never just gets louder.</div>
   <div class="knob"><b>WARMTH.</b> Head bump and low-mid weight, tuned per machine. Where the kick gets its weight and the snare gets its body. Past 12 o'clock the top end rolls off and the lows swell until it sounds like the tape is melting.</div>
-  <div class="knob"><b>WOBBLE.</b> Wow and flutter. A little is human, a lot is a memory. Past 12 o'clock it goes seasick: nearly four semitones of drift at the top.</div>
-  <div class="knob"><b>HISS.</b> Real tape noise, dosed to taste, machine-dependent. Cassette is louder, Studio is faint.</div>
+  <div class="knob"><b>WOBBLE, WOW and FLUTTER.</b> WOBBLE is the overall wow and flutter: a little is human, a lot is a memory, and past 12 o'clock it goes seasick. WOW and WOW RATE set the slow pitch drift, FLUTTER and FLUT RATE the fast shiver, RATE drives the whole motor. The movement knobs glide the way a real tape machine would, so a fast grab never lurches.</div>
+  <div class="knob"><b>HISS.</b> Real tape noise or sampler crackle, dosed to taste. Pick the bed in the pill: TAPE, SM-404 or SM-303.</div>
   <div class="knob"><b>AGE.</b> Years of wear. Dulls the top, adds dropouts, softens everything. Crank it and the tape starts falling apart: dropouts every few hundred milliseconds and a top end that is barely there.</div>
-  <div class="knob"><b>MIX and OUTPUT.</b> Parallel blend and level. Same positions on every face, so your hands always know where they are. <b>Leave MIX halfway on a chord loop:</b> the tape path drifts against the dry signal and the chords start to phase. It is a glitch we kept on purpose. Automate MIX slowly and it becomes a flanger that breathes with the tape.</div>
+  <div class="knob"><b>PHASE, MIX and OUTPUT.</b> MIX is a clean parallel blend before the tape, OUTPUT is the level. PHASE is the trick: <b>with WOBBLE, WOW or AGE turned up, leave PHASE halfway on a chord loop</b> and the tape path drifts against the dry signal until the chords start to phase. It is a glitch we kept on purpose. Automate PHASE slowly and it becomes a flanger that breathes with the tape.</div>
   <div class="knob"><b>PRESETS + INIT.</b> Preset pill in the header, 16 factory sounds (Worn, Walkman '94, Chewed and Crushed live at the loud end), save unlimited of your own. Right-click, two-finger tap or Cmd-click any knob for INIT: that one control snaps back to the preset you loaded.</div>
-  <div class="knob"><b>READOUT.</b> Grab any knob and a small readout appears in the bottom-right corner showing exactly where you are (66%, 67%, -3.5 dB). Let go and it fades. Every knob's bottom half is the original Honey sound, so your old sessions and presets sound exactly the same.</div>
+  <div class="knob"><b>READOUT and RESIZE.</b> Grab any knob and a small readout appears in the bottom-left corner showing exactly where you are (66%, 67%, -3.5 dB). Let go and it fades. Drag the bottom-right corner to make the whole plugin bigger or smaller. Your old sessions and presets load exactly as they were saved.</div>
 
   <h3>Pro tip</h3>
-  <p><b>On lofi drums.</b> CASSETTE. Turn WARMTH all the way up, then bring DRIVE up while dropping OUTPUT a little. Add a touch of AGE. Nice and tight, old and warm, ready to loop.</p>
-  <p><b>On the snare alone.</b> WALKMAN, DRIVE past 12, WOBBLE low. The crack wears down into a thud that sits in the beat instead of on top of it.</p>
-  <p><b>On chords.</b> STUDIO, DRIVE around 11 o'clock, WOBBLE just past off. Smooth glue, no dirt. Use at your own discretion, it is the drums that Honey was made for.</p>
+  <p><b>On lofi drums.</b> Turn WARMTH all the way up, then bring DRIVE up while dropping OUTPUT a little. Add a touch of AGE. Nice and tight, old and warm, ready to loop.</p>
+  <p><b>On the snare alone.</b> DRIVE past 12, WOBBLE low, SM-404 hiss. The crack wears down into a thud that sits in the beat instead of on top of it.</p>
+  <p><b>On chords.</b> DRIVE around 11 o'clock, WOBBLE just past off. Smooth glue, no dirt. Use at your own discretion, it is the drums that Honey was made for.</p>
 
   <h2>Common questions</h2>
   <div class="knob"><b>How much is Honey?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
@@ -168,6 +165,5 @@
 </div>
 <script src="js/cart.js?v=t1024" defer></script>
 <script src="js/email-gate.js" defer></script>
-<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.poster="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.querySelector("source").src="https://video.sebastianmacan.com/img/video/honey_face_"+f.dataset.face+".mp4?v=fix2";i.load();i.play();});});</script>
 </body>
 </html>
