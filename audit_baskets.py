@@ -16,7 +16,7 @@ CAT = {m[0]: (int(m[1]), m[2]) for m in re.findall(r"^\s*(\w+):\s*\{ name: '[^']
 BASK = {m[0]: (m[1], re.findall(r"'(\w+)'", m[2])) for m in re.findall(r"^\s*(\w+):\s*\{ page: '([^']+)',\s*items: \[([^\]]*)\]", cart, re.M)}
 paddle = {i["price_id"]: i for i in json.load(open(f"{H}/paddle/catalog.json"))["items"]}
 prod = json.load(open(f"{H}/delivery/products.json"))
-RETIRED = ["Subtle Tape Machine", "Sometimes tape plugins do too much", "right amount of vintage", "A real tape machine, in the box"]
+RETIRED = ["Old Tape for Drums", "Old tape for lofi drums", "Subtle Tape Machine", "Sometimes tape plugins do too much", "right amount of vintage", "A real tape machine, in the box"]
 FILE_OF = {"biome": "Biome", "magician": "Chordsmith", "jelly": "Jelly", "warble": "Warble", "gloss": "Gloss",
            "orbit": "Orbit", "fireplace": "Fireplace", "honey": "Honey", "gremlin": "Gremlin", "pocket": "Pocket"}
 bad = []

@@ -7,8 +7,8 @@ S = os.path.dirname(os.path.abspath(__file__))
 h = open(f"{S}/gremlin.html").read()
 
 # palette: orange + cream from the Pocket UI
-h = h.replace("--g1:#2ed14f; --g2:#c9ff4a;", "--g1:#f08a3c; --g2:#f3d9ae;")
-h = re.sub(r"rgba\(46,209,79,(\.\d+)\)", r"rgba(240,138,60,\1)", h)
+h = h.replace("--g1:#2ed14f; --g2:#c9ff4a;", "--g1:#4f97e8; --g2:#e7d6bb;")
+h = re.sub(r"rgba\(46,209,79,(\.\d+)\)", r"rgba(79,151,232,\1)", h)
 
 h = h.replace("<title>Gremlin | Glitch, Stutter and Granular Mangler VST3/AU Plugin</title>",
               "<title>Pocket | Snare Depth VST3/AU Plugin</title>")
@@ -53,7 +53,7 @@ body = '''  <section class="hero">
     <div class="kind">Snare Depth</div>
     <h1>POCKET</h1>
     <p class="tag">Puts your snare in the mix instead of on top of it.</p>
-    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/pocket.png?v=1.0.0" aria-label="Pocket plugin UI: a snare on a dark stage walking back and forward with the DEPTH knob"><source src="https://video.sebastianmacan.com/img/video/pocket_ui_loop.mp4?v=1.0.0a" type="video/mp4"></video></div>
+    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/pocket.png?v=1.1.7" aria-label="Pocket plugin UI: a little snare walking down a field path as the DEPTH knob turns"><source src="https://video.sebastianmacan.com/img/video/pocket_ui_loop.mp4?v=1.1.7" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="pocket">Buy Pocket &middot; $15</span>
       <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
@@ -86,6 +86,7 @@ body = '''  <section class="hero">
   <div class="knob"><b>WIDTH.</b> Widens the room, never the snare.</div>
   <div class="knob"><b>MIX and OUTPUT.</b> Parallel blend and output trim. BYPASS pill in the header for honest A/B.</div>
   <div class="knob"><b>PRESETS.</b> Preset bar in the header, save unlimited of your own. Zero latency, so it is safe on the way in or at mixdown.</div>
+  <div class="knob"><b>THE WALK.</b> The little snare on screen is the readout: it steps down the path exactly as far as DEPTH says, the ghost outline is your dry snare, the dark silhouette is all the way back. FIELD or STREET picks the scene. Drag the bottom-right corner to make the whole plugin bigger or smaller.</div>
 
   <h2>Presets</h2>
   <p>7 to start: Init, Trap Dry, Boom Bap, Live Room, Back Of The Club, Stadium and Snap Forward. From bone dry and tucked to a snare echoing off the back wall, plus unlimited slots for your own.</p>

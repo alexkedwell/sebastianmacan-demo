@@ -9,7 +9,7 @@ ITEMS = {
   "gloss":     ("Instant Mix Polish", "Gloss", "Four knobs that make tracks sit right in the mix, fast.", 19, "gloss.html"),
   "orbit":     ("3D Auto-Pan", "Orbit", "Hats that fly around your head. Free forever, and in the basket anyway.", 0, "orbit.html"),
   "fireplace": ("Ambience", "Fireplace", "Eight real rooms recorded on tape. Put your track somewhere.", 15, "fireplace.html"),
-  "honey":     ("Tape Smoothness", "Honey", "Old tape for lofi drums. Three machines, three faces.", 15, "honey.html"),
+  "honey":     ("Tape Machine", "Honey", "Sebastian Macan's tape machine. Real tape physics for anything you put on it.", 15, "honey.html"),
   "pocket":    ("Snare Depth", "Pocket", "Puts your snare in the mix instead of on top of it.", 15, "pocket.html"),
 }
 BASKETS = [
