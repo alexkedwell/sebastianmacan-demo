@@ -39,10 +39,18 @@
     var bar=el.querySelector('.mw-bar i'), seek=el.querySelector('.mw-bar');
     a.addEventListener('loadedmetadata',function(){t.textContent=fmt(a.duration);});
     a.addEventListener('timeupdate',function(){bar.style.width=(a.currentTime/a.duration*100)+'%';t.textContent=fmt(a.duration-a.currentTime);});
-    a.addEventListener('ended',function(){el.classList.remove('on');bar.style.width='0%';t.textContent=fmt(a.duration);});
+    /* Oct 26 2026: replay after the track ended needed a page refresh (Galaxy). Rewind on end, clear the
+       "current" slot, and if play() is refused after an end (Safari drops the decoded buffer) reload + retry. */
+    a.addEventListener('ended',function(){el.classList.remove('on');bar.style.width='0%';t.textContent=fmt(a.duration);a.currentTime=0;if(cur===stop)cur=null;setTimeout(function(){ if(a.paused){ a.load(); } },50);});
     function stop(){a.pause();el.classList.remove('on');}
+    function start(){
+      stopCurrent(); cur=stop; el.classList.add('on');
+      if(a.ended||a.currentTime>=a.duration-0.05) a.currentTime=0;
+      var p=a.play();
+      if(p&&p.catch) p.catch(function(){ a.load(); a.currentTime=0; var q=a.play(); if(q&&q.catch) q.catch(function(){ el.classList.remove('on'); cur=null; }); });
+    }
     btn.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
-      if(a.paused){ stopCurrent(); cur=stop; a.play(); el.classList.add('on'); }
+      if(a.paused){ start(); }
       else { stop(); cur=null; }
     });
     seek.addEventListener('click',function(e){e.stopPropagation();var r=seek.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*a.duration;});
