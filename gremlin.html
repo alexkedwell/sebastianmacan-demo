@@ -12,7 +12,7 @@
 <title>Gremlin | Glitch, Stutter and Granular Mangler VST3/AU Plugin</title>
 <meta name="description" content="Gremlin is the glitch box for beats: tempo-synced chops, pitched stutters and granular smear into a plate reverb. One plugin, three sections. VST3 and AU. By Sebastian Macan.">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#b8f43a; --g2:#f4e03a; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#b06bff; --g2:#ff5fd2; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -29,14 +29,14 @@
     background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
-    box-shadow:0 20px 80px rgba(184,244,58,.30); animation:float 7s ease-in-out infinite; }
+    box-shadow:0 20px 80px rgba(176,107,255,.30); animation:float 7s ease-in-out infinite; }
   .videobox video { display:block; width:100%; height:auto; }
   .sm, .big { cursor:pointer; }
   .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
   .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
-    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(184,244,58,.30); transition:transform .15s; }
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(176,107,255,.30); transition:transform .15s; }
   .dl:hover { transform:translateY(-2px) scale(1.02); }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
@@ -55,10 +55,10 @@
   .studio { margin:34px auto 6px; max-width:920px; }
   .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
   .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
-  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(184,244,58,.18); }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(176,107,255,.18); }
   .studio video { display:block; width:100%; height:auto; }
   .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(0,0,0,.05), rgba(0,0,0,.45)); transition:opacity .25s; }
-  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(184,244,58,.45); transition:transform .15s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(176,107,255,.45); transition:transform .15s; }
   .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
   .studio .play:hover span { transform:scale(1.07); }
   .studio.playing .play { opacity:0; pointer-events:none; }
