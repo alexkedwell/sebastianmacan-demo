@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="robots" content="noindex, nofollow">
-<script src="js/gate.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/base.css?v=1">
@@ -66,6 +64,24 @@
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
   @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
+  /* Made with (audio player) */
+  .mw { display:flex; align-items:center; gap:12px; margin-top:14px; padding:10px 12px 10px 10px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--line); position:relative; z-index:2; }
+  .mw-play { flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--g1),var(--g2)); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,.4); transition:transform .15s ease; }
+  .mw-play:hover { transform:scale(1.06); }
+  .mw-play svg { width:16px; height:16px; fill:#0a0a0c; margin-left:2px; }
+  .mw.on .mw-play svg.p { display:none; } .mw .mw-play svg.s { display:none; } .mw.on .mw-play svg.s { display:block; margin-left:0; }
+  .mw-body { flex:1; min-width:0; }
+  .mw-title { font-size:14px; font-weight:800; color:var(--txt); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .mw-title span { color:var(--dim); font-weight:600; }
+  .mw-bar { height:4px; border-radius:2px; background:rgba(255,255,255,.08); margin-top:7px; cursor:pointer; overflow:hidden; }
+  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:2px; }
+  .mw.vid .mw-play svg.p { display:none; } .mw.vid .mw-play::after { content:""; width:0; height:0; border-left:14px solid #0a0a0c; border-top:8px solid transparent; border-bottom:8px solid transparent; margin-left:3px; }
+  .mw.vid .mw-body { cursor:pointer; }
+  .mw.vid .mw-bar { background:linear-gradient(90deg,var(--g1),var(--g2)); opacity:.35; }
+  .mw-time { font-size:11px; color:var(--dim); font-variant-numeric:tabular-nums; flex:0 0 auto; }
+  .madewith { margin:34px 0 8px; }
+  .madewith h2 { margin-bottom:6px; }
+  .madewith p { color:var(--dim); font-size:14px; margin:0 0 4px; }
 </style>
 <script type="application/ld+json">
 {
@@ -161,6 +177,15 @@
       <div class="meta">v1.4.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
+  <section class="madewith">
+  <h2>Made with Warble</h2>
+  <p>Press play.</p>
+  <div class="mw" data-src="audio/warblin.m4a">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Play Warblin"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="4" height="11" rx="1"/><rect x="9.5" y="2.5" width="4" height="11" rx="1"/></svg></span>
+        <div class="mw-body"><div class="mw-lbl">Made with</div><div class="mw-title">Warblin <span>&middot; Warble</span></div><div class="mw-bar"><i></i></div></div>
+        <span class="mw-time">--:--</span>
+      </div>
+  </section>
   <div class="studio" id="st_warblin">
     <div class="label">Warblin with Warble</div>
     <div class="frame">
@@ -219,5 +244,6 @@
 </div>
 <script src="js/cart.js?v=t1024" defer></script>
 <script src="js/email-gate.js" defer></script>
+<script src="js/madewith.js?v=r1026"></script>
 </body>
 </html>
