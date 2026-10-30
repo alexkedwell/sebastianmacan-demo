@@ -85,7 +85,7 @@
   .fizz   { --g1:#ffb347; --g2:#c8f05a; --glow:#ffb347; --shadow:rgba(255,179,71,.26); }
   .wizard { --g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26); }
   .honey { --g1:#d4712f; --g2:#e8d9bb; --glow:#d4712f; --shadow:rgba(212,113,47,.30); }
-  .gremlin { --g1:#b06bff; --g2:#ff5fd2; --glow:#b06bff; --shadow:rgba(176,107,255,.30); }
+  .gremlin { --g1:#9a6bff; --g2:#c9a6ff; --glow:#9a6bff; --shadow:rgba(154,107,255,.30); }
   .pocket { --g1:#4f97e8; --g2:#e7d6bb; --glow:#4f97e8; --shadow:rgba(79,151,232,.30); }
   .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
   .gloss { --g1:#8b6bff; --g2:#3df0a8; --glow:#8b6bff; --shadow:rgba(139,107,255,.26); }
@@ -170,7 +170,7 @@
   .modeshot{margin:10px 0 12px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
   .modeshot video{display:block;width:100%;height:auto;}
 </style>
-</head>
+<style>.card.gremlin{overflow:hidden;position:relative}.card.gremlin>*:not(.vine):not(.new){position:relative;z-index:1}.card.gremlin>.vine{position:absolute;z-index:0;pointer-events:none;left:-40px;top:-60px;width:330px;transform:scaleX(-1) rotate(8deg);opacity:.55;filter:drop-shadow(0 8px 14px rgba(0,0,0,.6))}.card.gremlin>.new{z-index:2}</style></head>
 <body>
 <div class="wrap">
   <header>
@@ -215,13 +215,13 @@
   <div class="sect-title" id="effects">Color &amp; Motion FX</div>
   <div class="grid">
     <div class="card gremlin">
-      <span class="new">NEW</span>
+      <span class="new">NEW</span><img class="vine" alt="" src="img/gremlin_vine.png?v=a">
       <div class="kind">The Mangler Box</div>
-      <h2 style="background:linear-gradient(135deg,#b06bff,#ff5fd2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GREMLIN</h2>
+      <h2 style="background:linear-gradient(135deg,#9a6bff,#c9a6ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GREMLIN</h2>
       <p class="tag">Chop it. Stutter it. Smear it.</p>
       <p class="desc">The glitch box for beats. Tempo-synced chops, pitched stutters and a granular smear that melts your loop into a plate reverb. One plugin, three switchable sections, 12 presets from polite hiccup to full meltdown.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gremlin.png?v=3.1.0"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=all3" type="video/mp4"></video></div>
-      <span class="dl buy" style="background:linear-gradient(135deg,#b06bff,#ff5fd2);box-shadow:0 6px 28px rgba(176,107,255,.30);" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gremlin.png?v=3.1.0"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=all3p" type="video/mp4"></video></div>
+      <span class="dl buy" style="background:linear-gradient(135deg,#9a6bff,#c9a6ff);box-shadow:0 6px 28px rgba(154,107,255,.30);" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="gremlin">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Now</span></div>
       <a class="more" href="gremlin.html">See how it works &rarr;</a>
       <div class="meta">v3.2.3 · VST3 + AU effect · macOS + Windows</div>
