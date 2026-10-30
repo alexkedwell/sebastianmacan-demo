@@ -124,6 +124,20 @@
   <h2>One tape machine for everything you make</h2>
   <p>Honey is a tape machine, not a vibe knob. It models what actually happens when sound gets printed to tape and read back: the record and playback curves, magnetic hysteresis, tape compression, head bump, high-frequency loss, wow and flutter, hiss. That is why it does not only work on one thing. Put it on a sample and the sample sounds like it was dug up. Put it on a Rhodes and the keys get warm and slow. Put it on drums and they glue into one old recording. Put it on the mix bus, keep it low, and the whole track sits down and smooths out. Keep DRIVE and WARMTH low and it is just the dust. Push them and it gets thick and crunchy. Same tape, your call.
       
+  <div class="studio" id="st_studio">
+    <div class="label">In the studio &middot; Honey Off, Honey On</div>
+    <div class="frame">
+      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/honey_studio_demo.jpg?v=v1030" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_studio_demo.mp4?v=v1030" type="video/mp4"></video>
+      <div class="play" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Honey.</b> Same loop, Honey switched in at sixteen seconds. Real session, real audio: nothing is cut.</p>
+  </div>
+  <script>
+    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+  </script>
   <h2>What Honey does</h2>
   <p>Honey is what happens to a sound when it gets printed to old tape. It is built on real tape physics: the record and playback emphasis curves, magnetic hysteresis, tape compression, head bump, high-frequency loss, wow and flutter and hiss, all modelled instead of faked. The noise is real too: actual cassette hiss, or the crackle beds pulled off two samplers. Transients round off, harsh top end wears down, the low end gets weight and everything glues together like it came off a cassette somebody found in a drawer. Drums, samples, keys, guitars, vocals and full mixes are all fair game.</p>
 
