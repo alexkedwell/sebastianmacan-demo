@@ -191,6 +191,21 @@
     </div>
   </section>
 
+  <div class="studio" id="st_studio">
+    <div class="label">In the studio &middot; Galaxy II</div>
+    <div class="frame">
+      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/biome_studio_demo.jpg?v=v1101" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/biome_studio_demo.mp4?v=v1101" type="video/mp4"></video>
+      <div class="play" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Galaxy II, start to finish.</b> One sound dropped into Biome, grown into a texture. Real session, real audio: nothing is cut.</p>
+  </div>
+  <script>
+    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+  </script>
+
     <section class="madewith">
   <h2>Made with Biome</h2>
   <p>Press play.</p>
