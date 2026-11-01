@@ -82,10 +82,10 @@ body = '''  <section class="hero">
     <div class="kind">The Mangler Box</div>
     <h1>GREMLIN</h1>
     <p class="tag">Chop it. Stutter it. Smear it. The glitch box for beats.</p>
-    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/gremlin.png?v=3.1.0"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=3.1.0c" type="video/mp4"></video></div>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/gremlin.png?v=4.0.0"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=3.1.0c" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
-      <div class="meta">v3.1.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
+      <div class="meta">v4.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
 
@@ -94,7 +94,8 @@ body = '''  <section class="hero">
 
   <h2>Three sections, one box</h2>
   <div class="bot"><b>CHOP.</b> A tempo-synced gate and slicer. Pick a rate from 1/4 down to 1/32, set the GATE length, choose a pattern or roll a new one with the seed. Instant trance gates, triplet holes and rhythmic silence that always lands on the grid.</div>
-  <div class="bot"><b>STUTTER.</b> Buffer repeats on demand. RATE sets the slice, REPEATS how many times it fires, REVERSE flips them backwards, and PITCH is true pitch from -12 to +12 semitones. Every repeat in a burst shares one interval, so stutters stay musical instead of turning to mush. Noon is 0 st, plain repeats.</div>
+  <div class="bot"><b>STUTTER.</b> Now a full-width rack. REPEAT is the classic buffer stutter: RATE from 1/1 down to 1/32 or FREE (10 to 2000 ms, no transport needed), REPEATS, RAMP, REVERSE and true PITCH from -12 to +12 st. Switch REPEAT off and every other module keeps working on the live signal. TAPE, SCATTER, SHAPE, FILTER, WIDTH, GLIDE, then the new rack: GATE, CRUSH, WARP, COMB, GRAIN, GLITCH, FORMANT, RING, CHAOS, and SKETCH, the draw pad. Every module has its own knob, so every one is its own effect.</div>
+  <div class="bot"><b>SKETCH.</b> Draw 16 bars across one bar of music. TIME mode reads back in time by what you drew (the Gross Beat move). VOL mode is a drawn gate. MAD mode turns each bar you drew into a random seeded event: micro-repeat, reverse, crush or a ring hit, as hard as you drew it. Same drawing, same SEED, same result.</div>
   <div class="bot"><b>SMEAR.</b> Grain blur into a Dattorro plate reverb. WASH sets how much of the signal melts, DECAY runs from 0.6 s to 14 s, DEPTH pushes the verb further back in the room, TONE darkens or opens it, SHIMMER adds a +12 st feedback pitch shift, and FREEZE holds the tail forever.</div>
 
   <h2>Get started in 3 steps</h2>
@@ -109,6 +110,11 @@ body = '''  <section class="hero">
   <div class="knob"><b>STUTTER: RATE and REPEATS.</b> Slice size and how many times the buffer fires.</div>
   <div class="knob"><b>STUTTER: REVERSE.</b> Plays the repeats backwards. Instant tape-rewind moments.</div>
   <div class="knob"><b>STUTTER: PITCH.</b> True pitch, -12 to +12 semitones. All repeats in a burst share one interval; noon is 0 st.</div>
+  <div class="knob"><b>STUTTER: FREE.</b> Pick FREE in RATE and the step clock runs off the FREE knob in milliseconds. Works with the transport stopped.</div>
+  <div class="knob"><b>STUTTER: GATE, CRUSH, WARP.</b> Trance gate on the grid, bit-crush and decimate, and a per-step tape-stop dive or tape-start rise.</div>
+  <div class="knob"><b>STUTTER: COMB + TUNE, FORMANT, RING + HZ.</b> A tuned comb (40 Hz to 2 kHz), a vowel formant sweep, and a ring modulator that swoops down to its pitch on every step.</div>
+  <div class="knob"><b>STUTTER: GRAIN, GLITCH, CHAOS.</b> A rhythm-locked grain cloud, chance-per-step buffer jumps, skips and micro-repeats, and CHAOS, which re-rolls every rack knob around where you left it once a bar.</div>
+  <div class="knob"><b>STUTTER: SKETCH.</b> The draw pad. Drag to draw, right-click to clear. SKETCH sets how much of the drawing you hear; MODE picks TIME, VOL or MAD.</div>
   <div class="knob"><b>SMEAR: WASH and DECAY.</b> How much melts, and for how long: 0.6 s up to a 14 s tail.</div>
   <div class="knob"><b>SMEAR: DEPTH.</b> Predelay, early/late balance and a high-cut in one move, so the verb sits further back instead of on top.</div>
   <div class="knob"><b>SMEAR: TONE, SHIMMER, FREEZE and MIX.</b> Darken or open the tail, add a +12 st shimmer to the feedback, freeze it forever, blend it in.</div>
