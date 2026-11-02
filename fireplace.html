@@ -37,8 +37,8 @@
   @media (max-width:560px){ .vidrow, .vidrow.three { grid-template-columns:repeat(2,1fr); } }
   .vidrow.two { grid-template-columns:1fr 1fr; width:66.6%; margin-left:auto; margin-right:auto; }
   @media (max-width:560px){ .vidrow.two { width:100%; } }
-  .vidrow .sm.fire { border:0; background:transparent; overflow:visible; pointer-events:none; }
-  .vidrow .sm.fire canvas { display:block; width:100%; height:100%; }
+  .vidrow .sm.fire { border:0; background:transparent; overflow:visible; }
+  .vidrow .sm.fire canvas { display:block; width:100%; height:100%; cursor:crosshair; touch-action:pan-y; -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
   .vidrow .sm { border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#0b0806; aspect-ratio:16/9; position:relative; }
   .vidrow .sm video, .vidrow .sm img { display:block; width:100%; height:100%; object-fit:cover; }
   .vidrow .sm span, .vidstack .big span { position:absolute; left:8px; bottom:6px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.9); }
@@ -282,24 +282,6 @@
 <script src="js/cart.js?v=g4solo" defer></script>
 <script src="js/email-gate.js" defer></script>
 <script src="js/loops.js?v=1" defer></script>
-<script>
-/* Hearth fire: decorative, always burning. Transparent canvas in the rooms grid (no box, no label). */
-(function(){var cv=document.getElementById('hearthfire');if(!cv)return;var ctx=cv.getContext('2d');var W=480,H=270;cv.width=W;cv.height=H;
-var t=0,rs=4242;function rnd(){rs=(rs*1103515245+12345)&0x7fffffff;return rs/0x7fffffff;}
-var em=[];for(var i=0;i<30;i++)em.push({x:170+rnd()*140,y:150+rnd()*90,s:rnd(),v:0.22+rnd()*0.5,r:0.8+rnd()*1.6,ph:rnd()*6.28});
-function flame(x,b,h,w,c,ph,sp){var f=1+0.18*Math.sin(t*sp+ph)+0.08*Math.sin(t*sp*2.3+ph*1.7),l=8*Math.sin(t*0.9+ph);
-ctx.fillStyle=c;ctx.beginPath();ctx.moveTo(x-w,b);ctx.bezierCurveTo(x-w*1.1,b-h*0.45*f,x-w*0.25+l*0.5,b-h*0.75*f,x+l,b-h*f);ctx.bezierCurveTo(x+w*0.25+l*0.5,b-h*0.75*f,x+w*1.1,b-h*0.45*f,x+w,b);ctx.closePath();ctx.fill();}
-function frame(){ctx.clearRect(0,0,W,H);var g=0.8+0.2*Math.sin(t*2.2)+0.06*Math.sin(t*7.1);
-var gr=ctx.createRadialGradient(240,215,5,240,215,170);gr.addColorStop(0,'rgba(255,120,30,'+(0.26*g).toFixed(3)+')');gr.addColorStop(0.5,'rgba(255,80,10,'+(0.08*g).toFixed(3)+')');gr.addColorStop(1,'rgba(255,80,10,0)');ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
-ctx.fillStyle='rgba(0,0,0,.35)';ctx.beginPath();ctx.ellipse(240,238,120,10,0,0,6.28);ctx.fill();
-ctx.fillStyle='#3b2416';ctx.beginPath();ctx.roundRect(132,222,216,18,9);ctx.fill();ctx.fillStyle='#4a2d1a';ctx.beginPath();ctx.roundRect(152,207,176,17,8);ctx.fill();
-var b=214,F=[[172,66,20,'#c9401d',0,2.1],[200,88,22,'#e4591f',1.3,2.6],[230,106,24,'#ef7a22',2.2,2.3],[260,92,22,'#e4591f',0.7,2.8],[288,70,20,'#c9401d',1.9,2.2]],I=[[185,42,12,'#f2a93b',0.4,3.1],[215,60,13,'#f7c04a',1.8,3.4],[245,68,14,'#f9d35c',2.9,3.0],[273,56,12,'#f7c04a',1.1,3.6]],k;
-for(k=0;k<F.length;k++)flame(F[k][0],b,F[k][1],F[k][2],F[k][3],F[k][4],F[k][5]);for(k=0;k<I.length;k++)flame(I[k][0],b,I[k][1],I[k][2],I[k][3],I[k][4],I[k][5]);
-for(k=0;k<em.length;k++){var e=em[k];e.y-=e.v;e.x+=Math.sin(t*1.6+e.ph)*0.3;if(e.y<20||rnd()<0.002){e.y=200+rnd()*14;e.x=175+rnd()*130;}var a=Math.max(0,Math.min(1,(e.y-20)/120))*(0.55+0.45*Math.sin(t*5+e.ph));ctx.fillStyle='rgba(255,'+(150+Math.round(e.s*80))+',40,'+a.toFixed(2)+')';ctx.beginPath();ctx.arc(e.x,e.y,e.r,0,6.28);ctx.fill();}
-t+=1/60;}
-var vis=true;function loop(){if(vis)frame();requestAnimationFrame(loop);}
-if('IntersectionObserver' in window){new IntersectionObserver(function(en){vis=en[0].isIntersecting;}).observe(cv);}
-loop();})();
-</script>
+<script src="js/hearthfire.js?v=2"></script>
 </body>
 </html>
