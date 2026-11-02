@@ -61,8 +61,12 @@
   .mw-lbl { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; }
   .mw-title { font-size:14px; font-weight:800; color:var(--txt); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .mw-title span { color:var(--dim); font-weight:600; }
-  .mw-bar { height:4px; border-radius:2px; background:rgba(255,255,255,.08); margin-top:7px; cursor:pointer; overflow:hidden; }
-  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:2px; }
+  .mw-bar { height:6px; border-radius:3px; background:rgba(255,255,255,.10); margin-top:8px; cursor:pointer; position:relative; touch-action:none; transition:height .12s; }
+  .mw-bar::before { content:""; position:absolute; left:0; right:0; top:-12px; bottom:-12px; }
+  .mw:hover .mw-bar, .mw.scrub .mw-bar { height:8px; }
+  .mw-bar i::after { content:""; position:absolute; right:-6px; top:50%; width:12px; height:12px; margin-top:-6px; border-radius:50%; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.6); opacity:0; transition:opacity .12s; }
+  .mw:hover .mw-bar i::after, .mw.scrub .mw-bar i::after, .mw.on .mw-bar i::after { opacity:1; }
+  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:3px; position:relative; }
   /* MADE WITH — video variant + lightbox */
   .mw.vid .mw-play svg.p { display:none; } .mw.vid .mw-play::after { content:""; width:0; height:0; border-left:14px solid #0a0a0c; border-top:8px solid transparent; border-bottom:8px solid transparent; margin-left:3px; }
   .mw.vid .mw-body { cursor:pointer; }
@@ -77,6 +81,8 @@
   .mw-lb-x { position:absolute; right:12px; top:8px; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.12); color:#fff; font-size:26px; line-height:38px; text-align:center; cursor:pointer; }
   .mw-lb-x:hover { background:rgba(255,255,255,.25); }
   .mw-time { font-size:11px; color:var(--dim); font-variant-numeric:tabular-nums; flex:0 0 auto; }
+  .mw-rw { flex:0 0 auto; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--dim); border:1px solid var(--line); font-size:15px; line-height:1; transition:color .12s, border-color .12s, transform .12s; user-select:none; }
+  .mw-rw:hover { color:var(--txt); border-color:var(--g1); transform:rotate(-40deg); }
   .new { position:absolute; top:16px; right:16px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 10px; border-radius:999px; background:linear-gradient(135deg,var(--g1),var(--g2)); color:#0a0a0c; }
   .chaos  { --g1:#ff3d5a; --g2:#7b5cff; --glow:#ff3d5a; --shadow:rgba(255,61,90,.28); }
   .dusty  { --g1:#f5a623; --g2:#ff6b9d; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
@@ -729,7 +735,7 @@ document.addEventListener('DOMContentLoaded', function () {
   vids.forEach(function (v) { io.observe(v); });
 });
 </script>
-<script src="js/madewith.js?v=r1026"></script>
+<script src="js/madewith.js?v=r1101"></script>
 <script src="js/loops.js?v=1" defer></script>
 </body>
 </html>

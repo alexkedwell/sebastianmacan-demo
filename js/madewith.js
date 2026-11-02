@@ -53,6 +53,17 @@
       if(a.paused){ start(); }
       else { stop(); cur=null; }
     });
-    seek.addEventListener('click',function(e){e.stopPropagation();var r=seek.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*a.duration;});
+    /* Nov 1 2026: "rewind is too hard" -> drag-to-scrub (mouse + touch, 24px tall hit area via CSS ::before),
+       a restart button, and seeking while paused updates the bar without starting playback. */
+    function seekTo(clientX){ if(!a.duration) return; var r=seek.getBoundingClientRect(); var f=Math.min(1,Math.max(0,(clientX-r.left)/r.width)); a.currentTime=f*a.duration; bar.style.width=(f*100)+'%'; t.textContent=fmt(a.duration-a.currentTime); }
+    var drag=false;
+    seek.addEventListener('pointerdown',function(e){e.stopPropagation();e.preventDefault();drag=true;el.classList.add('scrub');try{seek.setPointerCapture(e.pointerId);}catch(x){}seekTo(e.clientX);});
+    seek.addEventListener('pointermove',function(e){ if(drag) seekTo(e.clientX); });
+    function endDrag(e){ if(!drag) return; drag=false; el.classList.remove('scrub'); seekTo(e.clientX); }
+    seek.addEventListener('pointerup',endDrag); seek.addEventListener('pointercancel',endDrag);
+    seek.addEventListener('click',function(e){e.stopPropagation();});
+    var rw=document.createElement('span'); rw.className='mw-rw'; rw.setAttribute('role','button'); rw.setAttribute('aria-label','Restart'); rw.title='Restart'; rw.innerHTML='&#8634;';
+    el.insertBefore(rw,t);
+    rw.addEventListener('click',function(e){e.preventDefault();e.stopPropagation(); a.currentTime=0; bar.style.width='0%'; if(a.duration) t.textContent=fmt(a.duration); if(a.paused) start(); });
   });
 })();
