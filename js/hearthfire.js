@@ -79,7 +79,7 @@
     else if(state==='regrow'){ fs=Math.min(1,st/2.4); fs=fs*fs*(3-2*fs); if(st>=2.4){ state='burn'; fs=1; } }
     poke*=0.9; t+=dt*60/60;
   }
-  window.__hearth=function(){ return state+' '+st.toFixed(2)+' fs='+fs.toFixed(2)+' drops='+drops.length+' steam='+steam.length; };
+  window.__douse=douse; window.__hearth=function(){ return state+' '+st.toFixed(2)+' fs='+fs.toFixed(2)+' drops='+drops.length+' steam='+steam.length; };
   var vis=true; function loop(){ if(vis) frame(); requestAnimationFrame(loop); }
   if('IntersectionObserver' in window){ new IntersectionObserver(function(en){ vis=en[0].isIntersecting; }).observe(cv); }
   loop();
