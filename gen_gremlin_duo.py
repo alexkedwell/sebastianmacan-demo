@@ -5,8 +5,10 @@ S = os.path.dirname(os.path.abspath(__file__))
 h = open(f"{S}/gremlin.html").read()
 VER = "1.0.0"
 
-h = h.replace("--g1:#2ed14f; --g2:#c9ff4a;", "--g1:#9ad63a; --g2:#c86cff;")
-h = re.sub(r"rgba\(46,209,79,(\.\d+)\)", r"rgba(176,112,255,\1)", h)
+h = re.sub(r"--g1:#[0-9a-fA-F]{6}; --g2:#[0-9a-fA-F]{6};", "--g1:#9ad63a; --g2:#c86cff;", h)
+# any accent-coloured glow in gremlin.html (whatever palette it currently uses) -> Duo purple
+h = re.sub(r"rgba\((?:46,209,79|154,107,255|176,107,255),(\.\d+)\)", r"rgba(176,112,255,\1)", h)
+assert "--g1:#9ad63a" in h and "154,107,255" not in h and "176,107,255" not in h
 h = h.replace("<title>Gremlin | Glitch, Stutter and Granular Mangler VST3/AU Plugin</title>",
               "<title>Gremlin Duo | Chop + Smear VST3/AU Plugin</title>")
 h = re.sub(r'<meta name="description" content="[^"]*">',

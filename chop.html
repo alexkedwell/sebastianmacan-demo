@@ -14,7 +14,7 @@
 <title>Chop | Free Rhythm Chopper VST3/AU Plugin</title>
 <meta name="description" content="Chop is a free tempo-synced rhythm chopper (VST3 and AU, macOS and Windows). Six rates, five patterns, swing and humanize. Chomps any loop into a groove. By Sebastian Macan.">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#9a6bff; --g2:#c9a6ff; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#8fd62a; --g2:#d4ff5a; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -31,19 +31,21 @@
     background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
-    box-shadow:0 20px 80px rgba(154,107,255,.30); animation:float 7s ease-in-out infinite; }
+    box-shadow:0 20px 80px rgba(143,214,42,.30); animation:float 7s ease-in-out infinite; }
   .videobox video { display:block; width:100%; height:auto; }
   .sm, .big { cursor:pointer; }
   .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
   .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
-    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(154,107,255,.30); transition:transform .15s; }
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(143,214,42,.30); transition:transform .15s; }
   .dl:hover { transform:translateY(-2px) scale(1.02); }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
   h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
   p, li { color:#c8c8d0; font-size:15.5px; }
+  p a, .knob a, .step a { color:var(--g1); font-weight:700; text-decoration:none; border-bottom:1px solid transparent; }
+  p a:hover, .knob a:hover, .step a:hover { border-bottom-color:var(--g1); }
   ol, ul { padding-left:24px; margin:10px 0; }
   li { margin-bottom:10px; }
   .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
@@ -138,7 +140,7 @@
   <div class="knob"><b>INIT ANY KNOB.</b> Right-click or Cmd-click a knob to send it home.</div>
 
   <h2>Want more?</h2>
-  <p><a href="gremlin-duo.html">Gremlin Duo</a> adds SMEAR, the granular plate that melts your chopped loop into a wash, for $7. <a href="gremlin.html">Gremlin</a> adds the full STUTTER rack on top for $15.</p>
+  <p>Chop is the top-left square of <a href="gremlin.html">Gremlin</a>. Gremlin adds SMEAR, the granular plate that melts your chopped loop into a wash, and the full STUTTER rack underneath, for $15.</p>
 
   <h2>Common questions</h2>
   <div class="knob"><b>Is Chop really free?</b> Yes. Free forever. Full version, every knob, no email wall, no subscription.</div>
@@ -157,7 +159,7 @@
     <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
-<script src="js/cart.js?v=g4duo" defer></script>
+<script src="js/cart.js?v=g4solo" defer></script>
 <script src="js/email-gate.js" defer></script>
 
 <script src="js/loops.js?v=1" defer></script>

@@ -33,7 +33,7 @@
     honey:         { name: 'Honey',                  cents: 1500, priceId: 'pri_01m3nvfqfgwp0hn49hbr0zw2dt' },
     gremlin:       { name: 'Gremlin',                cents: 1500, priceId: 'pri_01m3rmmy11e41nxdpkp9rdjq4d' },
     pocket:        { name: 'Pocket',                 cents: 1500, priceId: 'pri_01m5jmgg27ch339v1v5gkr6g7a' },
-    gremlinduo:    { name: 'Gremlin Duo',            cents:  700, priceId: 'pri_01m6apd6eftdzyz8pyctmw1n6t' },
+    gremlinduo:    { name: 'Gremlin',                cents: 1500, priceId: 'pri_01m3rmmy11e41nxdpkp9rdjq4d' }, // Duo retired Nov 1 2026; alias for cached pages
     fireplace:     { name: 'Fireplace',              cents: 1500, priceId: 'pri_01m1nckxvaekbaccghkvvh4zva' },
     gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
     /* MIDI chord packs */

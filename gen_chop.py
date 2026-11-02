@@ -10,8 +10,10 @@ MAC = f"downloads/Chop-v{VER}-macOS.pkg"
 WIN = f"downloads/Chop-v{VER}-Windows-Setup.exe"
 
 # palette: Chop green (mascot)
-h = h.replace("--g1:#2ed14f; --g2:#c9ff4a;", "--g1:#8fd62a; --g2:#d4ff5a;")
-h = re.sub(r"rgba\(46,209,79,(\.\d+)\)", r"rgba(143,214,42,\1)", h)
+h = re.sub(r"--g1:#[0-9a-fA-F]{6}; --g2:#[0-9a-fA-F]{6};", "--g1:#8fd62a; --g2:#d4ff5a;", h)
+# any accent-coloured glow in gremlin.html (whatever palette it currently uses) -> Chop green
+h = re.sub(r"rgba\((?:46,209,79|154,107,255|176,107,255),(\.\d+)\)", r"rgba(143,214,42,\1)", h)
+assert "--g1:#8fd62a" in h and "154,107,255" not in h and "176,107,255" not in h
 
 h = h.replace("<title>Gremlin | Glitch, Stutter and Granular Mangler VST3/AU Plugin</title>",
               "<title>Chop | Free Rhythm Chopper VST3/AU Plugin</title>")
