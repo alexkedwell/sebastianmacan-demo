@@ -93,7 +93,13 @@
   .fizz   { --g1:#ffb347; --g2:#c8f05a; --glow:#ffb347; --shadow:rgba(255,179,71,.26); }
   .wizard { --g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26); }
   .honey { --g1:#d4712f; --g2:#e8d9bb; --glow:#d4712f; --shadow:rgba(212,113,47,.30); }
-  .gremlin { --g1:#9ad63a; --g2:#c86cff; --glow:#b070ff; --shadow:rgba(176,112,255,.30); }
+  .gremlin { --g1:#9ad63a; --g2:#4fd8ff; --glow:#d64dff; --shadow:rgba(214,77,255,.30); }
+  .gremlin::before { opacity:.16; background:radial-gradient(260px 170px at 0% 0%, #9ad63a 0%, transparent 70%),radial-gradient(260px 170px at 100% 0%, #d64dff 0%, transparent 70%),radial-gradient(260px 170px at 0% 100%, #ff4fa3 0%, transparent 70%),radial-gradient(260px 170px at 100% 100%, #4fd8ff 0%, transparent 70%); }
+  .gremlin h2 { background:none; -webkit-text-fill-color:#fff; }
+  .gremlin .gbar { display:flex; height:5px; border-radius:3px; overflow:hidden; margin-top:10px; width:180px; }
+  .gremlin .gbar i { flex:1; } .gremlin .gbar i:nth-child(1){background:#9ad63a} .gremlin .gbar i:nth-child(2){background:#d64dff} .gremlin .gbar i:nth-child(3){background:#ff4fa3} .gremlin .gbar i:nth-child(4){background:#4fd8ff}
+  .gremlin .dl, .gremlin .cartbtn.buy, .gremlin .new { background:linear-gradient(90deg,#9ad63a 0 25%,#d64dff 25% 50%,#ff4fa3 50% 75%,#4fd8ff 75% 100%); color:#0a0a0c; }
+  .gremlin .cartbtn.add { border-color:#4fd8ff; }
   .pocket { --g1:#4f97e8; --g2:#e7d6bb; --glow:#4f97e8; --shadow:rgba(79,151,232,.30); }
   .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
   .gloss { --g1:#8b6bff; --g2:#3df0a8; --glow:#8b6bff; --shadow:rgba(139,107,255,.26); }
@@ -217,7 +223,7 @@
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="biome">Buy Biome &middot; $39</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="biome">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="biome">Buy Now</span></div>
       <a class="more" href="biome.html">See how it works &rarr;</a>
-      <div class="meta">v1.5.9 · VST3 + AU instrument · macOS + Windows</div>
+      <div class="meta">v1.6.2 · VST3 + AU instrument · macOS + Windows</div>
     </div>
     <div class="card wizard">
       <span class="new">NEW</span>
@@ -238,14 +244,15 @@
     <div class="card gremlin">
       <span class="new">NEW</span>
       <div class="kind">The Mangler Box</div>
-      <h2 style="background:linear-gradient(135deg,#9ad63a,#c86cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GREMLIN</h2>
-      <p class="tag">Chop it. Stutter it. Smear it.</p>
-      <p class="desc">The glitch box for beats. Tempo-synced chops, a full-width Stutter rack (repeat, tape, gate, crush, warp, comb, grain, glitch, formant, ring, chaos and a Gross-Beat-style draw pad) and a granular smear that melts it all into a plate. 12 presets from polite hiccup to full meltdown.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gremlin.png?v=4.0.0"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=4.0.0" type="video/mp4"></video></div>
-      <span class="dl buy" style="background:linear-gradient(135deg,#9ad63a,#c86cff);box-shadow:0 6px 28px rgba(176,112,255,.30);" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
+      <h2>GREMLIN</h2>
+      <div class="gbar"><i></i><i></i><i></i><i></i></div>
+      <p class="tag">Four mischiefs. One box.</p>
+      <p class="desc">Chop, Smear, Stutter and Twitch, each with its own creature. Tempo-synced chops, a granular smear that melts into a plate, a stutter with its own patch bay, and Twitch: a per-step rack with a draw pad for gate, crush, warp, comb, grain, formant, ring and chaos. 12 presets from polite hiccup to full meltdown.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gremlin.png?v=5.0.0"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=5.0.0" type="video/mp4"></video></div>
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="gremlin">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Now</span></div>
       <a class="more" href="gremlin.html">See how it works &rarr;</a>
-      <div class="meta">v4.0.0 · VST3 + AU effect · macOS + Windows</div>
+      <div class="meta">v5.0.0 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card jelly">
       <span class="new">NEW</span>
