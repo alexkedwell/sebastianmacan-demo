@@ -182,6 +182,22 @@
   .modeshot{margin:10px 0 12px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
   .modeshot video{display:block;width:100%;height:auto;}
 </style>
+<style id="spacecss">
+  :root { --space:0; }
+  body { position:relative; }
+  .wrap { position:relative; z-index:1; }
+  /* the card dissolves into space: background + glow go, a thin glass edge stays */
+  .card.gremlin { background:rgba(20,20,24,calc(1 - var(--space))); border-color:rgba(255,255,255,calc(.08 + .16*var(--space)));
+    box-shadow:0 0 calc(80px*var(--space)) rgba(214,77,255,calc(.22*var(--space))); transition:none; }
+  .card.gremlin::before { opacity:calc(.16*(1 - var(--space))); }
+  .card.gremlin.inspace { backdrop-filter:blur(calc(2px*var(--space))); -webkit-backdrop-filter:blur(calc(2px*var(--space))); }
+  .card.gremlin h2 { text-shadow:0 0 calc(22px*var(--space)) rgba(255,255,255,calc(.55*var(--space))), 0 0 calc(50px*var(--space)) rgba(214,77,255,calc(.5*var(--space))); }
+  .card.gremlin .kind, .card.gremlin .desc, .card.gremlin .meta { color:rgba(200,204,214,calc(.62 + .3*var(--space))); }
+  .card.gremlin .shot { box-shadow:0 0 calc(40px*var(--space)) rgba(79,216,255,calc(.35*var(--space))); border-color:rgba(255,255,255,calc(.08 + .25*var(--space))); }
+  .card.gremlin .dl, .card.gremlin .cartbtn { position:relative; z-index:2; }
+  /* neighbours keep their solid card look so they read as cards floating in space */
+  .sect-title { position:relative; }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -608,5 +624,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script src="js/madewith.js?v=r1101"></script>
 <script src="js/loops.js?v=1" defer></script>
+<script src="js/spacewarp.js?v=1"></script>
 </body>
 </html>
