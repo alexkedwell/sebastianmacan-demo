@@ -3,7 +3,8 @@
    dissolves into a starfield + nebulae + a spiral galaxy; scrolls back out after.
    Exposes window.__space() for QA. */
 (function(){
-  var card = document.querySelector('.card.gremlin');
+  var PAGE = !!(document.currentScript && document.currentScript.dataset.mode==='page');
+  var card = PAGE ? document.body : document.querySelector('.card.gremlin');
   if(!card) return;
   var c = document.createElement('canvas');
   c.id = 'spacefx';
@@ -38,7 +39,8 @@
   var desk=false, cr=null;
   function measure(){
     var r = card.getBoundingClientRect(), vh = H;
-    desk = W > 640; cr = r;
+    desk = (W > 640) && !PAGE; cr = r;
+    if(PAGE){ kTarget = 1; scrollY = window.scrollY||0; return; }
     if(desk){ // desktop: space lives INSIDE the Gremlin card only, always on
       kTarget = (r.bottom > -40 && r.top < vh+40) ? 1 : 0; scrollY = window.scrollY||0; return; }
     // fade in while the card rises from the bottom; fade out while it leaves at the top
@@ -65,7 +67,7 @@
     var dt=Math.min(.05,(now-last)/1000); last=now; var T=(now-t0)/1000;
     k += (kTarget-k)*Math.min(1,dt*9);
     if(k<.004 && kTarget===0){ k=0; c.style.opacity=0; document.documentElement.style.setProperty('--space','0'); card.classList.remove('inspace'); requestAnimationFrame(frame); return; }
-    c.style.opacity=1; document.documentElement.style.setProperty('--space',k.toFixed(3)); card.classList.toggle('inspace',k>.5);
+    c.style.opacity=1; document.documentElement.style.setProperty('--space',k.toFixed(3)); if(!PAGE) card.classList.toggle('inspace',k>.5);
     ctx.clearRect(0,0,W,H);
     ctx.save();
     if(desk && cr){ ctx.beginPath(); var rr=18; ctx.moveTo(cr.left+rr,cr.top); ctx.arcTo(cr.right,cr.top,cr.right,cr.bottom,rr); ctx.arcTo(cr.right,cr.bottom,cr.left,cr.bottom,rr); ctx.arcTo(cr.left,cr.bottom,cr.left,cr.top,rr); ctx.arcTo(cr.left,cr.top,cr.right,cr.top,rr); ctx.closePath(); ctx.clip(); }
@@ -80,7 +82,10 @@
     nebula((X0+CW*.60), (Y0+CH*.10) - parN*.06, CW*.45, CH*.30, 'rgba(255,79,163,A)', .24*k);
     nebula((X0+CW*.05), (Y0+CH*.95) - parN*.03, CW*.40, CH*.32, 'rgba(154,214,58,A)', .18*k);
     // spiral galaxy, parallax + slow spin
-    if(desk){ // desktop: galaxies tucked into the card corners, away from the copy
+    if(PAGE){ // full page: galaxies in the outer margins, parallax with scroll
+      drawGalaxy(W*.92, H*.18 - par*.10 + Math.sin(T*.1)*6, T*.03, Math.min(1.4, W/420), k*.8);
+      drawGalaxy(W*.06, H*.85 - par*.06, 1.1+T*.02, Math.min(.9, W/520), k*.6);
+    } else if(desk){ // desktop: galaxies tucked into the card corners, away from the copy
       drawGalaxy((X0+CW*1.0), (Y0+CH*.04) + Math.sin(T*.1)*4, T*.03, Math.min(1.3, CW/300), k*.6);
       drawGalaxy((X0+CW*.02), (Y0+CH*.99), 1.1+T*.02, Math.min(.8, CW/520), k*.5);
     } else {
