@@ -218,6 +218,7 @@
   .card.gremlin .dl, .card.gremlin .cartbtn { position:relative; z-index:2; }
   /* neighbours keep their solid card look so they read as cards floating in space */
   .sect-title { position:relative; }
+  @media (min-width:641px){ .card.gremlin.inspace { backdrop-filter:none; -webkit-backdrop-filter:none; } }
 </style>
 </head>
 <body>
@@ -766,6 +767,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script src="js/madewith.js?v=r1101"></script>
 <script src="js/loops.js?v=1" defer></script>
-<script src="js/spacewarp.js?v=1"></script>
+<script src="js/spacewarp.js?v=2"></script>
 </body>
 </html>

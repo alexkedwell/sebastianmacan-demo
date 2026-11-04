@@ -35,8 +35,12 @@
     }
   }
   function smooth(x){ x=Math.max(0,Math.min(1,x)); return x*x*(3-2*x); }
+  var desk=false, cr=null;
   function measure(){
     var r = card.getBoundingClientRect(), vh = H;
+    desk = W > 640; cr = r;
+    if(desk){ // desktop: space lives INSIDE the Gremlin card only, always on
+      kTarget = (r.bottom > -40 && r.top < vh+40) ? 1 : 0; scrollY = window.scrollY||0; return; }
     // fade in while the card rises from the bottom; fade out while it leaves at the top
     var kin  = 1 - (r.top - vh*0.30)/(vh*0.70);
     var kout = (r.bottom - vh*0.02)/(vh*0.60);
@@ -63,17 +67,21 @@
     if(k<.004 && kTarget===0){ k=0; c.style.opacity=0; document.documentElement.style.setProperty('--space','0'); card.classList.remove('inspace'); requestAnimationFrame(frame); return; }
     c.style.opacity=1; document.documentElement.style.setProperty('--space',k.toFixed(3)); card.classList.toggle('inspace',k>.5);
     ctx.clearRect(0,0,W,H);
+    ctx.save();
+    if(desk && cr){ ctx.beginPath(); var rr=18; ctx.moveTo(cr.left+rr,cr.top); ctx.arcTo(cr.right,cr.top,cr.right,cr.bottom,rr); ctx.arcTo(cr.right,cr.bottom,cr.left,cr.bottom,rr); ctx.arcTo(cr.left,cr.bottom,cr.left,cr.top,rr); ctx.arcTo(cr.left,cr.top,cr.right,cr.top,rr); ctx.closePath(); ctx.clip(); }
     // deep space base
     ctx.fillStyle='rgba(3,4,12,'+(k*0.96)+')'; ctx.fillRect(0,0,W,H);
-    var par = scrollY; var warp=(1-k)*k*4; // streak while transitioning (warp-in / warp-out)
+    var par = scrollY; var warp = desk ? 0 : (1-k)*k*4;
+    var X0=0,Y0=0,CW=W,CH=H; if(desk&&cr){ X0=cr.left; Y0=cr.top; CW=cr.width; CH=cr.height; } // streak while transitioning (warp-in / warp-out)
+    var parN = desk ? 0 : par;
     // nebulae in the four Gremlin colours, slow drift
-    nebula(W*.18 + Math.sin(T*.07)*20, H*.30 - par*.05, W*.65, H*.46, 'rgba(214,77,255,A)', .34*k);
-    nebula(W*.85 + Math.cos(T*.05)*25, H*.72 - par*.04, W*.70, H*.52, 'rgba(79,216,255,A)', .28*k);
-    nebula(W*.60, H*.10 - par*.06, W*.45, H*.30, 'rgba(255,79,163,A)', .24*k);
-    nebula(W*.05, H*.95 - par*.03, W*.40, H*.32, 'rgba(154,214,58,A)', .18*k);
+    nebula((X0+CW*.18) + Math.sin(T*.07)*20, (Y0+CH*.30) - parN*.05, CW*.65, CH*.46, 'rgba(214,77,255,A)', .34*k);
+    nebula((X0+CW*.85) + Math.cos(T*.05)*25, (Y0+CH*.72) - parN*.04, CW*.70, CH*.52, 'rgba(79,216,255,A)', .28*k);
+    nebula((X0+CW*.60), (Y0+CH*.10) - parN*.06, CW*.45, CH*.30, 'rgba(255,79,163,A)', .24*k);
+    nebula((X0+CW*.05), (Y0+CH*.95) - parN*.03, CW*.40, CH*.32, 'rgba(154,214,58,A)', .18*k);
     // spiral galaxy, parallax + slow spin
-    drawGalaxy(W*.78, H*.20 - par*.08 + Math.sin(T*.1)*6, T*.03, Math.min(1.6, W/300), k*.95);
-    drawGalaxy(W*.15, H*.78 - par*.11, 1.1+T*.02, Math.min(.9, W/520), k*.7);
+    drawGalaxy((X0+CW*.78), (Y0+CH*.20) - parN*.08 + Math.sin(T*.1)*6, T*.03, Math.min(1.6, CW/300), k*.95);
+    drawGalaxy((X0+CW*.15), (Y0+CH*.78) - parN*.11, 1.1+T*.02, Math.min(.9, CW/520), k*.7);
     // stars with parallax + twinkle
     for(var i=0;i<stars.length;i++){ var s=stars[i]; var sp=[.04,.09,.16][s.l];
       var y = ((s.y - par*sp) % (H*1.6)); if(y<0) y+=H*1.6; y-=H*.3;
@@ -91,6 +99,7 @@
       var f=1-sh.t/sh.life; var x=sh.x+sh.vx*sh.t, y=sh.y+sh.vy*sh.t;
       var g=ctx.createLinearGradient(x,y,x-sh.vx*.12,y-sh.vy*.12); g.addColorStop(0,'rgba(255,255,255,'+(.95*f*k)+')'); g.addColorStop(1,'rgba(255,255,255,0)');
       ctx.strokeStyle=g; ctx.lineWidth=1.6; ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x-sh.vx*.12,y-sh.vy*.12); ctx.stroke(); }
+    ctx.restore();
     requestAnimationFrame(frame);
   }
   window.addEventListener('resize', function(){ resize(); measure(); });
