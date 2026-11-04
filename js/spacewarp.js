@@ -80,8 +80,13 @@
     nebula((X0+CW*.60), (Y0+CH*.10) - parN*.06, CW*.45, CH*.30, 'rgba(255,79,163,A)', .24*k);
     nebula((X0+CW*.05), (Y0+CH*.95) - parN*.03, CW*.40, CH*.32, 'rgba(154,214,58,A)', .18*k);
     // spiral galaxy, parallax + slow spin
-    drawGalaxy((X0+CW*.78), (Y0+CH*.20) - parN*.08 + Math.sin(T*.1)*6, T*.03, Math.min(1.6, CW/300), k*.95);
-    drawGalaxy((X0+CW*.15), (Y0+CH*.78) - parN*.11, 1.1+T*.02, Math.min(.9, CW/520), k*.7);
+    if(desk){ // desktop: galaxies tucked into the card corners, away from the copy
+      drawGalaxy((X0+CW*1.0), (Y0+CH*.04) + Math.sin(T*.1)*4, T*.03, Math.min(1.3, CW/300), k*.6);
+      drawGalaxy((X0+CW*.02), (Y0+CH*.99), 1.1+T*.02, Math.min(.8, CW/520), k*.5);
+    } else {
+      drawGalaxy((X0+CW*.78), (Y0+CH*.20) - parN*.08 + Math.sin(T*.1)*6, T*.03, Math.min(1.6, CW/300), k*.95);
+      drawGalaxy((X0+CW*.15), (Y0+CH*.78) - parN*.11, 1.1+T*.02, Math.min(.9, CW/520), k*.7);
+    }
     // stars with parallax + twinkle
     for(var i=0;i<stars.length;i++){ var s=stars[i]; var sp=[.04,.09,.16][s.l];
       var y = ((s.y - par*sp) % (H*1.6)); if(y<0) y+=H*1.6; y-=H*.3;
