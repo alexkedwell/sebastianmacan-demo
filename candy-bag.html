@@ -66,22 +66,21 @@
   .dl.dl-win { background:none; border:1px solid var(--g1); color:var(--g1); box-shadow:none; }
   .dlrow { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
   .freetag { color:var(--g1); }
-  .bimg { background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); padding:150px 18px 0; overflow:hidden; border:1px solid #4cc2ff; }
+  .bimg { background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); padding:64px 18px 0; overflow:hidden; border:1px solid #4cc2ff; }
   .bimg .candystage { aspect-ratio:4/3; overflow:visible; }
-  .bimg .candystage .candy { bottom:30%; }
-  .bimg .candystage .cf { bottom:24%; }
+  .bimg .candystage .candy { bottom:34%; width:34%; animation-name:candyhop2; }
+  .bimg .candystage .cf { bottom:28%; width:42%; }
+  @keyframes candyhop2 { 0%,100% { transform:translateY(0) rotate(var(--rot)); } 50% { transform:translateY(-60%) rotate(calc(var(--rot) + 10deg)); } }
   .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
   .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
   .candystage .bagback { left:13%; width:74%; bottom:0; }
   .candystage .bagfront { left:13%; width:74%; bottom:0; z-index:3; filter:drop-shadow(0 14px 22px rgba(0,0,0,.35)); }
-  .candystage .candy { width:38%; bottom:36%; z-index:1; animation:candyhop 2.4s ease-in-out infinite; transform-origin:50% 60%; cursor:pointer; }
+  .candystage .candy { width:38%; bottom:36%; z-index:1; animation:candyhop 2.4s ease-in-out infinite; transform-origin:50% 60%;  }
   .candystage .cl { left:5%; --rot:-24deg; animation-delay:.8s; }
   .candystage .cf { left:27%; width:46%; bottom:30%; z-index:2; --rot:2deg; animation-delay:0s; }
   .candystage .cr { left:58%; --rot:24deg; animation-delay:1.6s; }
-  .candystage .candy.pop { animation:candypop .9s cubic-bezier(.2,.9,.3,1.2) 1; z-index:4; }
   @media (prefers-reduced-motion:reduce) { .candystage .candy { animation:none; } }
   @keyframes candyhop { 0%,100% { transform:translateY(0) rotate(var(--rot)); } 50% { transform:translateY(-42%) rotate(calc(var(--rot) + 10deg)); } }
-  @keyframes candypop { 0% { transform:translateY(0) rotate(var(--rot)); } 45% { transform:translateY(-120%) rotate(calc(var(--rot) + 360deg)) scale(1.12); } 100% { transform:translateY(0) rotate(var(--rot)); } }
 </style>
 </head>
 <body>
@@ -163,10 +162,6 @@
     <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
-  <script>
-  document.querySelectorAll('.candystage .candy').forEach(function(k){k.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();k.classList.remove('pop');void k.offsetWidth;k.classList.add('pop');});
-    k.addEventListener('animationend',function(e){if(e.animationName==='candypop')k.classList.remove('pop');});});
-  </script>
 <script src="js/email-gate.js?v=cb1" defer></script>
 </body>
 </html>
