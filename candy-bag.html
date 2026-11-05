@@ -66,8 +66,10 @@
   .dl.dl-win { background:none; border:1px solid var(--g1); color:var(--g1); box-shadow:none; }
   .dlrow { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
   .freetag { color:var(--g1); }
-  .bimg { background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); padding:18px 18px 0; border:1px solid #4cc2ff; }
-  .bimg .candystage { aspect-ratio:4/3; }
+  .bimg { background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); padding:150px 18px 0; overflow:hidden; border:1px solid #4cc2ff; }
+  .bimg .candystage { aspect-ratio:4/3; overflow:visible; }
+  .bimg .candystage .candy { bottom:30%; }
+  .bimg .candystage .cf { bottom:24%; }
   .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
   .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
   .candystage .bagback { left:13%; width:74%; bottom:0; }
@@ -153,7 +155,7 @@
   <div class="cta"><div class="dlrow"><a class="dl" href="downloads/CandyBag-macOS.zip">Grab the bag &middot; Mac</a><a class="dl dl-win" href="downloads/CandyBag-Windows.zip">Grab the bag &middot; Windows</a></div><div class="meta">3 installers in one zip. Download once, unzip, done.</div></div>
 
   <div class="mathbox">
-    Three plugins, <b>$0</b>. No email, no account, no catches. Unzip, install, make noise.
+    Three plugins, <b>$0</b>. No account, no catches. Unzip, install, make noise.
   </div>
 
   <footer>
@@ -165,5 +167,6 @@
   document.querySelectorAll('.candystage .candy').forEach(function(k){k.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();k.classList.remove('pop');void k.offsetWidth;k.classList.add('pop');});
     k.addEventListener('animationend',function(e){if(e.animationName==='candypop')k.classList.remove('pop');});});
   </script>
+<script src="js/email-gate.js?v=cb1" defer></script>
 </body>
 </html>

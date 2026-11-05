@@ -20,6 +20,7 @@
     sugar:  { g1: "#ff8fc8", g2: "#7ef0d4", shadow: "rgba(255,143,200,.30)" },
     bounce: { g1: "#ff9f1c", g2: "#ffe14d", shadow: "rgba(255,159,28,.30)" },
     liftoff:{ g1: "#ff6b4a", g2: "#4ad9ff", shadow: "rgba(255,107,74,.30)" },
+    candybag: { g1: "#4cc2ff", g2: "#5b7cff", shadow: "rgba(76,194,255,.30)", label: "Candy Bag" },
     orbit:  { g1: "#ff9d2e", g2: "#ffd76b", shadow: "rgba(255,157,46,.30)" },
     prism:  { g1: "#ff4ad9", g2: "#4affd9", shadow: "rgba(255,74,217,.30)" },
     jelly:  { g1: "#ff7ab8", g2: "#8fe8c0", shadow: "rgba(255,122,184,.30)" },
@@ -116,7 +117,7 @@
 
   function openModal(href, plugin) {
     var acc = ACCENTS[plugin] || ACCENTS.chaos;
-    var name = plugin.charAt(0).toUpperCase() + plugin.slice(1);
+    var name = acc.label || (plugin.charAt(0).toUpperCase() + plugin.slice(1));
 
     var overlay = document.createElement("div");
     overlay.className = "eg-overlay";
