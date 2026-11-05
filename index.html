@@ -225,9 +225,8 @@
   .spotrow .sect-title { margin-top:0; }
   .spotrow .sect-title em { font-style:normal; color:var(--dim); font-weight:700; letter-spacing:.08em; text-transform:none; font-size:12px; margin-left:10px; }
   .spotgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin-top:12px; }
-  .spotcard { border:1px solid var(--line); background:var(--card); border-radius:18px; padding:30px 16px 14px; position:relative; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .spotcard { border:1px solid var(--line); background:var(--card); border-radius:18px; padding:16px 16px 14px; position:relative; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .spotcard:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
-  .spotcard .candy { position:absolute; top:10px; right:12px; width:26px; height:26px; z-index:2; filter:drop-shadow(0 2px 6px rgba(0,0,0,.5)); }
   .spotcard .shot { aspect-ratio:4/3; border-radius:12px; overflow:hidden; background:#0d0d10; display:flex; align-items:center; justify-content:center; }
   .spotcard .shot video { display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
   .spotcard .sinner { padding:14px 4px 4px; display:flex; flex-direction:column; }
@@ -267,7 +266,6 @@
   <section class="spotrow" id="spotlight">
   <div class="spotgrid">
     <div class="spotcard biome">
-      <img class="candy" src="icons/candy-192.png" alt="" aria-hidden="true">
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/biome.png?v=1.5.3"><source src="https://video.sebastianmacan.com/img/video/biome_ui_loop.mp4?v=1.5.3" type="video/mp4"></video></div>
       <div class="sinner">
         <div class="kind">Granular Texture Blender</div>
@@ -278,7 +276,6 @@
       </div>
     </div>
     <div class="spotcard wizard">
-      <img class="candy" src="icons/candy-192.png" alt="" aria-hidden="true">
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chordsmith.png?v=1.7.3i"><source src="https://video.sebastianmacan.com/img/video/chordsmith_ui_loop.mp4?v=1.7.3i" type="video/mp4"></video></div>
       <div class="sinner">
         <div class="kind">Chord &amp; Melody Generator</div>
@@ -289,7 +286,6 @@
       </div>
     </div>
     <div class="spotcard honey">
-      <img class="candy" src="icons/candy-192.png" alt="" aria-hidden="true">
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/honey_cassette.png?v=3.2.4"><source src="https://video.sebastianmacan.com/img/video/honey_ui_loop.mp4?v=3.2.4" type="video/mp4"></video></div>
       <div class="sinner">
         <div class="kind">Tape Machine</div>
