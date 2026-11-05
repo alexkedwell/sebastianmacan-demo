@@ -1,4 +1,4 @@
-/* Gremlin shop card -> deep space takeover (scroll-driven). Mockup v1, Nov 3 2026.
+/* Gremlin shop card -> deep space takeover (scroll-driven). v5 Nov 4 2026: phone smoothing (stable canvas size, seeded stars, hysteresis, no mobile blur).
    Fixed canvas behind the page. As the Gremlin card scrolls into view the page
    dissolves into a starfield + nebulae + a spiral galaxy; scrolls back out after.
    Exposes window.__space() for QA. */
@@ -15,24 +15,30 @@
   var stars=[], shoots=[], galaxy=[];
   var COLS=['#9ad63a','#d64dff','#ff4fa3','#4fd8ff']; // Gremlin quadrant colours
 
-  function rnd(a,b){ return a + Math.random()*(b-a); }
+  var seed=1337; function srand(){ seed|=0; seed=seed+0x6D2B79F5|0; var t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }
+  function rnd(a,b){ return a + srand()*(b-a); }
+  var Hmax=0;
   function resize(){
     DPR = Math.min(window.devicePixelRatio||1, 2);
-    W = window.innerWidth; H = window.innerHeight;
-    c.width = W*DPR; c.height = H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
-    build();
+    var w = window.innerWidth, h = window.innerHeight;
+    // phones: the browser toolbar collapsing/expanding fires resize with a small height change.
+    // Keep the canvas at the tallest height seen so the bitmap never reallocates mid-scroll (that reallocation was the glitch).
+    if(w===W && Hmax && h<=Hmax && Math.abs(h-H)<Hmax*.35){ H=h; return; }
+    W=w; H=h; Hmax=Math.max(Hmax,h);
+    c.width = W*DPR; c.height = Hmax*DPR; c.style.height=Hmax+'px'; ctx.setTransform(DPR,0,0,DPR,0,0);
+    seed=1337; build();
   }
   function build(){
     stars=[]; var n = Math.round((W*H)/900); // ~330 on a phone, ~900 desktop
     for(var i=0;i<n;i++){
-      var layer = Math.random()<.55?0:(Math.random()<.65?1:2); // 0 far, 2 near
-      stars.push({x:Math.random()*W, y:Math.random()*H*1.6, r:[.7,1.2,2.1][layer]*rnd(.7,1.4), l:layer,
-        tw:rnd(0,6.28), ts:rnd(.6,2.2), col: Math.random()<.18 ? COLS[(Math.random()*4)|0] : '#ffffff', a:rnd(.6,1), big: Math.random()<.025});
+      var layer = srand()<.55?0:(srand()<.65?1:2); // 0 far, 2 near
+      stars.push({x:srand()*W, y:srand()*Hmax*1.6, r:[.7,1.2,2.1][layer]*rnd(.7,1.4), l:layer,
+        tw:rnd(0,6.28), ts:rnd(.6,2.2), col: srand()<.18 ? COLS[(srand()*4)|0] : '#ffffff', a:rnd(.6,1), big: srand()<.025});
     }
     galaxy=[]; var arms=2, per=260;
     for(var a=0;a<arms;a++) for(var i=0;i<per;i++){
       var f=i/per, ang = f*4.6 + a*Math.PI, rad = 8 + f*f*150;
-      galaxy.push({ang:ang+rnd(-.22,.22), rad:rad*rnd(.85,1.12), s:rnd(.5,1.6), col: Math.random()<.5?'#ffffff':(Math.random()<.5?'#d64dff':'#4fd8ff'), a:rnd(.25,.9)*(1-f*.6)});
+      galaxy.push({ang:ang+rnd(-.22,.22), rad:rad*rnd(.85,1.12), s:rnd(.5,1.6), col: srand()<.5?'#ffffff':(srand()<.5?'#d64dff':'#4fd8ff'), a:rnd(.25,.9)*(1-f*.6)});
     }
   }
   function smooth(x){ x=Math.max(0,Math.min(1,x)); return x*x*(3-2*x); }
@@ -67,12 +73,12 @@
     var dt=Math.min(.05,(now-last)/1000); last=now; var T=(now-t0)/1000;
     k += (kTarget-k)*Math.min(1,dt*9);
     if(k<.004 && kTarget===0){ k=0; c.style.opacity=0; document.documentElement.style.setProperty('--space','0'); card.classList.remove('inspace'); requestAnimationFrame(frame); return; }
-    c.style.opacity=1; document.documentElement.style.setProperty('--space',k.toFixed(3)); if(!PAGE) card.classList.toggle('inspace',k>.5);
-    ctx.clearRect(0,0,W,H);
+    c.style.opacity=1; document.documentElement.style.setProperty('--space',k.toFixed(3)); if(!PAGE){ if(k>.6) card.classList.add('inspace'); else if(k<.4) card.classList.remove('inspace'); }
+    ctx.clearRect(0,0,W,Hmax);
     ctx.save();
     if(desk && cr){ ctx.beginPath(); var rr=18; ctx.moveTo(cr.left+rr,cr.top); ctx.arcTo(cr.right,cr.top,cr.right,cr.bottom,rr); ctx.arcTo(cr.right,cr.bottom,cr.left,cr.bottom,rr); ctx.arcTo(cr.left,cr.bottom,cr.left,cr.top,rr); ctx.arcTo(cr.left,cr.top,cr.right,cr.top,rr); ctx.closePath(); ctx.clip(); }
     // deep space base
-    ctx.fillStyle='rgba(3,4,12,'+(k*0.96)+')'; ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='rgba(3,4,12,'+(k*0.96)+')'; ctx.fillRect(0,0,W,Hmax);
     var par = scrollY; var warp = desk ? 0 : (1-k)*k*4;
     var X0=0,Y0=0,CW=W,CH=H; if(desk&&cr){ X0=cr.left; Y0=cr.top; CW=cr.width; CH=cr.height; } // streak while transitioning (warp-in / warp-out)
     var parN = desk ? 0 : par;
@@ -94,13 +100,13 @@
     }
     // stars with parallax + twinkle
     for(var i=0;i<stars.length;i++){ var s=stars[i]; var sp=[.04,.09,.16][s.l];
-      var y = ((s.y - par*sp) % (H*1.6)); if(y<0) y+=H*1.6; y-=H*.3;
-      if(y<-10||y>H+10) continue;
+      var y = ((s.y - par*sp) % (Hmax*1.6)); if(y<0) y+=Hmax*1.6; y-=Hmax*.3;
+      if(y<-10||y>Hmax+10) continue;
       var tw = .65 + .35*Math.sin(T*s.ts + s.tw); ctx.globalAlpha = s.a*tw*k;
       ctx.fillStyle = s.col;
-      if(warp>.08){ ctx.fillRect(s.x - s.r*.5, y - warp*s.r*22, s.r, warp*s.r*44 + s.r); }
-      else { ctx.beginPath(); ctx.arc(s.x,y,s.r,0,6.283); ctx.fill();
-        if(s.big){ ctx.globalAlpha*= .7; ctx.fillRect(s.x-s.r*5, y-.5, s.r*10, 1); ctx.fillRect(s.x-.5, y-s.r*5, 1, s.r*10); } }
+      ctx.beginPath(); ctx.arc(s.x,y,s.r,0,6.283); ctx.fill();
+      if(warp>.02){ var L=warp*s.r*44; ctx.globalAlpha*=Math.min(1,warp*6); ctx.fillRect(s.x - s.r*.5, y - L*.5, s.r, L); ctx.globalAlpha = s.a*tw*k; }
+      if(s.big){ ctx.globalAlpha*= .7; ctx.fillRect(s.x-s.r*5, y-.5, s.r*10, 1); ctx.fillRect(s.x-.5, y-s.r*5, 1, s.r*10); }
     }
     ctx.globalAlpha=1;
     // shooting stars

@@ -47,7 +47,7 @@ print(f"catalog {len(CAT)} items, {len(BASK)} baskets, {len(ITEMS)} product copi
 # 4. plugin count: hero copy on index (and demo-site) must equal the number of plugin cards. Alex caught "Ten" after Gremlin (Sep 30).
 WORDS = {9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}
 idx = open(f"{S}/index.html").read()
-midi_cards = {"hitmaker", "clubchords", "tears", "soulchords"}
+midi_cards = {"hitmaker", "clubchords", "tears", "soulchords", "candyad"}  # candyad = ad card for the free bag, not a plugin
 ncards = len(set(re.findall(r'class="card (\w+)"', idx)) - midi_cards)
 for page in [f"{S}/index.html", f"{H}/demo-site/index.html"]:
     if not os.path.exists(page): continue

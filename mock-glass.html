@@ -1,0 +1,54 @@
+<!doctype html><html><head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script><meta charset="utf-8"><title>Glass case mock</title>
+<link rel="stylesheet" href="x"><style>
+body{margin:0;background:#0a0a0c;color:#f2f2f4;font-family:-apple-system,Inter,system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 24px}
+.lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8a8a94;font-weight:800;margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:56px}
+.biome{--g1:#3ecf6e;--g2:#5ad9d0;--shadow:rgba(62,207,110,.26)} .wizard{--g1:#60aaff;--g2:#9fd4ff;--shadow:rgba(96,170,255,.26)} .honey{--g1:#d4712f;--g2:#e8d9bb;--shadow:rgba(212,113,47,.3)}
+.card{position:relative;border:1px solid #222228;background:#141418;border-radius:18px;padding:16px 16px 14px;display:flex;flex-direction:column;overflow:hidden}
+.kind{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a8a94;font-weight:700}
+h3{margin:4px 0;font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1;background:linear-gradient(135deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tag{font-size:15px;font-weight:700;margin-bottom:6px}.price{color:#8a8a94;font-size:13px}.more{margin-top:8px;font-size:13px;font-weight:700;color:#8a8a94}
+/* ---- glass case ---- */
+.case{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#0d0d10;display:flex;align-items:center;justify-content:center}
+.case video{max-width:100%;max-height:100%;width:auto;height:auto;display:block}
+.case::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,.10) 18%,rgba(255,255,255,0) 40%),linear-gradient(115deg,rgba(255,255,255,0) 50%,rgba(255,255,255,.10) 100%);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(255,255,255,.12),inset 0 0 0 2px rgba(255,255,255,.22),inset 0 0 40px rgba(255,255,255,.06)}
+.case::after{content:"";position:absolute;z-index:2;pointer-events:none;left:-30%;top:-10%;width:40%;height:130%;transform:rotate(18deg);
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.14),rgba(255,255,255,0))}
+/* variant B: tinted glass + thicker frame + bottom rail */
+.b .case{box-shadow:0 0 0 3px #1c1c22,0 0 0 4px rgba(255,255,255,.08),0 18px 40px rgba(0,0,0,.5)}
+.b .case::before{background:linear-gradient(180deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 35%,rgba(0,0,0,0) 70%,rgba(0,0,0,.25) 100%),linear-gradient(115deg,rgba(255,255,255,.14),rgba(255,255,255,0) 40%)}
+.rail{position:absolute;left:0;right:0;bottom:0;height:10px;z-index:3;background:linear-gradient(180deg,#2a2a32,#17171c);border-top:1px solid rgba(255,255,255,.18)}
+/* scoop */
+.scoop{position:absolute;z-index:4;left:-2px;bottom:-4px;width:84px;height:68px;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(0,0,0,.6))}
+.b .scoop{left:0;bottom:8px}
+.hover .card:hover .scoop{transform:rotate(-14deg) translate(3px,-4px);transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.scoop{transition:transform .35s}
+</style></head><body><div class="wrap">
+<p class="lbl">A · clear glass, chrome scoop</p>
+<div class="grid hover" id="A"></div>
+<p class="lbl">B · tinted case w/ steel rail, scoop tinted to each plugin</p>
+<div class="grid hover b" id="B"></div>
+<script>
+const P=[['biome','BIOME','Granular Texture Blender','Your sample, overgrown.',39,'biome.png?v=1.5.3','biome_ui_loop.mp4?v=1.5.3'],
+['wizard','CHORDSMITH','Chord &amp; Melody Generator','Hit songs on tap. 20 genres.',39,'chordsmith.png?v=1.7.3i','chordsmith_ui_loop.mp4?v=1.7.3i'],
+['honey','HONEY','Tape Machine',"Sebastian Macan's tape machine.",15,'honey_cassette.png?v=3.2.4','honey_ui_loop.mp4?v=3.2.4']];
+function scoop(tint){
+ const h=tint?'url(#g)':'url(#m)';
+ return `<svg class="scoop" viewBox="0 0 80 64"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="var(--g1)"/><stop offset="1" stop-color="var(--g2)"/></linearGradient><linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#c8cbd4"/><stop offset="1" stop-color="#7a7e8a"/></linearGradient><radialGradient id="cup" cx=".35" cy=".3"><stop offset="0" stop-color="#eef0f4"/><stop offset=".6" stop-color="#aeb2bd"/><stop offset="1" stop-color="#5c606b"/></radialGradient></defs>
+ <path d="M46 34 L74 10" stroke="rgba(0,0,0,.5)" stroke-width="11" stroke-linecap="round"/>
+ <path d="M46 34 L74 10" stroke="${h}" stroke-width="8" stroke-linecap="round"/>
+ <path d="M48 32 L72 11" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/>
+ <path d="M6 22 Q6 58 28 58 Q50 58 50 40 L50 26 Z" fill="url(#cup)" stroke="rgba(0,0,0,.5)" stroke-width="1.2"/>
+ <ellipse cx="28" cy="24" rx="22" ry="7" fill="#3a3d46" stroke="rgba(255,255,255,.75)" stroke-width="2"/>
+ <ellipse cx="28" cy="24" rx="17" ry="4.5" fill="#1b1d24"/>
+ <path d="M10 30 Q12 50 28 54" stroke="rgba(255,255,255,.35)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`}
+for(const [id,tint] of [['A',false],['B',true]]){
+ document.getElementById(id).innerHTML=P.map(([c,n,k,t,p,po,v])=>`<div class="card ${c}">
+  <div class="case"><video autoplay muted loop playsinline poster="img/ui/${po}"><source src="https://video.sebastianmacan.com/img/video/${v}" type="video/mp4"></video>${id==='B'?'<div class="rail"></div>':''}${scoop(tint)}</div>
+  <div style="padding:14px 4px 4px"><div class="kind">${k}</div><h3>${n}</h3><div class="tag">${t}</div><div class="price">$${p} · VST3 + AU · macOS + Windows</div><div class="more">See how it works →</div></div></div>`).join('')}
+</script></div></body></html>
