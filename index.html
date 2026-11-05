@@ -221,8 +221,21 @@
   /* neighbours keep their solid card look so they read as cards floating in space */
   .sect-title { position:relative; }
   .freerow { margin-top:34px; }
+  .spotrow { margin-top:34px; }
+  .spotrow .sect-title { margin-top:0; color:#f2f2f4; }
+  .spotrow .sect-title em { font-style:normal; color:var(--dim); font-weight:700; letter-spacing:.08em; text-transform:none; font-size:12px; margin-left:10px; }
+  .spotgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin-top:12px; }
+  .spotcard { border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; position:relative; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .spotcard:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
+  .spotcard video { display:block; width:100%; height:auto; background:#0d0d10; }
+  .spotcard .sinner { padding:16px 20px 20px; display:flex; flex-direction:column; }
+  .spotcard .kind { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  .spotcard h3 { margin:4px 0 4px; font-size:clamp(28px,3.4vw,36px); font-weight:900; letter-spacing:-.03em; line-height:1; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .spotcard .tag { font-size:15px; font-weight:700; margin-bottom:6px; }
+  .spotcard .price { color:var(--dim); font-size:13px; }
+  .spotcard .more { margin-top:8px; }
   .freerow .sect-title { margin-top:0; color:#ffd84a; }
-  .freegrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; margin-top:10px; }
+  .freegrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; margin-top:10px; }
   .freecard { border:1px solid rgba(255,216,74,.28); background:var(--card); border-radius:16px; padding:16px 16px 14px; display:flex; flex-direction:column; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease; }
   .freecard:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(255,216,74,.12); }
   .freecard .pill { position:absolute; top:12px; right:12px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid rgba(255,216,74,.5); color:#ffd84a; }
@@ -230,7 +243,7 @@
   .freecard h3 { margin:4px 0 6px; font-size:26px; font-weight:900; letter-spacing:-.03em; line-height:1; }
   .freecard p { margin:0 0 10px; color:var(--dim); font-size:13.5px; line-height:1.45; }
   .freecard .shot { border-radius:10px; overflow:hidden; margin-top:auto; }
-  .freecard .shot img { width:100%; display:block; }
+  .freecard .shot video { width:100%; display:block; background:#0d0d10; }
   .freecard .dl { margin-top:12px; font-size:13.5px; padding:10px 14px; border-radius:999px; }
   .freecard .more { margin-top:8px; }
   @media (min-width:641px){ .card.gremlin.inspace { backdrop-filter:none; -webkit-backdrop-filter:none; } }
@@ -249,6 +262,41 @@
     <h1>A whole <em>candy store</em> of sound.</h1>
     <p class="sub">Twelve plugins and 4796 MIDI chord progressions for producers who crave something unique. Grab a flavor, drop it in your DAW, create something sweet.</p>
   </section>
+  <section class="spotrow" id="spotlight">
+  <div class="sect-title">Spotlight <em>the three we'd show you first</em></div>
+  <div class="spotgrid">
+    <div class="spotcard biome">
+      <video autoplay muted loop playsinline preload="metadata" poster="img/ui/biome.png?v=1.5.3"><source src="https://video.sebastianmacan.com/img/video/biome_ui_loop.mp4?v=1.5.3" type="video/mp4"></video>
+      <div class="sinner">
+        <div class="kind">Granular Texture Blender</div>
+        <h3>BIOME</h3>
+        <div class="tag">Your sample, overgrown.</div>
+        <div class="price">$39 &middot; VST3 + AU &middot; macOS + Windows</div>
+        <a class="more" href="biome.html">See how it works &rarr;</a>
+      </div>
+    </div>
+    <div class="spotcard wizard">
+      <video autoplay muted loop playsinline preload="metadata" poster="img/ui/chordsmith.png?v=1.7.3i"><source src="https://video.sebastianmacan.com/img/video/chordsmith_ui_loop.mp4?v=1.7.3i" type="video/mp4"></video>
+      <div class="sinner">
+        <div class="kind">Chord &amp; Melody Generator</div>
+        <h3>CHORDSMITH</h3>
+        <div class="tag">Hit songs on tap. 20 genres.</div>
+        <div class="price">$39 &middot; VST3 + AU &middot; macOS + Windows</div>
+        <a class="more" href="chordsmith.html">See how it works &rarr;</a>
+      </div>
+    </div>
+    <div class="spotcard honey">
+      <video autoplay muted loop playsinline preload="metadata" poster="img/ui/honey_cassette.png?v=3.2.4"><source src="https://video.sebastianmacan.com/img/video/honey_ui_loop.mp4?v=3.2.4" type="video/mp4"></video>
+      <div class="sinner">
+        <div class="kind">Tape Machine</div>
+        <h3>HONEY</h3>
+        <div class="tag">Sebastian Macan's tape machine.</div>
+        <div class="price">$15 &middot; VST3 + AU &middot; macOS + Windows</div>
+        <a class="more" href="honey.html">See how it works &rarr;</a>
+      </div>
+    </div>
+  </div>
+  </section>
 
   <section class="freerow" id="free">
   <div class="sect-title">Free · Grab these first</div>
@@ -258,7 +306,7 @@
       <div class="kind">Free Rhythm Chopper</div>
       <h3 style="background:linear-gradient(135deg,#8fd62a,#d4ff5a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">CHOP</h3>
       <p>Chomps any sound into a groove.</p>
-      <div class="shot"><img src="img/ui/chop.png?v=1.1.1" alt="CHOP plugin UI" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chop.png?v=1.1.1"><source src="https://video.sebastianmacan.com/img/video/chop_ui_loop.mp4?v=1.1.1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,#8fd62a,#d4ff5a);box-shadow:0 6px 22px rgba(143,214,42,.28);" href="downloads/Chop-v1.1.1-macOS.pkg">Download CHOP</a>
       <a class="more" href="chop.html">See how it works &rarr;</a>
     </div>
@@ -267,7 +315,7 @@
       <div class="kind">Free Glitch Repeater</div>
       <h3 style="background:linear-gradient(135deg,#ff7a2e,#ffb347);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SCRAP</h3>
       <p>Grabs a slice and won't let go.</p>
-      <div class="shot"><img src="img/ui/scrap.png?v=1.0.1" alt="SCRAP plugin UI" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/scrap.png?v=1.0.1"><source src="https://video.sebastianmacan.com/img/video/scrap_ui_loop.mp4?v=1.0.1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,#ff7a2e,#ffb347);box-shadow:0 6px 22px rgba(255,122,46,.28);" href="downloads/Scrap-v1.0.1-macOS.pkg">Download SCRAP</a>
       <a class="more" href="scrap.html">See how it works &rarr;</a>
     </div>
@@ -276,12 +324,13 @@
       <div class="kind">3D Auto-Pan</div>
       <h3 style="background:linear-gradient(135deg,#ff9d2e,#ffd76b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">ORBIT</h3>
       <p>Sounds physically circle the listener.</p>
-      <div class="shot"><img src="img/ui/orbit.png?v=1.0" alt="ORBIT plugin UI" loading="lazy"></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/orbit.png?v=1.0"><source src="https://video.sebastianmacan.com/img/video/orbit_ui_loop.mp4?v=1.0" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,#ff9d2e,#ffd76b);box-shadow:0 6px 22px rgba(255,157,46,.28);" href="downloads/Orbit-v1.0-macOS.pkg">Download ORBIT</a>
       <a class="more" href="orbit.html">See how it works &rarr;</a>
     </div>
   </div>
   </section>
+
 
   <div class="sect-title" id="instruments">Instruments</div>
   <div class="grid">
@@ -786,7 +835,7 @@
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.
 // Real links/buttons inside the card (Download, See how it works) keep working normally.
-document.querySelectorAll('.card').forEach(function(card){
+document.querySelectorAll('.card, .freecard, .spotcard').forEach(function(card){
   var more = card.querySelector('a.more');
   if(!more) return;
   card.style.cursor = 'pointer';
