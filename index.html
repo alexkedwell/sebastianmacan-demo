@@ -220,6 +220,19 @@
   .card.gremlin .dl, .card.gremlin .cartbtn { position:relative; z-index:2; }
   /* neighbours keep their solid card look so they read as cards floating in space */
   .sect-title { position:relative; }
+  .freerow { margin-top:34px; }
+  .freerow .sect-title { margin-top:0; color:#ffd84a; }
+  .freegrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; margin-top:10px; }
+  .freecard { border:1px solid rgba(255,216,74,.28); background:var(--card); border-radius:16px; padding:16px 16px 14px; display:flex; flex-direction:column; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease; }
+  .freecard:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(255,216,74,.12); }
+  .freecard .pill { position:absolute; top:12px; right:12px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid rgba(255,216,74,.5); color:#ffd84a; }
+  .freecard .kind { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  .freecard h3 { margin:4px 0 6px; font-size:26px; font-weight:900; letter-spacing:-.03em; line-height:1; }
+  .freecard p { margin:0 0 10px; color:var(--dim); font-size:13.5px; line-height:1.45; }
+  .freecard .shot { border-radius:10px; overflow:hidden; margin-top:auto; }
+  .freecard .shot img { width:100%; display:block; }
+  .freecard .dl { margin-top:12px; font-size:13.5px; padding:10px 14px; border-radius:999px; }
+  .freecard .more { margin-top:8px; }
   @media (min-width:641px){ .card.gremlin.inspace { backdrop-filter:none; -webkit-backdrop-filter:none; } }
   @media (min-width:641px){ .card.gremlin .desc, .card.gremlin .tag, .card.gremlin .kind, .card.gremlin .meta { text-shadow:0 1px 2px rgba(0,0,0,.9), 0 0 12px rgba(5,5,14,.95), 0 0 24px rgba(5,5,14,.9); } }
 </style>
@@ -228,13 +241,46 @@
 <div class="wrap">
   <header>
     <div class="logo">SEBASTIAN<span>MACAN</span></div>
-    <nav><a href="#effects">Effects</a><a href="#instruments">Instruments</a><a href="#studio">Studio</a><a href="#midi">MIDI</a><a href="#modes">Modes</a><a href="#bundles">Bundles</a></nav>
+    <nav><a href="#free">Free</a><a href="#effects">Effects</a><a href="#instruments">Instruments</a><a href="#studio">Studio</a><a href="#midi">MIDI</a><a href="#modes">Modes</a><a href="#bundles">Bundles</a></nav>
   </header>
 
   <section class="hero">
     <div class="badge">12 Plugins + 11 MIDI Packs · VST3 + AU · macOS + Windows</div>
     <h1>A whole <em>candy store</em> of sound.</h1>
     <p class="sub">Twelve plugins and 4796 MIDI chord progressions for producers who crave something unique. Grab a flavor, drop it in your DAW, create something sweet.</p>
+  </section>
+
+  <section class="freerow" id="free">
+  <div class="sect-title">Free · Grab these first</div>
+  <div class="freegrid">
+    <div class="freecard chop">
+      <span class="pill">FREE</span>
+      <div class="kind">Free Rhythm Chopper</div>
+      <h3 style="background:linear-gradient(135deg,#8fd62a,#d4ff5a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">CHOP</h3>
+      <p>Chomps any sound into a groove.</p>
+      <div class="shot"><img src="img/ui/chop.png?v=1.1.1" alt="CHOP plugin UI" loading="lazy"></div>
+      <a class="dl" style="background:linear-gradient(135deg,#8fd62a,#d4ff5a);box-shadow:0 6px 22px rgba(143,214,42,.28);" href="downloads/Chop-v1.1.1-macOS.pkg">Download CHOP</a>
+      <a class="more" href="chop.html">See how it works &rarr;</a>
+    </div>
+    <div class="freecard scrap">
+      <span class="pill">FREE</span>
+      <div class="kind">Free Glitch Repeater</div>
+      <h3 style="background:linear-gradient(135deg,#ff7a2e,#ffb347);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SCRAP</h3>
+      <p>Grabs a slice and won't let go.</p>
+      <div class="shot"><img src="img/ui/scrap.png?v=1.0.1" alt="SCRAP plugin UI" loading="lazy"></div>
+      <a class="dl" style="background:linear-gradient(135deg,#ff7a2e,#ffb347);box-shadow:0 6px 22px rgba(255,122,46,.28);" href="downloads/Scrap-v1.0.1-macOS.pkg">Download SCRAP</a>
+      <a class="more" href="scrap.html">See how it works &rarr;</a>
+    </div>
+    <div class="freecard orbit">
+      <span class="pill">FREE</span>
+      <div class="kind">3D Auto-Pan</div>
+      <h3 style="background:linear-gradient(135deg,#ff9d2e,#ffd76b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">ORBIT</h3>
+      <p>Sounds physically circle the listener.</p>
+      <div class="shot"><img src="img/ui/orbit.png?v=1.0" alt="ORBIT plugin UI" loading="lazy"></div>
+      <a class="dl" style="background:linear-gradient(135deg,#ff9d2e,#ffd76b);box-shadow:0 6px 22px rgba(255,157,46,.28);" href="downloads/Orbit-v1.0-macOS.pkg">Download ORBIT</a>
+      <a class="more" href="orbit.html">See how it works &rarr;</a>
+    </div>
+  </div>
   </section>
 
   <div class="sect-title" id="instruments">Instruments</div>
@@ -335,7 +381,7 @@
   <div class="grid">
     <div class="card pocket">
       <span class="new">NEW</span>
-      <div class="kind">Snare Depth</div>
+      <div class="kind">Lofi Snare Character</div>
       <h2 style="background:linear-gradient(135deg,#4f97e8,#e7d6bb);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">POCKET</h2>
       <p class="tag">Snare character. Puts your snare in the mix instead of on top of it.</p>
       <p class="desc">One DEPTH knob darkens the top, adds distance pre-delay, brings up the room and dips the level, all in one move. The snare stays dead centre. CRACK, BODY, ROOM and WIDTH shape the rest.</p>
@@ -671,7 +717,7 @@
       <img src="img/bundles/studio_bundle.png?v=7" alt="Studio Tools Basket: Fireplace, Gloss, Honey and Pocket as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>STUDIO TOOLS BASKET</h3>
-        <p class="desc">Fireplace, Gloss, Honey and Pocket. Atmosphere, mix polish, lofi drum tape and snare character. The finishing tools.</p>
+        <p class="desc">Fireplace, Gloss, Honey and Pocket. Atmosphere, mix polish, lofi drum tape and lofi snare character. The finishing tools.</p>
         <div class="price">$35</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#60a5fa);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="studiobasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="studiobasket">Buy Now</span></div>
