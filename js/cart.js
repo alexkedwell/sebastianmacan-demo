@@ -28,8 +28,6 @@
     /* plugins */
     biome:         { name: 'Biome',                  cents: 3900, priceId: 'pri_01m09h3ccsvkn3gxqt033pppd5' },
     magician:      { name: 'Chordsmith',               cents: 3900, priceId: 'pri_01m09h3cvs4nrrch2v4r9zbq5n' },
-    jelly:         { name: 'Jelly',                  cents: 1500, priceId: 'pri_01m1gntsq26gagfdqahmz3thdk' },
-    warble:        { name: 'Warble',                 cents: 1500, priceId: 'pri_01m1gntt0z0mpgfr059dve73fj' },
     honey:         { name: 'Honey',                  cents: 1500, priceId: 'pri_01m3nvfqfgwp0hn49hbr0zw2dt' },
     gremlin:       { name: 'Gremlin',                cents: 1500, priceId: 'pri_01m3rmmy11e41nxdpkp9rdjq4d' },
     pocket:        { name: 'Pocket',                 cents: 1500, priceId: 'pri_01m5jmgg27ch339v1v5gkr6g7a' },
@@ -53,12 +51,10 @@
     /* bundles / baskets */
     allmodes:      { name: 'All 7 Modes Basket',     cents: 1200, priceId: 'pri_01m1gnszy7hgdp0xw9gfyqe7ha' },
     midimega:      { name: 'MIDI Mega Basket',       cents: 4900, priceId: 'pri_01m09n48fjhgmpb2hxcmr2kyf0' },
-    lofibasket:    { name: 'Lofi Basket',            cents: 3000, priceId: 'pri_01m1nckxzp0m01qh26zs7qq99t' },
+    lofibasket:    { name: 'Lofi Basket',            cents: 2200, priceId: 'pri_01m1nckxzp0m01qh26zs7qq99t' },
     chordbasket:   { name: 'Chord Basket',           cents: 6900, priceId: 'pri_01m36c5kc3z84gvnnc1nyej57d' },
     instrumentsbasket: { name: 'Instruments Basket', cents: 5900, priceId: 'pri_01m3jrbcjp6hcx8ysjy69b65qa' },
-    effectsbasket: { name: 'Effects Basket',         cents: 4900, priceId: 'pri_01m3jrbcz40geyntgtefncfdjs' },
-    studiobasket:  { name: 'Studio Tools Basket',    cents: 3500, priceId: 'pri_01m3jrbdb9gnqdxxjrp5zp0gwp' },
-    cozy:          { name: 'Cozy Basket',            cents: 2200, priceId: 'pri_01m3wta6frehvbb94wkk6m7ew4' }
+    studiobasket:  { name: 'Studio Tools Basket',    cents: 3500, priceId: 'pri_01m3jrbdb9gnqdxxjrp5zp0gwp' }
   };
 
   /* BASKET MEMBERSHIP -- the ONE place to edit when a product joins/leaves a basket.
@@ -68,10 +64,8 @@
      it belongs to here (then reprice the basket in Paddle if the roster changed). */
   var BASKETS = {
     instrumentsbasket: { page: 'basket-instruments.html', items: ['biome', 'magician'] },
-    effectsbasket:     { page: 'basket-effects.html',     items: ['jelly', 'warble', 'gloss', 'gremlin'], bonus: ['Orbit'] },
     studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'gloss', 'honey', 'pocket'] },
-    cozy:              { page: 'basket-cozy.html',        items: ['honey', 'fireplace'] },
-    lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'warble', 'honey'] },
+    lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'honey'] },
     chordbasket:       { page: 'basket-chord.html',       items: ['magician', 'hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
     midimega:          { page: 'basket-midi.html',        items: ['hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
     allmodes:          { page: 'basket-modes.html',       items: ['ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] }

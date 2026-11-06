@@ -6,13 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/base.css?v=1">
-<title>Candy Bag | Three Free Plugins | Sebastian Macan</title>
+<title>Candy Bag | Five Free Plugins | Sebastian Macan</title>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
 <meta name="theme-color" content="#000000">
-<meta name="description" content="Candy Bag: Chop, Scrap and Orbit. Three free Sebastian Macan plugins in one zip. VST3 + AU, macOS + Windows. Get your sweets.">
+<meta name="description" content="Candy Bag: Chop, Scrap, Orbit, Jelly and Warble. Five free Sebastian Macan plugins in one zip. VST3 + AU, macOS + Windows. Get your sweets.">
 <meta name="robots" content="index,follow">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#4cc2ff; --g2:#5b7cff; }
@@ -79,7 +79,11 @@
   .candystage .cl { left:5%; --rot:-24deg; animation-delay:.8s; }
   .candystage .cf { left:27%; width:46%; bottom:30%; z-index:2; --rot:2deg; animation-delay:0s; }
   .candystage .cr { left:58%; --rot:24deg; animation-delay:1.6s; }
-  @media (prefers-reduced-motion:reduce) { .candystage .candy { animation:none; } }
+  .candystage .toy { left:-1%; width:24%; bottom:1%; z-index:4; transform-origin:50% 100%; animation:toyrock 3.2s ease-in-out infinite; filter:drop-shadow(0 6px 10px rgba(0,0,0,.3)); }
+  .candystage .balloon { right:-4%; width:22%; bottom:48%; z-index:4; transform-origin:50% 100%; animation:balloonsway 4.5s ease-in-out infinite; filter:drop-shadow(0 8px 14px rgba(0,0,0,.28)); }
+  @keyframes toyrock { 0%,100% { transform:rotate(-4deg); } 50% { transform:rotate(4deg); } }
+  @keyframes balloonsway { 0%,100% { transform:translateY(0) rotate(-5deg); } 50% { transform:translateY(-6%) rotate(5deg); } }
+  @media (prefers-reduced-motion:reduce) { .candystage .candy, .candystage .toy, .candystage .balloon { animation:none; } }
   @keyframes candyhop { 0%,100% { transform:translateY(0) rotate(var(--rot)); } 50% { transform:translateY(-42%) rotate(calc(var(--rot) + 10deg)); } }
 </style>
 </head>
@@ -92,7 +96,7 @@
   <a class="back" href="/">&larr; Back to the store</a>
 
   <section class="hero">
-    <div class="kind">Three free plugins</div>
+    <div class="kind">Five free plugins</div>
     <h1>CANDY BAG</h1>
     <p class="tag">Get your sweets.</p>
     <div class="bimg">
@@ -101,16 +105,18 @@
         <img class="candy cl" src="img/candyad/candy_scrap_sky.png" alt="">
         <img class="candy cr" src="img/candyad/candy_orbit_pink.png" alt="">
         <img class="candy cf" src="img/candyad/candy_chop.png" alt="">
+        <img class="toy" src="img/candyad/toy_warble.png" alt="">
+        <img class="balloon" src="img/candyad/balloon_jelly.png" alt="">
         <img class="bagfront" src="img/candyad/bag_party.png" alt="">
       </div>
     </div>
     <div class="pricebar"><span class="big freebie">FREE</span></div>
-    <div class="meta">3 plugins · VST3 + AU · macOS + Windows</div>
-    <div class="cta" style="margin-top:22px;"><div class="dlrow"><a class="dl" href="downloads/CandyBag-macOS.zip">Grab the bag &middot; Mac</a><a class="dl dl-win" href="downloads/CandyBag-Windows.zip">Grab the bag &middot; Windows</a></div><div class="meta">Chop &middot; Scrap &middot; Orbit &middot; one zip, all three installers</div></div>
+    <div class="meta">5 plugins · VST3 + AU · macOS + Windows</div>
+    <div class="cta" style="margin-top:22px;"><div class="dlrow"><a class="dl" href="downloads/CandyBag-macOS.zip">Grab the bag &middot; Mac</a><a class="dl dl-win" href="downloads/CandyBag-Windows.zip">Grab the bag &middot; Windows</a></div><div class="meta">Chop &middot; Scrap &middot; Orbit &middot; Jelly &middot; Warble &middot; one zip, all five installers</div></div>
   </section>
 
   <h2>What's in the bag</h2>
-  <p class="sub">Chop chomps any sound into a groove. Scrap grabs a slice and will not let go. Orbit flies your hats around your head. Three Sebastian Macan plugins, free forever. Grab them one by one below, or take the whole bag in a single zip.</p>
+  <p class="sub">Chop chomps any sound into a groove. Scrap grabs a slice and will not let go. Orbit flies your hats around your head. Jelly makes everything jiggle. Warble makes any sound sing like a weird little bird. Five Sebastian Macan plugins, free forever. Grab them one by one below, or take the whole bag in a single zip.</p>
     <div class="item">
       <div class="iinfo">
         <div class="ikind">Free Rhythm Chopper</div>
@@ -150,11 +156,37 @@
         <a class="dl dl-win idl" href="downloads/Orbit-v1.0-Windows-Setup.exe">Windows</a>
       </div>
     </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">Wobble Machine</div>
+        <div class="iname">Jelly</div>
+        <p class="itag">Make everything jiggle. Free forever.</p>
+        <a class="rowlink" href="jelly.html">See how it works &rarr;</a>
+      </div>
+      <div class="iact">
+        <div class="freetag">FREE</div>
+        <a class="dl idl" href="downloads/Jelly-v1.1.0-macOS.pkg">Mac</a>
+        <a class="dl dl-win idl" href="downloads/Jelly-v1.1.0-Windows-Setup.exe">Windows</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="iinfo">
+        <div class="ikind">Drunk Songbird Pitch Wobbler</div>
+        <div class="iname">Warble</div>
+        <p class="itag">Make any sound sing like a weird little bird. Free forever.</p>
+        <a class="rowlink" href="warble.html">See how it works &rarr;</a>
+      </div>
+      <div class="iact">
+        <div class="freetag">FREE</div>
+        <a class="dl idl" href="downloads/Warble-v1.4.0-macOS.pkg">Mac</a>
+        <a class="dl dl-win idl" href="downloads/Warble-v1.4.0-Windows-Setup.exe">Windows</a>
+      </div>
+    </div>
 
-  <div class="cta"><div class="dlrow"><a class="dl" href="downloads/CandyBag-macOS.zip">Grab the bag &middot; Mac</a><a class="dl dl-win" href="downloads/CandyBag-Windows.zip">Grab the bag &middot; Windows</a></div><div class="meta">3 installers in one zip. Download once, unzip, done.</div></div>
+  <div class="cta"><div class="dlrow"><a class="dl" href="downloads/CandyBag-macOS.zip">Grab the bag &middot; Mac</a><a class="dl dl-win" href="downloads/CandyBag-Windows.zip">Grab the bag &middot; Windows</a></div><div class="meta">5 installers in one zip. Download once, unzip, done.</div></div>
 
   <div class="mathbox">
-    Three plugins, <b>$0</b>. No account, no catches. Unzip, install, make noise.
+    Five plugins, <b>$0</b>. No account, no catches. Unzip, install, make noise.
   </div>
 
   <footer>
@@ -162,6 +194,6 @@
     <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
-<script src="js/email-gate.js?v=cb1" defer></script>
+<script src="js/email-gate.js?v=free5" defer></script>
 </body>
 </html>
