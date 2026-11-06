@@ -205,12 +205,12 @@
   .modeshot{margin:10px 0 12px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
   .modeshot video{display:block;width:100%;height:auto;}
   /* Candy Bag ad card: third card after Chordsmith. Candies hop in and out of the bag. */
-  .card.candyad { --g1:#ff6cb2; --g2:#ff2f88; --glow:#ff5ca8; --shadow:rgba(255,92,168,.35); border-color:#ff5ca8; background:linear-gradient(160deg,#ff6cb2,#ff4a9a 60%,#ff2f88); cursor:pointer; }
+  .card.candyad { --g1:#4cc2ff; --g2:#5b7cff; --glow:#4cc2ff; --shadow:rgba(76,194,255,.35); border-color:#4cc2ff; background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); cursor:pointer; }
   .card.candyad::before { display:none; }
-  .card.candyad .kind { color:#ffe6f2; }
-  .card.candyad h2 { background:none; -webkit-text-fill-color:#1a1420; color:#1a1420; }
+  .card.candyad .kind { color:#e6f4ff; }
+  .card.candyad h2 { background:none; -webkit-text-fill-color:#10141f; color:#10141f; }
   .card.candyad .tag { color:#fff; }
-  .card.candyad .desc { color:#ffd6e8; }
+  .card.candyad .desc { color:#dbeeff; }
   .card.candyad .pill { position:absolute; top:14px; right:14px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid #fff; color:#fff; }
   .card.candyad .stage { position:relative; margin:auto -6px 2px; padding-top:18px; aspect-ratio:1/1; overflow:hidden; }
   .card.candyad .stage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
@@ -221,14 +221,27 @@
   .card.candyad .c2 { left:31%; animation-delay:.8s; --rot:4deg; width:40%; bottom:28%; }
   .card.candyad .c3 { left:58%; animation-delay:1.6s; --rot:24deg; }
   @keyframes candyhop { 0%,100% { transform:translateY(0) rotate(var(--rot)); } 50% { transform:translateY(-42%) rotate(calc(var(--rot) + 10deg)); } }
+  .card.candyad .toy { left:-3%; width:27%; bottom:1%; z-index:4; transform-origin:50% 100%; animation:toyrock 3.2s ease-in-out infinite; filter:drop-shadow(0 6px 10px rgba(0,0,0,.3)); }
+  .card.candyad .balloon { right:-7%; width:25%; bottom:44%; z-index:4; transform-origin:50% 100%; animation:balloonsway 4.5s ease-in-out infinite; filter:drop-shadow(0 8px 14px rgba(0,0,0,.28)); }
+  @keyframes toyrock { 0%,100% { transform:rotate(-4deg); } 50% { transform:rotate(4deg); } }
+  @keyframes balloonsway { 0%,100% { transform:translateY(0) rotate(-5deg); } 50% { transform:translateY(-6%) rotate(5deg); } }
   .card.candyad:hover .candy { animation-duration:1.2s; }
-  .card.candyad .candy.pop { animation:candypop .9s cubic-bezier(.2,.9,.3,1.2) 1; z-index:4; }
-  @keyframes candypop { 0% { transform:translateY(0) rotate(var(--rot)); } 45% { transform:translateY(-120%) rotate(calc(var(--rot) + 360deg)) scale(1.12); } 100% { transform:translateY(0) rotate(var(--rot)); } }
-  .card.candyad .dl { background:#1a1420; color:#ff6cb2; box-shadow:0 6px 22px rgba(0,0,0,.3); }
-  .card.candyad .more { color:#ffe6f2; }
+  .card.candyad .dl { background:#10141f; color:#4cc2ff; box-shadow:0 6px 22px rgba(0,0,0,.3); }
+  .card.candyad .more { color:#e6f4ff; }
   .card.candyad .more:hover { color:#fff; }
-  .card.candyad .meta { color:#ffd6e8; }
-  @media (prefers-reduced-motion:reduce) { .card.candyad .candy { animation:none; } }
+  .card.candyad .meta { color:#dbeeff; }
+  @media (prefers-reduced-motion:reduce) { .card.candyad .candy, .card.candyad .toy, .card.candyad .balloon { animation:none; } }
+  .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
+  .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
+  .candystage .bagback { left:13%; width:74%; bottom:0; }
+  .candystage .bagfront { left:13%; width:74%; bottom:0; z-index:3; filter:drop-shadow(0 14px 22px rgba(0,0,0,.35)); }
+  .candystage .candy { width:38%; bottom:36%; z-index:1; animation:candyhop 2.4s ease-in-out infinite; transform-origin:50% 60%; }
+  .candystage .cl { left:5%; --rot:-24deg; animation-delay:.8s; }
+  .candystage .cf { left:27%; width:46%; bottom:30%; z-index:2; --rot:2deg; animation-delay:0s; }
+  .candystage .cr { left:58%; --rot:24deg; animation-delay:1.6s; }
+  .candystage .toy { left:-3%; width:26%; bottom:1%; z-index:4; transform-origin:50% 100%; animation:toyrock 3.2s ease-in-out infinite; filter:drop-shadow(0 6px 10px rgba(0,0,0,.3)); }
+  .candystage .balloon { right:-7%; width:24%; bottom:46%; z-index:4; transform-origin:50% 100%; animation:balloonsway 4.5s ease-in-out infinite; filter:drop-shadow(0 8px 14px rgba(0,0,0,.28)); }
+  @media (prefers-reduced-motion:reduce) { .candystage .candy, .candystage .toy, .candystage .balloon { animation:none; } }
 </style>
 <style id="spacecss">
   :root { --space:0; }
@@ -271,20 +284,21 @@
   .freecard .shot video { display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
   .freecard .dl { margin-top:12px; font-size:13.5px; padding:10px 14px; border-radius:999px; }
   .freecard .more { margin-top:8px; }
-  /* Candy Bag: the closer. Full width, all three free plugins in one zip. */
-  .candybag { margin-top:14px; border:1px solid #ff5ca8; background:var(--card); border-radius:18px; overflow:hidden; display:grid; grid-template-columns:1.1fr 1fr; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-  .candybag:hover { transform:translateY(-4px); border-color:#ff8ac4; box-shadow:0 18px 60px rgba(255,92,168,.28); }
-  .candybag img { display:block; width:100%; height:100%; object-fit:cover; }
+  /* Candy Bag: the closer. Full width, all five free plugins in one zip. */
+  .candybag { margin-top:14px; border:1px solid #4cc2ff; background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); border-radius:18px; overflow:hidden; display:grid; grid-template-columns:1.1fr 1fr; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .candybag:hover { transform:translateY(-4px); border-color:#9fdcff; box-shadow:0 18px 60px rgba(76,194,255,.28); }
+  .candybag .stagewrap { display:flex; align-items:flex-end; justify-content:center; padding:18px 18px 0; min-height:300px; }
+  .candybag .candystage { width:min(100%, 380px); aspect-ratio:1/1; }
   .candybag .pill { position:absolute; top:14px; right:14px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid #fff; color:#fff; }
-  .candybag .binner { padding:34px 36px 32px; display:flex; flex-direction:column; justify-content:center; background:linear-gradient(160deg,#ff6cb2,#ff4a9a 60%,#ff2f88); }
-  .candybag .kind { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#ffe6f2; font-weight:700; }
-  .candybag h3 { margin:6px 0 8px; font-size:clamp(38px,5vw,56px); font-weight:900; letter-spacing:-.03em; line-height:.95; color:#1a1420; }
+  .candybag .binner { padding:34px 36px 32px; display:flex; flex-direction:column; justify-content:center; }
+  .candybag .kind { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e6f4ff; font-weight:700; }
+  .candybag h3 { margin:6px 0 8px; font-size:clamp(38px,5vw,56px); font-weight:900; letter-spacing:-.03em; line-height:.95; color:#10141f; }
   .candybag p { margin:0 0 18px; color:#fff; font-size:18px; font-weight:600; }
   .candybag .dlrow { display:flex; flex-wrap:wrap; gap:10px; }
-  .candybag .dl { font-size:14px; padding:12px 20px; border-radius:999px; background:#1a1420; box-shadow:0 6px 22px rgba(0,0,0,.3); color:#ff6cb2; font-weight:900; text-decoration:none; }
+  .candybag .dl { font-size:14px; padding:12px 20px; border-radius:999px; background:#10141f; box-shadow:0 6px 22px rgba(0,0,0,.3); color:#4cc2ff; font-weight:900; text-decoration:none; }
   .candybag .dl.dl-win { background:none; border:1px solid #fff; color:#fff; box-shadow:none; }
-  .candybag .inside { margin-top:16px; font-size:12.5px; color:#ffd6e8; }
-  @media (max-width:720px) { .candybag { grid-template-columns:1fr; } .candybag .binner { padding:22px 20px 24px; } }
+  .candybag .inside { margin-top:16px; font-size:12.5px; color:#dbeeff; }
+  @media (max-width:720px) { .candybag { grid-template-columns:1fr; } .candybag .stagewrap { min-height:0; padding:14px 14px 0; } .candybag .binner { padding:22px 20px 24px; } }
   @media (min-width:641px){ .card.gremlin .desc, .card.gremlin .tag, .card.gremlin .kind, .card.gremlin .meta { text-shadow:0 1px 2px rgba(0,0,0,.9), 0 0 12px rgba(5,5,14,.95), 0 0 24px rgba(5,5,14,.9); } }
 </style>
 </head>
@@ -308,12 +322,12 @@
       <div class="kind">Granular Texture Blender</div>
       <h2>BIOME</h2>
       <p class="tag">Your sample, overgrown.</p>
-      <p class="desc">Drag in ANY audio (rainforest, birds, synth, a vocal) and Biome shreds it into grains you can stretch, pitch, reverse and scatter into an evolving texture. Build an ecosystem out of anything.</p>
+      <p class="desc">Drag in ANY audio (rainforest, birds, synth, a vocal) and Biome shreds it into grains you can stretch, pitch, reverse and scatter into an evolving texture.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/biome.png?v=1.5.3"><source src="https://video.sebastianmacan.com/img/video/biome_ui_loop.mp4?v=1.5.3" type="video/mp4"></video></div>
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="biome">Buy Biome &middot; $39</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="biome">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="biome">Buy Now</span></div>
       <a class="more" href="biome.html">See how it works &rarr;</a>
-      <div class="meta">v1.6.4 · VST3 + AU instrument · macOS + Windows</div>
+      <div class="meta">v1.6.5 · VST3 + AU instrument · macOS + Windows</div>
     </div>
     <div class="card wizard">
       <span class="new">NEW</span>
@@ -327,58 +341,36 @@
       <a class="more" href="chordsmith.html">See how it works &rarr;</a>
       <div class="meta">v1.7.3 · VST3 + AU instrument · macOS + Windows</div>
     </div>
-    <div class="card candyad" id="candyad" data-goto="#candybag">
+    <div class="card candyad" id="candyad" data-goto="candy-bag.html">
       <span class="pill">FREE</span>
-      <div class="kind">Three free plugins</div>
+      <div class="kind">Five free plugins</div>
       <h2>CANDY BAG</h2>
       <p class="tag">Get your sweets.</p>
-      <p class="desc">Chop, Scrap and Orbit. One zip, all three installers. Keep scrolling, the bag is waiting at the bottom.</p>
+      <p class="desc">Chop, Scrap, Orbit, Jelly and Warble. One zip, all five installers. Five plugins, zero dollars.</p>
       <div class="stage" aria-hidden="true">
         <img class="bagback" src="img/candyad/bag_back.png" alt="">
-        <img class="candy c1" src="img/candyad/candy_chop.png" alt="">
-        <img class="candy c2" src="img/candyad/candy_scrap.png" alt="">
-        <img class="candy c3" src="img/candyad/candy_orbit.png" alt="">
-        <img class="bagfront" src="img/candyad/bag_front.png" alt="">
+        <img class="candy c1" src="img/candyad/candy_scrap_sky.png" alt="">
+        <img class="candy c2" src="img/candyad/candy_chop.png" alt="">
+        <img class="candy c3" src="img/candyad/candy_orbit_yellow.png" alt="">
+        <img class="toy" src="img/candyad/toy_warble.png" alt="">
+        <img class="balloon" src="img/candyad/balloon_jelly.png" alt="">
+        <img class="bagfront" src="img/candyad/bag_party.png" alt="">
       </div>
-      <a class="dl" href="#candybag">Grab the bag &darr;</a>
-      <a class="more" href="#candybag">Free, down below &rarr;</a>
-      <div class="meta">Chop &middot; Scrap &middot; Orbit &middot; macOS + Windows</div>
+      <a class="dl" href="candy-bag.html">Grab the bag &middot; Free</a>
+      <a class="more" href="candy-bag.html">See what is inside &rarr;</a>
+      <div class="meta">Chop &middot; Scrap &middot; Orbit &middot; Jelly &middot; Warble &middot; macOS + Windows</div>
     </div>
   </div>
 
   <div class="sect-title" id="effects">Color &amp; Motion FX</div>
   <div class="grid">
-    <div class="card jelly">
-      <span class="new">NEW</span>
-      <div class="kind">Wobble Machine</div>
-      <h2>JELLY</h2>
-      <p class="tag">Make everything jiggle.</p>
-      <p class="desc">One huge wobbling jelly-blob knob drives filter, tremolo, pitch jiggle and pan wiggle from a single tempo-synced LFO. Turn BOUNCE up and it wobbles like a dropped ball of slime.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/jelly.png?v=1.1"><source src="https://video.sebastianmacan.com/img/video/jelly_ui_loop.mp4?v=1.1" type="video/mp4"></video></div>
-      <span class="dl buy" role="button" tabindex="0" data-cart-buy="jelly">Buy Jelly &middot; $15</span>
-      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="jelly">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="jelly">Buy Now</span></div>
-      <a class="more" href="jelly.html">See how it works &rarr;</a>
-      <div class="meta">v1.1 · VST3 + AU effect · macOS + Windows</div>
-    </div>
-    <div class="card warble">
-      <span class="new">NEW</span>
-      <div class="kind">Drunk Songbird Pitch Wobbler</div>
-      <h2>WARBLE</h2>
-      <p class="tag">Make any sound sing like a weird little bird.</p>
-      <p class="desc">Tempo-synced pitch wobble, random chirp flicks and a beak filter that opens with the bend. Smash HATCH for a new bird every time, seeds bring them back.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/warble.png?v=1.3"><source src="https://video.sebastianmacan.com/img/video/warble_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
-      <span class="dl buy" role="button" tabindex="0" data-cart-buy="warble">Buy Warble &middot; $15</span>
-      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="warble">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="warble">Buy Now</span></div>
-      <a class="more" href="warble.html">See how it works &rarr;</a>
-      <div class="meta">v1.7.2 · VST3 + AU effect · macOS + Windows</div>
-    </div>
     <div class="card gremlin">
       <span class="new">NEW</span>
       <div class="kind">The Mangler Box</div>
       <h2>GREMLIN</h2>
       <div class="gbar"><i></i><i></i><i></i><i></i></div>
       <p class="tag">Four mischiefs. One box.</p>
-      <p class="desc">Chop, Smear, Stutter and Twitch, each with its own creature. Tempo-synced chops, a granular smear that melts into a plate, a stutter with its own patch bay, and Twitch: a per-step rack with a draw pad for gate, crush, warp, comb, grain, formant, ring and chaos. 12 presets from polite hiccup to full meltdown.</p>
+      <p class="desc">Chop cuts it. Smear melts it. Stutter repeats it. Twitch wrecks it.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gremlin.png?v=5.0.1"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=5.0.1" type="video/mp4"></video></div>
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="gremlin">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Now</span></div>
@@ -402,12 +394,36 @@
       <div class="kind">Free Glitch Repeater</div>
       <h2 style="background:linear-gradient(135deg,#ff7a2e,#ffb347);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SCRAP</h2>
       <p class="tag">Grabs a slice and won't let go.</p>
-      <p class="desc">Stutter-buffer glitch that repeats, reverses and pitch-kicks slices of whatever is playing, with a growl drive and an air return. Metallic, broken, built for drops. Rusty's glitch mode set free.</p>
+      <p class="desc">Stutter-buffer glitch that repeats, reverses and pitch-kicks slices of whatever is playing, with a growl drive and an air return. Metallic, broken, built for drops.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/scrap.png?v=1.0.1"><source src="https://video.sebastianmacan.com/img/video/scrap_ui_loop.mp4?v=1.0.1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,#ff7a2e,#ffb347);box-shadow:0 6px 28px rgba(255,122,46,.30);" href="downloads/Scrap-v1.0.1-macOS.pkg">Download Scrap</a>
       <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
       <a class="more" href="scrap.html">See how it works &rarr;</a>
       <div class="meta">v1.0.1 · VST3 + AU effect · macOS + Windows</div>
+    </div>
+    <div class="card warble">
+      <span class="new">NEW</span>
+      <div class="kind">Free Drunk Songbird Wobbler</div>
+      <h2>WARBLE</h2>
+      <p class="tag">Make any sound sing like a weird little bird.</p>
+      <p class="desc">Tempo-synced pitch wobble, random chirp flicks and a beak filter that opens with the bend. Smash HATCH for a new bird every time, seeds bring them back.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/warble.png?v=1.3"><source src="https://video.sebastianmacan.com/img/video/warble_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
+      <a class="dl" style="background:linear-gradient(135deg,#2bb59a,#ff9f43);box-shadow:0 6px 28px rgba(43,181,154,.30);" href="downloads/Warble-v1.4.0-macOS.pkg">Download Warble</a>
+      <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
+      <a class="more" href="warble.html">See how it works &rarr;</a>
+      <div class="meta">v1.7.2 · VST3 + AU effect · macOS + Windows</div>
+    </div>
+    <div class="card jelly">
+      <span class="new">NEW</span>
+      <div class="kind">Free Wobble Machine</div>
+      <h2>JELLY</h2>
+      <p class="tag">Make everything jiggle.</p>
+      <p class="desc">One huge wobbling jelly-blob knob drives filter, tremolo, pitch jiggle and pan wiggle from a single tempo-synced LFO. Turn BOUNCE up and it wobbles like a dropped ball of slime.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/jelly.png?v=1.1"><source src="https://video.sebastianmacan.com/img/video/jelly_ui_loop.mp4?v=1.1" type="video/mp4"></video></div>
+      <a class="dl" style="background:linear-gradient(135deg,#ff7ab8,#8fe8c0);box-shadow:0 6px 28px rgba(255,122,184,.30);" href="downloads/Jelly-v1.1.0-macOS.pkg">Download Jelly</a>
+      <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
+      <a class="more" href="jelly.html">See how it works &rarr;</a>
+      <div class="meta">v1.1 · VST3 + AU effect · macOS + Windows</div>
     </div>
 
   </div>
@@ -416,7 +432,7 @@
   <div class="grid">
     <div class="card pocket">
       <span class="new">NEW</span>
-      <div class="kind">Lofi Snare Character</div>
+      <div class="kind">Snare Character</div>
       <h2 style="background:linear-gradient(135deg,#4f97e8,#e7d6bb);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">POCKET</h2>
       <p class="tag">Snare character. Puts your snare in the mix instead of on top of it.</p>
       <p class="desc">One DEPTH knob darkens the top, adds distance pre-delay, brings up the room and dips the level, all in one move. The snare stays dead centre. CRACK, BODY, ROOM and WIDTH shape the rest.</p>
@@ -726,46 +742,26 @@
   </div>
 
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
-  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Eight baskets. Instruments at $59, Effects at $49 and Studio Tools at $35 sort the plugins by what they do, and the Cozy Basket is $22 for Honey and Fireplace. The Chord Basket is Chordsmith plus every MIDI pack at $69, the MIDI Mega Basket packs all 4796 progressions at $49, the whole Modal Series is just $12, and the Lofi Basket is $30 for the full lofi mood with Honey inside.</p>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Six baskets. Instruments at $59 and Studio Tools at $35 sort the plugins by what they do, and the Lofi Basket is $22 for Honey and Fireplace. The Chord Basket is Chordsmith plus every MIDI pack at $69, the MIDI Mega Basket packs all 4796 progressions at $49, and the whole Modal Series is just $12.</p>
   <div class="bundlegrid">
     <a class="bundle instr-b" href="basket-instruments.html">
       <img src="img/bundles/instruments_bundle.png?v=3" alt="Instruments Basket: Biome and Chordsmith as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>INSTRUMENTS BASKET</h3>
-        <p class="desc">Biome and Chordsmith. Grow huge textures, then write the chords on top. Both instruments in the store.</p>
+        <p class="desc">Biome and Chordsmith. Write the chords, then grow them into huge textures.</p>
         <div class="price">$59</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#39e6d0,#60a5fa);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="instrumentsbasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="instrumentsbasket">Buy Now</span></div>
       </div>
     </a>
-    <a class="bundle fx-b" href="basket-effects.html">
-      <img src="img/bundles/effects_bundle.png?v=4" alt="Effects Basket: Jelly, Warble, Gloss, Gremlin and Orbit as wrapped candy in a basket" loading="lazy">
-      <div class="binner">
-        <h3>EFFECTS BASKET</h3>
-        <p class="desc">Jelly, Warble, Gloss and Gremlin, with Orbit thrown in. Every effect we make, one basket.</p>
-        <div class="price">$49</div>
-        <span class="dl bopen" style="background:linear-gradient(135deg,#ff5ca8,#8b5cf6);">Open the basket</span>
-        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="effectsbasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="effectsbasket">Buy Now</span></div>
-      </div>
-    </a>
     <a class="bundle studio-b" href="basket-studio.html">
-      <img src="img/bundles/studio_bundle.png?v=7" alt="Studio Tools Basket: Fireplace, Gloss, Honey and Pocket as wrapped candy in a basket" loading="lazy">
+      <img src="img/bundles/studio_bundle.png?v=8" alt="Studio Tools Basket: Fireplace, Gloss, Honey and Pocket as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>STUDIO TOOLS BASKET</h3>
-        <p class="desc">Fireplace, Gloss, Honey and Pocket. Atmosphere, mix polish, lofi drum tape and lofi snare character. The finishing tools.</p>
+        <p class="desc">Fireplace, Gloss, Honey and Pocket. A fire under the beat, a shine on the mix, a cassette to print it to and a snare that finally sits down. The last four plugins you touch before you hit export.</p>
         <div class="price">$35</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#60a5fa);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="studiobasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="studiobasket">Buy Now</span></div>
-      </div>
-    </a>
-    <a class="bundle cozy-b" href="basket-cozy.html">
-      <img src="img/bundles/cozy_bundle.png" alt="Cozy Basket: Honey and Fireplace as wrapped candy in a basket" loading="lazy">
-      <div class="binner">
-        <h3>COZY BASKET</h3>
-        <p class="desc">Honey and Fireplace. Smooth tape for your chords and the cozy room around them.</p>
-        <div class="price">$22</div>
-        <span class="dl bopen" style="background:linear-gradient(135deg,#ff5e3a,#ffb86b);">Open the basket</span>
-        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="cozy">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="cozy">Buy Now</span></div>
       </div>
     </a>
     <a class="bundle chord-b" href="basket-chord.html">
@@ -792,18 +788,18 @@
       <img src="img/bundles/modes_bundle.png" alt="All 7 Modes Basket: the complete Modal Series as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>ALL 7 MODES BASKET</h3>
-        <p class="desc">The whole Modal Series in one basket. All 7 modes, 336 progressions, every secret flavor from Dorian to Locrian.</p>
+        <p class="desc">The whole Modal Series in one basket. All 7 modes, 336 progressions, every secret flavor.</p>
         <div class="price">$12</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#8b5cf6,#39e6d0);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="allmodes">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="allmodes">Buy Now</span></div>
       </div>
     </a>
     <a class="bundle lofi-b" href="basket-lofi.html">
-      <img src="img/bundles/lofi_bundle.png?v=5" alt="Lofi Basket: Fireplace, Warble and Honey as wrapped candy in a basket" loading="lazy">
+      <img src="img/bundles/lofi_bundle.png?v=6" alt="Lofi Basket: Honey and Fireplace as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>LOFI BASKET</h3>
-        <p class="desc">Fireplace, Warble and Honey. A crackling room, a weird little songbird and smooth tape for the chords. The complete lofi mood.</p>
-        <div class="price">$30</div>
+        <p class="desc">Honey and Fireplace. Smooth tape for your chords and the cozy room around them. The complete lofi mood.</p>
+        <div class="price">$22</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#2bb59a);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="lofibasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="lofibasket">Buy Now</span></div>
       </div>
@@ -841,25 +837,33 @@
       <a class="more" href="orbit.html">See how it works &rarr;</a>
     </div>
   </div>
-  <div class="candybag" id="candybag">
-    <img src="img/bundles/candy_bag.png?v=2" alt="Candy Bag: Chop, Scrap and Orbit as wrapped candy spilling out of a striped paper bag" loading="lazy">
+  <div class="candybag" id="candybag" style="cursor:pointer">
+    <div class="stagewrap"><div class="candystage" aria-hidden="true">
+      <img class="bagback" src="img/candyad/bag_back.png" alt="">
+      <img class="candy cl" src="img/candyad/candy_scrap_sky.png" alt="">
+      <img class="candy cr" src="img/candyad/candy_orbit_yellow.png" alt="">
+      <img class="candy cf" src="img/candyad/candy_chop.png" alt="">
+      <img class="toy" src="img/candyad/toy_warble.png" alt="">
+      <img class="balloon" src="img/candyad/balloon_jelly.png" alt="">
+      <img class="bagfront" src="img/candyad/bag_party.png" alt="">
+    </div></div>
     <div class="binner">
       <span class="pill">FREE</span>
-      <div class="kind">Three free plugins</div>
+      <div class="kind">Five free plugins</div>
       <h3>CANDY BAG</h3>
       <p>Get your sweets.</p>
       <div class="dlrow">
         <a class="dl" href="downloads/CandyBag-macOS.zip">Grab the bag &middot; Mac</a>
         <a class="dl dl-win" href="downloads/CandyBag-Windows.zip">Grab the bag &middot; Windows</a>
       </div>
-      <div class="inside">Chop &middot; Scrap &middot; Orbit &middot; one zip, all three installers</div>
+      <div class="inside">Chop &middot; Scrap &middot; Orbit &middot; Jelly &middot; Warble &middot; one zip, all five installers</div>
     </div>
   </div>
   </section>
 
   <footer>
     <div>© 2026 Aluetion, LLC. All rights reserved. Sebastian Macan is an Aluetion, LLC brand.</div>
-    <div><a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="privacy.html">Privacy</a> · <a href="downloads.html">Re-download</a> · <a href="EULA.txt">License</a> · <a href="https://instagram.com/sebastianmacanmusic">Instagram</a></div>
+    <div><a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="privacy.html">Privacy</a> · <a href="https://dl.sebastianmacan.com/library">Library</a> · <a href="downloads.html">Re-download</a> · <a href="EULA.txt">License</a> · <a href="https://instagram.com/sebastianmacanmusic">Instagram</a></div>
     <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> &middot; <a href="learn/chordsmith.html">Chord generators</a> &middot; <a href="learn/jelly.html">Wobble FX</a> &middot; <a href="learn/orbit.html">3D auto-pan</a></div>
   </footer>
 </div>
@@ -913,9 +917,12 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="js/spacewarp.js?v=5"></script>
   <script>
   (function(){var c=document.getElementById('candyad');if(!c)return;
-    c.querySelectorAll('.candy').forEach(function(k){k.addEventListener('click',function(e){e.stopPropagation();k.classList.remove('pop');void k.offsetWidth;k.classList.add('pop');});
-      k.addEventListener('animationend',function(e){if(e.animationName==='candypop')k.classList.remove('pop');});});
-    c.addEventListener('click',function(e){if(e.target.closest('a'))return;var t=document.querySelector('#candybag');if(t)t.scrollIntoView({behavior:'smooth',block:'center'});});
+        c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});
+  })();
+  </script>
+  <script>
+  (function(){var s=document.getElementById('candybag');if(!s)return;
+    s.addEventListener('click',function(e){if(e.target.closest('a, .dl, button, input'))return;window.location.href='candy-bag.html';});
   })();
   </script>
 </body>

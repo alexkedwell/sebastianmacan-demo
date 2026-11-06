@@ -24,7 +24,6 @@
     orbit:  { g1: "#ff9d2e", g2: "#ffd76b", shadow: "rgba(255,157,46,.30)" },
     prism:  { g1: "#ff4ad9", g2: "#4affd9", shadow: "rgba(255,74,217,.30)" },
     jelly:  { g1: "#ff7ab8", g2: "#8fe8c0", shadow: "rgba(255,122,184,.30)" },
-    warble: { g1: "#2bb59a", g2: "#ff9f43", shadow: "rgba(43,181,154,.30)" },
     fizz:   { g1: "#ffb347", g2: "#c8f05a", shadow: "rgba(255,179,71,.30)" },
     wizard: { g1: "#8b6bff", g2: "#ffd84a", shadow: "rgba(139,107,255,.30)" },
     magician: { g1: "#8b6bff", g2: "#ffd84a", shadow: "rgba(139,107,255,.30)" },
@@ -97,6 +96,16 @@
       var t = setTimeout(finish, TIMEOUT_MS);
       try {
         var hp = document.getElementById("eg-hp");
+        // Library: record the free grab + send the welcome/library email (fire-and-forget, never blocks)
+        var FREE = { candybag: 1, chop: 1, scrap: 1, orbit: 1, jelly: 1, warble: 1 };
+        if (FREE[plugin] && !(hp && hp.value)) {
+          try {
+            fetch("https://dl.sebastianmacan.com/library/free-grab", {
+              method: "POST", keepalive: true, headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: email, product: plugin })
+            }).catch(function () {});
+          } catch (_) {}
+        }
         fetch(ENDPOINT, {
           method: "POST",
           keepalive: true, // survive page navigation / download start

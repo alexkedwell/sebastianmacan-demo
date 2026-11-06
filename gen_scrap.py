@@ -64,9 +64,6 @@ for root in ("site", "demo-site"):
   <h2>What Scrap does</h2>
   <p>Scrap keeps a short recording of whatever is playing. Every few beats it grabs a slice, between 15 and 220 milliseconds, and plays it back up to thirteen times. Some slices come back reversed. Some come back an octave down, a fifth up, an octave up. Then it hands you the dry signal again like nothing happened. The result is metallic, broken and rhythmic in a way you could never program by hand. Put it on a drop, a vocal chop, a hi-hat loop, a whole bus for one bar.</p>
 
-  <h2>Where it comes from</h2>
-  <p>Scrap started life as the GLITCH mode inside Rusty, our robot vocal plugin. People kept using that one mode on things that were not vocals at all, so it is now its own plugin, with its own knobs for the parts Rusty kept hidden. Same slice engine, same rusty robot, nothing held back, and it is free.</p>
-
   <h2>Six knobs, one robot</h2>
   <div class="bot"><b>TWIST.</b> How broken. Low is a polite hiccup every so often. High is shorter slices, more repeats, more reversals, more pitch jumps.</div>
   <div class="bot"><b>REPEAT.</b> How many times a slice can fire. All the way up is a thirteen-shot stutter.</div>
@@ -77,7 +74,7 @@ for root in ("site", "demo-site"):
 
   <h2>Get started in 3 steps</h2>
   <div class="step"><b>1. Put Scrap on something rhythmic.</b> A drum loop, a vocal chop, the last bar before a drop.</div>
-  <div class="step"><b>2. Press play.</b> It opens on Init, which is exactly Rusty's glitch. Already interesting.</div>
+  <div class="step"><b>2. Press play.</b> It opens on Init. Already interesting.</div>
   <div class="step"><b>3. Turn TWIST up and PITCH up.</b> That is the metallic one. Automate MIX from zero to full for the drop and back.</div>
 
   <h2>Make it yours</h2>
@@ -116,7 +113,7 @@ for root in ("site", "demo-site"):
       <div class="kind">Free Glitch Repeater</div>
       <h2 style="background:linear-gradient(135deg,#ff7a2e,#ffb347);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SCRAP</h2>
       <p class="tag">Grabs a slice and won't let go.</p>
-      <p class="desc">Stutter-buffer glitch that repeats, reverses and pitch-kicks slices of whatever is playing, with a growl drive and an air return. Metallic, broken, built for drops. Rusty's glitch mode set free.</p>
+      <p class="desc">Stutter-buffer glitch that repeats, reverses and pitch-kicks slices of whatever is playing, with a growl drive and an air return. Metallic, broken, built for drops.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/scrap.png?v={VER}"><source src="https://video.sebastianmacan.com/img/video/scrap_ui_loop.mp4?v={VER}" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,#ff7a2e,#ffb347);box-shadow:0 6px 28px rgba(255,122,46,.30);" href="{MAC}">Download Scrap</a>
       <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
