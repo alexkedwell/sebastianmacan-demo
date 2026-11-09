@@ -4,7 +4,7 @@ Run from ~/sebastianmacan/site. Idempotent. Modelled on gen_gremlin.py.
 Palette comes from the Pocket UI screenshot: orange arcs on a dark room, cream snare head."""
 import re, os
 S = os.path.dirname(os.path.abspath(__file__))
-h = open(f"{S}/gremlin.html").read()
+h = open(f"{S}/_tpl/product.html").read().replace('<meta name="robots" content="noindex">\n', "")
 
 # palette: orange + cream from the Pocket UI
 h = h.replace("--g1:#2ed14f; --g2:#c9ff4a;", "--g1:#4f97e8; --g2:#e7d6bb;")

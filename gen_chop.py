@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+# DEAD GENERATOR (Nov 9 2026): template drifted (neon skin) + VER stale. chop.html is hand-edited now. Do not run.
+raise SystemExit("gen_chop.py is retired - edit chop.html directly")
 """Generate site/chop.html (FREE product page) from gremlin.html. Run from ~/sebastianmacan/site. Idempotent.
 Chop = free forever (Orbit pattern: direct download links, no cart)."""
 import re, os
 S = os.path.dirname(os.path.abspath(__file__))
-h = open(f"{S}/gremlin.html").read()
+h = open(f"{S}/_tpl/product.html").read().replace('<meta name="robots" content="noindex">\n', "")
 
 VER = "1.0.1"
 MAC = f"downloads/Chop-v{VER}-macOS.pkg"
@@ -69,8 +71,8 @@ body = f'''  <section class="hero">
   <h2>What Chop does</h2>
   <p>Drop it on a pad, a vocal, a guitar loop, a whole bus. Chop opens and closes on the beat so the sound turns into a rhythm. Six rates from quarter notes to 1/32s with triplets, five patterns from straight to gallop to random, and a LENGTH knob that decides how much of every step you hear. SHAPE goes from a soft pluck to a hard gate. SWING and HUMANIZE keep it from sounding like a machine.</p>
 
-  <h2>Where it comes from</h2>
-  <p>Chop is the first section of Gremlin, our three-part mangler. It was always the part people reached for first, so now it is its own plugin and it is free. Same engine, same green chomper, nothing held back.</p>
+  <h2>Same family as Smear, Stutter and Twitch</h2>
+  <p>Chop shares its panel, its chomper and its engine with the three $15 boxes. Each one does one thing; this one happens to be free. Nothing held back.</p>
 
   <h2>Six knobs, one groove</h2>
   <div class="bot"><b>RATE.</b> 1/4, 1/8, 1/8T, 1/16, 1/16T, 1/32. Locked to your DAW tempo.</div>
@@ -92,7 +94,7 @@ body = f'''  <section class="hero">
   <div class="knob"><b>INIT ANY KNOB.</b> Right-click or Cmd-click a knob to send it home.</div>
 
   <h2>Want more?</h2>
-  <p><a href="gremlin-duo.html">Gremlin Duo</a> adds SMEAR, the granular plate that melts your chopped loop into a wash, for $7. <a href="gremlin.html">Gremlin</a> adds the full STUTTER rack on top for $15.</p>
+  <p>Smear, Stutter and Twitch each pick up where Chop leaves off: <a href="smear.html">Smear</a> melts your chopped loop into a plate reverb, <a href="stutter.html">Stutter</a> repeats it on a dice roll, <a href="twitch.html">Twitch</a> is the per-step glitch rack with a draw pad. $15 each.</p>
 
   <h2>Common questions</h2>
   <div class="knob"><b>Is Chop really free?</b> Yes. Free forever. Full version, every knob, no email wall, no subscription.</div>

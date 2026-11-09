@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/base.css?v=1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
+<meta name="theme-color" content="#000000">
+<title>Smear | Granular Smear and Plate Reverb VST3/AU Plugin</title>
+<meta name="description" content="Smear melts any sound into a cloud. Grain blur into a plate reverb with PITCH, BLUR, WASH, DECAY, SHIMMER and FREEZE. VST3 and AU, macOS and Windows. By Sebastian Macan.">
+<style>
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#9a6bff; --g2:#44e0c8; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; letter-spacing:.12em; font-size:15px; text-transform:uppercase; color:var(--txt); text-decoration:none; }
+  .logo span { color:#ff3d5a; }
+  nav a { color:var(--dim); text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  .back { display:inline-block; margin:18px 0 0; color:var(--dim); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--txt); }
+  .hero { text-align:center; padding:26px 0 8px; }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(154,107,255,.30); animation:float 7s ease-in-out infinite; }
+  .videobox video { display:block; width:100%; height:auto; }
+  .sm, .big { cursor:pointer; }
+  .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .cta { text-align:center; margin:28px 0 8px; }
+  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(154,107,255,.30); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .meta { color:var(--dim); font-size:13px; margin-top:12px; }
+  h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
+  h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
+  p, li { color:#c8c8d0; font-size:15.5px; }
+  ol, ul { padding-left:24px; margin:10px 0; }
+  li { margin-bottom:10px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin:14px 0; }
+  .step b { color:var(--txt); }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .bot { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 22px; margin:12px 0; color:#c8c8d0; font-size:15.5px; line-height:1.55; }
+  .bot b { color:#fff; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
+  .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .knob b { color:var(--txt); }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:var(--dim); }
+  @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
+  .studio { margin:34px auto 6px; max-width:920px; }
+  .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
+  .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(255,157,46,.18); }
+  .studio video { display:block; width:100%; height:auto; }
+  .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(0,0,0,.05), rgba(0,0,0,.45)); transition:opacity .25s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(255,157,46,.45); transition:transform .15s; }
+  .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
+  .studio .play:hover span { transform:scale(1.07); }
+  .studio.playing .play { opacity:0; pointer-events:none; }
+  .studio .sound { position:absolute; top:14px; right:14px; font-size:11px; font-weight:800; letter-spacing:.1em; color:#0a0a0c; background:var(--g1); padding:6px 10px; border-radius:999px; }
+  .studio.playing .sound { display:none; }
+  .studio .cap { color:var(--dim); font-size:15px; margin:12px 4px 0; line-height:1.55; }
+  .studio .cap b { color:var(--txt); }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "name": "Smear",
+   "operatingSystem": "macOS, Windows",
+   "applicationCategory": "MultimediaApplication",
+   "applicationSubCategory": "Audio plugin (VST3, AU)",
+   "description": "Smear is a granular smear into a plate reverb. SMEAR sets how dense the grain cloud is, PITCH throws grains up an octave, a fifth or down an octave, BLUR smudges them, WASH and DECAY run the plate from 0.6 s to 14 s, SHIMMER adds a +12 st feedback shift, FREEZE holds the tail forever. By Sebastian Macan.",
+   "url": "https://sebastianmacan.com/smear.html",
+   "offers": { "@type": "Offer", "price": "15", "priceCurrency": "USD" },
+   "author": { "@type": "Person", "name": "Sebastian Macan" },
+   "publisher": { "@type": "Organization", "name": "Aluetion, LLC", "url": "https://sebastianmacan.com" }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    { "@type": "Question", "name": "How much is Smear?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Smear is $15, one-time. Instant download after checkout, full version, no locked knobs, no subscription." } },
+    { "@type": "Question", "name": "Is Smear a reverb?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It is a plate reverb with a granular front end: grains of the input get blurred and pitched before the plate, so sounds melt instead of just echoing." } },
+    { "@type": "Question", "name": "What DAWs does Smear work in?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more." } },
+    { "@type": "Question", "name": "Is there a Windows version of Smear?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Smear ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms." } }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+  </header>
+  <a class="back" href="/">&larr; Back to all plugins</a>
+
+  <section class="hero">
+    <div class="kind">Granular Smear</div>
+    <h1>SMEAR</h1>
+    <p class="tag">Melts anything into a cloud.</p>
+    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/smear.png?v=1.0.0" aria-label="Smear plugin UI: a violet melting creature dripping while WASH and DECAY sweep"><source src="https://video.sebastianmacan.com/img/video/smear_ui_loop.mp4?v=1.0.0" type="video/mp4"></video></div>
+    <div class="cta">
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="smear">Buy Smear &middot; $15</span>
+      <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
+    </div>
+  </section>
+
+  <h2>What Smear does</h2>
+  <p>Smear takes whatever you feed it and melts it. The incoming sound gets cut into a cloud of grains, some of them thrown up an octave or a fifth, smudged by a feedback delay, then poured into a plate reverb that runs from a short room to a 14 second wash. A dry drum loop turns into a pad. A vocal turns into a choir in the next room. Turn SMEAR up and the edges go, turn WASH up and the whole thing dissolves, hit FREEZE and the tail hangs there for as long as you want it.</p>
+
+  <h2>Melty, the readout</h2>
+  <p>The violet creature in the panel is the meter. It drips with the wash and melts harder the more you smear, so you can see how far gone the sound is before you hear it.</p>
+
+  <h2>Ten controls, one cloud</h2>
+  <div class="bot"><b>SMEAR.</b> How dense the grain cloud is. Zero is clean, full is soup.</div>
+  <div class="bot"><b>PITCH.</b> Chance a grain plays +12, +7 or -12 semitones. A little is sparkle, a lot is a choir.</div>
+  <div class="bot"><b>BLUR.</b> A feedback delay that smudges the grains. Low keeps the groove, high turns rhythm into texture.</div>
+  <div class="bot"><b>WASH.</b> Reverb amount behind the cloud.</div>
+  <div class="bot"><b>DECAY.</b> Reverb tail, 0.6 s to 14 s.</div>
+  <div class="bot"><b>DEPTH.</b> Predelay, early/late balance and a high-cut in one move, so the verb sits further back instead of on top.</div>
+  <div class="bot"><b>SHIMMER.</b> A +12 st pitch shift in the reverb feedback. Every pass climbs an octave.</div>
+  <div class="bot"><b>TONE.</b> Dark to bright on the wet sound only.</div>
+  <div class="bot"><b>DRIFT.</b> Slow wobble of grain pitch and delay time, so a long tail never sits still.</div>
+  <div class="bot"><b>FREEZE.</b> Holds the grains and an endless reverb while lit. Play over it, then let go.</div>
+
+  <h2>Get started in 3 steps</h2>
+  <div class="step"><b>1. Put Smear on something.</b> A drum loop, a chord stab, a vocal phrase. It opens on Init, already wet.</div>
+  <div class="step"><b>2. Turn WASH and DECAY up.</b> The sound starts to pour out behind itself. Stop where it still feels like your track.</div>
+  <div class="step"><b>3. Hit FREEZE at the right moment.</b> The tail hangs. Automate it on a transition and let it go on the drop.</div>
+
+  <h2>Make it yours</h2>
+  <div class="knob"><b>MIX and OUT.</b> Blend the cloud with the dry sound, trim the result. BYPASS pill in the header for an honest A/B.</div>
+  <div class="knob"><b>ON pill.</b> The switch in the panel corner. Off dims the box and passes the dry signal, same as inside the mangler.</div>
+  <div class="knob"><b>INIT ANY KNOB.</b> Right-click or Cmd-click a knob to send it home.</div>
+  <div class="knob"><b>Window size.</b> Opens compact. Drag the corner grip to make it as big as you like; your DAW remembers it.</div>
+
+  <h2>Presets</h2>
+  <p>12 to start: Init, Candy Cloud, Cathedral Melt, Deep Violet, Endless Sunday, Frozen Lake, Ghost Choir, Haunted Pad, Shimmer Lift, Soft Focus, Tape Drip and Washed Out. Save unlimited of your own.</p>
+
+  <h2>Common questions</h2>
+  <div class="knob"><b>How much is Smear?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
+  <div class="knob"><b>Is Smear a reverb?</b> It is a reverb with a granular front end. The plate alone is a proper Dattorro plate; SMEAR, PITCH, BLUR and DRIFT are what make it melt instead of just echo.</div>
+  <div class="knob"><b>What DAWs does Smear work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
+  <div class="knob"><b>Is there a Windows version of Smear?</b> Yes. Smear ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms.</div>
+  <div class="knob"><b>How do I install Smear?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
+
+  <div class="cta">
+    <span class="dl buy" role="button" tabindex="0" data-cart-buy="smear">Buy Smear &middot; $15</span>
+    <div class="meta">Email required &middot; instant download</div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="https://dl.sebastianmacan.com/library">Library</a> · <a href="downloads.html">Re-download</a></div>
+  </footer>
+</div>
+<script src="js/cart.js?v=split1" defer></script>
+<script src="js/email-gate.js?v=free5" defer></script>
+
+<script>
+    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+  </script>
+<script src="js/loops.js?v=1" defer></script>
+</body>
+</html>

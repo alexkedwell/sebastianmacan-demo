@@ -29,9 +29,10 @@
     biome:         { name: 'Biome',                  cents: 3900, priceId: 'pri_01m09h3ccsvkn3gxqt033pppd5' },
     magician:      { name: 'Chordsmith',               cents: 3900, priceId: 'pri_01m09h3cvs4nrrch2v4r9zbq5n' },
     honey:         { name: 'Honey',                  cents: 1500, priceId: 'pri_01m3nvfqfgwp0hn49hbr0zw2dt' },
-    gremlin:       { name: 'Gremlin',                cents: 1500, priceId: 'pri_01m3rmmy11e41nxdpkp9rdjq4d' },
+    smear:         { name: 'Smear',                 cents: 1500, priceId: 'pri_01m6zc3a05t9ersbfm7tfsm3p0' },
+    stutter:       { name: 'Stutter',               cents: 1500, priceId: 'pri_01m6zc3abqa067b8xh3a3zrvde' },
+    twitch:        { name: 'Twitch',                cents: 1500, priceId: 'pri_01m6zc3ar61pqdse2fhx42gnd6' },
     pocket:        { name: 'Pocket',                 cents: 1500, priceId: 'pri_01m5jmgg27ch339v1v5gkr6g7a' },
-    gremlinduo:    { name: 'Gremlin',                cents: 1500, priceId: 'pri_01m3rmmy11e41nxdpkp9rdjq4d' }, // Duo retired Nov 1 2026; alias for cached pages
     fireplace:     { name: 'Fireplace',              cents: 1500, priceId: 'pri_01m1nckxvaekbaccghkvvh4zva' },
     gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
     /* MIDI chord packs */

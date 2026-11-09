@@ -101,6 +101,33 @@
   </header>
   <a class="back" href="/">&larr; Back to all plugins</a>
 
+  <!-- family-hero:start -->
+<style>
+.fam{position:relative;width:900px;margin:4px 0 -14px calc(50% - 450px);padding:26px 0 0;overflow:visible}
+@media(max-width:960px){.fam{width:100%;margin:4px 0 -14px 0;overflow:hidden}.fam .row{transform:scale(.62);transform-origin:50% 100%}}
+@media(max-width:520px){.fam .row{transform:scale(.42)}.fam{margin-top:-20px}}
+@media(prefers-reduced-motion:reduce){.fam img{animation:none}}
+.fam .floor{position:absolute;left:50%;bottom:8px;width:92%;height:70px;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.14),rgba(255,255,255,.05) 55%,transparent 72%)}
+.fam .back{position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 90%,rgba(95,208,122,.16),rgba(77,163,255,.08) 55%,transparent 80%);pointer-events:none}
+.fam .row{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:0;padding:0 0 32px}
+.fam img{display:block;filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) saturate(1.08);transform-origin:50% 100%;animation:famBob 3.2s ease-in-out infinite}
+.fam img.L{height:116px}.fam img.M{height:90px}.fam img.S{height:70px}
+.fam img[src*="orbit"]{filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) drop-shadow(0 0 12px rgba(190,130,255,.95)) brightness(1.7) saturate(1.5)}
+.fam img[src*="gremlin_smear"]{filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(200,90,255,.8)) brightness(1.35) saturate(1.3)}
+.fam img[src*="fire"]{mix-blend-mode:screen;filter:drop-shadow(0 0 12px rgba(255,160,40,.6))}
+.fam img:nth-child(2n){animation-delay:-.8s}.fam img:nth-child(3n){animation-delay:-1.6s}.fam img:nth-child(5n){animation-delay:-2.4s}
+@keyframes famBob{0%,100%{transform:translateY(0) scaleY(1)}50%{transform:translateY(-6px) scaleY(1.025)}}
+.fam .front{position:absolute;left:0;right:0;bottom:4px;display:flex;justify-content:center;align-items:flex-end;gap:0;pointer-events:none}
+.fam .front img{height:80px}
+</style>
+
+<style>.fam.huddle .row{justify-content:center;padding-left:30px;padding-right:30px}.fam.huddle .row img{position:relative;margin:0 -5px}.fam.huddle .row img.S,.fam.huddle .row img.M{margin:0 -14px}.fam.huddle .row img.L{z-index:1}.fam.huddle .row img.M{z-index:3}.fam.huddle .row img.S{z-index:5}</style>
+<div class="fam huddle"><div class="back"></div><div class="floor"></div><div class="row">
+<img class="M" src="/img/cast/fire.png"><img class="L" src="/img/cast/pocket.png"><img class="S" src="/img/cast/orbit.png"><img class="L" src="/img/cast/chop.png"><img class="M" src="/img/cast/gremlin_twitch.png"><img class="L" src="/img/cast/warble.png"><img class="S" src="/img/cast/gremlin_stutter.png"><img class="L" src="/img/cast/jelly.png"><img class="S" src="/img/cast/honey.png"><img class="L" src="/img/cast/scrap.png"><img class="M" src="/img/cast/gremlin_smear.png">
+</div></div>
+  <!-- family-hero:end -->
+
   <h1>Use my plugins. <em>Get paid.</em></h1>
   <p class="sub">Record yourself using a Sebastian Macan plugin in a real session. Send the raw video. I pay $10 for every one I accept (terms below). The whole catalogue is yours, free.</p>
 
@@ -165,7 +192,7 @@
           <select id="plugin" name="plugin" required>
             <option value="">Pick one</option>
             <option>Biome</option><option>Chaos</option><option>Chordsmith</option><option>Dusty</option><option>Fireplace</option>
-            <option>Ghost</option><option>Gloss</option><option>Gremlin</option><option>Halo</option><option>Honey</option>
+            <option>Ghost</option><option>Gloss</option><option>Smear</option><option>Stutter</option><option>Twitch</option><option>Halo</option><option>Honey</option>
             <option>Jelly</option><option>Orbit</option><option>Pocket</option><option>Reels</option><option>Taffy</option><option>Warble</option>
             <option value="Chord pack">A chord pack</option><option value="Ad">Instagram ad</option>
           </select></div>

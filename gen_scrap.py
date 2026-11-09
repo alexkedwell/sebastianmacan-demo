@@ -85,7 +85,7 @@ for root in ("site", "demo-site"):
   <div class="knob"><b>Window size.</b> Drag the corner grip to resize the whole plugin; your DAW remembers it.</div>
 
   <h2>Want more?</h2>
-  <p><a href="chop.html">Chop</a> is the other free one: a tempo-synced gate that turns anything into a rhythm. <a href="gremlin.html">Gremlin</a> is the full mangler box with four creatures for $15.</p>
+  <p><a href="chop.html">Chop</a> is the other free one: a tempo-synced gate that turns anything into a rhythm. <a href="stutter.html">Stutter</a>, <a href="smear.html">Smear</a> and <a href="twitch.html">Twitch</a> are the $15 boxes next to it.</p>
 
   <h2>Common questions</h2>
   <div class="knob"><b>Is Scrap really free?</b> Yes. Free forever. Full version, every knob, no email wall, no subscription.</div>

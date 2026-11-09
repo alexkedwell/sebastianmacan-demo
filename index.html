@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
 <meta name="theme-color" content="#000000">
-<title>Sebastian Macan - Audio Plugins | 12 Plugins + 11 MIDI Packs</title>
+<title>Sebastian Macan - Audio Plugins | 14 Plugins + 11 MIDI Packs</title>
 <meta name="description" content="Creative audio plugins (VST3/AU, macOS) + 4796 MIDI chord progressions incl. Hitmaker Chords and the Modal Series: Biome, Chordsmith, Fireplace, Gloss, Jelly, Orbit, Warble.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; }
@@ -95,19 +95,9 @@
   .fizz   { --g1:#ffb347; --g2:#c8f05a; --glow:#ffb347; --shadow:rgba(255,179,71,.26); }
   .wizard { --g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26); }
   .honey { --g1:#d4712f; --g2:#e8d9bb; --glow:#d4712f; --shadow:rgba(212,113,47,.30); }
-  .gremlin { --g1:#9ad63a; --g2:#4fd8ff; --glow:#d64dff; --shadow:rgba(214,77,255,.30); }
-  .gremlin::before { opacity:.16; background:radial-gradient(260px 170px at 0% 0%, #9ad63a 0%, transparent 70%),radial-gradient(260px 170px at 100% 0%, #d64dff 0%, transparent 70%),radial-gradient(260px 170px at 0% 100%, #ff4fa3 0%, transparent 70%),radial-gradient(260px 170px at 100% 100%, #4fd8ff 0%, transparent 70%); }
-  /* Gremlin card: clean neon (6A, Nov 3 2026) */
-  .gremlin h2 { -webkit-text-fill-color:#fff5fa; text-shadow:0 0 2px #fff, 0 0 10px rgba(255,79,163,.9), 0 0 28px rgba(255,79,163,.55); }
-  .gremlin .kind { color:#ffd4e8; letter-spacing:.2em; text-shadow:0 0 8px rgba(255,79,163,.6); }
-  .gremlin .gbar { height:2px; width:120px; border-radius:1px; background:#ffe3f0; box-shadow:0 0 4px #ff4fa3, 0 0 12px rgba(255,79,163,.9); margin-top:12px; } .gremlin .gbar i { display:none; }
-  .gremlin .tag { color:#fff; font-weight:600; font-style:italic; letter-spacing:.02em; text-shadow:0 0 10px rgba(255,79,163,.5); }
-  .gremlin .desc { color:#cfd3dc; }
-  .gremlin .dl, .gremlin .cartbtn.buy, .gremlin .cartbtn.add, .gremlin .new { background:transparent !important; border-radius:999px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
-  .gremlin .dl, .gremlin .cartbtn.buy { border:1.5px solid #ff7ab8; color:#fff; box-shadow:0 0 3px #ff4fa3, 0 0 14px rgba(255,79,163,.55), inset 0 0 10px rgba(255,79,163,.25); text-shadow:0 0 8px rgba(255,79,163,.9); }
-  .gremlin .cartbtn.add { border:1.5px solid rgba(255,255,255,.55); color:#fff; box-shadow:0 0 10px rgba(255,255,255,.18), inset 0 0 8px rgba(255,255,255,.08); }
-  .gremlin .new { border:1.5px solid #ff7ab8; color:#fff; box-shadow:0 0 10px rgba(255,79,163,.6); text-shadow:0 0 6px rgba(255,79,163,.9); }
-  .gremlin .shot { border-color:rgba(255,122,184,.35); box-shadow:0 0 30px rgba(255,79,163,.25); }
+  .smear { --g1:#9a6bff; --g2:#44e0c8; --glow:#9a6bff; --shadow:rgba(154,107,255,.30); }
+  .stutter { --g1:#ff2ea6; --g2:#ff7ad1; --glow:#ff2ea6; --shadow:rgba(255,46,166,.30); }
+  .twitch { --g1:#3cdcff; --g2:#9aefff; --glow:#3cdcff; --shadow:rgba(60,220,255,.30); }
   .pocket { --g1:#4f97e8; --g2:#e7d6bb; --glow:#4f97e8; --shadow:rgba(79,151,232,.30); }
   .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
   .gloss { --g1:#8b6bff; --g2:#3df0a8; --glow:#8b6bff; --shadow:rgba(139,107,255,.26); }
@@ -248,13 +238,7 @@
   body { position:relative; }
   .wrap { position:relative; z-index:1; }
   /* the card dissolves into space: background + glow go, a thin glass edge stays */
-  .card.gremlin { background:rgba(20,20,24,calc(1 - var(--space))); border-color:rgba(255,255,255,calc(.08 + .16*var(--space)));
     box-shadow:0 0 calc(80px*var(--space)) rgba(255,79,163,calc(.22*var(--space))); transition:none; }
-  .card.gremlin::before { opacity:calc(.16*(1 - var(--space))); }
-  .card.gremlin h2 { text-shadow:0 0 calc(22px*var(--space)) rgba(255,255,255,calc(.55*var(--space))), 0 0 calc(50px*var(--space)) rgba(255,79,163,calc(.5*var(--space))); }
-  .card.gremlin .kind, .card.gremlin .desc, .card.gremlin .meta { color:rgba(200,204,214,calc(.62 + .3*var(--space))); }
-  .card.gremlin .shot { box-shadow:0 0 calc(40px*var(--space)) rgba(255,79,163,calc(.30*var(--space))); border-color:rgba(255,255,255,calc(.08 + .25*var(--space))); }
-  .card.gremlin .dl, .card.gremlin .cartbtn { position:relative; z-index:2; }
   /* neighbours keep their solid card look so they read as cards floating in space */
   .sect-title { position:relative; }
   .freerow { margin-top:44px; }
@@ -299,7 +283,6 @@
   .candybag .dl.dl-win { background:none; border:1px solid #fff; color:#fff; box-shadow:none; }
   .candybag .inside { margin-top:16px; font-size:12.5px; color:#dbeeff; }
   @media (max-width:720px) { .candybag { grid-template-columns:1fr; } .candybag .stagewrap { min-height:0; padding:14px 14px 0; } .candybag .binner { padding:22px 20px 24px; } }
-  @media (min-width:641px){ .card.gremlin .desc, .card.gremlin .tag, .card.gremlin .kind, .card.gremlin .meta { text-shadow:0 1px 2px rgba(0,0,0,.9), 0 0 12px rgba(5,5,14,.95), 0 0 24px rgba(5,5,14,.9); } }
 </style>
 </head>
 <body>
@@ -310,9 +293,9 @@
   </header>
 
   <section class="hero">
-    <div class="badge">12 Plugins + 11 MIDI Packs · VST3 + AU · macOS + Windows</div>
+    <div class="badge">14 Plugins + 11 MIDI Packs · VST3 + AU · macOS + Windows</div>
     <h1>A whole <em>candy store</em> of sound.</h1>
-    <p class="sub">Twelve plugins and 4796 MIDI chord progressions for producers who crave something unique. Grab a flavor, drop it in your DAW, create something sweet.</p>
+    <p class="sub">Fourteen plugins and 4796 MIDI chord progressions for producers who crave something unique. Grab a flavor, drop it in your DAW, create something sweet.</p>
   </section>
 
   <div class="sect-title" id="instruments">Instruments</div>
@@ -364,25 +347,48 @@
 
   <div class="sect-title" id="effects">Color &amp; Motion FX</div>
   <div class="grid">
-    <div class="card gremlin">
+    <div class="card stutter">
       <span class="new">NEW</span>
-      <div class="kind">The Mangler Box</div>
-      <h2>GREMLIN</h2>
-      <div class="gbar"><i></i><i></i><i></i><i></i></div>
-      <p class="tag">Four mischiefs. One box.</p>
-      <p class="desc">Chop cuts it. Smear melts it. Stutter repeats it. Twitch wrecks it.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/gremlin.png?v=5.0.1"><source src="https://video.sebastianmacan.com/img/video/gremlin_ui_loop.mp4?v=5.0.1" type="video/mp4"></video></div>
-      <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
-      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="gremlin">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Now</span></div>
-      <a class="more" href="gremlin.html">See how it works &rarr;</a>
-      <div class="meta">v5.0.1 · VST3 + AU effect · macOS + Windows</div>
+      <div class="kind">Beat Repeat</div>
+      <h2 style="background:linear-gradient(135deg,#ff2ea6,#ff7ad1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">STUTTER</h2>
+      <p class="tag">Repeats it until it is a new idea.</p>
+      <p class="desc">Buffer repeats on a dice roll. RATE from whole bars to 1/32 or FREE in milliseconds, REPEATS, RAMP, REVERSE, true PITCH, TAPE, SCATTER, HOLD and a patch bay you can click. Jitter twitches with every burst.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/stutter.png?v=2.0.0"><source src="https://video.sebastianmacan.com/img/video/stutter_ui_loop.mp4?v=2.0.0" type="video/mp4"></video></div>
+      <span class="dl buy" style="background:linear-gradient(135deg,#ff2ea6,#ff7ad1);box-shadow:0 6px 28px rgba(255,46,166,.30);" role="button" tabindex="0" data-cart-buy="stutter">Buy Stutter &middot; $15</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="stutter">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="stutter">Buy Now</span></div>
+      <a class="more" href="stutter.html">See how it works &rarr;</a>
+      <div class="meta">v2.0.0 · VST3 + AU effect · macOS + Windows</div>
+    </div>
+    <div class="card smear">
+      <span class="new">NEW</span>
+      <div class="kind">Granular Smear</div>
+      <h2 style="background:linear-gradient(135deg,#9a6bff,#44e0c8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SMEAR</h2>
+      <p class="tag">Melts anything into a cloud.</p>
+      <p class="desc">Grains of your sound, some thrown up an octave, smudged and poured into a plate reverb with a tail up to 14 seconds. SHIMMER climbs, FREEZE holds it forever. Melty drips along.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/smear.png?v=1.0.0"><source src="https://video.sebastianmacan.com/img/video/smear_ui_loop.mp4?v=1.0.0" type="video/mp4"></video></div>
+      <span class="dl buy" style="background:linear-gradient(135deg,#9a6bff,#44e0c8);box-shadow:0 6px 28px rgba(154,107,255,.30);" role="button" tabindex="0" data-cart-buy="smear">Buy Smear &middot; $15</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="smear">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="smear">Buy Now</span></div>
+      <a class="more" href="smear.html">See how it works &rarr;</a>
+      <div class="meta">v1.0.0 · VST3 + AU effect · macOS + Windows</div>
+    </div>
+    <div class="card twitch">
+      <span class="new">NEW</span>
+      <div class="kind">Per-Step Glitch Rack</div>
+      <h2 style="background:linear-gradient(135deg,#3cdcff,#9aefff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">TWITCH</h2>
+      <p class="tag">Twelve effects. One grid. Draw the rest.</p>
+      <p class="desc">GATE, CRUSH, WARP, COMB, GRAIN, GLITCH, FORMANT, RING and CHAOS, each firing on the step grid. SKETCH is a draw pad: TIME scrubs, VOL gates, MAD throws seeded events. Zappy sparks on every hit.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/twitch.png?v=1.0.0"><source src="https://video.sebastianmacan.com/img/video/twitch_ui_loop.mp4?v=1.0.0" type="video/mp4"></video></div>
+      <span class="dl buy" style="background:linear-gradient(135deg,#3cdcff,#9aefff);box-shadow:0 6px 28px rgba(60,220,255,.30);" role="button" tabindex="0" data-cart-buy="twitch">Buy Twitch &middot; $15</span>
+      <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="twitch">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="twitch">Buy Now</span></div>
+      <a class="more" href="twitch.html">See how it works &rarr;</a>
+      <div class="meta">v1.0.0 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card chop">
       <span class="new">NEW</span>
       <div class="kind">Free Rhythm Chopper</div>
       <h2 style="background:linear-gradient(135deg,#8fd62a,#d4ff5a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">CHOP</h2>
       <p class="tag">Chomps any sound into a groove.</p>
-      <p class="desc">Tempo-synced gate with six rates, five patterns, swing and humanize. Pads, vocals, loops: anything that sustains becomes a rhythm. The first section of Gremlin, free forever.</p>
+      <p class="desc">Tempo-synced gate with six rates, five patterns, swing and humanize. Pads, vocals, loops: anything that sustains becomes a rhythm. Free forever.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chop.png?v=1.1.1"><source src="https://video.sebastianmacan.com/img/video/chop_ui_loop.mp4?v=1.1.1" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,#8fd62a,#d4ff5a);box-shadow:0 6px 28px rgba(143,214,42,.30);" href="downloads/Chop-v1.1.1-macOS.pkg">Download Chop</a>
       <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
@@ -867,7 +873,7 @@
     <div style="width:100%;margin-top:10px;font-size:12px;">Guides: <a href="learn/biome.html">Granular synthesis</a> &middot; <a href="learn/chordsmith.html">Chord generators</a> &middot; <a href="learn/jelly.html">Wobble FX</a> &middot; <a href="learn/orbit.html">3D auto-pan</a></div>
   </footer>
 </div>
-<script src="js/cart.js?v=free5" defer></script>
+<script src="js/cart.js?v=split1" defer></script>
 <script src="js/email-gate.js?v=free5" defer></script>
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.
@@ -914,7 +920,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script src="js/madewith.js?v=r1101"></script>
 <script src="js/loops.js?v=1" defer></script>
-<script src="js/spacewarp.js?v=5"></script>
   <script>
   (function(){var c=document.getElementById('candyad');if(!c)return;
         c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});

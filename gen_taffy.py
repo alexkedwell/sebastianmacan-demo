@@ -4,7 +4,7 @@ Run from ~/sebastianmacan/site. Idempotent. Modelled on gen_pocket.py.
 Palette: brushed steel + amber LED from the Taffy rack UI."""
 import re, os
 S = os.path.dirname(os.path.abspath(__file__))
-h = open(f"{S}/gremlin.html").read()
+h = open(f"{S}/_tpl/product.html").read().replace('<meta name="robots" content="noindex">\n', "")
 
 h = h.replace("--g1:#2ed14f; --g2:#c9ff4a;", "--g1:#c9c9c9; --g2:#ffb545;")
 h = re.sub(r"rgba\(46,209,79,(\.\d+)\)", r"rgba(255,181,69,\1)", h)
