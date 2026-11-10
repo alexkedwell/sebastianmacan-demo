@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
 <meta name="theme-color" content="#000000">
-<title>Pocket | Lofi Snare Character VST3/AU Plugin</title>
-<meta name="description" content="Pocket is lofi snare character. It puts your snare in the mix instead of on top of it. One DEPTH knob pulls the hit back into the room and keeps it dead centre. VST3 and AU, macOS and Windows. By Sebastian Macan.">
+<title>Pocket | Depth Machine VST3/AU Plugin for Hats, Snares and Percussion</title>
+<meta name="description" content="Pocket is a depth machine. It snugs your hats, snares, claps and percussion into the mix. One DEPTH knob pulls the hit back into the room and keeps it dead centre. VST3 and AU, macOS and Windows. By Sebastian Macan.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#4f97e8; --g2:#e7d6bb; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -83,7 +83,7 @@
    "operatingSystem": "macOS, Windows",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Pocket is lofi snare character. It puts your snare in the mix instead of on top of it. One DEPTH knob darkens the top, adds distance pre-delay and brings up the room, while the snare stays dead centre. By Sebastian Macan.",
+   "description": "Pocket is a depth machine for hats, snares, claps and percussion. It snugs them into the mix instead of on top of it. One DEPTH knob darkens the top, adds distance pre-delay and brings up the room, while the snare stays dead centre. By Sebastian Macan.",
    "url": "https://sebastianmacan.com/pocket.html",
    "offers": { "@type": "Offer", "price": "15", "priceCurrency": "USD" },
    "author": { "@type": "Person", "name": "Sebastian Macan" },
@@ -115,17 +115,20 @@
   <a class="back" href="/">&larr; Back to all plugins</a>
 
   <section class="hero">
-    <div class="kind">Snare Character</div>
+    <div class="kind">Depth Machine</div>
     <h1>POCKET</h1>
-    <p class="tag">Snare character. Puts your snare in the mix instead of on top of it.</p>
-    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/pocket.png?v=1.2.0" aria-label="Pocket plugin UI: a snare flying on a kite string over a blue sky, drifting back as DEPTH goes up; flips to night"><source src="https://video.sebastianmacan.com/img/video/pocket_ui_loop.mp4?v=1.2.0c" type="video/mp4"></video></div>
+    <p class="tag">Depth machine. Snugs your hats, snares, claps and percussion into the mix.</p>
+    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/pocket.png?v=1.2.1" aria-label="Pocket plugin UI: a snare flying on a kite string over a starry night sky, drifting back as DEPTH goes up; flips to day"><source src="https://video.sebastianmacan.com/img/video/pocket_ui_loop.mp4?v=1.2.1" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="pocket">Buy Pocket &middot; $15</span>
-      <div class="meta">v1.2.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
+      <div class="meta">v1.2.1 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
   <h2>What Pocket does</h2>
-  <p>Snare not sounding right in the car? Pocket moves the snare back into the room. One DEPTH knob does the whole job: it softens the top end the way air does, pushes the snare a few milliseconds back, opens up the room around it and tucks the level. Dead centre the whole way. Your snare stops fighting the vocal and starts living with the drums.</p>
+  <p>Hats too loud? Clap sitting on top of the beat? Pocket moves it back into the room. DEPTH walks it back: softer top, a few ms late, more room, a touch quieter, dead centre the whole way. CRACK decides how hard it lands. Put it on hats, snares, claps, shakers, the whole top kit. Everything stops fighting and starts sitting together.</p>
+
+  <h2>Stacking</h2>
+  <p>Layer three snares and they blur together. Give each one a different DEPTH, a different ROOM, a different WIDTH and they blend instead of fighting for the same inch. Pocket is the glue between layers.</p>
 
   <h2>Where it comes from</h2>
   <p>Orbit, the free auto-pan, had a side effect nobody planned: it mixed hats in. The darkening and the tiny pre-delay it used to fake distance turned out to be the useful part. Pocket is that depth engine with the motion stripped out and the source pinned to the centre, rebuilt for the one drum that needs it most.</p>
@@ -138,8 +141,8 @@
   <div class="bot"><b>WIDTH.</b> Stereo width of the room only, never the direct. The snare stays mono-solid while the space around it opens up.</div>
 
   <h2>Get started in 3 steps</h2>
-  <div class="step"><b>1. Put Pocket on the snare.</b> Snare track, snare bus, or the whole top kit. It opens on Init, which is close to dry.</div>
-  <div class="step"><b>2. Turn DEPTH until the snare sits.</b> Somewhere between 30 and 60 percent it stops poking out and starts sounding placed. That is the pocket.</div>
+  <div class="step"><b>1. Put Pocket on whatever's poking out.</b> Hats, snare, claps, a percussion bus. It opens on Init, which is close to dry.</div>
+  <div class="step"><b>2. Turn DEPTH until it sits.</b> Somewhere between 30 and 60 percent it stops poking out and starts sounding placed. That is the pocket.</div>
   <div class="step"><b>3. Shape it.</b> CRACK for the hit, BODY for the weight, ROOM and WIDTH for the space. MIX blends it with the dry signal, OUTPUT trims the result.</div>
 
   <h2>Make it yours</h2>
@@ -158,7 +161,7 @@
   <h2>Common questions</h2>
   <div class="knob"><b>How much is Pocket?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
   <div class="knob"><b>Is Pocket just an EQ and a reverb?</b> No. DEPTH moves four things together the way real distance does: darkening from 16 kHz down to 4.5 kHz, up to 12 ms of pre-delay, room lift and up to a 3 dB level dip. The first reflection is mono, so the snare itself never leaves the centre.</div>
-  <div class="knob"><b>Does it work on things other than snares?</b> It is tuned for snares and claps, but anything that sits too far forward is fair game: percussion, plucks, even a vocal ad-lib.</div>
+  <div class="knob"><b>Is Pocket only for snares?</b> No. Hats, claps, shakers, percussion buses and snares all sit down the same way. Anything too far forward is fair game, plucks and vocal ad-libs included.</div>
   <div class="knob"><b>What DAWs does Pocket work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
   <div class="knob"><b>Is there a Windows version of Pocket?</b> Yes. Pocket ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.</div>
   <div class="knob"><b>How do I install Pocket?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>

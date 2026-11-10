@@ -30,7 +30,7 @@
   .hero p.sub { margin-top:16px; color:var(--dim); max-width:620px; margin-left:auto; margin-right:auto; font-size:clamp(15px,2.4vw,18px); }
   .badge { display:inline-block; border:1px solid #2a2a32; border-radius:999px; padding:4px 14px; font-size:12px; color:var(--dim); letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
   .sect-title { margin:44px 0 6px; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); font-weight:800; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px; margin-top:16px }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px; margin-top:16px; align-items:start }
   .card { border:1px solid var(--line); background:var(--card); border-radius:18px; padding:28px 26px 24px; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .card:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
   .shot { margin:16px -6px 2px; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#0d0d10; }
@@ -352,12 +352,12 @@
       <div class="kind">Beat Repeat</div>
       <h2 style="background:linear-gradient(135deg,#ff2ea6,#ff7ad1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">STUTTER</h2>
       <p class="tag">Repeats it until it is a new idea.</p>
-      <p class="desc">Buffer repeats on a dice roll. RATE from whole bars to 1/32 or FREE in milliseconds, REPEATS, RAMP, REVERSE, true PITCH, TAPE, SCATTER, HOLD and a patch bay you can click. Jitter twitches with every burst.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/stutter.png?v=2.0.0"><source src="https://video.sebastianmacan.com/img/video/stutter_ui_loop.mp4?v=2.0.0" type="video/mp4"></video></div>
+      <p class="desc">Roll the dice and the beat repeats itself. Pick a RATE from whole bars down to 1/32, stack REPEATS, RAMP them faster, flip them in REVERSE, kick the PITCH, warp it with TAPE, SCATTER the hits and HOLD the one you love. Jitter bounces along with every burst.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/stutter.png?v=2.0.2"><source src="https://video.sebastianmacan.com/img/video/stutter_ui_loop.mp4?v=2.0.2" type="video/mp4"></video></div>
       <span class="dl buy" style="background:linear-gradient(135deg,#ff2ea6,#ff7ad1);box-shadow:0 6px 28px rgba(255,46,166,.30);" role="button" tabindex="0" data-cart-buy="stutter">Buy Stutter &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="stutter">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="stutter">Buy Now</span></div>
       <a class="more" href="stutter.html">See how it works &rarr;</a>
-      <div class="meta">v2.0.0 · VST3 + AU effect · macOS + Windows</div>
+      <div class="meta">v2.0.2 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card smear">
       <span class="new">NEW</span>
@@ -369,7 +369,7 @@
       <span class="dl buy" style="background:linear-gradient(135deg,#9a6bff,#44e0c8);box-shadow:0 6px 28px rgba(154,107,255,.30);" role="button" tabindex="0" data-cart-buy="smear">Buy Smear &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="smear">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="smear">Buy Now</span></div>
       <a class="more" href="smear.html">See how it works &rarr;</a>
-      <div class="meta">v1.0.0 · VST3 + AU effect · macOS + Windows</div>
+      <div class="meta">v1.0.1 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card twitch">
       <span class="new">NEW</span>
@@ -377,11 +377,11 @@
       <h2 style="background:linear-gradient(135deg,#3cdcff,#9aefff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">TWITCH</h2>
       <p class="tag">Twelve effects. One grid. Draw the rest.</p>
       <p class="desc">GATE, CRUSH, WARP, COMB, GRAIN, GLITCH, FORMANT, RING and CHAOS, each firing on the step grid. SKETCH is a draw pad: TIME scrubs, VOL gates, MAD throws seeded events. Zappy sparks on every hit.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/twitch.png?v=1.0.0"><source src="https://video.sebastianmacan.com/img/video/twitch_ui_loop.mp4?v=1.0.0" type="video/mp4"></video></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/twitch.png?v=1.0.1"><source src="https://video.sebastianmacan.com/img/video/twitch_ui_loop.mp4?v=1.0.1c7" type="video/mp4"></video></div>
       <span class="dl buy" style="background:linear-gradient(135deg,#3cdcff,#9aefff);box-shadow:0 6px 28px rgba(60,220,255,.30);" role="button" tabindex="0" data-cart-buy="twitch">Buy Twitch &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="twitch">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="twitch">Buy Now</span></div>
       <a class="more" href="twitch.html">See how it works &rarr;</a>
-      <div class="meta">v1.0.0 · VST3 + AU effect · macOS + Windows</div>
+      <div class="meta">v1.0.1 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card chop">
       <span class="new">NEW</span>
@@ -394,18 +394,6 @@
       <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
       <a class="more" href="chop.html">See how it works &rarr;</a>
       <div class="meta">v1.1.1 · VST3 + AU effect · macOS + Windows</div>
-    </div>
-    <div class="card scrap">
-      <span class="new">NEW</span>
-      <div class="kind">Free Glitch Repeater</div>
-      <h2 style="background:linear-gradient(135deg,#ff7a2e,#ffb347);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SCRAP</h2>
-      <p class="tag">Grabs a slice and won't let go.</p>
-      <p class="desc">Stutter-buffer glitch that repeats, reverses and pitch-kicks slices of whatever is playing, with a growl drive and an air return. Metallic, broken, built for drops.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/scrap.png?v=1.0.1"><source src="https://video.sebastianmacan.com/img/video/scrap_ui_loop.mp4?v=1.0.1" type="video/mp4"></video></div>
-      <a class="dl" style="background:linear-gradient(135deg,#ff7a2e,#ffb347);box-shadow:0 6px 28px rgba(255,122,46,.30);" href="downloads/Scrap-v1.0.1-macOS.pkg">Download Scrap</a>
-      <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
-      <a class="more" href="scrap.html">See how it works &rarr;</a>
-      <div class="meta">v1.0.1 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card warble">
       <span class="new">NEW</span>
@@ -431,6 +419,18 @@
       <a class="more" href="jelly.html">See how it works &rarr;</a>
       <div class="meta">v1.1 · VST3 + AU effect · macOS + Windows</div>
     </div>
+    <div class="card scrap">
+      <span class="new">NEW</span>
+      <div class="kind">Free Glitch Repeater</div>
+      <h2 style="background:linear-gradient(135deg,#ff7a2e,#ffb347);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SCRAP</h2>
+      <p class="tag">Grabs a slice and won't let go.</p>
+      <p class="desc">Stutter-buffer glitch that repeats, reverses and pitch-kicks slices of whatever is playing, with a growl drive and an air return. Metallic, broken, built for drops.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/scrap.png?v=1.0.1"><source src="https://video.sebastianmacan.com/img/video/scrap_ui_loop.mp4?v=1.0.1" type="video/mp4"></video></div>
+      <a class="dl" style="background:linear-gradient(135deg,#ff7a2e,#ffb347);box-shadow:0 6px 28px rgba(255,122,46,.30);" href="downloads/Scrap-v1.0.1-macOS.pkg">Download Scrap</a>
+      <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
+      <a class="more" href="scrap.html">See how it works &rarr;</a>
+      <div class="meta">v1.0.1 · VST3 + AU effect · macOS + Windows</div>
+    </div>
 
   </div>
 
@@ -438,15 +438,15 @@
   <div class="grid">
     <div class="card pocket">
       <span class="new">NEW</span>
-      <div class="kind">Snare Character</div>
+      <div class="kind">Depth Machine</div>
       <h2 style="background:linear-gradient(135deg,#4f97e8,#e7d6bb);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">POCKET</h2>
-      <p class="tag">Snare character. Puts your snare in the mix instead of on top of it.</p>
-      <p class="desc">One DEPTH knob darkens the top, adds distance pre-delay, brings up the room and dips the level, all in one move. The snare stays dead centre. CRACK, BODY, ROOM and WIDTH shape the rest.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/pocket.png?v=1.2.0"><source src="https://video.sebastianmacan.com/img/video/pocket_ui_loop.mp4?v=1.2.0c" type="video/mp4"></video></div>
+      <p class="tag">Depth machine. Snugs your hats, snares, claps and percussion into the mix.</p>
+      <p class="desc">DEPTH sets how far back it sits. CRACK sets how hard it hits. ROOM, WIDTH and BODY let you stack snares and percussion on top of each other without a pile-up.</p>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/pocket.png?v=1.2.1"><source src="https://video.sebastianmacan.com/img/video/pocket_ui_loop.mp4?v=1.2.1" type="video/mp4"></video></div>
       <span class="dl buy" style="background:linear-gradient(135deg,#4f97e8,#e7d6bb);box-shadow:0 6px 28px rgba(79,151,232,.30);" role="button" tabindex="0" data-cart-buy="pocket">Buy Pocket &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="pocket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="pocket">Buy Now</span></div>
       <a class="more" href="pocket.html">See how it works &rarr;</a>
-      <div class="meta">v1.2.0 · VST3 + AU effect · macOS + Windows</div>
+      <div class="meta">v1.2.1 · VST3 + AU effect · macOS + Windows</div>
     </div>
     <div class="card honey">
       <span class="new">NEW</span>
@@ -764,7 +764,7 @@
       <img src="img/bundles/studio_bundle.png?v=8" alt="Studio Tools Basket: Fireplace, Gloss, Honey and Pocket as wrapped candy in a basket" loading="lazy">
       <div class="binner">
         <h3>STUDIO TOOLS BASKET</h3>
-        <p class="desc">Fireplace, Gloss, Honey and Pocket. A fire under the beat, a shine on the mix, a cassette to print it to and a snare that finally sits down. The last four plugins you touch before you hit export.</p>
+        <p class="desc">Fireplace, Gloss, Honey and Pocket. A fire under the beat, a shine on the mix, a cassette to print it to and a depth machine that sits the whole top kit down. The last four plugins you touch before you hit export.</p>
         <div class="price">$35</div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#f5a623,#60a5fa);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="studiobasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="studiobasket">Buy Now</span></div>
@@ -866,6 +866,33 @@
     </div>
   </div>
   </section>
+
+  <!-- family-footer:start -->
+<style>
+.fam{position:relative;width:900px;margin:34px 0 6px calc(50% - 450px);padding:26px 0 0;overflow:visible}
+@media(max-width:960px){.fam{width:100%;margin:24px 0 0 0;overflow:hidden}.fam .row{transform:scale(.62);transform-origin:50% 100%}}
+@media(max-width:520px){.fam .row{transform:scale(.42)}.fam{margin-top:0}}
+@media(prefers-reduced-motion:reduce){.fam img{animation:none}}
+.fam .floor{position:absolute;left:50%;bottom:8px;width:92%;height:70px;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.14),rgba(255,255,255,.05) 55%,transparent 72%)}
+.fam .back{position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 90%,rgba(95,208,122,.16),rgba(77,163,255,.08) 55%,transparent 80%);pointer-events:none}
+.fam .row{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:0;padding:0 0 32px}
+.fam img{display:block;filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) saturate(1.08);transform-origin:50% 100%;animation:famBob 3.2s ease-in-out infinite}
+.fam img.L{height:116px}.fam img.M{height:90px}.fam img.S{height:70px}
+.fam img[src*="orbit"]{filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) drop-shadow(0 0 12px rgba(190,130,255,.95)) brightness(1.7) saturate(1.5)}
+.fam img[src*="gremlin_smear"]{filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(200,90,255,.8)) brightness(1.35) saturate(1.3)}
+.fam img[src*="fire"]{mix-blend-mode:screen;filter:drop-shadow(0 0 12px rgba(255,160,40,.6))}
+.fam img:nth-child(2n){animation-delay:-.8s}.fam img:nth-child(3n){animation-delay:-1.6s}.fam img:nth-child(5n){animation-delay:-2.4s}
+@keyframes famBob{0%,100%{transform:translateY(0) scaleY(1)}50%{transform:translateY(-6px) scaleY(1.025)}}
+.fam .front{position:absolute;left:0;right:0;bottom:4px;display:flex;justify-content:center;align-items:flex-end;gap:0;pointer-events:none}
+.fam .front img{height:80px}
+</style>
+
+<style>.fam.huddle .row{justify-content:center;padding-left:30px;padding-right:30px}.fam.huddle .row img{position:relative;margin:0 -5px}.fam.huddle .row img.S,.fam.huddle .row img.M{margin:0 -14px}.fam.huddle .row img.L{z-index:1}.fam.huddle .row img.M{z-index:3}.fam.huddle .row img.S{z-index:5}</style>
+<div class="fam huddle"><div class="back"></div><div class="floor"></div><div class="row">
+<img class="M" src="/img/cast/fire.png"><img class="L" src="/img/cast/pocket.png"><img class="S" src="/img/cast/orbit.png"><img class="L" src="/img/cast/chop.png"><img class="M" src="/img/cast/gremlin_twitch.png"><img class="L" src="/img/cast/warble.png"><img class="S" src="/img/cast/gremlin_stutter.png"><img class="L" src="/img/cast/jelly.png"><img class="S" src="/img/cast/honey.png"><img class="L" src="/img/cast/scrap.png"><img class="M" src="/img/cast/gremlin_smear.png">
+</div></div>
+  <!-- family-footer:end -->
 
   <footer>
     <div>© 2026 Aluetion, LLC. All rights reserved. Sebastian Macan is an Aluetion, LLC brand.</div>
