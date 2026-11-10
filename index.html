@@ -30,7 +30,7 @@
   .hero p.sub { margin-top:16px; color:var(--dim); max-width:620px; margin-left:auto; margin-right:auto; font-size:clamp(15px,2.4vw,18px); }
   .badge { display:inline-block; border:1px solid #2a2a32; border-radius:999px; padding:4px 14px; font-size:12px; color:var(--dim); letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
   .sect-title { margin:44px 0 6px; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); font-weight:800; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px; margin-top:16px; align-items:start }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px; margin-top:16px; }
   .card { border:1px solid var(--line); background:var(--card); border-radius:18px; padding:28px 26px 24px; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .card:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
   .shot { margin:16px -6px 2px; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#0d0d10; }
@@ -44,7 +44,8 @@
     background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .card .kind { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin-bottom:10px; font-weight:700; }
   .card .tag { margin-top:6px; font-size:16px; font-weight:700; }
-  .card .desc { margin-top:8px; color:var(--dim); font-size:14px; flex:1; }
+  .card .desc { margin-top:8px; color:var(--dim); font-size:14px; }
+  .card > .shot, .card > .stage { margin-bottom:auto; }
   .dl { display:inline-block; margin-top:18px; color:#fff; font-weight:800; font-size:15px; text-align:center;
     padding:13px 26px; border-radius:999px; text-decoration:none; letter-spacing:.02em; transition:transform .15s;
     background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 6px 28px var(--shadow); }
@@ -377,7 +378,7 @@
       <h2 style="background:linear-gradient(135deg,#3cdcff,#9aefff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">TWITCH</h2>
       <p class="tag">Twelve effects. One grid. Draw the rest.</p>
       <p class="desc">GATE, CRUSH, WARP, COMB, GRAIN, GLITCH, FORMANT, RING and CHAOS, each firing on the step grid. SKETCH is a draw pad: TIME scrubs, VOL gates, MAD throws seeded events. Zappy sparks on every hit.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/twitch.png?v=1.0.1"><source src="https://video.sebastianmacan.com/img/video/twitch_ui_loop.mp4?v=1.0.1c7" type="video/mp4"></video></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/twitch.png?v=1.0.1"><source src="https://video.sebastianmacan.com/img/video/twitch_ui_loop.mp4?v=1.0.1c7c" type="video/mp4"></video></div>
       <span class="dl buy" style="background:linear-gradient(135deg,#3cdcff,#9aefff);box-shadow:0 6px 28px rgba(60,220,255,.30);" role="button" tabindex="0" data-cart-buy="twitch">Buy Twitch &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="twitch">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="twitch">Buy Now</span></div>
       <a class="more" href="twitch.html">See how it works &rarr;</a>
