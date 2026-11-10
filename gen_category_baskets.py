@@ -6,7 +6,6 @@ ITEMS = {
   "magician":  ("Chord & Melody Generator", "Chordsmith", "Pick a genre, key and mode, hit GENERATE. Chords and a melody, ready to drag into your DAW.", 39, "chordsmith.html"),
   "jelly":     ("Wobble Machine", "Jelly", "Make everything jiggle. LFO-driven movement for basses, synths and anything that sits too still.", 15, "jelly.html"),
   "warble":    ("Drunk Songbird Pitch Wobbler", "Warble", "Make any sound sing like a weird little bird.", 15, "warble.html"),
-  "gloss":     ("Instant Mix Polish", "Gloss", "Four knobs that make tracks sit right in the mix, fast.", 19, "gloss.html"),
   "orbit":     ("3D Auto-Pan", "Orbit", "Hats that fly around your head. Free forever, and in the basket anyway.", 0, "orbit.html"),
   "fireplace": ("Ambience", "Fireplace", "Eight real rooms recorded on tape. Put your track somewhere.", 15, "fireplace.html"),
   "honey":     ("Tape Machine", "Honey", "Sebastian Macan's tape machine. Real tape physics for anything you put on it.", 15, "honey.html"),
@@ -20,11 +19,11 @@ BASKETS = [
        items=["biome", "magician"], meta="2 plugins · VST3 + AU · macOS",
        mdesc="Biome and Chordsmith. Both Sebastian Macan instruments, one basket, VST3 + AU for macOS."),
   dict(file="basket-studio.html", cid="studiobasket", title="STUDIO TOOLS BASKET", name="Studio Tools Basket", price=35,
-       img="img/bundles/studio_bundle.png?v=8", g1="#f5a623", g2="#60a5fa",
+       img="img/bundles/studio_bundle.png?v=9", g1="#f5a623", g2="#60a5fa",
        tag="A fire under the beat, a shine on the mix, a cassette to print it to and a snare that finally sits down.",
-       desc="Fireplace lays a living room of atmosphere under the beat. Honey puts the chords on smooth tape. Gloss makes every track sit right. From rough idea to finished mix, one basket.",
-       items=["fireplace", "gloss", "honey"], meta="3 plugins · VST3 + AU · macOS + Windows",
-       mdesc="Fireplace, Gloss and Honey. The Sebastian Macan finishing tools, one basket, VST3 + AU."),
+       desc="Fireplace lays a living room of atmosphere under the beat. Honey puts the chords on smooth tape. From rough idea to finished mix, one basket.",
+       items=["fireplace", "honey"], meta="3 plugins · VST3 + AU · macOS + Windows",
+       mdesc="Fireplace and Honey. The Sebastian Macan finishing tools, one basket, VST3 + AU."),
 ]
 def row(k):
     kind, name, tag, price, page = ITEMS[k]

@@ -29,7 +29,6 @@
     magician: { g1: "#8b6bff", g2: "#ffd84a", shadow: "rgba(139,107,255,.30)" },
     biome:  { g1: "#3ecf6e", g2: "#5ad9d0", shadow: "rgba(62,207,110,.30)" },
     fauna:  { g1: "#3e9ecf", g2: "#7de8b8", shadow: "rgba(62,158,207,.30)" },
-    gloss:  { g1: "#9be8c9", g2: "#f2a3c2", shadow: "rgba(155,232,201,.30)" },
     halo:   { g1: "#ffd700", g2: "#fff3b0", shadow: "rgba(255,215,0,.30)" },
     hitmaker: { g1: "#d9151f", g2: "#7a0a12", shadow: "rgba(217,21,31,.30)" },
     hitmakercomplete: { g1: "#d9151f", g2: "#7a0a12", shadow: "rgba(217,21,31,.30)" },

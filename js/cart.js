@@ -34,7 +34,6 @@
     twitch:        { name: 'Twitch',                cents: 1500, priceId: 'pri_01m6zc3ar61pqdse2fhx42gnd6' },
     pocket:        { name: 'Pocket',                 cents: 1500, priceId: 'pri_01m5jmgg27ch339v1v5gkr6g7a' },
     fireplace:     { name: 'Fireplace',              cents: 1500, priceId: 'pri_01m1nckxvaekbaccghkvvh4zva' },
-    gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
     /* MIDI chord packs */
     hitmaker:      { name: 'Hitmaker Chords',        cents: 2500, priceId: 'pri_01m2ckt8h7agqfkge6ayanjj2x' },
     hitmakercomplete: { name: 'Hitmaker Chords',     cents: 2500, priceId: 'pri_01m2ckt8h7agqfkge6ayanjj2x' }, /* alias for stale cached HTML */
@@ -65,7 +64,7 @@
      it belongs to here (then reprice the basket in Paddle if the roster changed). */
   var BASKETS = {
     instrumentsbasket: { page: 'basket-instruments.html', items: ['biome', 'magician'] },
-    studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'gloss', 'honey', 'pocket'] },
+    studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'honey', 'pocket'] },
     lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'honey'] },
     chordbasket:       { page: 'basket-chord.html',       items: ['magician', 'hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
     midimega:          { page: 'basket-midi.html',        items: ['hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
