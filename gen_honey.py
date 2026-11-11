@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# RETIRED (Nov 10 2026): its copy is out of date. Running it would overwrite honey.html with an old version. Edit the html directly.
+raise SystemExit("gen_honey.py is retired - edit the html directly")
 """Generate site/honey.html (product page) + site/basket-tape.html (Tape Basket) from the house template.
 Run from ~/sebastianmacan/site. Idempotent."""
 import re, os

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# RETIRED (Nov 10 2026): its copy is out of date. Running it would overwrite smear.html / stutter.html / twitch.html with an old version. Edit the html directly.
+raise SystemExit("gen_split.py is retired - edit the html directly")
 """Generate smear.html / stutter.html / twitch.html (the Gremlin split, Nov 9 2026) from the house template gremlin.html.
 Run from ~/sebastianmacan/site. Idempotent. Modelled on gen_taffy.py. Presets lists come from each plugin's factoryPresetOrder()."""
 import re, os, sys

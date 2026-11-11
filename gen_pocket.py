@@ -37,7 +37,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
     { "@type": "Question", "name": "How much is Pocket?",
       "acceptedAnswer": { "@type": "Answer", "text": "Pocket is $15, one-time. Instant download after checkout, full version, no locked knobs, no subscription." } },
     { "@type": "Question", "name": "Is Pocket just an EQ and a reverb?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. The DEPTH knob moves four things together the way real distance does: it darkens the top end from 16 kHz down to 4.5 kHz, adds up to 12 ms of distance pre-delay, brings up the room and dips the level up to 3 dB. The first reflection is mono, so the snare itself never leaves the centre." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The DEPTH knob moves four things together the way real distance does: it darkens the top end from 16 kHz down to 4.5 kHz, adds up to 12 ms of distance pre-delay, brings up the room and dips the level up to 3 dB. The first reflection is mono, so the sound itself never leaves the centre." } },
     { "@type": "Question", "name": "What DAWs does Pocket work in?",
       "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically." } },
     { "@type": "Question", "name": "Is there a Windows version of Pocket?",
@@ -64,14 +64,14 @@ body = '''  <section class="hero">
   <p>Snare not sounding right in the car? You are trying to keep things loud, but the snare is the first thing that falls apart. Pocket keeps things loud without you having to worry about your drums. Most snares sit on top of the beat like a sticker. Pocket moves the snare back into the room: one DEPTH knob darkens the top end the way air does, adds a few milliseconds of distance, brings up the room around it and dips the level, all in one move. The snare stays dead centre the whole way. It stops fighting your vocal and starts living with your drums.</p>
 
   <h2>Where it comes from</h2>
-  <p>Orbit, the free auto-pan, had a side effect nobody planned: it mixed hats in. The darkening and the tiny pre-delay it used to fake distance turned out to be the useful part. Pocket is that depth engine with the motion stripped out and the source pinned to the centre, rebuilt for the one drum that needs it most.</p>
+  <p>Orbit, the free auto-pan, had a side effect nobody planned: it mixed hats in. The darkening and the tiny pre-delay it used to fake distance turned out to be the useful part. Pocket is that depth engine with the motion stripped out and the source pinned to the centre, rebuilt for hats, snares, claps and percussion.</p>
 
   <h2>One big knob, five helpers</h2>
-  <div class="bot"><b>DEPTH.</b> The knob. Together it darkens the top from 16 kHz down to 4.5 kHz, adds 0 to 12 ms of distance pre-delay, brings up the room and dips the level up to 3 dB. Zero is your dry snare. Turn it up and the snare walks to the back of the room without ever leaving the centre.</div>
+  <div class="bot"><b>DEPTH.</b> The knob. Together it darkens the top from 16 kHz down to 4.5 kHz, adds 0 to 12 ms of distance pre-delay, brings up the room and dips the level up to 3 dB. Zero is your dry sound. Turn it up and it walks to the back of the room without ever leaving the centre.</div>
   <div class="bot"><b>CRACK.</b> The transient. Pull it back to tuck the hit under the beat, push it to snap. Centre is untouched.</div>
   <div class="bot"><b>BODY.</b> 200 Hz, plus or minus 6 dB. Thicken a thin snare or clean up a boomy one. Centre is flat.</div>
   <div class="bot"><b>ROOM.</b> Early reflections plus a short tail, 80 to 450 ms. The first reflection is mono, so the direct sound stays centred no matter how big the room gets.</div>
-  <div class="bot"><b>WIDTH.</b> Stereo width of the room only, never the direct. The snare stays mono-solid while the space around it opens up.</div>
+  <div class="bot"><b>WIDTH.</b> Stereo width of the room only, never the direct. The hit stays mono-solid while the space around it opens up.</div>
 
   <h2>Get started in 3 steps</h2>
   <div class="step"><b>1. Put Pocket on the snare.</b> Snare track, snare bus, or the whole top kit. It opens on Init, which is close to dry.</div>
@@ -79,13 +79,8 @@ body = '''  <section class="hero">
   <div class="step"><b>3. Shape it.</b> CRACK for the hit, BODY for the weight, ROOM and WIDTH for the space. MIX blends it with the dry signal, OUTPUT trims the result.</div>
 
   <h2>Make it yours</h2>
-  <div class="knob"><b>DEPTH.</b> Darkening, distance pre-delay, room lift and a level dip in one move. The whole plugin lives here.</div>
-  <div class="knob"><b>CRACK.</b> Transient control. Back is tucked, forward is snappy, centre leaves the hit alone.</div>
-  <div class="knob"><b>BODY.</b> 200 Hz shelf, plus or minus 6 dB. Centre is flat.</div>
-  <div class="knob"><b>ROOM.</b> Early reflections and a short 80 to 450 ms tail. First reflection is mono so the snare never drifts.</div>
-  <div class="knob"><b>WIDTH.</b> Widens the room, never the snare.</div>
   <div class="knob"><b>MIX and OUTPUT.</b> Parallel blend and output trim. BYPASS pill in the header for honest A/B.</div>
-  <div class="knob"><b>PRESETS.</b> Preset bar in the header, save unlimited of your own. Zero latency, so it is safe on the way in or at mixdown.</div>
+  <div class="knob"><b>ZERO LATENCY.</b> Safe on the way in or at mixdown.</div>
   <div class="knob"><b>THE WALK.</b> The little snare on screen is the readout: it steps down the path exactly as far as DEPTH says, the ghost outline is your dry snare, the dark silhouette is all the way back. FIELD or STREET picks the scene. Drag the bottom-right corner to make the whole plugin bigger or smaller.</div>
 
   <h2>Presets</h2>
@@ -93,7 +88,7 @@ body = '''  <section class="hero">
 
   <h2>Common questions</h2>
   <div class="knob"><b>How much is Pocket?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
-  <div class="knob"><b>Is Pocket just an EQ and a reverb?</b> No. DEPTH moves four things together the way real distance does: darkening from 16 kHz down to 4.5 kHz, up to 12 ms of pre-delay, room lift and up to a 3 dB level dip. The first reflection is mono, so the snare itself never leaves the centre.</div>
+  <div class="knob"><b>Is Pocket just an EQ and a reverb?</b> No. DEPTH moves four things together the way real distance does: darkening from 16 kHz down to 4.5 kHz, up to 12 ms of pre-delay, room lift and up to a 3 dB level dip. The first reflection is mono, so the sound itself never leaves the centre.</div>
   <div class="knob"><b>Does it work on things other than snares?</b> It is tuned for snares and claps, but anything that sits too far forward is fair game: percussion, plucks, even a vocal ad-lib.</div>
   <div class="knob"><b>What DAWs does Pocket work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
   <div class="knob"><b>Is there a Windows version of Pocket?</b> Yes. Pocket ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.</div>

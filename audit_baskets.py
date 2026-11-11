@@ -27,7 +27,7 @@ for cid, (page, items) in BASK.items():
     files = prod.get(pid, {}).get("files", [])
     if any(f.endswith(".zip") for f in files): continue   # zip baskets (Lofi, MIDI) are checked by verify_store_gold
     want = {FILE_OF[i] for i in items if i in FILE_OF}
-    got = {m.group(1) for f in files for m in [re.match(r"([A-Za-z]+)-v", f)] if m} - {"Orbit"}  # Orbit = free bonus, never in cart roster
+    got = {m.group(1) for f in files for m in [re.match(r"([A-Za-z]+)-v", f)] if m} - {"Orbit", "Chop", "Scrap"}  # free bonus plugins, never in the paid cart roster
     if want and want != got: bad.append(f"ROSTER {cid}: cart.js {sorted(want)} vs products.json {sorted(got)}")
 # 3. prices: cart.js vs Paddle catalog
 for k, (cents, pid) in CAT.items():

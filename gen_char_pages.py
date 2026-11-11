@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# RETIRED (Nov 10 2026): its copy is out of date. Running it would overwrite the Jelly-template pages (warble.html etc.) with an old version. Edit the html directly.
+raise SystemExit("gen_char_pages.py is retired - edit the html directly")
 """Generate product pages for the 3 new character plugins from the Jelly template.
 Run from site dir: python3 gen_char_pages.py"""
 
