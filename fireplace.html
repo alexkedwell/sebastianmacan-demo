@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/base.css?v=1">
 <title>Fireplace | Cozy Ambience Machine VST3/AU Plugin</title>
-<meta name="description" content="Fireplace is an ambience layer plugin (VST3 and AU for macOS). Seven rooms under your music: a real recorded hearth, real forest rain, raw SP-404 and SP-303 crackle, vinyl attic, tape room, and Your Texture: drop any sound and it becomes an endless, never-looping bed that ducks under your beat.">
+<meta name="description" content="Fireplace is an ambience layer plugin (VST3 and AU, macOS and Windows). Seven rooms under your music: a real recorded hearth, real forest rain, raw SP-404 and SP-303 crackle, vinyl attic, tape room, and Your Texture: drop any sound and it becomes an endless, never-looping bed that ducks under your beat.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff8c42; --g2:#5ad1ff; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -84,7 +84,7 @@
   .knob b { color:var(--g1); }
   .bot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px; margin:8px 0; }
   .bot b { color:var(--g2); }
-  footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
+  footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
   /* In the studio — real recording of Sebastian using the plugin */
   .studio { margin:34px auto 6px; max-width:920px; }
@@ -118,11 +118,11 @@
    "operatingSystem": "macOS, Windows",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Fireplace is an ambience layer plugin (VST3 and AU for macOS). Seven rooms of atmosphere under your music, built from real recordings, plus Your Texture: drop any sound and it becomes an endless ducking texture bed.",
+   "description": "Fireplace is an ambience layer plugin (VST3 and AU, macOS and Windows). Seven rooms of atmosphere under your music, built from real recordings, plus Your Texture: drop any sound and it becomes an endless ducking texture bed.",
    "url": "https://sebastianmacan.com/fireplace.html",
    "offers": {
     "@type": "Offer",
-    "price": "0",
+    "price": "15",
     "priceCurrency": "USD"
    },
    "author": {
@@ -140,18 +140,26 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "How do I make my vocals sound like a robot?",
+     "name": "How much is Fireplace?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Put Fireplace on your vocal track, pick a robot, and turn TWIST. Chrome mode is the classic Daft Punk style vocoder, Talkbox is the melodic bot, Dalek is the angry intercom, Toybot is the 80s toy, and Sub Bot turns your voice into talking dubstep bass."
+      "text": "$15, one-time. Instant download after checkout. Full version, all eight rooms, no locked knobs, no subscription."
      }
     },
     {
      "@type": "Question",
-     "name": "How much is Fireplace?",
+     "name": "Are the recordings real?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Enter your email and the download starts right away. Full version, all eight robots, no locked knobs, no trial timer."
+      "text": "Yes. The fire, the rain, the wind, both SP crackle rooms and the Vinyl Attic tape machine are Sebastian's own recordings, shipped inside the plugin exactly as recorded. No synthesized crackle layered on top. That is why the download is bigger than our other effects (about 70 MB). Worth it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What can I drop into Your Texture?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any wav, aiff, flac, mp3 or ogg, any length. Short files get stretched into a seamless bed, long files play in random windows so they never loop. Drag from Finder or use LOAD TEXTURE (DAW browser drags hand over clips, not files, so use Finder)."
      }
     },
     {
@@ -159,15 +167,15 @@
      "name": "What DAWs does Fireplace work in?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+      "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more."
      }
     },
     {
      "@type": "Question",
-     "name": "Does Fireplace work on synths and bass, not just vocals?",
+     "name": "Is there a Windows version of Fireplace?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Chrome vocoder chords on a synth are instant robot funk, and Sub Bot is built for wubs, dubstep and space house: it follows the pitch of whatever you feed it and generates a huge talking sub layer underneath."
+      "text": "Yes. Fireplace ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms."
      }
     },
     {
@@ -175,7 +183,7 @@
      "name": "How do I install Fireplace?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin."
+      "text": "Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done."
      }
     }
    ]
@@ -203,7 +211,6 @@
     </div>
   </section>
 
-  <h2>Duck anything. Bring your own texture.</h2>
   <p class="pitch">Drop <b>any sound</b> on Fireplace and it becomes an <b>endless, never-looping texture bed</b> that <b>ducks under your music</b>. A two second wind sample. Leaves. Your own vinyl crackle. Fireplace stretches it into a seamless atmosphere that plays for hours without a single repeat, listens to your beat, and tucks itself under every hit. Save it as a preset and it is yours forever.</p>
 
 
@@ -269,14 +276,17 @@
   <div class="knob"><b>How much is Fireplace?</b> $15, one-time. Instant download after checkout. Full version, all eight rooms, no locked knobs, no subscription.</div>
   <div class="knob"><b>Are the recordings real?</b> Yes. The fire, the rain, the wind, both SP crackle rooms and the Vinyl Attic tape machine are Sebastian's own recordings, shipped inside the plugin exactly as recorded. No synthesized crackle layered on top. That is why the download is bigger than our other effects (about 70 MB). Worth it.</div>
   <div class="knob"><b>What can I drop into Your Texture?</b> Any wav, aiff, flac, mp3 or ogg, any length. Short files get stretched into a seamless bed, long files play in random windows so they never loop. Drag from Finder or use LOAD TEXTURE (DAW browser drags hand over clips, not files, so use Finder).</div>
+  <div class="knob"><b>What DAWs does Fireplace work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
   <div class="knob"><b>Is there a Windows version of Fireplace?</b> Yes. Fireplace ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms.</div>
+  <div class="knob"><b>How do I install Fireplace?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
 
   <div class="cta">
     <span class="dl buy" role="button" tabindex="0" data-cart-buy="fireplace">Buy Fireplace &middot; $15</span>
   </div>
 
   <footer>
-    <p>&copy; 2026 Aluetion, LLC &middot; <a href="/">sebastianmacan.com</a> &middot; <a href="mailto:hello@sebastianmacan.com">hello@sebastianmacan.com</a> &middot; <a href="https://dl.sebastianmacan.com/library">Library</a> · <a href="downloads.html">Re-download</a></p>
+    <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="https://dl.sebastianmacan.com/library">Library</a> · <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
 <script src="js/cart.js?v=toy1" defer></script>
