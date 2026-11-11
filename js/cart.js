@@ -54,7 +54,8 @@
     lofibasket:    { name: 'Lofi Basket',            cents: 2200, priceId: 'pri_01m1nckxzp0m01qh26zs7qq99t' },
     chordbasket:   { name: 'Chord Basket',           cents: 6900, priceId: 'pri_01m36c5kc3z84gvnnc1nyej57d' },
     instrumentsbasket: { name: 'Instruments Basket', cents: 5900, priceId: 'pri_01m3jrbcjp6hcx8ysjy69b65qa' },
-    studiobasket:  { name: 'Studio Tools Basket',    cents: 3500, priceId: 'pri_01m3jrbdb9gnqdxxjrp5zp0gwp' }
+    studiobasket:  { name: 'Studio Tools Basket',    cents: 3500, priceId: 'pri_01m3jrbdb9gnqdxxjrp5zp0gwp' },
+    gremlinbasket: { name: 'Gremlin Basket',         cents: 3500, priceId: 'pri_01m742cnasmkydjm43tzcg0er9' }
   };
 
   /* BASKET MEMBERSHIP -- the ONE place to edit when a product joins/leaves a basket.
@@ -65,6 +66,7 @@
   var BASKETS = {
     instrumentsbasket: { page: 'basket-instruments.html', items: ['biome', 'magician'] },
     studiobasket:      { page: 'basket-studio.html',      items: ['fireplace', 'honey', 'pocket'] },
+    gremlinbasket:     { page: 'basket-gremlin.html',     items: ['smear', 'stutter', 'twitch'], bonus: ['Chop', 'Scrap'] },
     lofibasket:        { page: 'basket-lofi.html',        items: ['fireplace', 'honey'] },
     chordbasket:       { page: 'basket-chord.html',       items: ['magician', 'hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
     midimega:          { page: 'basket-midi.html',        items: ['hitmaker', 'tears', 'clubchords', 'soulchords', 'ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'] },
