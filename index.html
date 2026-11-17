@@ -1080,24 +1080,8 @@ document.querySelectorAll('.feat .dl[data-dl]').forEach(function(btn){
   });
 });
 </script>
-<script>
-// Play only videos that are on screen. Phones cap simultaneous video playback,
-// so without this some cards freeze on their poster frame.
-document.addEventListener('DOMContentLoaded', function () {
-  var vids = document.querySelectorAll('video');
-  if (!('IntersectionObserver' in window)) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      var v = e.target;
-      if (e.isIntersecting) { var p = v.play(); if (p) p.catch(function(){}); }
-      else { v.pause(); }
-    });
-  }, { rootMargin: '100px 0px' });
-  vids.forEach(function (v) { io.observe(v); });
-});
-</script>
 <script src="js/madewith.js?v=r1101"></script>
-<script src="js/loops.js?v=1" defer></script>
+<script src="js/loops.js?v=2" defer></script>
   <script>
   (function(){var c=document.getElementById('candyad');if(!c)return;
         c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});
