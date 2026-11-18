@@ -1,5 +1,6 @@
 /* MADE WITH — track players + video lightbox. Shared by index.html cards and plugin pages.
    .mw[data-src]   = audio track (inline play/pause + progress)
+   .mw[data-clip]  = tiny inline video row (plays in place)
    .mw[data-video] = opens a fullscreen 9:16 video lightbox with sound  */
 (function(){
   var cur=null;
@@ -27,6 +28,20 @@
 
   document.querySelectorAll('.mw').forEach(function(el){
     var btn=el.querySelector('.mw-play'), t=el.querySelector('.mw-time');
+    if(el.dataset.clip){
+      /* Nov 18 2026: tiny inline video row. Plays in place with sound, shares the one-at-a-time slot. */
+      var cv=el.querySelector('video.mw-clip'), cbar=el.querySelector('.mw-bar i'), cseek=el.querySelector('.mw-bar');
+      el.classList.add('clip');
+      cv.addEventListener('loadedmetadata',function(){ t.textContent=fmt(cv.duration); });
+      cv.addEventListener('timeupdate',function(){ if(!cv.duration) return; cbar.style.width=(cv.currentTime/cv.duration*100)+'%'; t.textContent=fmt(cv.duration-cv.currentTime); });
+      var cstop=function(){ cv.pause(); el.classList.remove('on'); };
+      var cstart=function(){ stopCurrent(); cur=cstop; el.classList.add('on'); if(cv.ended||cv.currentTime>=cv.duration-0.05) cv.currentTime=0; var p=cv.play(); if(p&&p.catch) p.catch(function(){ el.classList.remove('on'); cur=null; }); };
+      cv.addEventListener('ended',function(){ el.classList.remove('on'); cbar.style.width='0%'; t.textContent=fmt(cv.duration); if(cur===cstop) cur=null; cv.load(); });
+      var ctoggle=function(e){ e.preventDefault(); e.stopPropagation(); if(cv.paused){ cstart(); } else { cstop(); cur=null; } };
+      btn.addEventListener('click',ctoggle); cv.addEventListener('click',ctoggle);
+      cseek.addEventListener('click',function(e){ e.stopPropagation(); if(!cv.duration) return; var r=cseek.getBoundingClientRect(); var f=Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)); cv.currentTime=f*cv.duration; cbar.style.width=(f*100)+'%'; });
+      return;
+    }
     if(el.dataset.video){
       var v=document.createElement('video'); v.preload='metadata'; v.src=el.dataset.video;
       v.addEventListener('loadedmetadata',function(){ t.textContent=fmt(v.duration); });
