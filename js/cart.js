@@ -33,6 +33,7 @@
     stutter:       { name: 'Stutter',               cents: 1500, priceId: 'pri_01m6zc3abqa067b8xh3a3zrvde' },
     twitch:        { name: 'Twitch',                cents: 1500, priceId: 'pri_01m6zc3ar61pqdse2fhx42gnd6' },
     pocket:        { name: 'Pocket',                 cents: 1500, priceId: 'pri_01m5jmgg27ch339v1v5gkr6g7a' },
+    ghost:         { name: 'Ghost',                  cents: 1500, priceId: 'pri_01m7pnq6c62bca1641q08pqf0z' },
     fireplace:     { name: 'Fireplace',              cents: 1500, priceId: 'pri_01m1nckxvaekbaccghkvvh4zva' },
     /* MIDI chord packs */
     hitmaker:      { name: 'Hitmaker Chords',        cents: 2500, priceId: 'pri_01m2ckt8h7agqfkge6ayanjj2x' },

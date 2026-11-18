@@ -6,8 +6,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/base.css?v=1">
-<title>Ghost | Free Granular Freeze VST3/AU Plugin</title>
-<meta name="description" content="Ghost is a free granular freeze effect (VST3 and AU for macOS). Freeze any sound into a haunted, infinite tape texture. By Sebastian Macan.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/candy-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/candy-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/candy-180.png">
+<meta name="theme-color" content="#000000">
+<title>Ghost | Granular Freeze VST3/AU Plugin</title>
+<!-- seo:start -->
+<link rel="canonical" href="https://sebastianmacan.com/ghost.html">
+<meta property="og:site_name" content="Sebastian Macan">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sebastianmacan.com/ghost.html">
+<meta property="og:title" content="Ghost | Granular Freeze VST3/AU Plugin">
+<meta property="og:description" content="Ghost is a granular freeze effect (VST3 and AU, macOS and Windows). Freeze any sound into a haunted, infinite tape texture. $15. By Sebastian Macan.">
+<meta property="og:image" content="https://sebastianmacan.com/img/og/ghost.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ghost | Granular Freeze VST3/AU Plugin">
+<meta name="twitter:description" content="Ghost is a granular freeze effect (VST3 and AU, macOS and Windows). Freeze any sound into a haunted, infinite tape texture. $15. By Sebastian Macan.">
+<meta name="twitter:image" content="https://sebastianmacan.com/img/og/ghost.jpg">
+<!-- seo:end -->
+<meta name="description" content="Ghost is a granular freeze effect (VST3 and AU, macOS and Windows). Freeze any sound into a haunted, infinite tape texture. $15. By Sebastian Macan.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#39e6d0; --g2:#8b5cf6; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -33,6 +53,7 @@
   .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
     background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(57,230,208,.24); transition:transform .15s; }
   .dl:hover { transform:translateY(-2px) scale(1.02); }
+  .dl.buy { cursor:pointer; user-select:none; }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
   h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
@@ -87,14 +108,14 @@
   {
    "@type": "SoftwareApplication",
    "name": "Ghost",
-   "operatingSystem": "macOS",
+   "operatingSystem": "macOS, Windows",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Ghost is a free granular freeze effect (VST3 and AU for macOS). Freeze any sound into a haunted, infinite tape texture. By Sebastian Macan.",
+   "description": "Ghost is a granular freeze effect (VST3 and AU, macOS and Windows). Freeze any sound into a haunted, infinite tape texture. $15. By Sebastian Macan.",
    "url": "https://sebastianmacan.com/ghost.html",
    "offers": {
     "@type": "Offer",
-    "price": "0",
+    "price": "15",
     "priceCurrency": "USD"
    },
    "author": {
@@ -120,10 +141,10 @@
     },
     {
      "@type": "Question",
-     "name": "Is Ghost really free?",
+     "name": "How much is Ghost?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer."
+      "text": "$15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription."
      }
     },
     {
@@ -131,7 +152,7 @@
      "name": "What DAWs does Ghost work in?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
+      "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically."
      }
     },
     {
@@ -139,7 +160,7 @@
      "name": "Is there a Windows version of Ghost?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops."
+      "text": "Yes. Ghost ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms."
      }
     },
     {
@@ -168,10 +189,10 @@
     <div class="kind">Granular Texture Machine</div>
     <h1>GHOST</h1>
     <p class="tag">Freeze sound. Then haunt it.</p>
-    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/ghost.png"><source src="https://video.sebastianmacan.com/img/video/ghost_ui_loop.mp4" type="video/mp4"></video></div>
+    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/ghost.png?v=1.4.2" aria-label="Ghost plugin UI: a glowing cursor drifting around the freeze pad while FREEZE lights up"><source src="https://video.sebastianmacan.com/img/video/ghost_ui_loop.mp4?v=1.4.2" type="video/mp4"></video></div>
     <div class="cta">
-      <a class="dl" href="downloads/Ghost-v1.1-macOS.pkg">Download Ghost Free</a>
-      <div class="meta">v1.1 &middot; VST3 + AU effect &middot; macOS</div>
+      <span class="dl buy" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; $15</span>
+      <div class="meta">v1.4.2 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
 
@@ -201,6 +222,8 @@
   <h2>Make it yours</h2>
   <div class="knob"><b>RANDOMIZE and seeds.</b> Every seed number is a different haunting. Type a seed in, get the same character back any time. Found one you love? Write the number down or save it.</div>
   <div class="knob"><b>Favorites.</b> Save the spots you love and recall them instantly.</div>
+  <div class="knob"><b>Presets.</b> 14 to start, from Seance and Poltergeist to Tape Wraith and Whisper Vault. SAVE keeps your own, every knob included.</div>
+  <div class="knob"><b>Back and forward.</b> Rolled past a good one? The arrows beside RANDOMIZE walk back through everything you heard.</div>
   <div class="knob"><b>Mix it in.</b> Blend the frozen ghost under the dry sound for texture, or go full wet for pads and transitions.</div>
 
   <h3>Pro tip</h3>
@@ -209,22 +232,24 @@
 
   <h2>Common questions</h2>
   <div class="knob"><b>What does a freeze effect do?</b> It captures a moment of sound and holds it forever, like pressing pause on the audio itself. Ghost freezes that moment with granular processing and haunted tape character, so a single chord or vocal breath becomes an endless, evolving pad.</div>
-  <div class="knob"><b>Is Ghost really free?</b> Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer.</div>
-  <div class="knob"><b>What DAWs does Ghost work in?</b> Any macOS DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically.</div>
-  <div class="knob"><b>Is there a Windows version of Ghost?</b> Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.</div>
+  <div class="knob"><b>How much is Ghost?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
+  <div class="knob"><b>What DAWs does Ghost work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically.</div>
+  <div class="knob"><b>Is there a Windows version of Ghost?</b> Yes. Ghost ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.</div>
   <div class="knob"><b>How do I install Ghost?</b> Run the installer and it puts the VST3 and AU files in the right folders for you. Restart your DAW, rescan plugins if needed, and it shows up like any other plugin.</div>
 
   <div class="cta">
-    <a class="dl" href="downloads/Ghost-v1.1-macOS.pkg">Download Ghost Free</a>
+    <span class="dl buy" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; $15</span>
     <div class="meta">Email required &middot; instant download</div>
   </div>
 
   <footer>
     <div>&copy; 2026 Aluetion, LLC. All rights reserved.</div>
-    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a></div>
+    <div><a href="pricing.html">Pricing</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="refunds.html">Refunds</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="https://dl.sebastianmacan.com/library">Library</a> · <a href="downloads.html">Re-download</a></div>
   </footer>
 </div>
-<script src="js/email-gate.js?v=toy1" defer></script>
+<script src="js/cart.js?v=free8" defer></script>
+<script src="js/email-gate.js?v=free8" defer></script>
+<script src="js/loops.js?v=2" defer></script>
 <script src="js/madewith.js?v=r1101"></script>
 </body>
 </html>
