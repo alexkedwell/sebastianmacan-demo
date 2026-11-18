@@ -59,6 +59,7 @@
     glow(x, cx, cy, r, halo);
     x.save(); x.beginPath(); x.arc(cx, cy, r, 0, TAU); x.clip();
     var n = bands.length, bh = r * 2 / n;
+    x.fillStyle = bands[0]; x.fillRect(cx - r, cy - r, r * 2, r * 2);   /* no unpainted cap above the first curved band */
     for (var i = 0; i < n; i++) {
       x.fillStyle = bands[i]; x.beginPath();
       var y0 = cy - r + i * bh;
