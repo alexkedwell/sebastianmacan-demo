@@ -46,6 +46,39 @@
   footer { border-top:1px solid var(--line); margin-top:72px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
   @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
+  .mw { display:flex; align-items:center; gap:12px; margin-top:14px; padding:10px 12px 10px 10px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--line); position:relative; z-index:2; }
+  .mw-play { flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--g1),var(--g2)); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,.4); transition:transform .15s ease; }
+  .mw-play:hover { transform:scale(1.06); }
+  .mw-play svg { width:16px; height:16px; fill:#0a0a0c; margin-left:2px; }
+  .mw.on .mw-play svg.p { display:none; } .mw .mw-play svg.s { display:none; } .mw.on .mw-play svg.s { display:block; margin-left:0; }
+  .mw-body { flex:1; min-width:0; }
+  .mw-lbl { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  .mw-title { font-size:14px; font-weight:800; color:var(--txt); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .mw-title span { color:var(--dim); font-weight:600; }
+  .mw-bar { height:6px; border-radius:3px; background:rgba(255,255,255,.10); margin-top:8px; cursor:pointer; position:relative; touch-action:none; transition:height .12s; }
+  .mw-bar::before { content:""; position:absolute; left:0; right:0; top:-12px; bottom:-12px; }
+  .mw:hover .mw-bar, .mw.scrub .mw-bar { height:8px; }
+  .mw-bar i::after { content:""; position:absolute; right:-6px; top:50%; width:12px; height:12px; margin-top:-6px; border-radius:50%; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.6); opacity:0; transition:opacity .12s; }
+  .mw:hover .mw-bar i::after, .mw.scrub .mw-bar i::after, .mw.on .mw-bar i::after { opacity:1; }
+  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:3px; position:relative; }
+  .mw.vid .mw-play svg.p { display:none; } .mw.vid .mw-play::after { content:""; width:0; height:0; border-left:14px solid #0a0a0c; border-top:8px solid transparent; border-bottom:8px solid transparent; margin-left:3px; }
+  .mw.vid .mw-body { cursor:pointer; }
+  .mw.vid .mw-bar { background:linear-gradient(90deg,var(--g1),var(--g2)); opacity:.35; }
+  .mw.vid .mw-lbl::after { content:" · VIDEO"; color:var(--g1); }
+  .mw-lb { position:fixed; inset:0; z-index:9999; background:rgba(6,6,8,.92); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s ease; }
+  .mw-lb.on { opacity:1; pointer-events:auto; }
+  .mw-lb-in { position:relative; height:min(92vh, 1920px); aspect-ratio:9/16; max-width:96vw; border-radius:22px; overflow:hidden; background:#000; box-shadow:0 30px 120px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); transform:scale(.96); transition:transform .25s ease; }
+  .mw-lb.on .mw-lb-in { transform:scale(1); }
+  .mw-lb-in video { width:100%; height:100%; display:block; object-fit:contain; background:#000; }
+  .mw-lb-t { position:absolute; left:16px; top:14px; font-size:12px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#fff; text-shadow:0 1px 8px rgba(0,0,0,.8); pointer-events:none; }
+  .mw-lb-x { position:absolute; right:12px; top:8px; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.12); color:#fff; font-size:26px; line-height:38px; text-align:center; cursor:pointer; }
+  .mw-lb-x:hover { background:rgba(255,255,255,.25); }
+  .mw-time { font-size:11px; color:var(--dim); font-variant-numeric:tabular-nums; flex:0 0 auto; }
+  .mw-rw { flex:0 0 auto; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--dim); border:1px solid var(--line); font-size:15px; line-height:1; transition:color .12s, border-color .12s, transform .12s; user-select:none; }
+  .mw-rw:hover { color:var(--txt); border-color:var(--g1); transform:rotate(-40deg); }
+  .madewith { margin:34px 0 8px; }
+  .madewith h2 { margin-bottom:6px; }
+  .madewith p { color:var(--dim); font-size:14px; margin:0 0 4px; }
 </style>
 <script type="application/ld+json">
 {
@@ -145,6 +178,21 @@
   <h2>What Ghost does</h2>
   <p>Ghost freezes the last four seconds of whatever is playing and lets you play around inside the frozen sound. Pads, risers, haunted atmospheres, endless tails: all from audio you already have.</p>
 
+  <section class="madewith">
+  <h2>Made with Ghost</h2>
+  <p>Press play.</p>
+  <div class="mw" data-src="audio/ghost_seed31973.m4a">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Play Seed 31973"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="4" height="11" rx="1"/><rect x="9.5" y="2.5" width="4" height="11" rx="1"/></svg></span>
+        <div class="mw-body"><div class="mw-lbl">Made with</div><div class="mw-title">Seed 31973 <span>&middot; Ghost</span></div><div class="mw-bar"><i></i></div></div>
+        <span class="mw-time">--:--</span>
+      </div>
+  <div class="mw" data-src="audio/ghost_seed31973_first_take.m4a">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Play Seed 31973, first take"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="4" height="11" rx="1"/><rect x="9.5" y="2.5" width="4" height="11" rx="1"/></svg></span>
+        <div class="mw-body"><div class="mw-lbl">Made with</div><div class="mw-title">Seed 31973, first take <span>&middot; Ghost</span></div><div class="mw-bar"><i></i></div></div>
+        <span class="mw-time">--:--</span>
+      </div>
+  </section>
+
   <h2>Get started in 3 steps</h2>
   <div class="step"><b>1. Put Ghost on a track.</b> In your DAW, drop Ghost on any track that has sound on it: a vocal, a synth, a whole loop.</div>
   <div class="step"><b>2. Hit FREEZE while it plays.</b> Ghost traps the last four seconds of audio. The music keeps going, but now Ghost is holding a frozen copy for you.</div>
@@ -177,5 +225,6 @@
   </footer>
 </div>
 <script src="js/email-gate.js?v=toy1" defer></script>
+<script src="js/madewith.js?v=r1101"></script>
 </body>
 </html>
