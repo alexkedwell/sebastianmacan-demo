@@ -35,7 +35,7 @@ for root in ("site", "demo-site"):
    "@type": "FAQPage",
    "mainEntity": [
     { "@type": "Question", "name": "Is Scrap really free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scrap is free forever. Full version, every knob, no email wall, no subscription." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scrap is free for a limited time. Full version, every knob, no email wall, no subscription." } },
     { "@type": "Question", "name": "What does Scrap do?",
       "acceptedAnswer": { "@type": "Answer", "text": "It records what is playing into a short buffer, grabs a slice between 15 and 220 milliseconds, and plays it back up to thirteen times. Each slice can be reversed and pitched down an octave, up a fifth or up an octave. TWIST decides how broken it gets." } },
     { "@type": "Question", "name": "What DAWs does Scrap work in?",
@@ -52,7 +52,7 @@ for root in ("site", "demo-site"):
     body = f'''  <section class="hero">
     <div class="kind">Free Glitch Repeater</div>
     <h1>SCRAP</h1>
-    <p class="tag">Grabs a slice and won't let go. Free forever.</p>
+    <p class="tag">Grabs a slice and won't let go. Free for a limited time.</p>
     <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/scrap.png?v={VER}" aria-label="Scrap plugin UI: an orange rusty robot glitching while the knobs move"><source src="https://video.sebastianmacan.com/img/video/scrap_ui_loop.mp4?v={VER}" type="video/mp4"></video></div>
     <div class="cta">
       <a class="dl" href="{MAC}">Download Scrap Free &middot; macOS</a>
@@ -88,7 +88,7 @@ for root in ("site", "demo-site"):
   <p><a href="chop.html">Chop</a> is the other free one: a tempo-synced gate that turns anything into a rhythm. <a href="stutter.html">Stutter</a>, <a href="smear.html">Smear</a> and <a href="twitch.html">Twitch</a> are the $15 boxes next to it.</p>
 
   <h2>Common questions</h2>
-  <div class="knob"><b>Is Scrap really free?</b> Yes. Free forever. Full version, every knob, no email wall, no subscription.</div>
+  <div class="knob"><b>Is Scrap really free?</b> Yes. Free for a limited time. Full version, every knob, no email wall, no subscription.</div>
   <div class="knob"><b>What DAWs does Scrap work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
   <div class="knob"><b>Is there a Windows version of Scrap?</b> Yes. Scrap ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both.</div>
   <div class="knob"><b>How do I install Scrap?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
@@ -116,7 +116,7 @@ for root in ("site", "demo-site"):
       <p class="desc">Stutter-buffer glitch that repeats, reverses and pitch-kicks slices of whatever is playing, with a growl drive and an air return. Metallic, broken, built for drops.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/scrap.png?v={VER}"><source src="https://video.sebastianmacan.com/img/video/scrap_ui_loop.mp4?v={VER}" type="video/mp4"></video></div>
       <a class="dl" style="background:linear-gradient(135deg,#ff7a2e,#ffb347);box-shadow:0 6px 28px rgba(255,122,46,.30);" href="{MAC}">Download Scrap</a>
-      <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
+      <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">Free &middot; Limited time</span></div>
       <a class="more" href="scrap.html">See how it works &rarr;</a>
       <div class="meta">v{VER} · VST3 + AU effect · macOS + Windows</div>
     </div>
