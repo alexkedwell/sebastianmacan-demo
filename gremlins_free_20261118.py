@@ -15,7 +15,7 @@ def sub(s, old, new, n=1):
 
 G = {  # slug: (Name, mac, win, g1, g2, shadow, kind, tagline, ui version)
     "smear":   ("Smear",   "Smear-v1.0.1-macOS.pkg",   "Smear-v1.0.1-Windows-Setup.exe",   "#9a6bff", "#44e0c8", "rgba(154,107,255,.30)", "Granular Smear", "It's a reverb.", "1.0.1"),
-    "stutter": ("Stutter", "Stutter-v2.0.3-macOS.pkg", "Stutter-v2.0.3-Windows-Setup.exe", "#ff2ea6", "#ff7ad1", "rgba(255,46,166,.30)", "Beat Repeat", "Sorry, was I repeating myself? Was I repeating myself?", "2.0.3"),
+    "stutter": ("Stutter", "Stutter-v2.0.3-macOS.pkg", "Stutter-v2.0.3-Windows-Setup.exe", "#ff2ea6", "#ff7ad1", "rgba(255,46,166,.30)", "Beat Repeat", "Trips over your beat.", "2.0.3"),
     "twitch":  ("Twitch",  "Twitch-v1.1.1-macOS.pkg",  "Twitch-v1.1.1-Windows-Setup.exe",  "#3cdcff", "#9aefff", "rgba(60,220,255,.30)", "Per-Step Glitch Rack", "The mad scientist of the bunch.", "1.1.1"),
 }
 FREEPILL = '<div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>'

@@ -130,7 +130,7 @@ P["stutter"] = dict(slug="stutter", NAME="Stutter", ver="2.0.0", g1="#ff2ea6", g
     title="Stutter | Beat Repeat and Buffer Stutter VST3/AU Plugin",
     meta="Stutter is a beat repeat with dice. AMOUNT, RATE, REPEATS, RAMP, REVERSE, true PITCH, TAPE, SCATTER and a patch bay you can click. VST3 and AU, macOS and Windows. By Sebastian Macan.",
     ld_desc="Stutter is a tempo-synced buffer stutter. AMOUNT is the chance a repeat fires per step, RATE from 1/1 to 1/32 or FREE in milliseconds, REPEATS, RAMP, REVERSE, PITCH from -12 to +12 st, TAPE, SCATTER, SHAPE, FILTER, WIDTH, GLIDE, DECLICK and HOLD. By Sebastian Macan.",
-    kind="Beat Repeat", tagline="Sorry, was I repeating myself? Was I repeating myself?",
+    kind="Beat Repeat", tagline="Trips over your beat.",
     aria="Stutter plugin UI: a purple jittering creature next to a patch bay while AMOUNT and PITCH sweep",
     what="Stutter grabs a slice of whatever is playing and fires it again. Not on every beat: AMOUNT is the dice, the chance that a repeat happens on each step of the grid. RATE picks the grid from whole bars down to 1/32, or FREE in milliseconds with no transport at all. REPEATS, RAMP and REVERSE shape the burst, PITCH moves every repeat up to an octave either way, and TAPE, SCATTER, SHAPE, FILTER, WIDTH and GLIDE turn one repeat into a trick. HOLD freezes the buffer while you lean on it.",
     why_h="Jitter and the patch bay", why="The purple creature is Jitter. It twitches with every repeat. Next to it is the patch bay: HOLD plugs the dangling cable into the free socket, and you can click any cable to grey it out. The cables are toys. Nothing breaks if you play with them.",

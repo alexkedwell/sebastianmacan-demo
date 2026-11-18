@@ -11,7 +11,7 @@ ITEMS = {
   "honey":     ("Tape Machine", "Honey", "Sebastian Macan's tape machine. Real tape physics for anything you put on it.", 15, "honey.html"),
   "pocket":    ("Snare Depth", "Pocket", "Puts your snare in the mix instead of on top of it.", 15, "pocket.html"),
   "smear": ("Granular Smear", "Smear", "It's a reverb.", 15, "smear.html"),
-  "stutter": ("Beat Repeat", "Stutter", "Sorry, was I repeating myself? Was I repeating myself?", 15, "stutter.html"),
+  "stutter": ("Beat Repeat", "Stutter", "Trips over your beat.", 15, "stutter.html"),
   "twitch": ("Per-Step Glitch Rack", "Twitch", "The mad scientist of the bunch.", 15, "twitch.html"),
   "chop": ("Rhythm Chopper", "Chop", "Chomps any sound into a groove.", 0, "chop.html"),
   "scrap": ("Glitch Repeater", "Scrap", "Grabs a slice and won't let go.", 0, "scrap.html"),
