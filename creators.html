@@ -123,9 +123,21 @@
 </style>
 
 <style>.fam.huddle .row{justify-content:center;padding-left:30px;padding-right:30px}.fam.huddle .row img{position:relative;margin:0 -5px}.fam.huddle .row img.S,.fam.huddle .row img.M{margin:0 -14px}.fam.huddle .row img.L{z-index:1}.fam.huddle .row img.M{z-index:3}.fam.huddle .row img.S{z-index:5}</style>
+<style>
+.fam.huddle .row span.c{position:relative;display:block;flex:none;margin:0 -5px;transform-origin:50% 100%;animation:famBob 3.2s ease-in-out infinite}
+.fam.huddle .row span.c.L{height:116px;z-index:1}.fam.huddle .row span.c.M{height:90px;z-index:3;margin:0 -14px}.fam.huddle .row span.c.S{height:70px;z-index:5;margin:0 -14px}
+.fam.huddle .row span.c img{position:absolute;margin:0;max-width:none;animation:none;filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) saturate(1.08)}
+.fam.huddle .row span.c img[src*="orbit"]{filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) drop-shadow(0 0 12px rgba(190,130,255,.95)) brightness(1.7) saturate(1.5)}
+.fam.huddle .row span.c img[src*="twitch"]{filter:none}
+.fam.huddle .row span.c img[src*="fire"]{filter:drop-shadow(0 0 12px rgba(255,160,40,.6))}
+.fam.huddle .row span.c img[src*="smear"]{filter:drop-shadow(0 14px 10px rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(255,255,255,.45)) saturate(1.2)}
+.fam .row>:nth-child(2n){animation-delay:-.8s}.fam .row>:nth-child(3n){animation-delay:-1.6s}.fam .row>:nth-child(5n){animation-delay:-2.4s}
+@media(prefers-reduced-motion:reduce){.fam .row span.c{animation:none}}
+</style>
 <div class="fam huddle"><div class="back"></div><div class="floor"></div><div class="row">
-<img class="M" src="/img/cast/fire.png"><img class="L" src="/img/cast/pocket.png"><img class="S" src="/img/cast/orbit.png"><img class="L" src="/img/cast/chop.png?v=nodot1"><img class="M" src="/img/cast/gremlin_twitch.png"><img class="L" src="/img/cast/warble.png"><img class="S" src="/img/cast/gremlin_stutter.png"><img class="L" src="/img/cast/jelly.png"><img class="S" src="/img/cast/honey.png"><img class="L" src="/img/cast/scrap.png"><img class="M" src="/img/cast/gremlin_smear.png">
+<span class="c M" style="width:85.3px"><img src="/img/cast/anim/fire_poster.png?v=1" data-anim="/img/cast/anim/fire.webp?v=1" alt="" style="left:19.4px;top:-17.1px;width:65.1px;height:90.0px"></span><span class="c L" style="width:83.5px"><img src="/img/cast/anim/pocket_poster.png?v=1" data-anim="/img/cast/anim/pocket.webp?v=1" alt="" style="left:-11.5px;top:-25.1px;width:101.1px;height:140.1px"></span><span class="c L" style="width:112.3px"><img src="/img/cast/anim/chop_poster.png?v=1" data-anim="/img/cast/anim/chop.webp?v=1" alt="" style="left:-0.0px;top:0.9px;width:114.0px;height:113.2px"></span><span class="c M" style="width:77.0px"><img src="/img/cast/anim/twitch_poster.png?v=1" data-anim="/img/cast/anim/twitch.webp?v=1" alt="" style="left:-57.8px;top:-39.0px;width:177.4px;height:122.5px"></span><span class="c L" style="width:125.3px"><img src="/img/cast/anim/warble_poster.png?v=1" data-anim="/img/cast/anim/warble.webp?v=1" alt="" style="left:15.7px;top:-3.2px;width:111.1px;height:117.8px"></span><span class="c S" style="width:49.0px"><img src="/img/cast/anim/stutter_poster.png?v=1" data-anim="/img/cast/anim/stutter.webp?v=1" alt="" style="left:-6.9px;top:1.5px;width:63.4px;height:69.2px"></span><span class="c L" style="width:142.1px"><img src="/img/cast/anim/jelly_poster.png?v=1" data-anim="/img/cast/anim/jelly.webp?v=1" alt="" style="left:-1.5px;top:-10.9px;width:116.5px;height:125.1px"></span><span class="c S" style="width:111.1px"><img src="/img/cast/anim/honey_poster.png?v=1" data-anim="/img/cast/anim/honey.webp?v=1" alt="" style="left:-0.3px;top:0.0px;width:111.7px;height:70.0px"></span><span class="c L" style="width:115.4px"><img src="/img/cast/anim/scrap_poster.png?v=1" data-anim="/img/cast/anim/scrap.webp?v=1" alt="" style="left:13.4px;top:0.7px;width:103.8px;height:103.8px"></span><span class="c M" style="width:80.1px"><img src="/img/cast/anim/smear_poster.png?v=2" data-anim="/img/cast/anim/smear.webp?v=2" alt="" style="left:9.8px;top:8.0px;width:49.2px;height:70.7px"></span>
 </div></div>
+<script src="/js/famstrip.js?v=1" defer></script>
   <!-- family-hero:end -->
 
   <h1>Use my plugins. <em>Get paid.</em></h1>

@@ -21,6 +21,10 @@
     bounce: { g1: "#ff9f1c", g2: "#ffe14d", shadow: "rgba(255,159,28,.30)" },
     liftoff:{ g1: "#ff6b4a", g2: "#4ad9ff", shadow: "rgba(255,107,74,.30)" },
     candybag: { g1: "#4cc2ff", g2: "#5b7cff", shadow: "rgba(76,194,255,.30)", label: "Candy Bag" },
+    gremlinbasket: { g1: "#ff8ad8", g2: "#6ec8ff", shadow: "rgba(255,138,216,.30)", label: "Gremlin Basket" },
+    smear: { g1: "#9a6bff", g2: "#44e0c8", shadow: "rgba(154,107,255,.30)" },
+    stutter: { g1: "#ff2ea6", g2: "#ff7ad1", shadow: "rgba(255,46,166,.30)" },
+    twitch: { g1: "#3cdcff", g2: "#9aefff", shadow: "rgba(60,220,255,.30)" },
     orbit:  { g1: "#ff9d2e", g2: "#ffd76b", shadow: "rgba(255,157,46,.30)" },
     prism:  { g1: "#ff4ad9", g2: "#4affd9", shadow: "rgba(255,74,217,.30)" },
     jelly:  { g1: "#ff7ab8", g2: "#8fe8c0", shadow: "rgba(255,122,184,.30)" },
@@ -96,7 +100,7 @@
       try {
         var hp = document.getElementById("eg-hp");
         // Library: record the free grab + send the welcome/library email (fire-and-forget, never blocks)
-        var FREE = { candybag: 1, chop: 1, scrap: 1, orbit: 1, jelly: 1, warble: 1 };
+        var FREE = { candybag: 1, chop: 1, scrap: 1, orbit: 1, jelly: 1, warble: 1, smear: 1, stutter: 1, twitch: 1, gremlinbasket: 1 };
         if (FREE[plugin] && !(hp && hp.value)) {
           try {
             fetch("https://dl.sebastianmacan.com/library/free-grab", {

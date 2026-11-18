@@ -18,7 +18,7 @@ paddle = {i["price_id"]: i for i in json.load(open(f"{H}/paddle/catalog.json"))[
 prod = json.load(open(f"{H}/delivery/products.json"))
 RETIRED = ["Old Tape for Drums", "Old tape for lofi drums", "Subtle Tape Machine", "Sometimes tape plugins do too much", "right amount of vintage", "A real tape machine, in the box"]
 FILE_OF = {"biome": "Biome", "magician": "Chordsmith", "jelly": "Jelly", "warble": "Warble",
-           "orbit": "Orbit", "fireplace": "Fireplace", "honey": "Honey", "smear": "Smear", "stutter": "Stutter", "twitch": "Twitch", "pocket": "Pocket"}
+           "orbit": "Orbit", "fireplace": "Fireplace", "honey": "Honey", "smear": "Smear", "stutter": "Stutter", "twitch": "Twitch", "pocket": "Pocket", "ghost": "Ghost"}
 bad = []
 # 1. roster: cart.js basket vs delivered files
 for cid, (page, items) in BASK.items():
@@ -47,7 +47,7 @@ print(f"catalog {len(CAT)} items, {len(BASK)} baskets, {len(ITEMS)} product copi
 # 4. plugin count: hero copy on index (and demo-site) must equal the number of plugin cards. Alex caught "Ten" after Gremlin (Sep 30).
 WORDS = {9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}
 idx = open(f"{S}/index.html").read()
-midi_cards = {"hitmaker", "clubchords", "tears", "soulchords", "candyad"}  # candyad = ad card for the free bag, not a plugin
+midi_cards = {"hitmaker", "clubchords", "tears", "soulchords", "candyad", "gremlinad"}  # candyad = ad card for the free bag, not a plugin
 ncards = len(set(re.findall(r'class="card (\w+)"', idx)) - midi_cards)
 for page in [f"{S}/index.html", f"{H}/demo-site/index.html"]:
     if not os.path.exists(page): continue
