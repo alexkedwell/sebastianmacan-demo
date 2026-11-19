@@ -57,7 +57,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
 
 body_start = h.index('  <section class="hero">'); body_end = h.index('  <footer>')
 body = f'''  <section class="hero">
-    <div class="kind">Free Rhythm Chopper</div>
+    <div class="kind">Rhythm Chopper</div>
     <h1>CHOP</h1>
     <p class="tag">Chomps any sound into a groove. Free forever.</p>
     <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chop.png?v={VER}" aria-label="Chop plugin UI: a green chomper mascot biting on the beat while the knobs move"><source src="https://video.sebastianmacan.com/img/video/chop_ui_loop.mp4?v={VER}" type="video/mp4"></video></div>

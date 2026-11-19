@@ -50,7 +50,7 @@ for root in ("site", "demo-site"):
 
     body_start = h.index('  <section class="hero">'); body_end = h.index('  <footer>')
     body = f'''  <section class="hero">
-    <div class="kind">Free Glitch Repeater</div>
+    <div class="kind">Glitch Repeater</div>
     <h1>SCRAP</h1>
     <p class="tag">Grabs a slice and won't let go. Free for a limited time.</p>
     <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/scrap.png?v={VER}" aria-label="Scrap plugin UI: an orange rusty robot glitching while the knobs move"><source src="https://video.sebastianmacan.com/img/video/scrap_ui_loop.mp4?v={VER}" type="video/mp4"></video></div>
