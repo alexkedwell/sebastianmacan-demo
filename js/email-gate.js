@@ -1,6 +1,8 @@
 /* email-gate.js — download gate for sebastianmacan.com
  * Intercepts .dl download clicks, asks for an email, POSTs it to the
  * capture endpoint, then starts the download.
+ * The email IS the customer's library account (dl.sebastianmacan.com/library, no password): the box says so,
+ * and after every free download a panel confirms the library and links to it.
  * IMPORTANT: the download is NEVER blocked — if the endpoint is down,
  * times out, or errors, we start the download anyway.
  */
@@ -62,6 +64,10 @@
     ".eg-skip{background:none;border:none;color:#8a8a94;font-size:12.5px;cursor:pointer;padding:4px;text-decoration:underline;text-underline-offset:3px;font-family:inherit}" +
     ".eg-skip:hover{color:#f2f2f4}" +
     ".eg-note{color:#5c5c66;font-size:11.5px;text-align:center;margin-top:2px}" +
+    ".eg-lib{display:block;text-align:center;text-decoration:none;border:none;cursor:pointer;color:#fff;font-weight:800;font-size:15px;padding:14px;border-radius:999px;letter-spacing:.02em;background:linear-gradient(135deg,var(--eg1),var(--eg2));box-shadow:0 8px 32px var(--egsh);transition:transform .15s}" +
+    ".eg-lib:hover{transform:translateY(-1px)}" +
+    ".eg-mail{color:#f2f2f4;font-weight:700;word-break:break-all}" +
+    ".eg-row{display:flex;justify-content:center;gap:18px;margin-top:14px}" +
     ".eg-hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;pointer-events:none}" +
     "@media (max-width:480px){.eg-modal{padding:28px 22px 24px}}";
 
@@ -141,13 +147,13 @@
       '<div class="eg-modal" role="dialog" aria-modal="true" aria-label="Get ' + name + '">' +
       '<button class="eg-close" aria-label="Close">&times;</button>' +
       '<div class="eg-kind">Free Download</div>' +
-      '<h3 class="eg-title">Get <em>' + name + '</em> + future updates</h3>' +
-      '<p class="eg-sub">Drop your email and the download starts instantly. You\u2019ll also get new presets, updates and future plugins first. Unsubscribe anytime.</p>' +
+      '<h3 class="eg-title">Get <em>' + name + '</em></h3>' +
+      '<p class="eg-sub">Type your email and the download starts right away. That email becomes your library: every plugin you grab is kept there, with fresh download links any time. No password.</p>' +
       '<form class="eg-form" novalidate>' +
       '<input class="eg-input" type="email" name="email" placeholder="you@studio.com" autocomplete="email" required>' +
       '<input class="eg-hp" type="text" id="eg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">' +
       '<button class="eg-btn" type="submit">Send it \u2192 Download ' + name + '</button>' +
-      '<div class="eg-note">Your email is only used for plugin news. Ever.</div>' +
+      '<div class="eg-note">You\u2019ll also hear about new plugins and updates. Unsubscribe anytime.</div>' +
       "</form></div>";
 
     document.body.appendChild(overlay);
@@ -183,12 +189,53 @@
       btn.textContent = "Starting download\u2026";
       postEmail(email, plugin).then(function () {
         try { localStorage.setItem(STORAGE_KEY, email); } catch (_) {}
-        close();
+        document.removeEventListener("keydown", onKey);
+        overlay.remove();
         startDownload(href);
+        openDone(href, plugin, email);
       });
     });
 
     setTimeout(function () { input.focus(); }, 60);
+  }
+
+  /* After the download starts: say where it is kept. Shown to new AND returning visitors. */
+  function openDone(href, plugin, email) {
+    var acc = ACCENTS[plugin] || ACCENTS.chaos;
+    var name = acc.label || (plugin.charAt(0).toUpperCase() + plugin.slice(1));
+    var overlay = document.createElement("div");
+    overlay.className = "eg-overlay";
+    overlay.style.setProperty("--eg1", acc.g1);
+    overlay.style.setProperty("--eg2", acc.g2);
+    overlay.style.setProperty("--egsh", acc.shadow);
+    overlay.innerHTML =
+      '<div class="eg-modal eg-done" role="dialog" aria-modal="true" aria-label="' + name + ' is downloading">' +
+      '<button class="eg-close" aria-label="Close">&times;</button>' +
+      '<div class="eg-kind">Downloading</div>' +
+      '<h3 class="eg-title"><em>' + name + '</em> is in your library</h3>' +
+      '<p class="eg-sub">Your library is tied to <span class="eg-mail"></span>. Everything you grab is kept there, with fresh download links any time. Opening it emails you a sign-in code, no password.</p>' +
+      '<a class="eg-lib" href="https://dl.sebastianmacan.com/library" target="_blank" rel="noopener">Open my library</a>' +
+      '<div class="eg-row"><button class="eg-skip eg-other" type="button">Use a different email</button><button class="eg-skip eg-ok" type="button">Done</button></div>' +
+      "</div>";
+    overlay.querySelector(".eg-mail").textContent = email;
+    document.body.appendChild(overlay);
+    requestAnimationFrame(function () { overlay.classList.add("eg-show"); });
+    function close() {
+      overlay.classList.remove("eg-show");
+      setTimeout(function () { overlay.remove(); }, 200);
+      document.removeEventListener("keydown", onKey);
+    }
+    function onKey(e) { if (e.key === "Escape") close(); }
+    document.addEventListener("keydown", onKey);
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+    overlay.querySelector(".eg-close").addEventListener("click", close);
+    overlay.querySelector(".eg-ok").addEventListener("click", close);
+    overlay.querySelector(".eg-other").addEventListener("click", function () {
+      try { localStorage.removeItem(STORAGE_KEY); } catch (_) {}
+      document.removeEventListener("keydown", onKey);
+      overlay.remove();
+      openModal(href, plugin);
+    });
   }
 
   document.addEventListener("click", function (e) {
@@ -204,6 +251,7 @@
     if (known && validEmail(known)) {
       postEmail(known, plugin);
       startDownload(href);
+      openDone(href, plugin, known);
       return;
     }
     openModal(href, plugin);

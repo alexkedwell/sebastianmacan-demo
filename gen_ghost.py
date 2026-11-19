@@ -65,16 +65,18 @@ for f in ('ghost_seed31973.m4a', 'ghost_seed31973_first_take.m4a'): shutil.copy(
 print('ghost.html', len(h), 'bytes; platforms:', PLAT)
 
 # ---------- home card ----------
-CSS = "  .ghost { --g1:#39e6d0; --g2:#8b5cf6; --glow:#39e6d0; --shadow:rgba(57,230,208,.26); }\n"
-GRAD = 'linear-gradient(135deg,#39e6d0,#8b5cf6)'
+CSS = "  .ghost { --g1:#7c4dff; --g2:#7c4dff; --glow:#7c4dff; --shadow:rgba(124,77,255,.225); }\n  .ghost .new, .ghost .dl.buy, .ghost .cartbtn.buy { background:#141826; border:1.5px solid #7c4dff; }\n  .ghost .new { color:#b9a2ff; }\n  .ghost .dl.buy, .ghost .cartbtn.buy { color:#d9ccff; }\n  .ghost .gfog { position:absolute; inset:0; pointer-events:none; z-index:0; }\n  .ghost .gfog ~ *:not(.new) { position:relative; z-index:1; }\n  .ghost .gfog ~ .new { z-index:2; }\n"
+FOG = open(S + '/_tpl/ghost_card_fog.html', encoding='utf-8').read().strip()   # Astra's "A Quiet Visitor" (Alex, Nov 19)
+GRAD = 'linear-gradient(#e8f6ff,#e8f6ff)'
 CARD = f'''    <div class="card ghost">
+      {FOG}
       <span class="new">NEW</span>
-      <div class="kind">Granular Texture Machine</div>
+      <div class="kind">Haunted Tape Texture Machine</div>
       <h2 style="background:{GRAD};-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GHOST</h2>
-      <p class="tag">Freeze sound. Then haunt it.</p>
+      <p class="tag">Your sound has unfinished business.</p>
       <p class="desc">Grabs the last four seconds of whatever you played and refuses to let it move on. Very unhealthy. Sounds incredible.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/ghost.png?v={V}"><source src="https://video.sebastianmacan.com/img/video/ghost_ui_loop.mp4?v={V}" type="video/mp4"></video></div>
-      <span class="dl buy" style="background:{GRAD};box-shadow:0 6px 28px rgba(57,230,208,.26);" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; ${USD}</span>
+      <span class="dl buy" style="background:#141826;box-shadow:0 6px 28px rgba(124,77,255,.225);" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; ${USD}</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="ghost">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="ghost">Buy Now</span></div>
       <a class="more" href="ghost.html">See how it works &rarr;</a>
       <div class="meta">v{V} · VST3 + AU effect · {PLAT}</div>
@@ -89,13 +91,13 @@ def card_in(path, demo_tree):
             a = s.index('<div class="card ghost">'); b = s.index('<div class="card ', a + 10); s = s[:a] + s[b:]
         else:
             pk = '  .pocket { --g1:#4f97e8;'; s = rep(s, pk, CSS + pk)
-        s = rep(s, anchor, anchor + CARD)
+        a = s.index('    <div class="card smear">'); b = s.index('\n    </div>\n', a) + 12; s = s[:b] + CARD + s[b:]   # right after Smear (Alex, Nov 18)
         s = rep(s, '13 Plugins + 11 MIDI Packs', '14 Plugins + 11 MIDI Packs', 4)
         s = rep(s, 'Thirteen plugins and 4796', 'Fourteen plugins and 4796')
     else:   # re-run: refresh the card (platform line)
-        import re as _re; s = _re.sub(r'  \.ghost \{ --g1:[^\n]*\n', CSS, s)
-        a = s.index('    <div class="card ghost">'); b = s.index('    <div class="card ', a + 10); s = s[:a] + CARD + s[b:]
-    assert s.count('class="card ghost"') == 1 and s.count('.ghost { --g1') == 1
+        import re as _re; s = _re.sub(r'  \.ghost \{ --g1:[^\n]*\n(?:  \.ghost \.[^\n]*\n)*', lambda _m: CSS, s, count=1)
+        a = s.index('    <div class="card ghost">'); b = s.index('\n    </div>\n', a) + 12; s = s[:a] + CARD + s[b:]
+    assert s.count('    <div class="card ghost">') == 1 and s.count('.ghost { --g1') >= 1   # demo's sync keeps an older second rule
     open(path, 'w').write(s)
 card_in(S + '/index.html', False); card_in(D + '/index.html', True)
 

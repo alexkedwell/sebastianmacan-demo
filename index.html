@@ -270,6 +270,23 @@
   .card.gremlinad.full .pill { z-index:2; border-color:#fff; color:#fff; }
   .card.gremlinad.full .golink { position:absolute; inset:0; z-index:3; }
   @media (max-width:705px) { .card.gremlinad.full { justify-self:center; } }
+  /* Featured lane: banners. The video IS the banner (saucers in the candy galaxy); words sit on top of it.
+     Wide cut 1600x456: saucers own the left 40% of the picture, so the words start past that. Tall cut (phones) 720x1280: saucers own the top. */
+  .featbanner { margin-top:16px; border:1px solid rgba(255,138,216,.55); background:#0a0622; border-radius:18px; overflow:hidden; position:relative; cursor:pointer; height:322px; display:flex; align-items:center; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .featbanner.gremlinad { --g1:#ff8ad8; --g2:#6ec8ff; --ink:#14121c; --shadow:rgba(255,138,216,.28); }
+  .featbanner:hover { transform:translateY(-4px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
+  .featbanner .stage { position:absolute; inset:0; }
+  .featbanner .stage video { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; object-position:left center; }
+  .featbanner .stage .vtall { display:none; }
+  .featbanner .pill { position:absolute; top:14px; right:14px; z-index:2; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid #fff; color:#fff; }
+  .featbanner .binner { position:relative; z-index:1; margin-left:max(41%,456px); padding:18px 28px 18px 0; display:flex; flex-direction:column; justify-content:center; text-shadow:0 1px 10px rgba(8,5,22,.9); }
+  .featbanner .kind { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#d9c8ff; font-weight:700; }
+  .featbanner h3 { margin:6px 0 8px; font-size:clamp(30px,4.4vw,52px); font-weight:900; letter-spacing:-.03em; line-height:.95; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; text-shadow:none; filter:drop-shadow(0 2px 10px rgba(8,5,22,.85)); }
+  .featbanner p { margin:0 0 18px; color:#fff; font-size:18px; font-weight:600; }
+  .featbanner .dlrow { display:flex; flex-wrap:wrap; gap:10px; }
+  .featbanner .dl { font-size:14px; padding:12px 20px; border-radius:999px; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 6px 22px rgba(0,0,0,.45); color:var(--ink); font-weight:900; text-decoration:none; text-shadow:none; }
+  .featbanner .inside { margin-top:16px; font-size:12.5px; color:#d9c8ff; }
+  @media (max-width:720px) { .featbanner { height:auto; display:block; padding-top:74%; } .featbanner .stage .vwide { display:none; } .featbanner .stage .vtall { display:block; object-position:center top; } .featbanner .binner { margin-left:0; padding:0 20px 24px; } }
   @media (prefers-reduced-motion:reduce) { .card.candyad .candy, .card.candyad .toy, .card.candyad .balloon { animation:none; } }
   .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
   .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
@@ -318,7 +335,7 @@
   .freecard .shot video { display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
   .freecard .dl { margin-top:12px; font-size:13.5px; padding:10px 14px; border-radius:999px; }
   .freecard .more { margin-top:8px; }
-  /* Candy Bag: the closer. Full width, all five free plugins in one zip. */
+  /* Candy Bag: the closer. Full width, all eight free plugins in one zip. */
   .candybag { margin-top:14px; border:1px solid #4cc2ff; background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); border-radius:18px; overflow:hidden; display:grid; grid-template-columns:1.1fr 1fr; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .candybag:hover { transform:translateY(-4px); border-color:#9fdcff; box-shadow:0 18px 60px rgba(76,194,255,.28); }
   .candybag .stagewrap { display:flex; align-items:flex-end; justify-content:center; padding:18px 18px 0; min-height:300px; }
@@ -451,7 +468,7 @@
 <div class="wrap">
   <header>
     <div class="logo">SEBASTIAN<span>MACAN</span></div>
-    <nav><a href="#effects">Effects</a><a href="#instruments">Instruments</a><a href="#studio">Studio</a><a href="#midi">MIDI</a><a href="#modes">Modes</a><a href="#bundles">Bundles</a><a href="#free">Free</a></nav>
+    <nav><a href="#effects">Effects</a><a href="#instruments">Instruments</a><a href="#studio">Studio</a><a href="#midi">MIDI</a><a href="#modes">Modes</a><a href="#featured">Featured</a><a href="#bundles">Bundles</a><a href="#free">Free</a></nav>
   </header>
 
   <section class="hero">
@@ -485,12 +502,6 @@
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="magician">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="magician">Buy Now</span></div>
       <a class="more" href="chordsmith.html">See how it works &rarr;</a>
       <div class="meta">v1.7.3 · VST3 + AU instrument · macOS + Windows</div>
-    </div>
-    <div class="card gremlinad full" id="gremlinad" data-goto="basket-gremlin.html" data-warp="basket-gremlin.html">
-      <div class="stage" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/fullcard.jpg?v=1"><source src="https://video.sebastianmacan.com/img/video/gremlin_saucers_fullcard.mp4?v=1" type="video/mp4"></video></div>
-      <span class="pill">CLICK</span>
-      <div class="kind">Five gremlins, one basket</div>
-      <a class="golink" href="basket-gremlin.html" aria-label="Gremlin Basket: open the basket"></a>
     </div>
   </div>
 
@@ -926,6 +937,19 @@
     </div>
   </div>
 
+  <div class="sect-title" id="featured">Featured · Limited Time</div>
+  <div class="featbanner gremlinad" id="gremlinad" data-goto="basket-gremlin.html" data-warp="basket-gremlin.html">
+    <div class="stage" aria-hidden="true"><video class="vwide" autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/banner_wide.jpg?v=3"><source src="https://video.sebastianmacan.com/img/video/gremlin_banner_wide.mp4?v=3" type="video/mp4"></video><video class="vtall" autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/banner_tall.jpg?v=2"><source src="https://video.sebastianmacan.com/img/video/gremlin_banner_tall.mp4?v=2" type="video/mp4"></video></div>
+    <span class="pill">CLICK</span>
+    <div class="binner">
+      <div class="kind">Five gremlins, one basket</div>
+      <h3>GREMLIN BASKET</h3>
+      <p>Do not feed them after midnight.</p>
+      <div class="dlrow"><a class="dl" href="basket-gremlin.html">Open the basket</a></div>
+      <div class="inside">Smear &middot; Stutter &middot; Twitch &middot; Chop &middot; Scrap &middot; Free &middot; Limited time</div>
+    </div>
+  </div>
+
   <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
   <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Seven baskets. Instruments at $59 and Studio Tools at $35 sort the plugins by what they do, the Gremlin Basket is free with Smear, Stutter, Twitch, Chop and Scrap, and the Lofi Basket is $22 for Honey and Fireplace. The Chord Basket is Chordsmith plus every MIDI pack at $69, the MIDI Mega Basket packs all 4796 progressions at $49, and the whole Modal Series is just $12.</p>
   <div class="bundlegrid">
@@ -956,7 +980,7 @@
         <p class="desc">Smear, Stutter, Twitch, Chop and Scrap. Five little troublemakers who will not leave your sound alone. Do not feed them after midnight.</p>
         <div class="price"><span class="freebie">FREE</span></div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#ff8ad8,#6ec8ff);">Open the basket</span>
-        <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">100% Free &middot; Forever</span></div>
+        <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">Free &middot; Limited time</span></div>
       </div>
     </a>
     <a class="bundle chord-b" href="basket-chord.html">
@@ -1089,14 +1113,14 @@
     </div></div>
     <div class="binner">
       <span class="pill">FREE</span>
-      <div class="kind">Five free plugins</div>
+      <div class="kind">Eight free plugins</div>
       <h3>CANDY BAG</h3>
       <p>Get your sweets.</p>
       <div class="dlrow">
         <a class="dl" href="downloads/CandyBag-macOS.zip">Grab the bag &middot; Mac</a>
         <a class="dl dl-win" href="downloads/CandyBag-Windows.zip">Grab the bag &middot; Windows</a>
       </div>
-      <div class="inside">Chop &middot; Scrap &middot; Orbit &middot; Jelly &middot; Warble &middot; one zip, all five installers</div>
+      <div class="inside">Chop &middot; Scrap &middot; Smear &middot; Stutter &middot; Twitch &middot; Jelly &middot; Warble &middot; Orbit &middot; one zip, all eight installers</div>
     </div>
   </div>
   </section>
@@ -1147,7 +1171,7 @@
   </footer>
 </div>
 <script src="js/cart.js?v=free8" defer></script>
-<script src="js/email-gate.js?v=free8" defer></script>
+<script src="js/email-gate.js?v=lib1" defer></script>
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.
 // Real links/buttons inside the card (Download, See how it works) keep working normally.

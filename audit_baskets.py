@@ -61,6 +61,11 @@ if "effectsbasket" in BASK:
     be = open(f"{S}/basket-effects.html").read()
     for i in BASK["effectsbasket"][1]:
         if f'data-cart-buy="{i}"' not in be: bad.append(f"BASKET PAGE basket-effects.html: missing row for {i}")
+# 6. Candy Bag = every plugin in the home Free section (Alex, Nov 18 2026). tools/candybag_sync.py fixes it.
+import subprocess as _sp
+_cb = _sp.run([sys.executable, f"{H}/tools/candybag_sync.py", "--check"], capture_output=True, text=True)
+if _cb.returncode != 0:
+    bad += [l for l in _cb.stdout.splitlines() if l.startswith("CANDY BAG")] or ["CANDY BAG: check failed: " + _cb.stderr[-300:]]
 if bad:
     print("\n".join(bad)); print(f"\n{len(bad)} PROBLEMS"); sys.exit(1)
 print("baskets + copy + prices consistent, 0 problems")

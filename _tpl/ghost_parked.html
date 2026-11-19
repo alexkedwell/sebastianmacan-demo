@@ -9,7 +9,7 @@
 <title>Ghost | Free Granular Freeze VST3/AU Plugin</title>
 <meta name="description" content="Ghost is a free granular freeze effect (VST3 and AU for macOS). Freeze any sound into a haunted, infinite tape texture. By Sebastian Macan.">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#39e6d0; --g2:#8b5cf6; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#b9a2ff; --g2:#7c4dff; --gm:#9a75ff; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -23,15 +23,15 @@
   .hero { text-align:center; padding:26px 0 8px; }
   .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:700; }
   h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
-    background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    background:linear-gradient(#e8f6ff,#e8f6ff); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
-    box-shadow:0 20px 80px rgba(57,230,208,.24); animation:float 7s ease-in-out infinite; }
+    box-shadow:0 20px 80px rgba(124,77,255,.22); animation:float 7s ease-in-out infinite; }
   .videobox video { display:block; width:100%; height:auto; }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
-  .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
-    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(57,230,208,.24); transition:transform .15s; }
+  .dl { display:inline-block; color:#d9ccff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
+    background:#141826; border:1.5px solid #7c4dff; box-shadow:0 8px 36px rgba(124,77,255,.30); transition:transform .15s; }
   .dl:hover { transform:translateY(-2px) scale(1.02); }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
@@ -47,7 +47,7 @@
   footer a { color:var(--dim); }
   @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;} nav::-webkit-scrollbar{display:none;} nav a{margin:0 10px;display:inline-block;} footer{flex-direction:column;text-align:center;} }
   .mw { display:flex; align-items:center; gap:12px; margin-top:14px; padding:10px 12px 10px 10px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--line); position:relative; z-index:2; }
-  .mw-play { flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--g1),var(--g2)); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,.4); transition:transform .15s ease; }
+  .mw-play { flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--g1),var(--gm) 45%,var(--g2)); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,.4); transition:transform .15s ease; }
   .mw-play:hover { transform:scale(1.06); }
   .mw-play svg { width:16px; height:16px; fill:#0a0a0c; margin-left:2px; }
   .mw.on .mw-play svg.p { display:none; } .mw .mw-play svg.s { display:none; } .mw.on .mw-play svg.s { display:block; margin-left:0; }
@@ -60,10 +60,10 @@
   .mw:hover .mw-bar, .mw.scrub .mw-bar { height:8px; }
   .mw-bar i::after { content:""; position:absolute; right:-6px; top:50%; width:12px; height:12px; margin-top:-6px; border-radius:50%; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.6); opacity:0; transition:opacity .12s; }
   .mw:hover .mw-bar i::after, .mw.scrub .mw-bar i::after, .mw.on .mw-bar i::after { opacity:1; }
-  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:3px; position:relative; }
+  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--gm) 45%,var(--g2)); border-radius:3px; position:relative; }
   .mw.vid .mw-play svg.p { display:none; } .mw.vid .mw-play::after { content:""; width:0; height:0; border-left:14px solid #0a0a0c; border-top:8px solid transparent; border-bottom:8px solid transparent; margin-left:3px; }
   .mw.vid .mw-body { cursor:pointer; }
-  .mw.vid .mw-bar { background:linear-gradient(90deg,var(--g1),var(--g2)); opacity:.35; }
+  .mw.vid .mw-bar { background:linear-gradient(90deg,var(--g1),var(--gm) 45%,var(--g2)); opacity:.35; }
   .mw.vid .mw-lbl::after { content:" · VIDEO"; color:var(--g1); }
   .mw-lb { position:fixed; inset:0; z-index:9999; background:rgba(6,6,8,.92); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s ease; }
   .mw-lb.on { opacity:1; pointer-events:auto; }
@@ -165,9 +165,9 @@
   <a class="back" href="/">&larr; Back to all plugins</a>
 
   <section class="hero">
-    <div class="kind">Granular Texture Machine</div>
+    <div class="kind">Haunted Tape Texture Machine</div>
     <h1>GHOST</h1>
-    <p class="tag">Freeze sound. Then haunt it.</p>
+    <p class="tag">Your sound has unfinished business.</p>
     <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/ghost.png"><source src="https://video.sebastianmacan.com/img/video/ghost_ui_loop.mp4" type="video/mp4"></video></div>
     <div class="cta">
       <a class="dl" href="downloads/Ghost-v1.1-macOS.pkg">Download Ghost Free</a>
@@ -176,7 +176,15 @@
   </section>
 
   <h2>What Ghost does</h2>
-  <p>Ghost freezes the last four seconds of whatever is playing and lets you play around inside the frozen sound. Pads, risers, haunted atmospheres, endless tails: all from audio you already have.</p>
+  <p>Ghost freezes the last four seconds of whatever is playing and lets you play around inside the frozen sound. Pads, risers, haunted atmospheres, endless tails: all from audio you already have. It's spooky how cool this thing is.</p>
+
+  <h2>Where Ghost haunts</h2>
+  <p>Used in genres such as ambient, dark trap, horrorcore, hip hop, synthwave, riddim, dubstep, drum &amp; bass, dark techno, soundtrack, punk, metal, emo rap, and witch house.</p>
+  <div class="knob"><b>Dark trap.</b> Freeze the last note of your melody and let it hang under the 808s like fog in a graveyard.</div>
+  <div class="knob"><b>Horrorcore.</b> Freeze a vocal ad-lib, turn up REVERSE and SMEAR, and now something is whispering behind the verse. Nobody invited it.</div>
+  <div class="knob"><b>Dark techno.</b> Freeze a stab or a drone and ride the XY pad for sixteen bars. The warehouse just got colder.</div>
+  <div class="knob"><b>Ambient.</b> Turn one chord into a gloomy pad that drifts for as long as you let it. Rainy window not included.</div>
+  <div class="knob"><b>Soundtrack.</b> Freeze a string swell or a single piano note and you have the sound of someone walking down the basement stairs. Don't go down there.</div>
 
   <section class="madewith">
   <h2>Made with Ghost</h2>
