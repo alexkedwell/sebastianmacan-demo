@@ -114,9 +114,10 @@
   .smear { --g1:#9a6bff; --g2:#44e0c8; --glow:#9a6bff; --shadow:rgba(154,107,255,.30); }
   .stutter { --g1:#ff2ea6; --g2:#ff7ad1; --glow:#ff2ea6; --shadow:rgba(255,46,166,.30); }
   .twitch { --g1:#3cdcff; --g2:#9aefff; --glow:#3cdcff; --shadow:rgba(60,220,255,.30); }
-  .ghost { --g1:#9be7ff; --g2:#895fff; --glow:#895fff; --shadow:rgba(137,95,255,.24); }
-  .ghost .new, .ghost .cartbtn.buy { background:linear-gradient(135deg,#9be7ff,#00e5ff 45%,#895fff); }
-  .ghost .dl.buy, .ghost .cartbtn.buy { color:#0a0a12; }
+  .ghost { --g1:#7c4dff; --g2:#7c4dff; --glow:#7c4dff; --shadow:rgba(124,77,255,.30); }
+  .ghost .new, .ghost .dl.buy, .ghost .cartbtn.buy { background:#141826; border:1.5px solid #7c4dff; }
+  .ghost .new { color:#b9a2ff; }
+  .ghost .dl.buy, .ghost .cartbtn.buy { color:#d9ccff; }
   .pocket { --g1:#4f97e8; --g2:#e7d6bb; --glow:#4f97e8; --shadow:rgba(79,151,232,.30); }
   .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
   .biome  { --g1:#3ecf6e; --g2:#5ad9d0; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
@@ -586,12 +587,12 @@
   <div class="grid">
     <div class="card ghost">
       <span class="new">NEW</span>
-      <div class="kind">Granular Texture Machine</div>
-      <h2 style="background:linear-gradient(135deg,#9be7ff,#00e5ff 45%,#895fff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GHOST</h2>
+      <div class="kind">Haunted Tape Texture Machine</div>
+      <h2 style="background:linear-gradient(#e8f6ff,#e8f6ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GHOST</h2>
       <p class="tag">Your sound has unfinished business.</p>
       <p class="desc">Grabs the last four seconds of whatever you played and refuses to let it move on. Very unhealthy. Sounds incredible.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/ghost.png?v=1.4.2"><source src="https://video.sebastianmacan.com/img/video/ghost_ui_loop.mp4?v=1.4.2" type="video/mp4"></video></div>
-      <span class="dl buy" style="background:linear-gradient(135deg,#9be7ff,#00e5ff 45%,#895fff);box-shadow:0 6px 28px rgba(137,95,255,.24);" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; $15</span>
+      <span class="dl buy" style="background:#141826;box-shadow:0 6px 28px rgba(124,77,255,.30);" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; $15</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="ghost">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="ghost">Buy Now</span></div>
       <a class="more" href="ghost.html">See how it works &rarr;</a>
       <div class="meta">v1.4.2 · VST3 + AU effect · macOS + Windows</div>
