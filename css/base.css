@@ -1,2 +1,10 @@
 @font-face{font-family:"Inter";src:url("/fonts/InterVar.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap;}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+
+/* cart buttons: same rules as js/cart.js, here so they are styled before any script runs */
+.cartrow{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;position:relative;z-index:2;}
+.cartbtn{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase; padding:10px 16px;border-radius:999px;cursor:pointer;text-decoration:none;user-select:none;-webkit-user-select:none; transition:transform .15s ease;position:relative;z-index:2;text-align:center;}
+.cartbtn:hover{transform:translateY(-2px);}
+.cartbtn.add{color:#f2f2f4;background:transparent;border:1px solid var(--g1,#7b5cff);}
+.cartbtn.buy{color:#fff;border:1px solid transparent;background:linear-gradient(135deg,var(--g1,#ff3d5a),var(--g2,#7b5cff)); box-shadow:0 4px 18px var(--shadow,rgba(123,92,255,.3));}
+.cartbtn.added{border-color:#39e6d0;color:#39e6d0;}
