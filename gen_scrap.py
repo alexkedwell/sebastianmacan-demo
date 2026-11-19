@@ -110,7 +110,7 @@ for root in ("site", "demo-site"):
     m = re.search(r'    <div class="card chop">\n.*?\n    </div>\n', idx, re.S); assert m
     card = f'''    <div class="card scrap">
       <span class="new">NEW</span>
-      <div class="kind">Free Glitch Repeater</div>
+      <div class="kind">Glitch Repeater</div>
       <h2 style="background:linear-gradient(135deg,#ff7a2e,#ffb347);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SCRAP</h2>
       <p class="tag">Grabs a slice and won't let go.</p>
       <p class="desc">Stutter-buffer glitch that repeats, reverses and pitch-kicks slices of whatever is playing, with a growl drive and an air return. Metallic, broken, built for drops.</p>
