@@ -179,6 +179,7 @@
   .bundle { border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; display:flex; flex-direction:column; }
   .bundle:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
   .bundle img { display:block; width:100%; height:auto; }
+  .bundle video.bart { display:block; width:100%; height:auto; aspect-ratio:7/5; object-fit:cover; background:#0c0a16; }
   .bundle .binner { padding:20px 24px 24px; display:flex; flex-direction:column; flex:1; }
   .bundle h3 { font-size:26px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .bundle .desc { color:var(--dim); font-size:14px; margin-top:6px; flex:1; }
@@ -977,7 +978,7 @@
       </div>
     </a>
     <a class="bundle gremlin-b" href="basket-gremlin.html" data-warp="basket-gremlin.html">
-      <img src="img/bundles/gremlin_bundle.png?v=11" alt="Gremlin Basket: Smear, Stutter, Twitch, Chop and Scrap in candy flying saucers lifting out of a basket" loading="lazy">
+      <video class="bart" autoplay muted loop playsinline preload="metadata" aria-label="Gremlin Basket: Smear, Stutter, Twitch, Chop and Scrap in candy flying saucers lifting out of a basket" poster="img/bundles/gremlin_bundle.png?v=11"><source src="https://video.sebastianmacan.com/img/video/gremlin_bundle_alive.mp4?v=1" type="video/mp4"></video>
       <div class="binner">
         <h3>GREMLIN BASKET</h3>
         <p class="desc">Smear, Stutter, Twitch, Chop and Scrap. Five little troublemakers who will not leave your sound alone. Do not feed them after midnight.</p>
