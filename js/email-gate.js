@@ -148,7 +148,7 @@
       '<button class="eg-close" aria-label="Close">&times;</button>' +
       '<div class="eg-kind">Free Download</div>' +
       '<h3 class="eg-title">Get <em>' + name + '</em></h3>' +
-      '<p class="eg-sub">Type your email and the download starts right away. That email becomes your library: every plugin you grab is kept there, with fresh download links any time. No password.</p>' +
+      '<p class="eg-sub">Type your email and the download starts right away. We also email you the Mac and Windows download links. That email becomes your library: every plugin you grab is kept there, with fresh links any time. No password to remember. Your email is the key: enter it on the Library page and we send you a sign-in code.</p>' +
       '<form class="eg-form" novalidate>' +
       '<input class="eg-input" type="email" name="email" placeholder="you@studio.com" autocomplete="email" required>' +
       '<input class="eg-hp" type="text" id="eg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">' +

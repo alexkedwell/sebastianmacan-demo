@@ -42,7 +42,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
    "@type": "FAQPage",
    "mainEntity": [
     { "@type": "Question", "name": "Is Chop really free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Chop is free forever. Full version, every knob, no email wall, no subscription." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Full version, every knob, no email wall, no subscription." } },
     { "@type": "Question", "name": "What does Chop do?",
       "acceptedAnswer": { "@type": "Answer", "text": "It gates your audio on a tempo grid. Pick a rate from 1/4 to 1/32 (triplets included), a pattern (straight, offbeat, 3-3-2, gallop, random), set how much of each step stays open, add swing and humanize. Any sustained sound becomes a rhythm." } },
     { "@type": "Question", "name": "What DAWs does Chop work in?",
@@ -59,11 +59,10 @@ body_start = h.index('  <section class="hero">'); body_end = h.index('  <footer>
 body = f'''  <section class="hero">
     <div class="kind">Rhythm Chopper</div>
     <h1>CHOP</h1>
-    <p class="tag">Chomps any sound into a groove. Free forever.</p>
+    <p class="tag">Chomps any sound into a groove.</p>
     <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chop.png?v={VER}" aria-label="Chop plugin UI: a green chomper mascot biting on the beat while the knobs move"><source src="https://video.sebastianmacan.com/img/video/chop_ui_loop.mp4?v={VER}" type="video/mp4"></video></div>
     <div class="cta">
-      <a class="dl" href="{MAC}">Download Chop Free &middot; macOS</a>
-      <a class="dl dl-win" href="{WIN}">Download Chop Free &middot; Windows</a>
+      <a class="dl" href="{MAC}" data-mac="{MAC}" data-win="{WIN}">Download Chop Free</a>
       <div class="meta">v{VER} &middot; VST3 + AU effect &middot; macOS + Windows &middot; 100% free</div>
     </div>
   </section>
@@ -97,15 +96,14 @@ body = f'''  <section class="hero">
   <p>Smear, Stutter and Twitch each pick up where Chop leaves off: <a href="smear.html">Smear</a> melts your chopped loop into a plate reverb, <a href="stutter.html">Stutter</a> repeats it on a dice roll, <a href="twitch.html">Twitch</a> is the per-step glitch rack with a draw pad. $15 each.</p>
 
   <h2>Common questions</h2>
-  <div class="knob"><b>Is Chop really free?</b> Yes. Free forever. Full version, every knob, no email wall, no subscription.</div>
+  <div class="knob"><b>Is Chop really free?</b> Yes. Full version, every knob, no email wall, no subscription.</div>
   <div class="knob"><b>What DAWs does Chop work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
   <div class="knob"><b>Is there a Windows version of Chop?</b> Yes. Chop ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both.</div>
   <div class="knob"><b>How do I install Chop?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
 
   <div class="cta">
-    <a class="dl" href="{MAC}">Download Chop Free &middot; macOS</a>
-    <a class="dl dl-win" href="{WIN}">Download Chop Free &middot; Windows</a>
-    <div class="meta">No email needed &middot; direct download</div>
+    <a class="dl" href="{MAC}" data-mac="{MAC}" data-win="{WIN}">Download Chop Free</a>
+    <div class="meta">Email required &middot; instant download</div>
   </div>
 
 '''

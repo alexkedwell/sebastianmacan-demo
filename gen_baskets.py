@@ -160,7 +160,7 @@ def page(b):
 <div class="wrap">
   <header>
     <a class="logo" href="/">SEBASTIAN<span>MACAN</span></a>
-    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a></nav>
+    <nav><a href="/#effects">Effects</a><a href="/#instruments">Instruments</a><a href="/#midi">MIDI</a><a class="libnav" href="https://dl.sebastianmacan.com/library">Library</a></nav>
   </header>
   <a class="back" href="/#bundles">&larr; Back to the baskets</a>
 
