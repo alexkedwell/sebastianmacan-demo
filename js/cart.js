@@ -469,13 +469,13 @@
     if (!ids.length) return;
     if (!PADDLE_CLIENT_TOKEN) {
       openDrawer();
-      setMsg('Paid checkout opens soon. Everything in the store is a free download during launch, so grab it from the product buttons for now.');
+      setMsg('Checkout is not available right now. Please try again in a few minutes.');
       return;
     }
     var missing = ids.filter(function (id) { return !CATALOG[id].priceId; });
     if (missing.length) {
       openDrawer();
-      setMsg('Checkout is not wired up yet for: ' + missing.map(function (id) { return CATALOG[id].name; }).join(', ') + '. Remove those items to check out the rest.');
+      setMsg('Checkout is not available yet for: ' + missing.map(function (id) { return CATALOG[id].name; }).join(', ') + '. Remove those items to check out the rest.');
       return;
     }
     setMsg('');
