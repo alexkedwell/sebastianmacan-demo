@@ -91,6 +91,12 @@
   @media (max-width:640px){ .wrap{padding:0 16px;} header{flex-direction:column;gap:10px;} nav a{margin:0 10px;display:inline-block;} .grid{grid-template-columns:1fr 1fr;} .pay{grid-template-columns:1fr 1fr;} .pay .lead,.pay .free{grid-column:span 2;min-height:150px;} .pay .lead b,.pay .free b{font-size:48px;} .row{grid-template-columns:1fr;} footer{flex-direction:column;text-align:center;} }
   .pay .tile { --c1:#ffb347 !important; --c2:#ffe08a !important; }
   h1 em { background:linear-gradient(135deg,#ffb347,#ffe08a); -webkit-background-clip:text; background-clip:text; }
+  .getbox { position:relative; overflow:hidden; background:linear-gradient(180deg,#17171c,#101014); border:1px solid rgba(255,255,255,.07); box-shadow:inset 0 1px 0 rgba(255,255,255,.05); }
+  .getbox::before { content:""; position:absolute; inset:-1px; background:radial-gradient(70% 120% at 100% 0%,rgba(255,179,71,.30),transparent 62%); pointer-events:none; }
+  .getbox::after { content:""; position:absolute; left:18px; right:18px; top:0; height:2px; border-radius:2px; background:linear-gradient(90deg,#ffb347,#ffe08a,transparent); opacity:.9; }
+  .getbox > * { position:relative; }
+  .getbox p a { color:#ffcf73; }
+  .getbox .btn { background:linear-gradient(135deg,#ffb347,#ffe08a); box-shadow:0 8px 36px rgba(255,179,71,.28); }
 </style>
 </head>
 <body>
@@ -141,7 +147,7 @@
   <!-- family-hero:end -->
 
   <h1>Use my plugins. <em>Get paid.</em></h1>
-  <p class="sub">Record a video of yourself using a Sebastian Macan plugin in a real session. Send me the video. I pay $10 for every one I accept (terms below). The whole catalogue is yours, free.</p>
+  <p class="sub">Record a video of yourself using a Sebastian Macan plugin in a real session. Send the link here. I pay $10 for every one I accept (terms below). The whole catalogue is yours, free.</p>
 
     <div class="pay">
     <div class="tile lead"><div class="kicker">Per accepted video</div><b>$10</b><span>per accepted video. You meet the requirements, you get paid.</span></div>
@@ -154,13 +160,13 @@
 
   <h2>Get the plugins</h2>
   <div class="getbox">
-    <p>Email <a href="mailto:hello@sebastianmacan.com?subject=Creator%20program%20-%20send%20me%20the%20plugins">hello@sebastianmacan.com</a> with your name and what you make. You get the full catalogue, Mac and Windows, no strings. Then make the videos.</p>
+    <p>Email <a href="mailto:hello@sebastianmacan.com?subject=Creator%20program%20-%20send%20me%20the%20plugins">hello@sebastianmacan.com</a> with your name and what you make. You get the full catalogue, Mac and Windows, to make your videos with.</p>
     <a class="btn" href="mailto:hello@sebastianmacan.com?subject=Creator%20program%20-%20send%20me%20the%20plugins">Get the plugins</a>
   </div>
 
   <h2>How it works</h2>
   <ol>
-    <li><b>Record a before and after.</b> Your DAW, your session, the plugin on screen. Show the sound with the plugin off, then with the plugin on. You can do that by turning the plugin off and back on, or with the bypass button. The best videos start recording the second you drop the plugin on: we watch you play with the knobs, and once you get to a point where you like what you have, turn the plugin off and back on so we can hear the change. 30 to 90 seconds.</li>
+    <li><b>Record a before and after.</b> Your DAW, your session, the plugin on screen. Show the sound with the plugin off, then with the plugin on. You can do that by turning the plugin off and back on, or with the bypass button. We want to see you play with the plugin so start recording the second you start cooking. And once you get to a point where you like what you have, turn the plugin off and back on so we can hear the change. 30 to 90 seconds.</li>
     <li><b>Audio has to be clear.</b> Screen capture with the DAW audio, a phone video of the screen with the session audio attached behind it, or a phone video with the speakers turned up loud. However you get there is fine. If the audio quality is not there, the video is not accepted.</li>
     <li><b>Submit with the form below.</b> Upload the file anywhere (Google Drive, Dropbox, WeTransfer) and paste the link. One form per video.</li>
     <li><b>Start with 1 to 5 videos, then wait to hear back.</b> I do not want to waste your time if it is not a good fit. If it is, I will ask for more. No cap after that.</li>
@@ -178,13 +184,13 @@
   <div class="knob"><b>Plugin on screen.</b> The plugin window is visible and you touch it at least once.</div>
   <div class="knob"><b>Before and after.</b> Plugin off, then plugin on. However you want to do it.</div>
   <div class="knob"><b>Clear audio.</b> Screen capture with the DAW audio, a phone video with the session audio attached behind it, or a phone video with the speakers turned up loud. You are responsible for the audio sounding clear. If the audio quality is there, we pay.</div>
-  <div class="knob"><b>30 to 90 seconds, 1080p or better, MP4 or MOV.</b> No editing needed. Raw is better. No other brand logos or watermarks.</div>
+  <div class="knob"><b>30 to 90 seconds, 1080p or better, MP4 or MOV.</b> No editing needed (only if you want to). Raw is better. No other brand logos or watermarks.</div>
   <div class="knob"><b>You own the music.</b> Nothing with songs you do not have the rights to.</div>
 
   <h2>What you are agreeing to</h2>
   <p>By submitting, you give Sebastian Macan / Aluetion, LLC a perpetual, worldwide, royalty-free license to use the footage in marketing: website, ads, social, YouTube. You keep full rights to post the same video yourself, tag us, and tell people you made it. Payment is for accepted videos only; anything that misses the checklist gets a one-line note on why, and you are welcome to resubmit. Start with 1 to 5 videos and wait to hear back before sending more. One form per video.</p>
   <h3>Getting paid</h3>
-  <p>Payouts go to the PayPal email you put in the form. Double-check it before you submit. If the address you give us is wrong and the money lands somewhere else, we cannot get it back, and that is on you, not us. Want to be paid another way? Email <a href="mailto:hello@sebastianmacan.com">hello@sebastianmacan.com</a> first and we will sort it out.</p>
+  <p>Payouts go to the PayPal email you put in the form. Double-check it before you submit. If the address you give us is wrong and the money lands somewhere else, we cannot get it back, and that is on you. Want to be paid another way? Email <a href="mailto:hello@sebastianmacan.com">hello@sebastianmacan.com</a> first and we will sort it out.</p>
   <h3>Your socials</h3>
   <p>The socials box in the form is optional. If you fill it in, we tag you. We pay to push these videos on Instagram, TikTok and YouTube, and when we post yours we tag your handles. That is real exposure to people who make music, on top of the cash. Leave it blank if you would rather not be tagged.</p>
 
