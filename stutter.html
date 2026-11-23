@@ -77,10 +77,10 @@
   .studio { margin:34px auto 6px; max-width:920px; }
   .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
   .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
-  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(255,157,46,.18); }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(255,46,166,.18); }
   .studio video { display:block; width:100%; height:auto; }
   .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(0,0,0,.05), rgba(0,0,0,.45)); transition:opacity .25s; }
-  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(255,157,46,.45); transition:transform .15s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(255,46,166,.45); transition:transform .15s; }
   .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
   .studio .play:hover span { transform:scale(1.07); }
   .studio.playing .play { opacity:0; pointer-events:none; }
@@ -185,7 +185,17 @@
     </div>
   </section>
 
+  <div class="studio" id="st_studio">
+    <div class="label">In the studio &middot; Stutter Off, Stutter On</div>
+    <div class="frame">
+      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/stutter_studio_demo.jpg?v=v1123" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/stutter_studio_demo.mp4?v=v1123" type="video/mp4"></video>
+      <div class="play" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Stutter.</b> A drum loop, Stutter switched in at six seconds. Real session, real audio.</p>
+  </div>
   <h2>What Stutter does</h2>
+  <p><b>Use it on drum loops, especially drum and bass.</b> It also gets weird variations out of your vocals, your synths, any instrument really.</p>
   <p>Stutter grabs a slice of whatever is playing and fires it again. Not on every beat: AMOUNT is the dice, the chance that a repeat happens on each step of the grid. RATE picks the grid from whole bars down to 1/32, or FREE in milliseconds with no transport at all. REPEATS, RAMP and REVERSE shape the burst, PITCH moves every repeat up to an octave either way, and TAPE, SCATTER, SHAPE, FILTER, WIDTH and GLIDE turn one repeat into a trick. HOLD freezes the buffer while you lean on it.</p>
 
   <h2>Jitter and the patch bay</h2>
