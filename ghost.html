@@ -99,6 +99,20 @@
   .madewith { margin:34px 0 8px; }
   .madewith h2 { margin-bottom:6px; }
   .madewith p { color:var(--dim); font-size:14px; margin:0 0 4px; }
+  .studio { margin:34px auto 6px; max-width:920px; }
+  .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
+  .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(185,162,255,.18); }
+  .studio video { display:block; width:100%; height:auto; }
+  .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(185,162,255,.05), rgba(185,162,255,.45)); transition:opacity .25s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(185,162,255,.45); transition:transform .15s; }
+  .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
+  .studio .play:hover span { transform:scale(1.07); }
+  .studio.playing .play { opacity:0; pointer-events:none; }
+  .studio .sound { position:absolute; top:14px; right:14px; font-size:11px; font-weight:800; letter-spacing:.1em; color:#0a0a0c; background:var(--g1); padding:6px 10px; border-radius:999px; }
+  .studio.playing .sound { display:none; }
+  .studio .cap { color:var(--dim); font-size:15px; margin:12px 4px 0; line-height:1.55; }
+  .studio .cap b { color:var(--txt); }
 </style>
 <script type="application/ld+json">
 {
@@ -195,6 +209,29 @@
     </div>
   </section>
 
+  <div class="studio" id="gh_studio">
+    <div class="label">In the studio &middot; Ghost Off, Ghost On</div>
+    <div class="frame">
+      <video id="gh_studioVid" playsinline preload="metadata" poster="img/ui/ghost_studio_demo.jpg?v=v1123" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/ghost_studio_demo.mp4?v=v1123" type="video/mp4"></video>
+      <div class="play" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Grey is before. Color is Ghost.</b> Ghost switches in at nine seconds. Real session, real audio.</p>
+  </div>
+  <div class="studio" id="gh_tour">
+    <div class="label">Preset tour &middot; Ghost</div>
+    <div class="frame">
+      <video id="gh_tourVid" playsinline preload="metadata" poster="img/ui/ghost_preset_tour.jpg?v=v1123" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/ghost_preset_tour.mp4?v=v1123" type="video/mp4"></video>
+      <div class="play" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>One loop, fifteen sounds.</b> Two bars of the loop dry, then four bars each. The first two are the seeds from the studio video: type 19854 or 28250 into SEED and you have them.</p>
+  </div>
+  <script>
+    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+  </script>
   <h2>What Ghost does</h2>
   <p>Ghost freezes the last four seconds of whatever is playing and lets you play around inside the frozen sound. Pads, risers, haunted atmospheres, endless tails: all from audio you already have. It's spooky how cool this thing is.</p>
 
@@ -217,6 +254,11 @@
   <div class="mw" data-src="audio/ghost_seed31973_first_take.m4a">
         <span class="mw-play" role="button" tabindex="0" aria-label="Play Seed 31973, first take"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="4" height="11" rx="1"/><rect x="9.5" y="2.5" width="4" height="11" rx="1"/></svg></span>
         <div class="mw-body"><div class="mw-lbl">Made with</div><div class="mw-title">Seed 31973, first take <span>&middot; Ghost</span></div><div class="mw-bar"><i></i></div></div>
+        <span class="mw-time">--:--</span>
+      </div>
+  <div class="mw" data-src="audio/ghost_preset_tour.m4a">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Play Preset Tour"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="4" height="11" rx="1"/><rect x="9.5" y="2.5" width="4" height="11" rx="1"/></svg></span>
+        <div class="mw-body"><div class="mw-lbl">Made with</div><div class="mw-title">Preset Tour <span>&middot; Ghost</span></div><div class="mw-bar"><i></i></div></div>
         <span class="mw-time">--:--</span>
       </div>
   </section>
