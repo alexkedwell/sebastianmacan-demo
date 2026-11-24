@@ -234,6 +234,21 @@
 
 
 
+  <div class="studio" id="bm_sounds">
+    <div class="label">Walkthrough &middot; Sebastian's Sounds</div>
+    <div class="frame">
+      <video id="bm_soundsVid" playsinline preload="metadata" poster="img/ui/biome_sebastians_sounds.jpg?v=v1123" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/biome_sebastians_sounds.mp4?v=v1123" type="video/mp4"></video>
+      <div class="play" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Twelve sounds, one held note.</b> Every sound in Sebastian's Sounds as it ships, with POSITION turned on a few of them. On Know Why and Bedford Fog the loop is locked and slid along the wave.</p>
+  </div>
+  <script>
+    document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+    p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+    v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+  </script>
+
     <section class="madewith">
   <h2>Made with Biome</h2>
   <p>Press play.</p>
