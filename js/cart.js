@@ -38,6 +38,7 @@
     clubchords:    { name: 'Club Chords 240',        cents: 1000, priceId: 'pri_01m2ckv8205dr3qxdmbhme2apz' },
     soulchords:    { name: 'Soul Chords 240',        cents: 1000, priceId: 'pri_01m2ckv8b9gm2dt8ka25f87cyq' },
     tears:         { name: 'Tears - Beautiful Minor Progressions', cents: 2000, priceId: 'pri_01m2ckv7rdr7cxqas4mkvb6cbj' },
+    dnbbrothers:   { name: 'Drum & Bass Brothers',   cents: 2000, priceId: 'pri_01m85ns227m2a1nvbemn0btm48' },
     /* Modal Series */
     ionian:        { name: 'Ionian Mode 48',         cents: 500, priceId: 'pri_01m1gnsxxvfs2nbag2280x8ydj' },
     dorian:        { name: 'Dorian Mode 48',         cents: 500, priceId: 'pri_01m1gnsy80zd3s9wnzgxk4dtgc' },
