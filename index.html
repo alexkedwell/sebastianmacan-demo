@@ -298,6 +298,12 @@
   .featbanner.dnbban h3 { font-size:clamp(28px,3.7vw,44px); }
   .featbanner.dnbban .dl { cursor:pointer; }
   .featbanner.dnbban .inside { color:#c9d6ff; }
+  .featbanner.dnbban { cursor:pointer; }
+  .featbanner.dnbban .stage img.wk { opacity:0; }
+  .featbanner.dnbban .stage.w1 img.wk1, .featbanner.dnbban .stage.w2 img.wk2 { opacity:1; }
+  .featbanner.dnbban .dlrow { align-items:center; gap:10px 18px; }
+  .featbanner.dnbban .see { color:#fff; font-size:14px; font-weight:700; text-decoration:none; text-shadow:0 1px 10px rgba(8,5,22,.9); }
+  .featbanner.dnbban .see:hover { text-decoration:underline; }
   @media (max-width:720px) { .featbanner .stage img.vwide { display:none; } .featbanner .stage img.vtall { display:block; object-position:center top; } }
   @media (prefers-reduced-motion:reduce) { .card.candyad .candy, .card.candyad .toy, .card.candyad .balloon { animation:none; } }
   .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
@@ -680,12 +686,12 @@
 
   <div class="sect-title">Drum &amp; Bass</div>
   <div class="featbanner dnbban" id="dnb">
-    <div class="stage" aria-hidden="true"><img class="vwide" src="img/bundles/dnb_banner_wide.jpg?v=1" alt="" loading="lazy" width="1600" height="456"><img class="vtall" src="img/bundles/dnb_banner_tall.jpg?v=1" alt="" loading="lazy" width="720" height="1280"></div>
+    <div class="stage" aria-hidden="true"><img class="vwide" src="img/bundles/dnb_banner_wide.jpg?v=1" alt="" loading="lazy" width="1600" height="456"><img class="vtall" src="img/bundles/dnb_banner_tall.jpg?v=1" alt="" loading="lazy" width="720" height="1280"><img class="vwide wk wk1" src="img/bundles/dnb_wink_wide_half.png?v=1" alt="" loading="lazy" width="1600" height="456"><img class="vwide wk wk2" src="img/bundles/dnb_wink_wide_shut.png?v=1" alt="" loading="lazy" width="1600" height="456"><img class="vtall wk wk1" src="img/bundles/dnb_wink_tall_half.png?v=1" alt="" loading="lazy" width="720" height="1280"><img class="vtall wk wk2" src="img/bundles/dnb_wink_tall_shut.png?v=1" alt="" loading="lazy" width="720" height="1280"></div>
     <div class="binner">
       <div class="kind">Stutter + Twitch + Tears</div>
       <h3>DRUM &amp; BASS BROTHERS</h3>
       <p>Two brothers and a chord pack.</p>
-      <div class="dlrow"><span class="dl" role="button" tabindex="0" data-cart-buy="dnbbrothers">Buy the Brothers &middot; $20</span></div>
+      <div class="dlrow"><span class="dl" role="button" tabindex="0" data-cart-buy="dnbbrothers">Buy the Brothers &middot; $20</span><a class="see" href="dnb-brothers.html">See what&#39;s inside &rarr;</a></div>
       <div class="inside">2 plugins + 1,008 .mid files<span class="sep"> &middot; </span><br class="brk">macOS + Windows</div>
     </div>
   </div>
@@ -1294,6 +1300,18 @@ document.querySelectorAll('.feat .dl[data-dl]').forEach(function(btn){
   <script>
   (function(){var c=document.getElementById('candyad');if(!c)return;
         c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});
+  })();
+  (function(){var c=document.getElementById('dnb');if(!c)return;
+        c.addEventListener('click',function(e){if(e.target.closest('a,[data-cart-buy],[data-cart-add]'))return;window.location.href='dnb-brothers.html';});
+        /* Stutter winks once every so often, only while the banner is on screen */
+        var st=c.querySelector('.stage');if(!st||(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))return;
+        var seen=false,t=null;
+        function ready(){var ok=true;st.querySelectorAll('img.wk').forEach(function(i){if(i.offsetParent!==null&&!(i.complete&&i.naturalWidth))ok=false;});return ok;}
+        function wink(){if(seen&&ready()){st.classList.add('w1');setTimeout(function(){st.classList.remove('w1');st.classList.add('w2');},70);
+            setTimeout(function(){st.classList.remove('w2');st.classList.add('w1');},330);setTimeout(function(){st.classList.remove('w1');},400);}
+          t=setTimeout(wink,9000+Math.random()*8000);}
+        if('IntersectionObserver' in window){new IntersectionObserver(function(en){seen=en[0].isIntersecting;},{threshold:.35}).observe(c);}else{seen=true;}
+        t=setTimeout(wink,5000+Math.random()*4000);
   })();
   (function(){var c=document.getElementById('gremlinad');if(!c)return;
         c.addEventListener('click',function(e){if(e.target.closest('a,[data-cart-add]'))return;window.location.href='basket-gremlin.html';});
