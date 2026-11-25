@@ -185,6 +185,16 @@
     </div>
     <p class="cap"><b>Grey is before. Color is Honey.</b> Same loop, Honey switched in at sixteen seconds. Real session, real audio: nothing is cut.</p>
   </div>
+  <div class="studio" id="st_tutorial">
+    <div class="label">Tutorial &middot; Build three presets</div>
+    <div class="frame">
+      <video id="st_tutorialVid" playsinline preload="metadata" poster="img/ui/honey_tutorial.jpg?v=v1125" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/honey_tutorial.mp4?v=v1125" type="video/mp4"></video>
+      <div class="play" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Five presets, then three built from Init.</b> Seasick, Found Footage and Chewed, one knob at a time. Real plugin, real audio.</p>
+  </div>
+
   <script>
     document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
     p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
