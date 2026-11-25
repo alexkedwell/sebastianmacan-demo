@@ -96,6 +96,31 @@
   }
   .striped .dl, .striped .cartbtn.buy, .toc a.striped { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 10px,rgba(0,0,0,.42) 10px 18px),linear-gradient(135deg,var(--g1),var(--g2)); }
   .pack.striped h2 { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 10px,rgba(0,0,0,.42) 10px 18px),linear-gradient(135deg,#e5e7eb,#9aa0a8); }
+  /* packsounds:css */
+  .pack > * { min-width:0; }
+  .psounds { margin-top:16px; }
+  .psounds .ps-h { font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--g1); }
+  .psounds .ps-note { color:var(--dim); font-size:12.5px; margin-top:10px; line-height:1.5; }
+  .mw { display:flex; align-items:center; gap:12px; margin-top:10px; padding:10px 12px 10px 10px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--line); position:relative; z-index:2; }
+  .mw-play { flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--g1),var(--g2)); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,.4); transition:transform .15s ease; }
+  .mw-play:hover { transform:scale(1.06); }
+  .mw-play svg { width:16px; height:16px; fill:#fff; margin-left:2px; }
+  .mw.on .mw-play svg.p { display:none; } .mw .mw-play svg.s { display:none; } .mw.on .mw-play svg.s { display:block; margin-left:0; }
+  .mw-body { flex:1; min-width:0; }
+  .mw-title { font-size:14px; font-weight:800; color:var(--txt); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .mw-title span { color:var(--dim); font-weight:600; }
+  .mw-bar { height:6px; border-radius:3px; background:rgba(255,255,255,.10); margin-top:8px; cursor:pointer; position:relative; touch-action:none; transition:height .12s; }
+  .mw-bar::before { content:""; position:absolute; left:0; right:0; top:-12px; bottom:-12px; }
+  .mw:hover .mw-bar, .mw.scrub .mw-bar { height:8px; }
+  .mw-bar i::after { content:""; position:absolute; right:-6px; top:50%; width:12px; height:12px; margin-top:-6px; border-radius:50%; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.6); opacity:0; transition:opacity .12s; }
+  .mw:hover .mw-bar i::after, .mw.scrub .mw-bar i::after, .mw.on .mw-bar i::after { opacity:1; }
+  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:3px; position:relative; }
+  .mw-time { font-size:11px; color:var(--dim); font-variant-numeric:tabular-nums; flex:0 0 auto; }
+  .mw-rw { flex:0 0 auto; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--dim); border:1px solid var(--line); font-size:15px; line-height:1; transition:color .12s, border-color .12s, transform .12s; user-select:none; }
+  .mw-rw:hover { color:var(--txt); border-color:var(--g1); transform:rotate(-40deg); }
+  .striped .mw-play { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 6px,rgba(0,0,0,.42) 6px 11px),linear-gradient(135deg,var(--g1),var(--g2)); }
+  #locrian .mw-play svg, #ionian .mw-play svg, #soulchords .mw-play svg, #mixolydian .mw-play svg, #lydian .mw-play svg, #dorian .mw-play svg { fill:#0a0a0c; }
+  /* packsounds:css:end */
 </style>
 </head>
 <body>
@@ -135,6 +160,17 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/hitmaker_poster.jpg?v=4"><source src="https://video.sebastianmacan.com/img/video/midi/hitmaker_demo.mp4?v=4" type="video/mp4"></video></div>
       <div class="vcap">Born from the same research engine as Chordsmith</div>
+      <!-- packsounds:hitmaker -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/hitmaker_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Pop"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Pop <span>&middot; piano and strings</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/hitmaker_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Trap"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Trap <span>&middot; dark piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/hitmaker_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play LoFi"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">LoFi <span>&middot; dusty electric piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/hitmaker_4.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play House"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">House <span>&middot; house piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/hitmaker_5.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Latin"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Latin <span>&middot; nylon guitar</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:hitmaker:end -->
     </div>
     <div class="pinfo">
       <div class="kind">MIDI Chord Pack Series</div>
@@ -160,6 +196,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/clubchords_poster.jpg?v=2"><source src="https://video.sebastianmacan.com/img/video/midi/clubchords_demo.mp4?v=2" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:clubchords -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/clubchords_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play House"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">House <span>&middot; house piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/clubchords_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Techno"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Techno <span>&middot; dark synth pad</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/clubchords_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Future Bass"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Future Bass <span>&middot; supersaw synth</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:clubchords:end -->
     </div>
     <div class="pinfo">
       <div class="kind">MIDI Chord Pack</div>
@@ -184,6 +229,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/tears_poster.jpg?v=2"><source src="https://video.sebastianmacan.com/img/video/midi/tears_demo.mp4?v=2" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:tears -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/tears_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Amber Tears"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Amber Tears <span>&middot; warm pad and strings</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/tears_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Carousel"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Carousel <span>&middot; felt piano and strings</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/tears_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Skyward Tears"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Skyward Tears <span>&middot; airy pad and choir</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:tears:end -->
     </div>
     <div class="pinfo">
       <div class="kind">MIDI Chord Pack</div>
@@ -208,6 +262,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/soulchords_poster.jpg?v=2"><source src="https://video.sebastianmacan.com/img/video/midi/soulchords_demo.mp4?v=2" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:soulchords -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/soulchords_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Neo-Soul"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Neo-Soul <span>&middot; electric piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/soulchords_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Gospel"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Gospel <span>&middot; gospel organ</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/soulchords_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Jazz"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Jazz <span>&middot; jazz guitar</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:soulchords:end -->
     </div>
     <div class="pinfo">
       <div class="kind">MIDI Chord Pack</div>
@@ -232,6 +295,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/ionian_poster.jpg?v=2"><source src="https://video.sebastianmacan.com/img/video/midi/ionian_demo.mp4?v=2" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:ionian -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/ionian_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Axis Anthem"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Axis Anthem <span>&middot; grand piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/ionian_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Skyline"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Skyline <span>&middot; electric piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/ionian_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Campfire"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Campfire <span>&middot; acoustic guitar</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:ionian:end -->
     </div>
     <div class="pinfo">
       <div class="kind">Modal Series</div>
@@ -256,6 +328,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/dorian_poster.jpg"><source src="https://video.sebastianmacan.com/img/video/midi/dorian_demo.mp4" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:dorian -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/dorian_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Dorian Groove"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Dorian Groove <span>&middot; electric piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/dorian_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Deep House"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Deep House <span>&middot; house piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/dorian_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Night Drive"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Night Drive <span>&middot; analog synth</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:dorian:end -->
     </div>
     <div class="pinfo">
       <div class="kind">Modal Series</div>
@@ -280,6 +361,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/phrygian_poster.jpg"><source src="https://video.sebastianmacan.com/img/video/midi/phrygian_demo.mp4" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:phrygian -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/phrygian_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Spanish Fire"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Spanish Fire <span>&middot; nylon guitar</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/phrygian_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Techno Menace"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Techno Menace <span>&middot; dark synth pad</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/phrygian_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Shadow"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Shadow <span>&middot; string section</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:phrygian:end -->
     </div>
     <div class="pinfo">
       <div class="kind">Modal Series</div>
@@ -304,6 +394,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/lydian_poster.jpg"><source src="https://video.sebastianmacan.com/img/video/midi/lydian_demo.mp4" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:lydian -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/lydian_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Floating"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Floating <span>&middot; warm pad and strings</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/lydian_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Glimmer"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Glimmer <span>&middot; vibraphone and pad</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/lydian_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Melodic House"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Melodic House <span>&middot; analog synth</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:lydian:end -->
     </div>
     <div class="pinfo">
       <div class="kind">Modal Series</div>
@@ -328,6 +427,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/mixolydian_poster.jpg"><source src="https://video.sebastianmacan.com/img/video/midi/mixolydian_demo.mp4" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:mixolydian -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/mixolydian_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Jam Band"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Jam Band <span>&middot; clean electric guitar</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/mixolydian_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Anthem Rock"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Anthem Rock <span>&middot; rock organ</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/mixolydian_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Festival"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Festival <span>&middot; supersaw synth</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:mixolydian:end -->
     </div>
     <div class="pinfo">
       <div class="kind">Modal Series</div>
@@ -352,6 +460,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/aeolian_poster.jpg"><source src="https://video.sebastianmacan.com/img/video/midi/aeolian_demo.mp4" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:aeolian -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/aeolian_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Emotional"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Emotional <span>&middot; grand piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/aeolian_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Cinematic"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Cinematic <span>&middot; string section</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/aeolian_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Rainfall"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Rainfall <span>&middot; dusty electric piano</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:aeolian:end -->
     </div>
     <div class="pinfo">
       <div class="kind">Modal Series</div>
@@ -376,6 +493,15 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/locrian_poster.jpg"><source src="https://video.sebastianmacan.com/img/video/midi/locrian_demo.mp4" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:locrian -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/locrian_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Forbidden"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Forbidden <span>&middot; church organ</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/locrian_2.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Abyss"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Abyss <span>&middot; dark choir</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <div class="mw" data-src="audio/packs/locrian_3.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play Descent"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">Descent <span>&middot; felt piano and strings</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">Real files from this pack. The pack is MIDI, so it plays any instrument you load. These are just ours.</p>
+      </div>
+      <!-- packsounds:locrian:end -->
     </div>
     <div class="pinfo">
       <div class="kind">Modal Series</div>
@@ -400,6 +526,13 @@
     <div class="pmedia">
       <div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="https://video.sebastianmacan.com/img/video/midi/allmodes_poster.jpg"><source src="https://video.sebastianmacan.com/img/video/midi/allmodes_demo.mp4" type="video/mp4"></video></div>
       <div class="vcap">Real progressions straight from the pack, playing on loop</div>
+      <!-- packsounds:allmodes -->
+      <div class="psounds">
+        <div class="ps-h">Hear it</div>
+        <div class="mw" data-src="audio/packs/allmodes_1.m4a?v=1"><span class="mw-play" role="button" tabindex="0" aria-label="Play All 7 modes, back to back"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></span><div class="mw-body"><div class="mw-title">All 7 modes, back to back <span>&middot; seven instruments</span></div><div class="mw-bar"><i></i></div></div><span class="mw-time">0:00</span></div>
+        <p class="ps-note">One real file from each of the 7 mode packs, in order. The pack is MIDI, so it plays any instrument you load.</p>
+      </div>
+      <!-- packsounds:allmodes:end -->
     </div>
     <div class="pinfo">
       <div class="kind">Modal Series Bundle</div>
@@ -436,5 +569,6 @@
 <script src="js/cart.js?v=free10" defer></script>
 <script src="js/email-gate.js?v=lib5" defer></script>
 <script src="js/loops.js?v=2" defer></script>
+<script src="js/madewith.js?v=r1118"></script>
 </body>
 </html>
