@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<script src="/js/gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>November 25 In the lab · Sebastian Macan</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<style>
+  :root { --bg:#0a0a0c; --card:#131318; --line:#25252e; --text:#f2f2f5; --dim:#9a9aa8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif; line-height:1.55; }
+  .wrap { max-width:980px; margin:0 auto; padding:28px 20px 90px; }
+  a { color:inherit; }
+  .back { color:var(--dim); text-decoration:none; font-size:14px; }
+  .eyebrow { margin-top:34px; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); font-weight:800; }
+  h1 { font-size:clamp(34px,6vw,58px); line-height:1.05; margin:8px 0 12px; letter-spacing:-.02em; }
+  .lede { color:var(--dim); font-size:18px; max-width:720px; }
+  .pill { display:inline-block; margin-top:14px; padding:6px 12px; border:1px solid var(--line); border-radius:999px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  .jump { display:flex; flex-wrap:wrap; gap:8px; margin:26px 0 8px; position:sticky; top:0; background:rgba(10,10,12,.86); backdrop-filter:blur(10px); padding:12px 0; z-index:5; }
+  .jump a { text-decoration:none; font-weight:800; font-size:12px; letter-spacing:.08em; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:var(--card); }
+  .jump a:hover { border-color:#4a4a5a; }
+  .idea { margin-top:34px; padding:30px 28px 26px; border:1px solid var(--line); background:var(--card); border-radius:22px; scroll-margin-top:70px; position:relative; overflow:hidden; }
+  .idea::before { content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg,var(--g1),var(--g2)); }
+  .kind { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); font-weight:800; }
+  .idea h2 { font-size:clamp(38px,7vw,64px); margin:4px 0 0; line-height:1; letter-spacing:-.02em; display:inline-block; }
+  .tag { font-size:20px; font-weight:700; margin:8px 0 18px; }
+  .idea h3 { font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin:26px 0 8px; }
+  .idea p { margin:0 0 10px; }
+  .idea ul { margin:0; padding-left:20px; }
+  .idea li { margin:4px 0; }
+  .knobs { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px; }
+  .knob { background:#0e0e12; border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:12px 14px; }
+  .knob b { display:block; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+  .knob span { color:var(--dim); font-size:14px; }
+  .note { color:var(--dim); font-size:14px; margin-top:16px !important; }
+  .looks { width:100%; display:block; border-radius:14px; border:1px solid var(--line); }
+  .studio .frame { position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#000; aspect-ratio:16/9; }
+  .studio video { display:block; width:100%; height:100%; }
+  .studio .play { position:absolute; left:50%; top:50%; width:84px; height:84px; margin:-42px 0 0 -42px; border-radius:50%; background:linear-gradient(135deg,var(--g1),var(--g2)); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 40px rgba(0,0,0,.55); transition:transform .2s ease; }
+  .studio .play:hover { transform:scale(1.07); }
+  .studio .play span { display:block; width:0; height:0; border-left:26px solid #0a0a0c; border-top:16px solid transparent; border-bottom:16px solid transparent; margin-left:7px; }
+  .studio .sound { position:absolute; right:14px; bottom:14px; font-size:11px; font-weight:800; letter-spacing:.1em; padding:6px 10px; border-radius:999px; background:rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.18); }
+  .studio.playing .play, .studio.playing .sound { display:none; }
+  .studio .cap { color:var(--dim); font-size:14px; margin:10px 2px 0; }
+  footer { margin-top:50px; color:var(--dim); font-size:13px; }
+  @media (max-width:560px) { .idea { padding:24px 18px 20px; } .jump { position:static; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/#lab-nov25">&larr; Back to the store</a>
+  <div class="eyebrow">In the lab</div>
+  <h1>November 25 In the lab</h1>
+  <p class="lede">Six drum ideas from one day. Each one is a concept demo: a working sound prototype with a drawn window, made to be judged by ear. None of them is a plugin yet.</p>
+  <span class="pill">Concept demos &middot; not released &middot; demo site only</span>
+  <nav class="jump"><a href="#latebird">LATE BIRD</a> <a href="#bootaps">BOO TAPS</a> <a href="#tuna">TUNA</a> <a href="#gecko">GECKO</a> <a href="#sidekick">SIDEKICK</a> <a href="#loosegoose">LOOSE GOOSE</a></nav>
+    <article class="idea" id="latebird" style="--g1:#7c8cff;--g2:#ffd27a">
+      <div class="kind">Beat Machine</div>
+      <h2 style="background:linear-gradient(135deg,#7c8cff,#ffd27a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">LATE BIRD</h2>
+      <p class="tag">Late on purpose.</p>
+      <div class="studio">
+        <div class="frame">
+          <video playsinline preload="none" poster="latebird.jpg?v=v1125a" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/lab_nov25_latebird.mp4?v=v1125a" type="video/mp4"></video>
+          <div class="play" aria-label="Play"><span></span></div>
+          <div class="sound">&#9654; WITH SOUND</div>
+        </div>
+        <p class="cap">The video shows the groove grid only: a dead straight 60 BPM beat, then the same beat with the hits moved.</p>
+      </div>
+      <h3>What it does</h3>
+      <p>A drum machine with a groove grid. Load a kick, a snare and a hat, or a whole sample pack. Sixteen steps per lane. Drag any hit late or early and the beat stops sounding like a computer.</p>
+      <h3>Controls</h3>
+      <div class="knobs">
+        <div class="knob"><b>SWING</b><span>pushes every second sixteenth late, up to full triplet swing</span></div>
+        <div class="knob"><b>AMOUNT, per lane</b><span>how much of the groove the kick, the snare and the hats each take</span></div>
+        <div class="knob"><b>Drag a dot</b><span>nudge one hit late or early, in milliseconds</span></div>
+        <div class="knob"><b>Presets</b><span>SLEEPY HEAD and TIP TOE</span></div>
+      </div>
+      <h3>Four looks, same controls</h3>
+      <img class="looks" src="latebird_looks.jpg?v=v1125a" alt="Four Late Bird window designs: night sky branch, sunrise bedroom, dark studio neon, toy store candy" loading="lazy">
+      <p class="note">1 Night sky branch. 2 Sunrise bedroom. 3 Dark studio neon. 4 Toy store candy.</p>
+      <h3>Where it goes next</h3>
+      <ul>
+        <li>Drum machine first: load your own one-shots, program the 16 steps, shape the groove.</li>
+        <li>Pack mode: point it at a sample pack folder. It sorts the pack into kicks, snares, hats, chords, pads and loops, reads the key and tempo of the melodic files, and builds a beat from it.</li>
+        <li>SWAP on any lane brings up another sound from the pack in the same key. GENERATE picks a whole new set, in a new key if you want. SWAP ALL replaces everything.</li>
+        <li>One machine, two pages (BEAT and GROOVE), built in two stages. Stage one is the drum machine. Stage two adds pack mode.</li>
+      </ul>
+      <p class="note"><b>Honest limits.</b> Prototype works on separate drum sounds. Moving a hit early needs a little look-ahead in a real plugin. Pack mode is designed, not prototyped.</p>
+    </article>
+    <article class="idea" id="bootaps" style="--g1:#bfe9ff;--g2:#b89cff">
+      <div class="kind">Ghost Note Maker</div>
+      <h2 style="background:linear-gradient(135deg,#bfe9ff,#b89cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">BOO TAPS</h2>
+      <p class="tag">Tiny hits between the hits.</p>
+      <div class="studio">
+        <div class="frame">
+          <video playsinline preload="none" poster="bootaps.jpg?v=v1125a" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/lab_nov25_bootaps.mp4?v=v1125a" type="video/mp4"></video>
+          <div class="play" aria-label="Play"><span></span></div>
+          <div class="sound">&#9654; WITH SOUND</div>
+        </div>
+        <p class="cap">A stiff 80 BPM beat, then ghosts on, more ghosts, quiet to loud, loose timing, the dice, both presets, and off and on at the end.</p>
+      </div>
+      <h3>What it does</h3>
+      <p>Put it on a snare or a whole drum loop. It listens for the hits and adds quiet ghost notes in the gaps, the little taps a real drummer plays without thinking.</p>
+      <h3>Controls</h3>
+      <div class="knobs">
+        <div class="knob"><b>AMOUNT</b><span>how many ghost hits</span></div>
+        <div class="knob"><b>LEVEL</b><span>how quiet they are, from 20 dB to 3 dB under the real hit</span></div>
+        <div class="knob"><b>FEEL</b><span>how loose the timing is, up to 22 ms late or 13 ms early</span></div>
+        <div class="knob"><b>DICE</b><span>three ghost patterns</span></div>
+        <div class="knob"><b>Presets</b><span>SOFT HANDS and BUSY FINGERS</span></div>
+      </div>
+      <h3>Where it goes next</h3>
+      <ul>
+        <li>Alex&#x27;s verdict on Nov 25: awesome. Next step is a real plugin prototype.</li>
+        <li>Needs host tempo, live hit detection and its own level matching.</li>
+      </ul>
+      <p class="note"><b>Honest limits.</b> In the prototype a ghost is a quieter, shorter, darker copy of the hit before it. Tested on one clean programmed beat.</p>
+    </article>
+    <article class="idea" id="tuna" style="--g1:#3cdcff;--g2:#7dffb0">
+      <div class="kind">Drum Tuner</div>
+      <h2 style="background:linear-gradient(135deg,#3cdcff,#7dffb0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">TUNA</h2>
+      <p class="tag">Drums in key. One knob.</p>
+      <div class="studio">
+        <div class="frame">
+          <video playsinline preload="none" poster="tuna.jpg?v=v1125a" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/lab_nov25_tuna.mp4?v=v1125a" type="video/mp4"></video>
+          <div class="play" aria-label="Play"><span></span></div>
+          <div class="sound">&#9654; WITH SOUND</div>
+        </div>
+        <p class="cap">Melody in F minor. The kick starts out of tune on purpose, then TUNA moves it to F and the snare to C. Best on headphones: the kick sits around 44 Hz.</p>
+      </div>
+      <h3>What it does</h3>
+      <p>Pick the key of the song. TUNA hears the pitch of the kick and the snare and slides each one to a note that fits.</p>
+      <h3>Controls</h3>
+      <div class="knobs">
+        <div class="knob"><b>KEY</b><span>the note the song is in</span></div>
+        <div class="knob"><b>TUNE</b><span>0 to 100 percent, how far each drum slides to the right note</span></div>
+        <div class="knob"><b>KICK FINE and SNARE FINE</b><span>nudge one drum by ear, in cents</span></div>
+        <div class="knob"><b>SNAP TO</b><span>NEAREST, ROOT or FIFTH</span></div>
+        <div class="knob"><b>Display</b><span>HEARD F#1, PLAYS F1, per drum, with an in tune meter</span></div>
+        <div class="knob"><b>Presets</b><span>ROOT LOCK and HIGH FIVE</span></div>
+      </div>
+      <h3>Where it goes next</h3>
+      <ul>
+        <li>A real plugin needs a short LEARN step, because a low kick takes time to read.</li>
+        <li>One instance per drum, with a shifter that keeps the attack.</li>
+      </ul>
+      <p class="note"><b>Honest limits.</b> Moving a drum a long way changes its length and tone, not only its pitch. The snare in the video goes up three semitones and gets shorter and brighter.</p>
+    </article>
+    <article class="idea" id="gecko" style="--g1:#8fd62a;--g2:#ffe066">
+      <div class="kind">Tail Shaper</div>
+      <h2 style="background:linear-gradient(135deg,#8fd62a,#ffe066);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GECKO</h2>
+      <p class="tag">Short and tight. Or long and washy.</p>
+      <div class="studio">
+        <div class="frame">
+          <video playsinline preload="none" poster="gecko.jpg?v=v1125a" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/lab_nov25_gecko.mp4?v=v1125a" type="video/mp4"></video>
+          <div class="play" aria-label="Play"><span></span></div>
+          <div class="sound">&#9654; WITH SOUND</div>
+        </div>
+        <p class="cap">Normal hits, short and tight, a sweep from short to long, then HOLD, SMOOTH and both presets. In the prototype the kick tail goes from 257 ms down to 71 ms, or up to 575 ms.</p>
+      </div>
+      <h3>What it does</h3>
+      <p>One knob for the tail of every drum hit. Left makes hits short and tight. Right lets them ring out. The front of the hit is never touched.</p>
+      <h3>Controls</h3>
+      <div class="knobs">
+        <div class="knob"><b>LENGTH</b><span>left is shorter, middle is no change, right is longer</span></div>
+        <div class="knob"><b>HOLD</b><span>how much of the body is kept before shaping starts</span></div>
+        <div class="knob"><b>SMOOTH</b><span>a softer fade on the short side, a darker tail on the long side</span></div>
+        <div class="knob"><b>Display</b><span>the real waveform, grey for the original and colour for the shaped hit</span></div>
+        <div class="knob"><b>Presets</b><span>SNAP PEA and BIG SPLASH</span></div>
+      </div>
+      <h3>Where it goes next</h3>
+      <ul>
+        <li>Make the long side stretch the drum&#x27;s own decay.</li>
+        <li>Add level matching so short does not also mean quieter.</li>
+      </ul>
+      <p class="note"><b>Honest limits.</b> The long side is an added splash behind the hit in this prototype. The short side is also about 3 dB quieter.</p>
+    </article>
+    <article class="idea" id="sidekick" style="--g1:#ff6fa8;--g2:#7dffcf">
+      <div class="kind">Kick and Bass Glue</div>
+      <h2 style="background:linear-gradient(135deg,#ff6fa8,#7dffcf);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">SIDEKICK</h2>
+      <p class="tag">The bass makes room for the kick.</p>
+      <div class="studio">
+        <div class="frame">
+          <video playsinline preload="none" poster="sidekick.jpg?v=v1125a" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/lab_nov25_sidekick.mp4?v=v1125a" type="video/mp4"></video>
+          <div class="play" aria-label="Play"><span></span></div>
+          <div class="sound">&#9654; WITH SOUND</div>
+        </div>
+        <p class="cap">First take. The bass in this one is too quiet to judge; a new video on a beat with a loud bassline replaces it.</p>
+      </div>
+      <h3>What it does</h3>
+      <p>Put it on the bass. It hears the kick and dips the low end of the bass under every kick, then lets it swell back. No sidechain routing.</p>
+      <h3>Controls</h3>
+      <div class="knobs">
+        <div class="knob"><b>GLUE</b><span>how deep the bass dips</span></div>
+        <div class="knob"><b>TIME</b><span>how fast the bass swells back, 40 to 700 ms</span></div>
+        <div class="knob"><b>FOCUS</b><span>how much of the bass is affected, from only the deep sub to more of the bass</span></div>
+        <div class="knob"><b>Presets</b><span>GENTLE HUG and BIG PUMP</span></div>
+      </div>
+      <h3>Where it goes next</h3>
+      <ul>
+        <li>Test on real 808 glides and a played bass.</li>
+        <li>A real plugin needs a sensitivity knob for the kick detector and a little look-ahead.</li>
+      </ul>
+      <p class="note"><b>Honest limits.</b> Tested on one beat with a synthesized bass.</p>
+    </article>
+    <article class="idea" id="loosegoose" style="--g1:#ffb347;--g2:#fff3d0">
+      <div class="kind">Hat Humanizer</div>
+      <h2 style="background:linear-gradient(135deg,#ffb347,#fff3d0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">LOOSE GOOSE</h2>
+      <p class="tag">Hats played by hand.</p>
+      <div class="studio">
+        <div class="frame">
+          <video playsinline preload="none" poster="loosegoose.jpg?v=v1125a" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/lab_nov25_loosegoose.mp4?v=v1125a" type="video/mp4"></video>
+          <div class="play" aria-label="Play"><span></span></div>
+          <div class="sound">&#9654; WITH SOUND</div>
+        </div>
+        <p class="cap">Machine hats, human on, then each knob alone, all together, both presets, and off and on at the end.</p>
+      </div>
+      <h3>What it does</h3>
+      <p>Programmed hats all sound the same. LOOSE GOOSE makes every hat a little different in level, brightness and timing, so they sound played.</p>
+      <h3>Controls</h3>
+      <div class="knobs">
+        <div class="knob"><b>HUMAN</b><span>the big knob; turns LEVEL, TONE and TIMING up together</span></div>
+        <div class="knob"><b>LEVEL</b><span>up to 6 dB louder or softer per hat</span></div>
+        <div class="knob"><b>TONE</b><span>each hat a little darker or brighter</span></div>
+        <div class="knob"><b>TIMING</b><span>up to 14 ms early or late</span></div>
+        <div class="knob"><b>ACCENT</b><span>beats louder, in-between hats softer</span></div>
+        <div class="knob"><b>Presets</b><span>GENTLE HANDS and SLEEPY STICKS</span></div>
+      </div>
+      <h3>Where it goes next</h3>
+      <ul>
+        <li>Prove it is click-free on busy hat loops.</li>
+        <li>Needs host tempo and seeded random so a bounce sounds the same twice.</li>
+      </ul>
+      <p class="note"><b>Honest limits.</b> Not yet proven click-free with the effect on. Tested on one clean programmed beat.</p>
+    </article>
+  <footer>Sebastian Macan &middot; lab notes, November 25 2026.</footer>
+</div>
+<script>
+  document.querySelectorAll('.studio').forEach(function(w){var v=w.querySelector('video'),p=w.querySelector('.play');
+  p.addEventListener('click',function(){document.querySelectorAll('.studio video').forEach(function(o){if(o!==v)o.pause();});v.setAttribute('controls','');v.play();});
+  v.addEventListener('play',function(){w.classList.add('playing');});v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});});
+</script>
+</body>
+</html>
