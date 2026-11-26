@@ -517,6 +517,10 @@
     document.querySelectorAll('[data-cart-buy]').forEach(function (el) {
       handle(el, function () {
         var id = el.getAttribute('data-cart-buy');
+        /* Nov 26 2026: only the "Buy Now" pill goes straight to Paddle. Every other Buy button
+           ("Buy Biome", "Buy the Brothers"...) puts the item in the cart; they pay from Checkout. */
+        var now = el.hasAttribute('data-cart-now') || /^\s*buy now\b/i.test(el.textContent || '');
+        if (!now) { add(id); return; }
         if (!PADDLE_CLIENT_TOKEN || !CATALOG[id] || !CATALOG[id].priceId) {
           /* checkout not live yet: put it in the bag and show the note */
           add(id, { silent: true });
