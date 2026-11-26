@@ -456,7 +456,7 @@
       s.onload = function () {
         try {
           if (PADDLE_ENV === 'sandbox') window.Paddle.Environment.set('sandbox');
-          window.Paddle.Initialize({ token: PADDLE_CLIENT_TOKEN });
+          window.Paddle.Initialize({ token: PADDLE_CLIENT_TOKEN, eventCallback: onPaddleEvent });
           resolve(window.Paddle);
         } catch (e) { reject(e); }
       };
@@ -464,6 +464,19 @@
       document.head.appendChild(s);
     });
     return paddleReady;
+  }
+
+  /* Paid: Paddle tells us the real transaction id. Empty the cart and take the buyer to their downloads.
+     (Paddle does not fill in a {transaction_id} placeholder in successUrl, so the redirect is done here.) */
+  var claimed = false;
+  function onPaddleEvent(ev) {
+    if (!ev || ev.name !== 'checkout.completed' || claimed) return;
+    var id = ev.data && (ev.data.transaction_id || ev.data.id);
+    if (!/^txn_[a-z0-9]{26}$/.test(id || '')) return;
+    claimed = true;
+    save([]);
+    try { render(); } catch (e) {}
+    setTimeout(function () { window.location.href = 'https://dl.sebastianmacan.com/claim?txn=' + id; }, 1500);
   }
 
   function checkout(ids) {
@@ -483,8 +496,7 @@
     loadPaddle().then(function (Paddle) {
       Paddle.Checkout.open({
         items: ids.map(function (id) { return { priceId: CATALOG[id].priceId, quantity: 1 }; }),
-        settings: { displayMode: 'overlay', theme: 'dark', locale: 'en',
-          successUrl: 'https://dl.sebastianmacan.com/claim?txn={transaction_id}' }
+        settings: { displayMode: 'overlay', theme: 'dark', locale: 'en' }
       });
     }).catch(function (e) {
       openDrawer();
