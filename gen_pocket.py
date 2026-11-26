@@ -64,7 +64,7 @@ body = '''  <section class="hero">
   <p>Snare not sounding right in the car? You are trying to keep things loud, but the snare is the first thing that falls apart. Pocket keeps things loud without you having to worry about your drums. Most snares sit on top of the beat like a sticker. Pocket moves the snare back into the room: one DEPTH knob darkens the top end the way air does, adds a few milliseconds of distance, brings up the room around it and dips the level, all in one move. The snare stays dead centre the whole way. It stops fighting your vocal and starts living with your drums.</p>
 
   <h2>Where it comes from</h2>
-  <p>Orbit, the free auto-pan, had a side effect nobody planned: it mixed hats in. The darkening and the tiny pre-delay it used to fake distance turned out to be the useful part. Pocket is that depth engine with the motion stripped out and the source pinned to the centre, rebuilt for hats, snares, claps and percussion.</p>
+  <p>Orbit, the free auto-pan, had a side effect nobody planned: it sat sounds back in the mix. The darkening and the tiny pre-delay it used to fake distance turned out to be the useful part. Pocket is that depth engine with the motion stripped out and the source pinned to the centre, rebuilt for snares, claps and percussion.</p>
 
   <h2>One big knob, five helpers</h2>
   <div class="bot"><b>DEPTH.</b> The knob. Together it darkens the top from 16 kHz down to 4.5 kHz, adds 0 to 12 ms of distance pre-delay, brings up the room and dips the level up to 3 dB. Zero is your dry sound. Turn it up and it walks to the back of the room without ever leaving the centre.</div>
