@@ -56,7 +56,7 @@
   .dl:hover { transform:translateY(-2px) scale(1.02); }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   .dnbad { display:flex; align-items:stretch; margin:40px 0 8px; border:1px solid var(--line); border-radius:18px; overflow:hidden; background:var(--card); }
-  .dnbad img { display:block; width:46%; height:auto; object-fit:cover; align-self:stretch; }
+  .dnbad video { display:block; width:46%; height:auto; min-width:0; object-fit:cover; align-self:stretch; }
   .dnbad .in { padding:24px 26px; display:flex; flex-direction:column; justify-content:center; flex:1; }
   .dnbad .k { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; }
   .dnbad h3 { margin:8px 0 0; font-size:clamp(22px,3.2vw,30px); font-weight:900; letter-spacing:-.02em; line-height:1.05; color:transparent; background:linear-gradient(135deg,#ff2ea6,#3cdcff); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
@@ -65,7 +65,7 @@
   .dnbad .buyb:hover { transform:translateY(-2px); }
   .dnbad .see { align-self:flex-start; margin-top:12px; color:var(--dim); font-size:13.5px; font-weight:700; text-decoration:none; }
   .dnbad .see:hover { color:var(--txt); }
-  @media (max-width:640px){ .dnbad { flex-direction:column; } .dnbad img { width:100%; height:auto; aspect-ratio:7/5; } .dnbad .in { padding:20px 18px 22px; } }
+  @media (max-width:640px){ .dnbad { flex-direction:column; } .dnbad video { width:100%; height:auto; aspect-ratio:7/5; } .dnbad .in { padding:20px 18px 22px; } }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
   h3 { font-size:17px; font-weight:800; margin:26px 0 6px; color:var(--g1); }
   p, li { color:#c8c8d0; font-size:15.5px; }
@@ -252,12 +252,12 @@
     <p class="cap"><b>One drum loop, thirteen presets.</b> Two bars of the loop dry, then four bars of each preset. The sound is the plugin and nothing else.</p>
   </div>
   <div class="dnbad" id="dnb">
-    <img src="img/bundles/dnb_brothers.jpg?v=1" alt="Drum &amp; Bass Brothers: the Stutter and Twitch gremlins with a Tears teardrop between them" loading="lazy" width="1400" height="1000">
+    <video autoplay muted loop playsinline preload="metadata" poster="img/bundles/dnb_brothers.jpg?v=1"><source src="https://video.sebastianmacan.com/img/video/dnb_insane_card.mp4?v=1" type="video/mp4"></video>
     <div class="in">
       <div class="k">Twitch has a brother</div>
       <h3>DRUM &amp; BASS BROTHERS</h3>
       <p>Stutter and Twitch tear up your breaks. Tears gives you 1,008 beautiful minor progressions to pour over them. Mac and Windows.</p>
-      <span class="buyb" role="button" tabindex="0" data-cart-add="dnbbrothers">Buy the Brothers &middot; $20</span>
+      <span class="buyb" role="button" tabindex="0" data-cart-add="dnbbrothers">Add to Cart &middot; $20</span>
       <a class="see" href="dnb-brothers.html">See what&#39;s inside &rarr;</a>
     </div>
   </div>
