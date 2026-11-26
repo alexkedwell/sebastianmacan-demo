@@ -17,16 +17,16 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sebastianmacan.com/stutter.html">
 <meta property="og:title" content="Stutter | Beat Repeat and Buffer Stutter VST3/AU Plugin">
-<meta property="og:description" content="Stutter is a beat repeat with dice. AMOUNT, RATE, REPEATS, RAMP, REVERSE, true PITCH, TAPE, SCATTER and a patch bay you can click. VST3 and AU, macOS and Windows. By Sebastian Macan.">
+<meta property="og:description" content="Stutter is a beat repeat with dice. AMOUNT, RATE, LENGTH, REPEATS, ROLL, REVERSE, true PITCH, TAPE, CRUSH and a patch bay you can click. VST3 and AU, macOS and Windows. By Sebastian Macan.">
 <meta property="og:image" content="https://sebastianmacan.com/img/og/stutter.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Stutter | Beat Repeat and Buffer Stutter VST3/AU Plugin">
-<meta name="twitter:description" content="Stutter is a beat repeat with dice. AMOUNT, RATE, REPEATS, RAMP, REVERSE, true PITCH, TAPE, SCATTER and a patch bay you can click. VST3 and AU, macOS and Windows. By Sebastian Macan.">
+<meta name="twitter:description" content="Stutter is a beat repeat with dice. AMOUNT, RATE, LENGTH, REPEATS, ROLL, REVERSE, true PITCH, TAPE, CRUSH and a patch bay you can click. VST3 and AU, macOS and Windows. By Sebastian Macan.">
 <meta name="twitter:image" content="https://sebastianmacan.com/img/og/stutter.jpg">
 <!-- seo:end -->
-<meta name="description" content="Stutter is a beat repeat with dice. AMOUNT, RATE, REPEATS, RAMP, REVERSE, true PITCH, TAPE, SCATTER and a patch bay you can click. VST3 and AU, macOS and Windows. By Sebastian Macan.">
+<meta name="description" content="Stutter is a beat repeat with dice. AMOUNT, RATE, LENGTH, REPEATS, ROLL, REVERSE, true PITCH, TAPE, CRUSH and a patch bay you can click. VST3 and AU, macOS and Windows. By Sebastian Macan.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#ff2ea6; --g2:#ff7ad1; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -110,7 +110,7 @@
    "operatingSystem": "macOS, Windows",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
-   "description": "Stutter is a tempo-synced buffer stutter. AMOUNT is the chance a repeat fires per step, RATE from 1/1 to 1/32 or FREE in milliseconds, REPEATS, RAMP, REVERSE, PITCH from -12 to +12 st, TAPE, SCATTER, SHAPE, FILTER, WIDTH, GLIDE, DECLICK and HOLD. By Sebastian Macan.",
+   "description": "Stutter is a tempo-synced buffer stutter. AMOUNT is the chance a repeat fires per step, RATE from 1/1 to 1/32 or FREE, LENGTH from 1/8 to 2 bars, REPEATS, ROLL, REVERSE, PITCH from -12 to +12 st, TAPE, SNIP, FADE, FILTER, CRUSH, GLIDE, DECLICK and HOLD. By Sebastian Macan.",
    "url": "https://sebastianmacan.com/stutter.html",
    "offers": {
     "@type": "Offer",
@@ -144,7 +144,15 @@
      "name": "Does Stutter work without the transport running?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Pick FREE in RATE and the step clock runs off the FREE knob in milliseconds. Jam on it live."
+      "text": "Yes. With the transport stopped it runs on its own clock. Pick FREE in RATE and it ignores the tempo altogether. Jam on it live."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "I have an older Stutter. What changes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Five knobs were swapped for LENGTH, ROLL, FADE, SNIP and CRUSH. Projects and presets that used the old five will not sound the same, so keep your old installer if a song depends on it."
      }
     },
     {
@@ -189,30 +197,30 @@
     <div class="kind">Beat Repeat</div>
     <h1>STUTTER</h1>
     <p class="tag">Trips over your beat.</p>
-    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/stutter.png?v=2.0.3" aria-label="Stutter plugin UI: a purple jittering creature centred above two rows of knobs, tiny patch cables under the title, while AMOUNT and PITCH sweep"><source src="https://video.sebastianmacan.com/img/video/stutter_ui_loop.mp4?v=2.0.3" type="video/mp4"></video></div>
+    <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/stutter.png?v=2.1.0" aria-label="Stutter plugin UI: a purple jittering creature centred above two rows of knobs, tiny patch cables under the title, while AMOUNT and REVERSE sweep"><source src="https://video.sebastianmacan.com/img/video/stutter_ui_loop.mp4?v=2.1.0b" type="video/mp4"></video></div>
     <div class="cta">
-      <a class="dl" href="downloads/Stutter-v2.0.3-macOS.pkg" data-mac="downloads/Stutter-v2.0.3-macOS.pkg" data-win="downloads/Stutter-v2.0.3-Windows-Setup.exe">Download Stutter Free</a>
-      <div class="meta">v2.0.3 &middot; VST3 + AU effect &middot; macOS + Windows</div>
+      <a class="dl" href="downloads/Stutter-v2.1.0-macOS.pkg" data-mac="downloads/Stutter-v2.1.0-macOS.pkg" data-win="downloads/Stutter-v2.1.0-Windows-Setup.exe">Download Stutter Free</a>
+      <div class="meta">v2.1.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
 
-  <div class="studio" id="st_studio">
-    <div class="label">In the studio &middot; Stutter Off, Stutter On</div>
+  <div class="studio" id="st_melodic">
+    <div class="label">Presets &middot; on a melodic loop</div>
     <div class="frame">
-      <video id="st_studioVid" playsinline preload="metadata" poster="img/ui/stutter_studio_demo.jpg?v=v1123" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/stutter_studio_demo.mp4?v=v1123" type="video/mp4"></video>
+      <video id="st_melodicVid" playsinline preload="metadata" poster="img/ui/stutter_presets_melodic.jpg?v=v1126" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/stutter_presets_melodic.mp4?v=v1126b" type="video/mp4"></video>
       <div class="play" aria-label="Play"><span></span></div>
       <div class="sound">&#9654; WITH SOUND</div>
     </div>
-    <p class="cap"><b>Grey is before. Color is Stutter.</b> A drum loop, Stutter switched in at six seconds. Real session, real audio.</p>
+    <p class="cap"><b>One loop, five presets.</b> The loop dry first. Then Deep Breath, Popcorn, Helium Rewind, Stair Climber and Woodpecker. The sound is the plugin and nothing else.</p>
   </div>
-  <div class="studio" id="st_tour">
-    <div class="label">Preset tour &middot; Stutter</div>
+  <div class="studio" id="st_drums">
+    <div class="label">Presets &middot; on drums</div>
     <div class="frame">
-      <video id="st_tourVid" playsinline preload="metadata" poster="img/ui/stutter_preset_tour.jpg?v=v1123" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/stutter_preset_tour.mp4?v=v1123" type="video/mp4"></video>
+      <video id="st_drumsVid" playsinline preload="metadata" poster="img/ui/stutter_presets_drums.jpg?v=v1126" controlslist="nodownload"><source src="https://video.sebastianmacan.com/img/video/stutter_presets_drums.mp4?v=v1126b" type="video/mp4"></video>
       <div class="play" aria-label="Play"><span></span></div>
       <div class="sound">&#9654; WITH SOUND</div>
     </div>
-    <p class="cap"><b>One drum loop, ten presets.</b> Two bars of the loop dry, then four bars of each preset. The sound is the plugin and nothing else.</p>
+    <p class="cap"><b>One drum loop, fifteen presets.</b> Two bars dry. Then every one of the fifteen in turn. The sound is the plugin and nothing else.</p>
   </div>
 
   <div class="dnbad" id="dnb">
@@ -228,20 +236,24 @@
 
   <h2>What Stutter does</h2>
   <p><b>Use it on drum loops, especially drum and bass.</b> It also gets weird variations out of your vocals, your synths, any instrument really.</p>
-  <p>Stutter grabs a slice of whatever is playing and fires it again. Not on every beat: AMOUNT is the dice, the chance that a repeat happens on each step of the grid. RATE picks the grid from whole bars down to 1/32, or FREE in milliseconds with no transport at all. REPEATS, RAMP and REVERSE shape the burst, PITCH moves every repeat up to an octave either way, and TAPE, SCATTER, SHAPE, FILTER, WIDTH and GLIDE turn one repeat into a trick. HOLD freezes the buffer while you lean on it.</p>
+  <p>Stutter grabs a slice of whatever is playing and fires it again. Not on every beat: AMOUNT is the dice, the chance that a repeat happens on each step of the grid. RATE picks the grid from whole bars down to 1/32. LENGTH says how long the stutter lasts and REPEATS says how many times it fires. ROLL speeds the repeats up or slows them down. PITCH moves every repeat up to an octave either way. REVERSE, TAPE, SNIP, FADE, FILTER and CRUSH turn one repeat into a trick. HOLD freezes the buffer while you lean on it.</p>
 
   <h2>Jitter and the patch bay</h2>
   <p>The purple creature is Jitter. It twitches with every repeat. Next to it is the patch bay: HOLD plugs the dangling cable into the free socket, and you can click any cable to grey it out. The cables are toys. Nothing breaks if you play with them.</p>
 
   <h2>Sixteen controls, one grid</h2>
   <div class="bot"><b>AMOUNT.</b> The chance a repeat fires on each step. 0% is silence from the engine, 100% is every step.</div>
-  <div class="bot"><b>RATE and FREE.</b> Slice size, 1/1 down to 1/32. Pick FREE and the clock runs off the FREE knob, 10 to 2000 ms, transport stopped or not.</div>
-  <div class="bot"><b>REPEATS and RAMP.</b> How many times the slice fires, and whether each repeat shrinks.</div>
+  <div class="bot"><b>RATE.</b> Slice size, 1/1 down to 1/32. Pick FREE and it ignores the tempo: 125 ms steps, transport stopped or not.</div>
+  <div class="bot"><b>LENGTH.</b> How long one stutter lasts. AUTO is the classic quick trip. Set it anywhere from 1/8 to 2 BARS and the repeats keep coming until time is up.</div>
+  <div class="bot"><b>REPEATS.</b> How many times the slice fires. More repeats, smaller slices.</div>
+  <div class="bot"><b>ROLL.</b> The repeats speed up or slow down across the stutter. Right is FASTER. Left is SLOWER. Hello, drum roll.</div>
   <div class="bot"><b>REVERSE.</b> Chance a burst plays backwards. Instant tape-rewind moments.</div>
   <div class="bot"><b>PITCH and GLIDE.</b> True pitch, -12 to +12 semitones, noon is 0. GLIDE ramps the pitch across the burst.</div>
-  <div class="bot"><b>TAPE and SCATTER.</b> Chance a burst becomes a tape-stop or tape-start, and chance a repeat reads from an older point in the buffer.</div>
-  <div class="bot"><b>SHAPE and FILTER.</b> Gain shape across the burst: square, triangle or swell. FILTER sweeps a low-pass closed or a high-pass open across it.</div>
-  <div class="bot"><b>WIDTH.</b> Alternate repeats pan left and right.</div>
+  <div class="bot"><b>TAPE.</b> Chance a burst becomes a tape-stop or tape-start.</div>
+  <div class="bot"><b>SNIP.</b> Cuts every repeat short and leaves a gap. A little is a trim. A lot is a row of tiny blips.</div>
+  <div class="bot"><b>FADE.</b> The whole stutter fades out or swells in. Left is OUT. Right is IN.</div>
+  <div class="bot"><b>FILTER.</b> Sweeps a low-pass closed or a high-pass open across the burst.</div>
+  <div class="bot"><b>CRUSH.</b> Gritty lo-fi repeats. Only the repeats get chewed. Your dry signal stays clean.</div>
   <div class="bot"><b>DECLICK.</b> Finds the hard edges a repeat copies in and smooths only those few milliseconds. The other side of the knob is PUNCH.</div>
   <div class="bot"><b>PATTERN.</b> DICE is the classic. EVERY BAR, EVERY 2 BARS, FILL 4, ACCEL and TRIPLET lock the bursts to the song.</div>
   <div class="bot"><b>SEED.</b> Same seed, same dice, every time. Change it for a new roll.</div>
@@ -250,26 +262,27 @@
   <h2>Get started in 3 steps</h2>
   <div class="step"><b>1. Put Stutter on a loop.</b> Drums are the classic. It opens on Init at 1/8, so you hear it working immediately.</div>
   <div class="step"><b>2. Set AMOUNT.</b> A quarter turn is a fill every few bars. Full is a machine gun.</div>
-  <div class="step"><b>3. Add one trick.</b> REVERSE for rewinds, PITCH up an octave for the chipmunk, TAPE for stops, SCATTER for chaos. Then save it.</div>
+  <div class="step"><b>3. Add one trick.</b> REVERSE for rewinds, PITCH up an octave for the chipmunk, TAPE for stops, CRUSH for grit. Then save it.</div>
 
   <h2>Make it yours</h2>
   <div class="knob"><b>MIX and OUT.</b> Blend the repeats with the dry loop, trim the result. BYPASS pill in the header for an honest A/B.</div>
-  <div class="knob"><b>ON and REPEAT pills.</b> ON dims the box and passes dry. REPEAT is the classic engine; switch it off and TAPE, SCATTER, REVERSE, PITCH and FILTER act on the live signal per step instead.</div>
+  <div class="knob"><b>ON and REPEAT pills.</b> ON dims the box and passes dry. REPEAT is the classic engine; switch it off and TAPE, REVERSE, PITCH and FILTER act on the live signal per step instead.</div>
   <div class="knob"><b>INIT ANY KNOB.</b> Right-click or Cmd-click a knob to send it home.</div>
   <div class="knob"><b>Window size.</b> Opens compact. Drag the corner grip to make it as big as you like; your DAW remembers it.</div>
 
   <h2>Presets</h2>
-  <p>11 to start: Init, Buzz Roll, Full Meltdown, Hiccup, Machine Gun, Polite, Popcorn, Rewind, Stairs Down, Sugar Rush and Tape Chewer. Save unlimited of your own.</p>
+  <p>21 to start: Init, Gentle Hiccup, Machine Gun, Rewind Room, Broken Toy, Tape Chewer, Crunchy Toast, Short Fuse, Speed Bump, Power Cut, Deep Breath, Popcorn, Helium Rewind, Stair Climber, Woodpecker, Chewy Cassette, Robot Hiccup, Triplet Trampoline, Sinking Feeling, Bouncy Ball and Drum Roll Please. Save unlimited of your own.</p>
 
   <h2>Common questions</h2>
   <div class="knob"><b>Is Stutter really free?</b> Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer.</div>
-  <div class="knob"><b>Does Stutter work without the transport running?</b> Yes. Pick FREE in RATE and the step clock runs off the FREE knob in milliseconds. Jam on it live.</div>
+  <div class="knob"><b>Does Stutter work without the transport running?</b> Yes. With the transport stopped it runs on its own clock. Pick FREE in RATE and it ignores the tempo altogether. Jam on it live.</div>
+  <div class="knob"><b>I have an older Stutter. What changes?</b> Five knobs were swapped for LENGTH, ROLL, FADE, SNIP and CRUSH. Projects and presets that used the old five will not sound the same, so keep your old installer if a song depends on it.</div>
   <div class="knob"><b>What DAWs does Stutter work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
   <div class="knob"><b>Is there a Windows version of Stutter?</b> Yes. Stutter ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One download covers both platforms.</div>
   <div class="knob"><b>How do I install Stutter?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
 
   <div class="cta">
-    <a class="dl" href="downloads/Stutter-v2.0.3-macOS.pkg" data-mac="downloads/Stutter-v2.0.3-macOS.pkg" data-win="downloads/Stutter-v2.0.3-Windows-Setup.exe">Download Stutter Free</a>
+    <a class="dl" href="downloads/Stutter-v2.1.0-macOS.pkg" data-mac="downloads/Stutter-v2.1.0-macOS.pkg" data-win="downloads/Stutter-v2.1.0-Windows-Setup.exe">Download Stutter Free</a>
     <div class="meta">Email required &middot; instant download</div>
   </div>
 
