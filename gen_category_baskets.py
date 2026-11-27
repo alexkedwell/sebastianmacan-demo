@@ -25,7 +25,7 @@ BASKETS = [
        mdesc="Biome and Chordsmith. Both Sebastian Macan instruments, one basket, VST3 + AU for macOS."),
   dict(file="basket-studio.html", cid="studiobasket", title="STUDIO TOOLS BASKET", name="Studio Tools Basket", price=35,
        img="img/bundles/studio_bundle.png?v=9", g1="#f5a623", g2="#60a5fa",
-       tag="A fire under the beat, a cassette to print it to and a snare that finally sits down.",
+       tag="A fire under the beat, a cassette to print it to and a depth machine that sits your snares and claps down.",
        desc="Fireplace lays a living room of atmosphere under the beat. Honey puts the chords on smooth tape. From rough idea to finished mix, one basket.",
        items=["fireplace", "honey"], meta="3 plugins · VST3 + AU · macOS + Windows",
        mdesc="Fireplace and Honey. The Sebastian Macan finishing tools, one basket, VST3 + AU."),
