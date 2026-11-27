@@ -20,7 +20,7 @@ PACKS = [
     {"id": "clubchords", "name": "CLUB CHORDS 240", "kind": "MIDI Chord Pack", "n": "240 .mid files",
      "g1": "#60a5fa", "g2": "#8b5cf6",
      "tag": "Chords for the dancefloor.",
-     "desc": "240 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum & Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.",
+     "desc": "240 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum & Bass, UK Garage. 40 per genre, voiced the way each scene actually plays them.",
      "inside": ["6 club genres, 40 progressions each, all 24 keys", "Stab voicings and pads that cut through a mix", "Tested against four-on-the-floor grooves"],
      "dl": "downloads/ClubChords240-SebastianMacan.zip", "yt": ""},
     {"id": "soulchords", "name": "SOUL CHORDS 240", "kind": "MIDI Chord Pack", "n": "240 .mid files",
