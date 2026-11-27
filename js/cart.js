@@ -161,6 +161,17 @@
     '.smcart-up .no{border:0;background:none;padding:10px 6px;cursor:pointer;font-size:12px;font-weight:700;color:#6f6f7a;text-decoration:underline;text-underline-offset:3px;}',
     '.smcart-up .no:hover{color:#f2f2f4;}',
     '.smcart-up.loud .kick{color:#39e6d0;}',
+    /* Nov 27: card lives in the item list under its item; No thanks under the button */
+    '#smcart-items .smcart-up{margin:28px 0 8px;box-shadow:0 0 28px rgba(123,92,255,.18);}',
+    '.smcart-up.still{animation:smdeal-rim 6s linear infinite;}',
+    '.smcart-up .candy{width:62px;height:62px;top:-26px;right:-4px;}',
+    '.smcart-up .btns{flex-direction:column;align-items:stretch;gap:2px;}',
+    '.smcart-up .go{white-space:normal;line-height:1.3;}',
+    '.smcart-up .no{align-self:center;padding:8px 6px 0;}',
+    '.smcart-row .inc{font-size:12px;color:#8a8a94;font-weight:600;margin-top:3px;}',
+    '.smchip.two{border-radius:16px;padding:9px 16px;text-align:center;line-height:1.5;}',
+    '.smchip .by{font-size:11.5px;color:#8a8a94;font-weight:600;}',
+    '.smchips{gap:8px 10px;}',
     /* product-page "Also in" chips */
     '.smchips{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;justify-content:center;margin:12px auto 0;max-width:640px;font-size:12px;color:#8a8a94;font-family:-apple-system,BlinkMacSystemFont,Inter,"Segoe UI",Roboto,sans-serif;}',
     '.smchips .lbl{font-weight:700;margin-right:2px;}',
@@ -323,22 +334,29 @@
   function bestOffer() {
     if (!UPSELL_ON || quiet()) return null;
     var best = null;
+    var cartBaskets = cart.filter(function (c) { return BASKETS[c]; });
+    function inside(small, big) { return small.every(function (i) { return big.indexOf(i) !== -1; }); }
     Object.keys(BASKETS).forEach(function (bid) {
       if (cart.indexOf(bid) !== -1 || !CATALOG[bid] || !CATALOG[bid].priceId) return;
       var b = BASKETS[bid];
-      var inCart = b.items.filter(function (i) { return cart.indexOf(i) !== -1; });
-      if (!inCart.length || !inCart.some(isFresh)) return;
-      /* skip if the cart already holds a basket that covers these items */
-      var covered = cart.some(function (c) { return BASKETS[c] && inCart.every(function (i) { return BASKETS[c].items.indexOf(i) !== -1; }); });
-      if (covered) return;
-      var have = inCart.reduce(function (s, i) { return s + CATALOG[i].cents; }, 0);
-      var full = b.items.reduce(function (s, i) { return s + CATALOG[i].cents; }, 0);
+      /* a basket already in the cart counts as the items inside it */
+      if (cartBaskets.some(function (c) { return inside(b.items, BASKETS[c].items); })) return;   /* already have all of it */
+      var subs = cartBaskets.filter(function (c) { return inside(BASKETS[c].items, b.items); });
+      var partial = cartBaskets.some(function (c) { return subs.indexOf(c) === -1 && BASKETS[c].items.some(function (i) { return b.items.indexOf(i) !== -1; }); });
+      if (partial) return;                                   /* would buy something twice */
+      var singles = b.items.filter(function (i) { return cart.indexOf(i) !== -1; });
+      var entries = cart.filter(function (c) { return singles.indexOf(c) !== -1 || subs.indexOf(c) !== -1; });
+      if (!entries.length || !entries.some(isFresh)) return;
+      var held = b.items.filter(function (i) { return singles.indexOf(i) !== -1 || subs.some(function (c) { return BASKETS[c].items.indexOf(i) !== -1; }); });
+      var missing = b.items.filter(function (i) { return held.indexOf(i) === -1; });
+      var have = entries.reduce(function (s, i) { return s + CATALOG[i].cents; }, 0);
       var more = CATALOG[bid].cents - have;
-      if (more < 0) more = 0;
-      var missing = b.items.filter(function (i) { return cart.indexOf(i) === -1; });
+      if (!missing.length && more >= 0) return;              /* nothing to gain */
+      var full = b.items.reduce(function (s, i) { return s + CATALOG[i].cents; }, 0);
       var la = lastAdded();
-      var cand = { bid: bid, inCart: inCart, missing: missing, more: more, save: full - CATALOG[bid].cents, loud: inCart.length >= 2,
-                   hasLast: la && b.items.indexOf(la) !== -1 ? 1 : 0 };
+      var cand = { bid: bid, inCart: entries, held: held, missing: missing, have: have, more: more < 0 ? 0 : more, diff: more,
+                   save: full - CATALOG[bid].cents, loud: entries.length >= 2,
+                   hasLast: la && (b.items.indexOf(la) !== -1 || subs.indexOf(la) !== -1) ? 1 : 0 };
       /* rank (Alex, Sep 23): basket containing the item they JUST added > covers more of the cart > cheaper swap > bigger saving */
       if (!best || cand.hasLast > best.hasLast ||
           (cand.hasLast === best.hasLast && (cand.inCart.length > best.inCart.length ||
@@ -347,36 +365,61 @@
     return best;
   }
 
-  function offerHTML(o) {
-    var b = BASKETS[o.bid], p = CATALOG[o.bid];
-    var others = listNames(o.missing, b.bonus);
-    var price = money(p.cents);
-    var title, sub, kick;
-    if (o.loud) {
-      kick = 'Sweet deal';
-      title = '<b>' + listNames(o.inCart) + '</b> are in the ' + p.name + '. Get the whole basket for <b class="px">' + price + '</b>.';
-      sub = others ? others + ' included.' : '';
+  /* ---- plain-words helpers for basket copy (Nov 27: every offer must say exactly what you get and what you pay) ---- */
+  function shortName(id) { return CATALOG[id].name.split(' - ')[0]; }
+  /* "Chordsmith" / "Fireplace and Honey" / "10 more chord packs" / "Chordsmith and 10 more chord packs".
+     more = say "N more ... packs" (the shopper already holds a pack). joiner ' + ' gives "Biome + Chordsmith". */
+  function describe(ids, more, joiner) {
+    var PACKS = BASKETS.midimega.items, MODES = BASKETS.allmodes.items;
+    var packs = ids.filter(function (i) { return PACKS.indexOf(i) !== -1; });
+    var parts = ids.filter(function (i) { return PACKS.indexOf(i) === -1; }).map(shortName);
+    if (packs.length > 2) {
+      var noun = packs.every(function (i) { return MODES.indexOf(i) !== -1; }) ? 'mode packs' : 'chord packs';
+      parts.push(packs.length + (more ? ' more ' : ' ') + noun);
+    } else parts = parts.concat(packs.map(shortName));
+    if (joiner) return parts.join(joiner);
+    if (parts.length <= 1) return parts.join('');
+    return parts.slice(0, -1).join(', ') + ' and ' + parts[parts.length - 1];
+  }
+
+  function offerHTML(o, still) {
+    var p = CATALOG[o.bid], price = money(p.cents), PACKS = BASKETS.midimega.items;
+    var hasPack = o.held.some(function (i) { return PACKS.indexOf(i) !== -1; });
+    var manyPacks = o.held.filter(function (i) { return PACKS.indexOf(i) !== -1; }).length > 2;
+    var diff = o.diff;
+    /* what leaves the cart, in plain words: "Biome" / "the Lofi Basket and Pocket" / "your 4 chord packs" */
+    var bk = o.inCart.filter(function (i) { return BASKETS[i]; }).map(function (i) { return 'the ' + CATALOG[i].name; });
+    var sg = describe(o.inCart.filter(function (i) { return !BASKETS[i]; }));
+    if (/^\d/.test(sg)) sg = 'your ' + sg;
+    var out = bk.concat(sg ? [sg] : []).join(' and ');
+    var mine = describe(o.held), what = describe(o.missing, hasPack);
+    var swap = 'Swap ' + out + ' (' + money(o.have) + ') for the ' + p.name + ' (' + price + ').';
+    var title, sub;
+    if (o.missing.length) {
+      title = 'Want <b>' + what + '</b> too? ' + (diff > 0 ? 'It\u2019s only <b class="px">' + money(diff) + '</b> more.' :
+              diff === 0 ? 'It costs <b class="px">nothing</b> extra.' : 'You even pay <b class="px">' + money(-diff) + '</b> less.');
+      sub = swap + ' You get ' + (manyPacks ? describe(BASKETS[o.bid].items, false, ' + ') :
+            describe(o.held, false, ' + ') + ' + ' + describe(o.missing, hasPack, ' + ')) + '.';
     } else {
-      kick = 'Basket deal';
-      var la = lastAdded();
-      var lead = (la && o.inCart.indexOf(la) !== -1) ? la : (o.inCart.filter(isFresh)[0] || o.inCart[0]);
-      title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name + '. Get the whole basket, ' + CATALOG[lead].name + ' included, for <b class="px">' + price + '</b>.';
-      sub = others ? 'That\u2019s ' + others + ' too.' : '';
+      title = 'Pay <b class="px">' + money(-diff) + '</b> less for <b>' + mine + '</b>.';
+      sub = swap + ' Same items, lower price.';
     }
-    return '<div class="smcart-up' + (o.loud ? ' loud' : '') + '" data-up="' + o.bid + '">' +
+    return '<div class="smcart-up' + (o.loud ? ' loud' : '') + (still ? ' still' : '') + '" data-up="' + o.bid + '">' +
       '<img class="candy" src="/img/candy-deal.png" alt="">' +
-      '<div class="kick">' + kick + '</div>' +
+      '<div class="kick">Basket deal</div>' +
       '<div class="t">' + title + '</div>' +
-      (sub ? '<div class="s">' + sub + '</div>' : '') +
-      '<div class="btns"><button class="go" data-up-go="' + o.bid + '">Get the basket \u00b7 ' + price +
-      (o.save > 0 ? '<span class="sv">save ' + money(o.save) + '</span>' : '') + '</button>' +
+      '<div class="s">' + sub + '</div>' +
+      '<div class="btns"><button class="go" data-up-go="' + o.bid + '">Swap to the basket \u00b7 ' + price + ' total</button>' +
       '<button class="no" data-up-no="' + o.bid + '">No thanks</button></div></div>';
   }
 
   /* swap: remove every single that the basket covers, add the basket */
   function upgradeTo(bid) {
     var b = BASKETS[bid];
-    cart = cart.filter(function (i) { return b.items.indexOf(i) === -1; });
+    cart = cart.filter(function (i) {
+      if (b.items.indexOf(i) !== -1) return false;
+      return !(BASKETS[i] && BASKETS[i].items.every(function (x) { return b.items.indexOf(x) !== -1; }));
+    });
     if (cart.indexOf(bid) === -1) cart.push(bid);
     save(cart); render(); pulseBadge();
   }
@@ -386,25 +429,27 @@
     els.badge.textContent = String(n);
     els.badge.classList.toggle('on', n > 0);
 
+    /* ONE basket card, placed right under the (last) cart item it is about */
+    var offer = n ? bestOffer() : null;
+    var key = offer ? offer.bid + ':' + cart.join(',') : '';
+    var card = offer ? offerHTML(offer, els.deal.getAttribute('data-key') === key) : '';
+    var at = -1;
+    if (card) cart.forEach(function (id, idx) { if (offer.inCart.indexOf(id) !== -1) at = idx; });
     if (n === 0) {
       els.items.innerHTML = '<div id="smcart-empty">Your bag is empty.<br>Go grab some candy.</div>';
     } else {
-      els.items.innerHTML = cart.map(function (id) {
+      els.items.innerHTML = cart.map(function (id, idx) {
         var p = CATALOG[id];
         return '<div class="smcart-row">' +
-          '<div><div class="n">' + p.name + '</div></div>' +
+          '<div><div class="n">' + p.name + '</div>' +
+          (BASKETS[id] ? '<div class="inc">Includes ' + describe(BASKETS[id].items, false, ' + ') + '</div>' : '') + '</div>' +
           '<div style="display:flex;align-items:center;gap:12px;">' +
           '<span class="p">' + money(p.cents) + '</span>' +
           '<button class="smcart-rm" data-cart-remove="' + id + '" aria-label="Remove ' + p.name + '">&times;</button>' +
-          '</div></div>';
+          '</div></div>' + (idx === at ? card : '');
       }).join('');
     }
-    var offer = n ? bestOffer() : null;
-    var key = offer ? offer.bid + ':' + cart.join(',') : '';
-    if (els.deal.getAttribute('data-key') !== key) {
-      els.deal.innerHTML = offer ? offerHTML(offer) : '';
-      els.deal.setAttribute('data-key', key);
-    }
+    els.deal.setAttribute('data-key', key);
     var total = cart.reduce(function (s, id) { return s + CATALOG[id].cents; }, 0);
     els.sub.textContent = money(total);
     els.checkout.disabled = n === 0;
@@ -442,6 +487,10 @@
   function remove(id) {
     var i = cart.indexOf(id);
     if (i !== -1) { cart.splice(i, 1); save(cart); }
+    try {
+      var snap = dismissedSnapshot();
+      if (snap) sessionStorage.setItem(DISMISS_KEY, JSON.stringify(snap.filter(function (x) { return x !== id; })));
+    } catch (e) {}
     render();
   }
 
@@ -547,6 +596,10 @@
     els.items.addEventListener('click', function (e) {
       var btn = e.target.closest('[data-cart-remove]');
       if (btn) return remove(btn.getAttribute('data-cart-remove'));
+      var go = e.target.closest('[data-up-go]');
+      if (go) return upgradeTo(go.getAttribute('data-up-go'));
+      var no = e.target.closest('[data-up-no]');
+      if (no) { dismiss(); render(); }
     });
     els.deal.addEventListener('click', function (e) {
       var go = e.target.closest('[data-up-go]');
@@ -575,8 +628,9 @@
       var more = CATALOG[bid].cents - CATALOG[id].cents;   /* what the basket costs on top of this product */
       if (more <= 0) return '';
       var others = BASKETS[bid].items.filter(function (i) { return i !== id; });
-      var what = others.length <= 2 ? listNames(others) : 'the rest of the ' + CATALOG[bid].name;
-      return '<a class="smchip" href="' + BASKETS[bid].page + '">Add ' + what + ' for <span class="sv" style="margin-left:2px">+' + money(more) + '</span></a>';
+      return '<a class="smchip two" href="' + BASKETS[bid].page + '">Add ' + describe(others, false) +
+        ' for <span class="sv" style="margin-left:2px">+' + money(more) + '</span><br>' +
+        '<span class="by">by getting the ' + CATALOG[bid].name + ' \u00b7 ' + money(CATALOG[bid].cents) + ' total</span></a>';
     }).join('');
     if (!chips) return;
     wrap.innerHTML = chips;
