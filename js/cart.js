@@ -571,12 +571,15 @@
     if (!bids.length) return;
     var wrap = document.createElement('div');
     wrap.className = 'smchips';
-    wrap.innerHTML = '<span class="lbl">Also in:</span>' + bids.map(function (bid) {
-      var full = BASKETS[bid].items.reduce(function (s, i) { return s + CATALOG[i].cents; }, 0);
-      var sv = full - CATALOG[bid].cents;
-      return '<a class="smchip" href="' + BASKETS[bid].page + '">' + CATALOG[bid].name + ' ' + money(CATALOG[bid].cents) +
-        (sv > 0 ? ' <span class="sv">save ' + money(sv) + '</span>' : '') + '</a>';
+    var chips = bids.map(function (bid) {
+      var more = CATALOG[bid].cents - CATALOG[id].cents;   /* what the basket costs on top of this product */
+      if (more <= 0) return '';
+      var others = BASKETS[bid].items.filter(function (i) { return i !== id; });
+      var what = others.length <= 2 ? listNames(others) : 'the rest of the ' + CATALOG[bid].name;
+      return '<a class="smchip" href="' + BASKETS[bid].page + '">Add ' + what + ' for <span class="sv" style="margin-left:2px">+' + money(more) + '</span></a>';
     }).join('');
+    if (!chips) return;
+    wrap.innerHTML = chips;
     var meta = cta.querySelector('.meta');
     if (meta) cta.insertBefore(wrap, meta); else cta.appendChild(wrap);
   }

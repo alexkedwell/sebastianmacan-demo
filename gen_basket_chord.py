@@ -12,7 +12,7 @@ s = s.replace('src="img/bundles/midi_mega_bundle.png" alt="MIDI MEGA BASKET bask
               'src="img/bundles/chord_bundle.png" alt="CHORD BASKET basket art"')
 s = s.replace('<div class="pricebar"><span class="big">$49</span></div>', '<div class="pricebar"><span class="big">$69</span></div>')
 s = s.replace('<div class="meta">11 packs · 4796 MIDI files · any DAW</div>',
-              '<div class="meta">1 plugin + 11 packs · 4796 MIDI files · VST3 + AU · macOS · any DAW</div>')
+              '<div class="meta">1 plugin + 11 packs · 4796 MIDI files · VST3 + AU · macOS + Windows · any DAW</div>')
 s = s.replace('data-cart-buy="midimega">Buy MIDI Mega Basket &middot; $49</span>', 'data-cart-buy="chordbasket">Buy Chord Basket &middot; $69</span>')
 s = s.replace('data-cart-add="midimega"', 'data-cart-add="chordbasket"').replace('data-cart-buy="midimega"', 'data-cart-buy="chordbasket"')
 s = re.sub(r'<p class="sub">Every MIDI pack we make:.*?</p>',
