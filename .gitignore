@@ -1,0 +1,9 @@
+# Nov 26 2026: build scripts, templates and removed-section backups stay on this Mac but are NOT published.
+# (Everything tracked in this repo is served at sebastianmacan.com, so anything tracked here is downloadable.)
+*.py
+_tpl/
+_removed/
+demos/RENDER_REPORT.md
+biome_howto_source.txt
+__pycache__/
+.DS_Store
