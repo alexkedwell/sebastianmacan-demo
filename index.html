@@ -290,6 +290,9 @@
   .featbanner .dl { font-size:14px; padding:12px 20px; border-radius:999px; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 6px 22px rgba(0,0,0,.45); color:var(--ink); font-weight:900; text-decoration:none; text-shadow:none; }
   .featbanner .inside { margin-top:16px; font-size:12.5px; color:#d9c8ff; }
   .featbanner .inside .brk { display:none; }
+  .featbanner.gremlinad p .l2 { display:block; }
+  @media (max-width:1000px) { .featbanner.gremlinad p .l2 { display:none; } }
+  @media (max-width:343px) { .featbanner.gremlinad .binner p { font-size:calc(16.4 * var(--u)); white-space:nowrap; } }
   @media (max-width:720px) { .featbanner { height:auto; display:block; padding-top:104%; } .featbanner .stage .vwide { display:none; } .featbanner .stage .vtall { display:block; object-position:center top; } .featbanner .binner { margin-left:0; padding:0 26px 40px; } .featbanner h3 { margin:14px 0 16px; } .featbanner p { margin-bottom:30px; line-height:1.45; } .featbanner .dl { margin-top:0; padding:15px 26px; } .featbanner .inside { margin-top:28px; line-height:1.9; } .featbanner .inside .sep { display:none; } .featbanner .inside .brk { display:inline; } }
   @media (max-width:389px) { .featbanner.gremlinad { --u:calc((100vw - 32px) / 358); } .featbanner.gremlinad .pill { top:calc(14 * var(--u)); right:calc(14 * var(--u)); font-size:max(9px, calc(10 * var(--u))); padding:calc(4 * var(--u)) calc(9 * var(--u)); } .featbanner.gremlinad .binner { padding:0 calc(26 * var(--u)) calc(40 * var(--u)); } .featbanner.gremlinad .kind { font-size:max(9px, calc(10 * var(--u))); } .featbanner.gremlinad h3 { font-size:calc(30 * var(--u)); margin:calc(14 * var(--u)) 0 calc(16 * var(--u)); } .featbanner.gremlinad p { font-size:calc(18 * var(--u)); margin-bottom:calc(30 * var(--u)); } .featbanner.gremlinad .dl { font-size:max(12px, calc(14 * var(--u))); padding:calc(15 * var(--u)) calc(26 * var(--u)); } .featbanner.gremlinad .inside { margin-top:calc(28 * var(--u)); font-size:max(11px, calc(12.5 * var(--u))); } }
   .featbanner.dnbban { --g1:#ff2ea6; --g2:#3cdcff; --ink:#0a0a0c; --shadow:rgba(168,85,247,.30); border-color:rgba(168,85,247,.55); background:#09071a; cursor:default; }
@@ -1036,7 +1039,7 @@
     <div class="binner">
       <div class="kind">Five gremlins, one basket</div>
       <h3>GREMLIN BASKET</h3>
-      <p>Do not feed them after midnight.</p>
+      <p>Now entering the Gremlin Universe.<span class="l2"> Your sound may not come back the same.</span></p>
       <div class="dlrow"><a class="dl" href="basket-gremlin.html">Open the basket</a></div>
       <div class="inside">Smear &middot; Stutter &middot; Twitch &middot; Chop &middot; Scrap<span class="sep"> &middot; </span><br class="brk">Free &middot; Limited time</div>
     </div>
@@ -1069,7 +1072,7 @@
       <video class="bart" autoplay muted loop playsinline preload="metadata" aria-label="Gremlin Basket: Smear, Stutter, Twitch, Chop and Scrap in candy flying saucers lifting out of a basket" poster="img/bundles/gremlin_bundle.png?v=11"><source src="https://video.sebastianmacan.com/img/video/gremlin_bundle_alive.mp4?v=1" type="video/mp4"></video>
       <div class="binner">
         <h3>GREMLIN BASKET</h3>
-        <p class="desc">Smear, Stutter, Twitch, Chop and Scrap. Five little troublemakers who will not leave your sound alone. Do not feed them after midnight.</p>
+        <p class="desc">Smear, Stutter, Twitch, Chop and Scrap. Five little troublemakers who will not leave your sound alone. Now entering the Gremlin Universe. Your sound may not come back the same.</p>
         <div class="price"><span class="freebie">FREE</span></div>
         <span class="dl bopen" style="background:linear-gradient(135deg,#ff8ad8,#6ec8ff);">Open the basket</span>
         <div class="cartrow"><span class="cartbtn add" style="pointer-events:none;border-color:rgba(255,216,74,.5);color:#ffd84a;">Free &middot; Limited time</span></div>
