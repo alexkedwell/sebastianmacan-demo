@@ -41,7 +41,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
     { "@type": "Question", "name": "What DAWs does Honey work in?",
       "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically." } },
     { "@type": "Question", "name": "Is there a Windows version of Honey?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Honey ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both." } }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Honey works on macOS (VST3 + AU) and Windows (VST3), code-signed on both." } }
    ]
   }
  ]

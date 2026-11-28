@@ -48,7 +48,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
     { "@type": "Question", "name": "What DAWs does Chop work in?",
       "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically." } },
     { "@type": "Question", "name": "Is there a Windows version of Chop?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Chop ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both." } }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Chop works on macOS (VST3 + AU) and Windows (VST3), code-signed on both." } }
    ]
   }
  ]
@@ -98,7 +98,7 @@ body = f'''  <section class="hero">
   <h2>Common questions</h2>
   <div class="knob"><b>Is Chop really free?</b> Yes. Full version, every knob, no email wall, no subscription.</div>
   <div class="knob"><b>What DAWs does Chop work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
-  <div class="knob"><b>Is there a Windows version of Chop?</b> Yes. Chop ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both.</div>
+  <div class="knob"><b>Is there a Windows version of Chop?</b> Yes. Chop works on macOS (VST3 + AU) and Windows (VST3), code-signed on both.</div>
   <div class="knob"><b>How do I install Chop?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
 
   <div class="cta">

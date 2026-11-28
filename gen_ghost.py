@@ -34,7 +34,7 @@ h = rep(h, '"price": "0"', f'"price": "{USD}"')
 FREE_Q = 'Is Ghost really free?'; FREE_A = 'Yes. Enter your email and the download starts right away. Full version, no locked knobs, no trial timer.'
 PAY_Q = 'How much is Ghost?'; PAY_A = f'${USD}, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.'
 WIN_A_OLD = 'Windows builds are finished and getting their final polish. macOS is live today and Windows lands soon. Join the email list when you download and you will hear the moment it drops.'
-WIN_A = 'Yes. Ghost ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.' if WIN else WIN_A_OLD
+WIN_A = 'Yes. Ghost works on macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.' if WIN else WIN_A_OLD
 DAW_OLD = 'Any macOS DAW that loads VST3 or AU plugins'; DAW_NEW = 'Any DAW that loads VST3 or AU plugins' if WIN else DAW_OLD
 h = rep(h, FREE_Q, PAY_Q, 2); h = rep(h, FREE_A, PAY_A, 2); h = rep(h, WIN_A_OLD, WIN_A, 2); h = rep(h, DAW_OLD, DAW_NEW, 2)
 # hero + bottom buttons

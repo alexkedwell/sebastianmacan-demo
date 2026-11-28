@@ -41,7 +41,7 @@ for root in ("site", "demo-site"):
     { "@type": "Question", "name": "What DAWs does Scrap work in?",
       "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically." } },
     { "@type": "Question", "name": "Is there a Windows version of Scrap?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scrap ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both." } }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scrap works on macOS (VST3 + AU) and Windows (VST3), code-signed on both." } }
    ]
   }
  ]
@@ -90,7 +90,7 @@ for root in ("site", "demo-site"):
   <h2>Common questions</h2>
   <div class="knob"><b>Is Scrap really free?</b> Yes. Free for a limited time. Full version, every knob, no email wall, no subscription.</div>
   <div class="knob"><b>What DAWs does Scrap work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
-  <div class="knob"><b>Is there a Windows version of Scrap?</b> Yes. Scrap ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both.</div>
+  <div class="knob"><b>Is there a Windows version of Scrap?</b> Yes. Scrap works on macOS (VST3 + AU) and Windows (VST3), code-signed on both.</div>
   <div class="knob"><b>How do I install Scrap?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
 
   <div class="cta">

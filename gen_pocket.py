@@ -41,7 +41,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
     { "@type": "Question", "name": "What DAWs does Pocket work in?",
       "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically." } },
     { "@type": "Question", "name": "Is there a Windows version of Pocket?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pocket ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms." } }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pocket works on macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms." } }
    ]
   }
  ]
@@ -91,7 +91,7 @@ body = '''  <section class="hero">
   <div class="knob"><b>Is Pocket just an EQ and a reverb?</b> No. DEPTH moves four things together the way real distance does: darkening from 16 kHz down to 4.5 kHz, up to 12 ms of pre-delay, room lift and up to a 3 dB level dip. The first reflection is mono, so the sound itself never leaves the centre.</div>
   <div class="knob"><b>Does it work on things other than snares?</b> It is tuned for snares and claps, but anything that sits too far forward is fair game: percussion, plucks, even a vocal ad-lib.</div>
   <div class="knob"><b>What DAWs does Pocket work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
-  <div class="knob"><b>Is there a Windows version of Pocket?</b> Yes. Pocket ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.</div>
+  <div class="knob"><b>Is there a Windows version of Pocket?</b> Yes. Pocket works on macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.</div>
   <div class="knob"><b>How do I install Pocket?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
 
   <div class="cta">

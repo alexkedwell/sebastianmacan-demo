@@ -80,7 +80,7 @@ def build(slug, NAME, ver, g1, g2, rgb, title, meta, ld_desc, kind, tagline, ari
   <div class="knob"><b>How much is {NAME}?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
 {faq_html}
   <div class="knob"><b>What DAWs does {NAME} work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
-  <div class="knob"><b>Is there a Windows version of {NAME}?</b> Yes. {NAME} ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms.</div>
+  <div class="knob"><b>Is there a Windows version of {NAME}?</b> Yes. {NAME} works on macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms.</div>
   <div class="knob"><b>How do I install {NAME}?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
 
   <div class="cta">
@@ -124,7 +124,7 @@ P["smear"] = dict(slug="smear", NAME="Smear", ver="1.0.0", g1="#9a6bff", g2="#44
     ld_faqs=[("How much is Smear?", "Smear is $15, one-time. Instant download after checkout, full version, no locked knobs, no subscription."),
              ("Is Smear a reverb?", "It is a plate reverb with a granular front end: grains of the input get blurred and pitched before the plate, so sounds melt instead of just echoing."),
              ("What DAWs does Smear work in?", "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more."),
-             ("Is there a Windows version of Smear?", "Yes. Smear ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.")])
+             ("Is there a Windows version of Smear?", "Yes. Smear works on macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.")])
 
 P["stutter"] = dict(slug="stutter", NAME="Stutter", ver="2.0.0", g1="#ff2ea6", g2="#ff7ad1", rgb="255,46,166",
     title="Stutter | Beat Repeat and Buffer Stutter VST3/AU Plugin",
@@ -159,7 +159,7 @@ P["stutter"] = dict(slug="stutter", NAME="Stutter", ver="2.0.0", g1="#ff2ea6", g
     ld_faqs=[("How much is Stutter?", "Stutter is $15, one-time. Instant download after checkout, full version, no locked knobs, no subscription."),
              ("Does Stutter work without the transport running?", "Yes. Pick FREE in RATE and the step clock runs off the FREE knob in milliseconds, 10 to 2000 ms."),
              ("What DAWs does Stutter work in?", "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more."),
-             ("Is there a Windows version of Stutter?", "Yes. Stutter ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.")])
+             ("Is there a Windows version of Stutter?", "Yes. Stutter works on macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.")])
 
 P["twitch"] = dict(slug="twitch", NAME="Twitch", ver="1.0.0", g1="#3cdcff", g2="#9aefff", rgb="60,220,255",
     title="Twitch | Per-Step Glitch Rack VST3/AU Plugin",
@@ -194,7 +194,7 @@ P["twitch"] = dict(slug="twitch", NAME="Twitch", ver="1.0.0", g1="#3cdcff", g2="
     ld_faqs=[("How much is Twitch?", "Twitch is $15, one-time. Instant download after checkout, full version, no locked knobs, no subscription."),
              ("Does every Twitch knob run at once?", "Yes. Each of the twelve knobs is its own effect on the same tempo grid. Turn up one, or all of them."),
              ("What DAWs does Twitch work in?", "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more."),
-             ("Is there a Windows version of Twitch?", "Yes. Twitch ships for macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.")])
+             ("Is there a Windows version of Twitch?", "Yes. Twitch works on macOS (VST3 + AU) and Windows (VST3). One purchase covers both platforms.")])
 
 PRESETS = {}
 try:
